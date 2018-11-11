@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\usepackage{subcaption}
+\usepackage{gensymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{enumerate}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem*{thmt*}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\pgfplotsset{compat=1.15}
+
+\newtheorem{defn}{Definition}[section]
+\title{Auditing For Fairness in Machine Learning}
+\author{}
+\date{November 2018}
+
+\begin{document}
+\maketitle
+
+\section{Methods}
+
+
+\section{Experimental Results}
+\subsection{Synthetic Data}
+
+\paragraph{Metric-free Individual Fairness versus Other Fairness Measures.}
+
+\paragraph{Overlapping Distributions.}
+The first set of experiments (figure to figure ) tests the theoretical results in theorem ... Figure plots the value of the individual fairness measure $\Delta$ against the fraction of unfair records $\nu$, when $f$ is a logistic classifier. As stated in theorem, $\Delta$ is equal to $\nu$ and thus, the plot aligns along the $45\degree$ line. 
+
+changing the standard deviation $\sigma$ of the noise $\epsilon$. Figure \ref{fig: 1a} plots the value of $\Delta$ as a function of $\nu$ for value of $\sigma\in \{0, 0.1, 0.5, 1\}$ when $f$ is logistic regression and $\Delta$ is obtained by training a logistic classifier using auditing features $X_{1}, X_{2}$ and labels $\tilde{R_{f}},$ where  $\tilde{R_{f}}=R_{f}$ if $a=0$ and  $\tilde{R_{f}}=1 -R_{f}$ if $a=0$. The line $\Delta=\nu$ is consistent with theoretical results derived in the previous sections. Moreover, the variance of the noise in $Y^{*}$ and thus, the accuracy of the classifier $f$ do not affect the experimental results.
+
+\end{document}
