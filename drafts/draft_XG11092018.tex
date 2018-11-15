@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{pgfplots}
+
 \usepackage{subcaption}
 \usepackage{gensymb}
 \usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
@@ -22,16 +23,154 @@
 \maketitle
 
 \section{Methods}
+\subsection{Metric-Free Individual Fairness}
+
+\paragraph{Definitions.}
+We consider a collection of indicators $\mathbb{C}$. An indicator on $\mathbb{Z}$ is a function $g: \mathbb{Z} \rightarrow \mathbb{R}$ such that $g(z) =1$ if and only if $z\in G$.
+
+\paragraph{Label Access.}
+We assume that given a $z\sim D$, we have oracle access to $f(z,a)$ for all $a\in \mathbb{A}$. Because auditing features may only be a subset of the features used to train $f$, $f(z,a)$ is the marginal mean of $f$ conditional on $z$ and $a$. 
+Sources of individual unfairness include, but are not restricted to two situations:  either protected attributes have a direct influence on the value (e.g. $f$ is a function of protected attributes); or features on $\mathbb{X}-\mathbb{Z}$ are correlated with the protected attributes in $\mathbb{A}$.  
+
+\paragraph{Treating Individuals Similarly.}
+\begin{defn}(Metric-free individual fairness)
+\label{def: mfif}
+For $0<\alpha \leq 1$ and $0< \beta \leq 1$, a classifier $f$ is $(\alpha, \beta)$ fair with respect to $\mathbb{A}$ if for all $a, a^{'}\in \mathbb{A}$ with $a\neq a^{'}$, and for all $G\in \mathbb{C}$ with $Pr[z\in G] \geq \alpha$ :
+$$  E_{z\sim G}[|f(z, a) - f(z, a^{'})|] \leq \beta.$$
+\end{defn}
+
+Metric-free individual fairness is a multiple-individuals level notion of fairness since a $(\alpha, \beta)$ fair classifier does not allow more than a fraction $\beta$ of individuals to be treated differently depending on their protected attributes within fraction $\alpha$ of individuals. According to definition \ref{def: mfif}, a classifier is unfair if it treats differently individuals with similar auditing features but different protected attributes. 
+
+\paragraph{Relation with Statistical Measures of Fairness.}
+The concept of metric-free individual fairness bridges both concepts of statistical fairness and individual fairness. Informally, smaller values of $\alpha$ provides a more granular definition of fairness; larger values of alpha corresponds more to a group/statistical level definition. 
+
+\bigskip
+Formally, the next results shows that the definition \ref{def: mfif} encompasses two prevalent notions of statistical fairness:statistical parity, $SP$, and equalized odds, $EO$ (see \cite{hardt2016equality}):
+
+\begin{thm}(From metric-free fairness to SP and EO)
+\label{thm: SP}
+Consider a classifier $f: \mathbb{X} \rightarrow \{0, 1\}$.  If $f$ is $(\alpha,\beta)$-metric individually fair with $\alpha \leq \min_{a\in \mathbb{A}}\{Pr[f=1 \& A=a]$, then 
+\begin{enumerate}[(a)]
+    \item $f$ satisfies $\alpha(1-\beta)$-statistical parity, i.e for all $a, a^{'}\neq a \in \mathbb{A}$
+$$ |Pr[f=1, A=a] - Pr[f=1, A=a^{'}]| \leq \alpha(1-\beta)$$
+    \item $f$ satisfies $\alpha(1-\beta)$-equalized odds, i.e for all $a, a^{'}\neq a \in \mathbb{A}$ and $y\in\{0,1\}$
+$$ |Pr[f=1, A=a, Y=y] - Pr[f=1, A=a^{'}, Y=y]| \leq \alpha(1-\beta)$$
+\end{enumerate}
+\end{thm}
+
+When $\alpha \rightarrow 0$ and/or $\beta\rightarrow 1$, the definition of metric-free individual fairness implies notion of  exact statistical parity or equalized odds (see \cite{hardt2016equality}).
+
+\paragraph{Relation with Individual Measure of Fairness.}
+The definition in \ref{def: mfif} does not require a metric in the audit space $\mathbb{Z}$, because similarity between individuals is measured between individuals with the same auditing features $z$ but different protected attributes. This is different from the definition of individual fairness in \cite{dwork2012fairness} that measures individuals across all individuals, but requires to define a similarity metric. The following definition of individual fairness is borrowed from \cite{dwork2012fairness}:
+
+\begin{defn}(Individual fairness)
+Let $\delta:\mathbb{Z} \times \mathbb{Z} \rightarrow \mathbb{R}$ be a metric. A classifier $f$ is $\delta$-individually fair if for all $z, z^{'} \in \mathbb{Z}$, 
+$$|f(z, a) - f(z^{'}, a)| \leq \delta(z, z^{'}).$$
+\end{defn}
+
+On one hand, metric-free individual fairness is weaker than individual fairness since it only protects group of individuals of size $\alpha$ and since its protection is only partial (unless $\beta \rightarrow 1$). On the other hand, metric-free individual fairness proposes a notion of fairness that is true regardless on how individual similarity is measured. 
+
+\bigskip
+Example where metric-free individual fairness is the right concept: 
+
+
 
 
 \section{Experimental Results}
 \subsection{Synthetic Data}
-
 \paragraph{Metric-free Individual Fairness versus Other Fairness Measures.}
+The first set of experiments illustrates how the concept of metric-free individual fairness relates to other existing definitions of fairness. Figures \ref{fig: 1a} and \ref{fig: 1b} plots measures statistical parity and  difference in true positive rates across protected groups $A=\{0, 1\}$ for different levels of metric-free individual fairness. Figure \ref{fig: 1a} shows that the level of statistical parity between protected groups -- $SP(\nu)=|Pr[f=1, A=0] - Pr[f=1, A=1]|$ -- is bounded below by $\nu$, which equals $\alpha(1-\beta)$ in theorem \ref{thm: SP} and measures the unfairness of classifier $f$ once the data has been modified. Figure \ref{fig: 1b} illustrates theorem \ref{thm: SP} for equalized odds: metric-free individual fairness implies that true positive rates -- $EO(\nu)= |Pr[f=1|A=1, Y=1] - Pr[f=1|A=0, Y=1]|$ -- cannot differ by more than $\nu$ across groups $A=0$ and $A=1$. Similar results could be obtained for true negative rates.
+
+\bigskip
+Figure compares the degree $\nu$ of metric-free individual unfairness to the fraction of individual pairs $(z, a)$ and $(z^{'}, a^{'})$ that are treated differently by the classifier $f$. Theorem indicates that the probability of fair treatment in the sense of \cite{dwork2012fairness} should be bounded below by the probability of fair treatment in the sense of this paper. 
+
+\begin{figure}
+\begin{subfigure} {.5\linewidth}
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$\nu$},
+    ylabel={$SP(\nu)$},
+    xmin=0, xmax=0.5,
+    ymin=0, ymax=0.5,
+    xtick={0,0.1,0.2,0.3,0.4,0.5},
+    ytick={0, 0.1, 0.2, 0.3, 0.4, 0.5},
+    legend pos=north west,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+ 
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    table[x=gamma, y=sp, col sep=comma]{../results/synth_exp_aggregate.csv};
+\end{axis}
+\end{tikzpicture}
+\caption{Statistical parity}
+\label{fig: 1a}
+\end{subfigure}
+\begin{subfigure} {.5\linewidth}
+\begin{tikzpicture}
+
+\begin{axis}[
+    xlabel={$\nu$},
+    ylabel={$EO(\nu)$},
+    xmin=0, xmax=0.5,
+    ymin=0, ymax=0.5,
+    xtick={0,0.1,0.2,0.3,0.4,0.5},
+    ytick={0, 0.1, 0.2, 0.3, 0.4, 0.5},
+    legend pos=north west,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+ 
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    table[x=gamma, y=tpr, col sep=comma]{../results/synth_exp_aggregate.csv};
+
+    
+\end{axis}
+\end{tikzpicture}
+\caption{True Positive Rates}
+\label{fig: 1b}
+\end{subfigure}
+
+\end{figure}
 
 \paragraph{Overlapping Distributions.}
 The first set of experiments (figure to figure ) tests the theoretical results in theorem ... Figure plots the value of the individual fairness measure $\Delta$ against the fraction of unfair records $\nu$, when $f$ is a logistic classifier. As stated in theorem, $\Delta$ is equal to $\nu$ and thus, the plot aligns along the $45\degree$ line. 
 
 changing the standard deviation $\sigma$ of the noise $\epsilon$. Figure \ref{fig: 1a} plots the value of $\Delta$ as a function of $\nu$ for value of $\sigma\in \{0, 0.1, 0.5, 1\}$ when $f$ is logistic regression and $\Delta$ is obtained by training a logistic classifier using auditing features $X_{1}, X_{2}$ and labels $\tilde{R_{f}},$ where  $\tilde{R_{f}}=R_{f}$ if $a=0$ and  $\tilde{R_{f}}=1 -R_{f}$ if $a=0$. The line $\Delta=\nu$ is consistent with theoretical results derived in the previous sections. Moreover, the variance of the noise in $Y^{*}$ and thus, the accuracy of the classifier $f$ do not affect the experimental results.
+
+\section{Appendix}
+
+\subsection{Proof of Theorem \ref{thm: SP}}
+\begin{proof}
+we show the results for statistical parity. The proof is similar for equalized odds. Suppose that $f$ is $(\alpha,\beta)$-metric free individually fair with $\alpha \leq \min_{a\in \mathbb{A}}\{Pr[f=1 \& A=a]$. Let $p_{a}$ denote the probability than $f(z, a)\neq f(z, a^{'})$ conditional on  $f(z,a)=1$. We first argue that $p_{a} \leq \alpha(1-\beta)$. To do so, construct a set $G=\{z\in \mathbb{Z}| f(z,a)= 1 \& \; f(z,a^{'})=0\}$. Consider a subset $G^{'}$ of $G^{c}$ such that $Pr[z\in G^{'}]=\nu-\epsilon$ for some $\epsilon>0$. We choose $\nu$ such that $$\frac{p_{a}}{p_{a} + \nu -\epsilon} = 1-\beta, $$
+or
+
+\begin{equation}
+\label{eq: nu}
+\nu = \epsilon + \frac{\beta}{1-\beta}p_{a}.    
+\end{equation}
+
+Therefore, $Pr[z\in G^{'}\cup G]=p_{a} + \nu - \epsilon$. By definition of $(\alpha, \beta)$-metric free individual fairness, since $ \frac{p_{a}}{p_{a} + \nu -\epsilon} = 1-\beta$, $p_{a} + \nu -\epsilon < \alpha$. Therefore, by equation \eqref{eq: nu},
+
+$$  p_{a} < (\alpha - \epsilon)(1-\beta).$$ Taking the limit $\epsilon \rightarrow 0$ leads to $p_{a}\geq \alpha(1-\beta)$. The same result holds for $p_{a^{'}}\equiv Pr[f(z, a^{'})=1 \& \; f(z,a)=0]$. Moreover,
+\begin{equation}
+    \begin{split}
+        Pr[f(z, a)=1] - Pr[f(z, a^{'})=1] & =  Pr[f(z, a)=1 \& f(z, a^{'})=0] - Pr[f(z, a)=0 \& f(z, a^{'})=1] \\
+         & = p_{a} - p_{a^{'}}
+    \end{split}
+\end{equation}
+Therefore, 
+
+$$|Pr[f(z, a)=1] - Pr[f(z, a^{'})=1]| \leq \alpha(1-\beta). $$
+\end{proof}
+
+\bibliographystyle{plain} % We choose the "plain" reference style
+\bibliography{references}
 
 \end{document}
