@@ -80,6 +80,63 @@ Example where metric-free individual fairness is the right concept:
 
 \section{Experimental Results}
 \subsection{Synthetic Data}
+
+\paragraph{With Oracle Access to Audited Classifier}
+\begin{figure}
+\begin{subfigure} {.5\linewidth}
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$\nu$},
+    ylabel={$SP(\nu)$},
+    xmin=0, xmax=0.5,
+    ymin=0, ymax=0.5,
+    xtick={0,0.1,0.2,0.3,0.4,0.5},
+    ytick={0, 0.1, 0.2, 0.3, 0.4, 0.5},
+    legend pos=north west,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+ 
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    table[x=gamma, y=unfairness_all, col sep=comma]{../results/synth_oracle_exp1.csv};
+\end{axis}
+\end{tikzpicture}
+\caption{Statistical parity}
+\label{fig: 1a}
+\end{subfigure}
+\begin{subfigure} {.5\linewidth}
+\begin{tikzpicture}
+
+\begin{axis}[
+    xlabel={$\nu$},
+    ylabel={$EO(\nu)$},
+    xmin=0, xmax=0.5,
+    ymin=0, ymax=0.5,
+    xtick={0,0.1,0.2,0.3,0.4,0.5},
+    ytick={0, 0.1, 0.2, 0.3, 0.4, 0.5},
+    legend pos=north west,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+ 
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    table[x=gamma, y=tpr, col sep=comma]{../results/synth_exp_aggregate.csv};
+
+    
+\end{axis}
+\end{tikzpicture}
+\caption{True Positive Rates}
+\label{fig: 1b}
+\end{subfigure}
+
+\end{figure}
+
 \paragraph{Metric-free Individual Fairness versus Other Fairness Measures.}
 The first set of experiments illustrates how the concept of metric-free individual fairness relates to other existing definitions of fairness. Figures \ref{fig: 1a} and \ref{fig: 1b} plots measures statistical parity and  difference in true positive rates across protected groups $A=\{0, 1\}$ for different levels of metric-free individual fairness. Figure \ref{fig: 1a} shows that the level of statistical parity between protected groups -- $SP(\nu)=|Pr[f=1, A=0] - Pr[f=1, A=1]|$ -- is bounded below by $\nu$, which equals $\alpha(1-\beta)$ in theorem \ref{thm: SP} and measures the unfairness of classifier $f$ once the data has been modified. Figure \ref{fig: 1b} illustrates theorem \ref{thm: SP} for equalized odds: metric-free individual fairness implies that true positive rates -- $EO(\nu)= |Pr[f=1|A=1, Y=1] - Pr[f=1|A=0, Y=1]|$ -- cannot differ by more than $\nu$ across groups $A=0$ and $A=1$. Similar results could be obtained for true negative rates.
 
