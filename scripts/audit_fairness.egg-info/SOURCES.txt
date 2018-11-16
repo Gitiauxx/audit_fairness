@@ -1,0 +1,7 @@
+setup.py
+audit_fairness.egg-info/PKG-INFO
+audit_fairness.egg-info/SOURCES.txt
+audit_fairness.egg-info/dependency_links.txt
+audit_fairness.egg-info/top_level.txt
+aufair/__init__.py
+aufair/audit_oracle.py
