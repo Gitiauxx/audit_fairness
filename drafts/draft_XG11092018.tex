@@ -25,24 +25,26 @@
 \section{Methods}
 \subsection{Metric-Free Individual Fairness}
 
-\paragraph{Definitions.}
-We consider a collection of indicators $\mathbb{C}$. An indicator on $\mathbb{Z}$ is a function $g: \mathbb{Z} \rightarrow \mathbb{R}$ such that $g(z) =1$ if and only if $z\in G$.
+\paragraph{Collection of Indicators.}
+An indicator is a subset $G$ of $\mathbb{Z}$ defining a function $g: \mathbb{Z} \rightarrow \{0, 1\}$ such that $g(z)=1$ if and only if $z\in G$. We consider a collection of indicators $ \mathbb{C}$.
 
 \paragraph{Label Access.}
-We assume that given a $z\sim D$, we have oracle access to $f(z,a)$ for all $a\in \mathbb{A}$. Because auditing features may only be a subset of the features used to train $f$, $f(z,a)$ is the marginal mean of $f$ conditional on $z$ and $a$. 
-Sources of individual unfairness include, but are not restricted to two situations:  either protected attributes have a direct influence on the value (e.g. $f$ is a function of protected attributes); or features on $\mathbb{X}-\mathbb{Z}$ are correlated with the protected attributes in $\mathbb{A}$.  
+We assume that given a $z\sim D$ and $x^{'}\sim D^{'}$, the oracle returns a value $f(z,x^{'}, a)$ for all $a\in \mathbb{A}$. 
 
 \paragraph{Treating Individuals Similarly.}
 \begin{defn}(Metric-free individual fairness)
 \label{def: mfif}
 For $0<\alpha \leq 1$ and $0< \beta \leq 1$, a classifier $f$ is $(\alpha, \beta)$ fair with respect to $\mathbb{A}$ if for all $a, a^{'}\in \mathbb{A}$ with $a\neq a^{'}$, and for all $G\in \mathbb{C}$ with $Pr[z\in G] \geq \alpha$ :
-$$  E_{z\sim G}[|f(z, a) - f(z, a^{'})|] \leq \beta.$$
+$$  E_{z\sim G \times D^{'}}[|f(z, x^{'}, a) - f(z, x^{'}, a^{'})|] \leq \beta.$$
 \end{defn}
+ Metric-free individual fairness is a multiple-individuals level notion of fairness. It protects any group of individuals $G\in \mathbb{C}$. The collection of indicators $\mathbb{C}$ is as in \cite{kim2018fairness} the computational bound on the granularity of metric-free individual fairness. If $\mathbb{C}$ is represented by polynomial-sized circuits, the definition of metric-free fairness guarantees fairness within the bound of any indicator that can be computed with polynomial-sized circuits. 
+ 
+ \bigskip
+ The main difference with previous notions of individual fairness (\cite{dwork2012fairness}) and computationally bounded individual fairness (\cite{kim2018fairness}) is that the fairness guarantee in definition \ref{def: mfif} is free of similarity metric.  The reason is that metric-free fairness guarantees similar treatment across individuals who are exactly similar but along protected attributes. This is weaker definition than previous definitions that relies on a broader definition of similarity than exact similarity.  We argue in the rest of this section that exact similarity is sufficient to protect small group of individuals against the discrimination "evils" identified in \cite{dwork2012fairness}. 
 
-Metric-free individual fairness is a multiple-individuals level notion of fairness since a $(\alpha, \beta)$ fair classifier does not allow more than a fraction $\beta$ of individuals to be treated differently depending on their protected attributes within fraction $\alpha$ of individuals. According to definition \ref{def: mfif}, a classifier is unfair if it treats differently individuals with similar auditing features but different protected attributes. 
 
 \paragraph{Relation with Statistical Measures of Fairness.}
-The concept of metric-free individual fairness bridges both concepts of statistical fairness and individual fairness. Informally, smaller values of $\alpha$ provides a more granular definition of fairness; larger values of alpha corresponds more to a group/statistical level definition. 
+The concept of metric-free individual fairness bridges both concepts of statistical fairness and individual fairness.  Informally, smaller values of $\alpha$ provides a more granular definition of fairness; larger values of alpha corresponds more to a group/statistical level definition. 
 
 \bigskip
 Formally, the next results shows that the definition \ref{def: mfif} encompasses two prevalent notions of statistical fairness:statistical parity, $SP$, and equalized odds, $EO$ (see \cite{hardt2016equality}):
