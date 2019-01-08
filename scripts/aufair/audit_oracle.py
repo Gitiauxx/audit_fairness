@@ -32,7 +32,8 @@ def oracle_access(data, features, learner, groups):
     for varname, varlist in groups.items():
         for var in varlist:
             test = data[features]
-            test['group'] = var
+            if varname in features:
+                test[varname] = var
             predict = learner.predict(np.array(test[features]))
             data['predict_{}_{}'.format(varname, var)] = predict
 
@@ -99,12 +100,15 @@ def binary_audit(data, features_audit, auditor, groups, seed=1):
         test_x = np.array(test[features_audit])
         test_y = np.array(test['difference'])
         predicted = auditor.predict(test_x)
-        test['pred'] = predicted
-
+        
         # compute accuracy
         accuracy = (predicted == test_y).astype('int32')
         positive_label = (predicted == 1).mean()
-        results[varname] = np.inner(predicted, test_y) / predicted.sum()
+        
+        if predicted.sum() > 0:
+            results[varname] = np.inner(predicted, test_y) / predicted.sum()
+        else:
+            results[varname] = 0
     
     return results
 
