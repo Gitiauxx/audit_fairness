@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+
+\usepackage{subcaption}
+\usepackage{gensymb}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,epsfig,epstopdf,titling,url,array}
+\usepackage{enumerate}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem*{thmt*}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\pgfplotsset{compat=1.15}
+
+\newtheorem{defn}{Definition}[section]
+\title{Auditing For Fairness in Machine Learning}
+\author{}
+\date{December 2018}
+
+\begin{document}
+\maketitle
+
+\section{Proofs}
+
+\subsection{Analysis of Algorithm 2}
+
+At each iteration $t$, denote $c_{t}$ the solution of the optimization problem 
+\begin{equation}
+\label{eq: opt1}
+max_{h\in \mathbb{C}} E_{D}\displaystyle\sum_{i=1}^{m} w_{it}f_{i}^{*}h_{i}
+\end{equation}
+
+For $g \in \mathbb{C}$, denote $\beta_{g}=E_{g=1}[f^{*}].$ At iteration $t$, 
+\begin{equation}
+    w_{it} = \begin{cases}
+    w_{i}(1 + \epsilon t) \mbox{ if } f_{it}^{*}=-1 \\
+    w_{i} \mbox{ otherwise.}
+    \end{cases}
+\end{equation}
+Let $g_{0}\in \mathbb{C}$ such that $g_{0}(x)=-1$ for all $x\in \mathfrak{X}$. 
+Denote $B_{g}=\{x_{i}| g(x_{i})=1 \; f_{a}(x_{i}) =f_{a^{'}}(x_{i})\}$, $B_{g}^{+}=\{x_{i}| g(x_{i})=1 \; f_{a}(x_{i})  >f_{a^{'}}(x_{i})\}$ and $B_{g}^{-}=\{x_{i}| g(x_{i})=1 \; f_{a}(x_{i}) <f_{a^{'}}(x_{i})\}$. Observe that 
+\begin{equation}\beta_{g}= \left| \displaystyle\sum_{i, x_{i}\in B_{g}^{+}}w_{i} - \displaystyle\sum_{i, x_{i}\in B_{g}^{-}}w_{i} \right|.
+\end{equation}
+Assume first that $\displaystyle\sum_{i, x_{i}\in B_{g}^{+}}w_{i} > \displaystyle\sum_{i, x_{i}\in B_{g}^{-}}w_{i}$. Therefore,
+
+\begin{equation}
+\begin{split}
+   E_{D}\left[\displaystyle\sum_{i=1, g(x_{i})=1}^{m} w_{it}f_{i}^{*}g(x_{i})\right] &=  E_{D}\left[\displaystyle\sum_{i=1, x_{i}\in B_{g} }^{m} w_{it}f_{i}^{*} + \displaystyle\sum_{i=1, x_{i}\notin B_{g} }^{m} w_{it}f_{i}^{*}\right] \\
+   & = -\frac{1}{2}\epsilon t E_{D}[|B_{g}|] - 
+   \epsilon t  E_{D}[|B_{g}^{-}|] -  E_{D}\left[ \displaystyle\sum_{i=1, x_{i}\in B_{g}^{-} }^{m} w_{i}\right]  \\
+   & +  E_{D}\left[ \displaystyle\sum_{i=1, x_{i}\in B_{g}^{+} }^{m} w_{i}\right] \\
+   & = -\frac{1}{2}\epsilon t E_{D}[|B_{g}|]- 
+   \epsilon t  E_{D}[|B_{g}^{-}|] + \beta_{g},
+   \end{split}
+\end{equation}
+where $|B|=\displaystyle\sum_{i=1, x_{i}\in B}^{m}w_{i}$ for any $B\in \mathbb{C}$. Moreover, 
+\begin{equation}
+   E_{D}\left[\frac{1}{m}\displaystyle\sum_{i=1, g(x_{i})=1}^{m} w_{it}f_{i}^{*}g_{0}(x_{i})\right] = \frac{1}{2}\epsilon t E_{D}[|B_{g}|] +
+   \epsilon t  E_{D}[|B_{g}^{-}|]- \beta_{g}.
+\end{equation}
+Therefore, $g$ cannot be a solution of \eqref{eq: opt1} if 
+\begin{equation}
+    \epsilon t\left( E_{D}[|B_{g}|] +
+   2  E_{D}[|B_{g}^{-}|]\right) > 2\beta_{g}.
+\end{equation}
+Note that $|B_{g}| = 1 -\left( |B_{g}^{-}| + |B_{g}^{+}|\right)$ and $\beta_{g}=|B_{g}^{+}| -  |B_{g}^{-}|$. Therefore, $g$ cannot be a solution of \eqref{eq: opt1} if
+
+\begin{equation}
+    t > \frac{2\beta_{g}}{\epsilon(1-\beta_{g})}
+\end{equation}
+At any iteration $t$, a solution of \eqref{eq: opt1} is either $g(x)=-1$ for all $x\in\mathfrak{X}$ or $\beta_{g} > \frac{\epsilon t}{\epsilon t + 2}$. 
+
+\bigskip
+\textbf{Small samples properties}
+We can use a generic uniform convergence property: 
+
+\begin{thm}
+\label{thm1}
+Let$\mathfrak{H}$ be a family of function  mapping from $\mathfrak{X}$ to $\{-1, 1\}$ and let $S=\{x_{1}, ..., x_{m}\}$ be a sample where $x_{i}\sim D$ for some distribution $D$ over $\mathfrak{X}$. With probability $1-\delta$, for all $h\in \mathfrak{H}$
+$$  \left|E_{S\sim D}[h]- \frac{1}{m}\displaystyle\sum_{i=1}^{m} h(x_{i})\right| \leq 2\mathfrak{R}_{m}(\mathfrak{H}) + \sqrt{\frac{2\ln(1/\delta)}{m}}.$$
+\end{thm}
+
+Applying the uniform convergence result from \ref{thm1} allows deriving property of algorithm 2. For any a sample $S$ and any $g\in \mathbb{C}$ with probability $1-\delta/2$, ,
+\begin{equation}
+    \left|\frac{1}{m}\displaystyle\sum_{i=1, g(x_{i})=1}^{m} w_{it}f_{i}^{*}g(x_{i}) + \frac{1}{2}\epsilon t E_{D}[|B_{g}|] +
+   \epsilon t  E_{D}[|B_{g}^{-}|] - \beta_{g}\right| \leq 2\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) + \sqrt{\frac{2\ln(2/\delta)}{m}},
+\end{equation}
+
+and 
+\begin{equation}
+    \left|\frac{1}{m}\displaystyle\sum_{i=1, g(x_{i})=1}^{m} w_{it}f_{i}^{*}g_{0}(x_{i}) - \frac{1}{2}\epsilon t E_{D}[|B_{g}|] -
+   \epsilon t  E_{D}[|B_{g}^{-}|] + \beta_{g}\right| \leq 2\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) + \sqrt{\frac{2\ln(2/\delta)}{m}}.
+\end{equation}
+Therefore, with probability $1-\delta$, $h$ cannot be solution of the empirical counterpart of \eqref{eq: opt1} if 
+\begin{equation}
+     t > \frac{2\beta_{g}}{\epsilon(1-\beta_{g})} + \frac{4}{1-\beta_{g}}\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) + \frac{2}{1-\beta_{g}}\sqrt{\frac{2\ln(2/\delta)}{m}}.
+\end{equation}
+Therefore at iteration $t$, with probability $1-\delta$, a solution of \eqref{eq: opt1} for a sample $S$ is either $g(x)=-1$ for all $x\in S$ or 
+\begin{equation}
+    \beta_{g} > \frac{\epsilon t}{2 + \epsilon t} - \frac{4}{2 + \epsilon t}\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) - \frac{2}{2 + \epsilon t}\sqrt{\frac{2\ln(2/\delta)}{m}}.
+\end{equation}
+\end{document}

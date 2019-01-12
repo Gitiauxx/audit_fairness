@@ -26,19 +26,19 @@
 \subsection{Preliminaries}
 
 \paragraph{Audited Classifier}
-The objective of this paper is to audit a classifier $f:\mathfrak{X}^{*} \rightarrow \{0,1\}$, where $\mathfrak{X}^{*}$ is a $d$-dimensional feature space. The Feature space is the Cartesian product of auditing features $\mathfrak{X}$, non-auditing features $\mathfrak{X}^{'}$ and protected attributes $\mathfrak{A}$: $\mathfrak{X}^{*} = \mathfrak{X} \times \mathfrak{X}^{'} \times \mathfrak{A}$.  The data is labeled by $y\in \{0, 1\}$ and the classifier $f$ is trained to label the data $\mathfrak{X}^{*}\times \{0, 1\}$. 
+The objective of this paper is to audit a classifier $f:\mathfrak{X}^{*} \rightarrow \{0,1\}$, where $\mathfrak{X}^{*}$ is a $d$-dimensional feature space. The Feature space is the Cartesian product of auditing features $\mathfrak{X}$, non-auditing features $\mathfrak{X}^{'}$ and protected attributes $\mathfrak{A}$: $\mathfrak{X}^{*} = \mathfrak{X} \times \mathfrak{X}^{'} \times \mathfrak{A}$.  The data is labeled by $y\in \{0, 1\}$ and the classifier $f$ is trained to label the data $\mathfrak{X}^{*}\times \{0, 1\}$.  
 
 \bigskip
-Not all features in $\mathfrak{X}^{*}$ are to be used to audit the classifier $f$. The auditor decides on features in $\mathfrak{X}$ along which individuals are considered similar and on features $\mathfrak{X}^{'}$ which should not be considered when  comparing two individuals.  Given the objective to guarantee similar treatment regardless of protected attribute, protected attributes are not auditing features. But the exclusion could extend to other features of $\mathfrak{X}^{*}$ depending on the auditor's definition of similarity. For example, if $f$ classify loan according to their probability of repayment, the auditor may consider that credit score should be used to define individual similarity, but that zipcode, because correlated with races, should not be an auditing feature, although it was used to learn $f$.  Defining the auditing features empowers the decision maker to choose along which dimensions she wants individuals to be treated the same.
+Not all features in $\mathfrak{X}^{*}$ are to be used to audit the classifier $f$. The auditor decides on features in $\mathfrak{X}$ along which individuals are considered similar and on features $\mathfrak{X}^{'}$ which should not be considered when  comparing two individuals. For example, if $f$ classify loan according to their probability of repayment, the auditor may consider that credit score should be used to define individual similarity, but that zipcode, because correlated with races, should not be an auditing feature, although it was used to learn $f$.  Defining the auditing features empowers the decision maker to choose along which dimensions she wants individuals to be treated the same.
 
 \paragraph{Label Access.}
-The auditor takes random draws of individual $x^{*}=(x, x^{'}, a)\in \mathfrak{X} \times \mathfrak{X}^{'} \times \mathfrak{A} $ from a distribution $\mathfrak{D}$ over $\mathfrak{X}^{*}$. For any draw $x^{*}\sim \mathfrak{D}$,  the auditor can apply a reassignment of protected attributes $\pi: \mathfrak{A} \rightarrow \mathfrak{A}$ that transforms $x^{*}= (x, x^{'}, a)$ into $x^{*}_{\pi}=(x, x^{'}, \pi(a))$. For example, if $\mathfrak{A}=\{0,1\}$, then the auditor can apply three non-trivial reassignments: $(\pi(0)=1, \pi(1)=1)$, $(\pi(0)=0, \pi(1)=0)$ and $(\pi(0)=1, \pi(1)=0)$. We assume that given a $x^{*}\sim \mathfrak{D}$, the auditor obtains $f(x^{*}_{\pi})$ for any reassignment $\pi$ of protected attributes. This is equivalent to a $1Q$-membership query as in \cite{awasthi2013learning}. In addition to querying an oracle $EX(f, D)$, for any sample  example $x^{*}$, the auditor can obtain $f(x^{*}_{\pi})$ from membership query $MEM(f)$ where $x_{\pi}^{*}$ differs from $x^{*}$  by a Hamming distance of one.  
-
+The auditor samples $(x^{*}, f(x^{*})$ from a distribution $D\times [-1, 1]$. 
 
 \paragraph{Collection of Indicators.}
-An indicator is a subset $G$ of $\mathfrak{X}^{*}$ and defines a function $g: \mathfrak{X}^{*} \rightarrow \{0, 1\}$ such that $g(x)=1$ if and only if $x\in G$. $\mathbb{C}$ denotes the collection $\mathbb{C}$ of indicators $G$. Think of $\mathbb{C}$ as the collection of all groups of individuals for which this paper's notion of fairness treatment will be applied to. 
+An indicator is a subset $G$ of the auditing feature space $\mathfrak{X}$. It defines a function $g: \mathfrak{X} \rightarrow \{0, 1\}$ such that $g(x)=1$ if and only if $x\in G$. $\mathbb{C}$ denotes the collection $\mathbb{C}$ of indicators $G$. Think of $\mathbb{C}$ as the collection of all groups of individuals for which this paper's notion of fairness treatment will be applied to.
 
- 
+\paragraph{Adjacent distribution}
+From a distribution $ D$ over $\mathfrak{X}\times [-1, 1]$ and a value for a protected attribute $a$, we construct an adjacent distribution $D_{a}=D|A\neq 1$ with zero probability for all individuals with protected attribute equal to $a$. 
 
 \subsection{Metric-Free Individual Fairness.}
 
@@ -60,8 +60,8 @@ This paper redefines the concept of individual fairness as \textit{individuals w
 
 \begin{defn}(Metric-free individual fairness)
 \label{def: mfif}
-Consider a $\alpha$-large collection $\mathbb{C}_{\alpha}$ of indicators on $\mathfrak{X}^{*}$. For $0\leq \beta <1$, a classifier $f$ is $(\mathbb{C}_{\alpha}, \beta)$-metric free individual fair with respect to $\mathfrak{A}$ if for all reassignments $\pi: \mathfrak{A} \rightarrow \mathfrak{A}$ and for all $G\in \mathbb{C}_{\alpha}$ with :
-$$  E_{x^{*}\sim G}[|f(x^{*}) - f(x^{*}_{\pi})|] \leq \beta.$$
+Consider a $\alpha$-large collection $\mathbb{C}_{\alpha}$ of indicators on $\mathfrak{X}$. For $0\leq \beta <1$, a classifier $f$ is $(\mathbb{C}_{\alpha}, \beta)$-metric free individual fair with respect to $\mathfrak{A}$ if for all protected attributes $a\neq a^{'}\in \mathfrak{A}$ and for all $G\in \mathbb{C}_{\alpha}$:
+$$  E_{\pi}\left |E_{x\sim G}[f(x, .)] - E_{x\sim G_{\pi}}[f(x, .)]\right| \leq \beta.$$
 \end{defn}
 
 Metric-free individual fairness formalizes the idea of fairness defined in \cite{calsamiglia2009decentralizing} and borrowed in \cite{dwork2012fairness}: \textit{"In a global justice problem, equality of opportunity is satisfied if individual well-being is 
@@ -302,8 +302,7 @@ changing the standard deviation $\sigma$ of the noise $\epsilon$. Figure \ref{fi
 
 \subsection{Proof of Theorem \ref{thm: SP}}
 \begin{proof}
-we show the results for statistical parity. The proof is similar for equalized odds. S
-uppose that $f$ is $(\alpha,\beta)$-metric free individually fair with $\alpha \leq \min_{a\in \mathbb{A}}\{Pr[f=1 \& A=a]$. Let $p_{a}$ denote the probability than $f(z, a)\neq f(z, a^{'})$ conditional on  $f(z,a)=1$. We first argue that $p_{a} \leq \alpha(1-\beta)$. To do so, construct a set $G=\{z\in \mathbb{Z}| f(z,a)= 1 \& \; f(z,a^{'})=0\}$. Consider a subset $G^{'}$ of $G^{c}$ such that $Pr[z\in G^{'}]=\nu-\epsilon$ for some $\epsilon>0$. We choose $\nu$ such that $$\frac{p_{a}}{p_{a} + \nu -\epsilon} = 1-\beta, $$
+we show the results for statistical parity. The proof is similar for equalized odds. Suppose that $f$ is $(\alpha,\beta)$-metric free individually fair with $\alpha \leq \min_{a\in \mathbb{A}}\{Pr[f=1 \& A=a]$. Let $p_{a}$ denote the probability than $f(z, a)\neq f(z, a^{'})$ conditional on  $f(z,a)=1$. We first argue that $p_{a} \leq \alpha(1-\beta)$. To do so, construct a set $G=\{z\in \mathbb{Z}| f(z,a)= 1 \& \; f(z,a^{'})=0\}$. Consider a subset $G^{'}$ of $G^{c}$ such that $Pr[z\in G^{'}]=\nu-\epsilon$ for some $\epsilon>0$. We choose $\nu$ such that $$\frac{p_{a}}{p_{a} + \nu -\epsilon} = 1-\beta, $$
 or
 
 \begin{equation}
@@ -415,29 +414,23 @@ $$Pr[h=c^{*}]=\frac{\langle h, u_{\pi}\rangle(P) + 1}{2} \geq \frac{\langle h, u
 Morevoer, $h$ is output in $poly(1/\epsilon, 1/\delta) + O\left(\frac{d\log(d/(\epsilon)) + \log(1/\delta)}{\epsilon^{2}}\right)$.
 
 \bigskip
-Conversely, assume that $\mathbb{C}$ is PAC learnable by $\mathbb{H}$ in $poly(1/\epsilon, 1/\delta)$. Let $f$ be a classifier defined on $\mathfrak{X}$ and $D$ be a distribution over $\mathfrak{X}$.  Let $\pi$ be a reassignment of protected attributes. Let $u_{\pi}$ denote the function $u_{\pi}(x)=2|f(x) -f_{\pi}(x)| - 1$. Denote $P$ the distribution induced by $u_{\pi}$: $P=\{(x, u_{\pi}(x)) | x\sim D\}$. Suppose that $f$ is $(\mathbb{C}_{\alpha}, \beta)$-unfair. Therefore, there exists $c\in\mathbb{C}$ such that $Pr[c=1] \geq \alpha$ and  $\langle c, u_{\pi}\rangle (P) \geq 2\beta -\alpha$.  Since $\mathbb{C}$ is PAC learnable by $\mathbb{H}$, there exists $h\in \mathbb{H}$ such that 
+Conversely, assume that $\mathbb{C}$ is PAC learnable by $\mathbb{H}$ in $poly(1/\epsilon, 1/\delta)$. Let $f$ be a classifier defined on $\mathfrak{X}$ and $D$ be a distribution over $\mathfrak{X}$.  Let $\pi$ be a reassignment of protected attributes. Let $u_{\pi}$ denote the function $u_{a}(x)=f(x, a^{'})$ if $a^{'}=a$ and $u_{a}(x)=-f(x,a^{'})$ otherwise. Denote $P$ the distribution induced by $u_{a}$: $P=\{(x, u_{a}(x)) | x\sim D\}$. Suppose that $f$ is $(\mathbb{C}_{\alpha}, \beta)$-unfair. Therefore, there exists $c\in\mathbb{C}$ such that $\langle c, u_{\pi}\rangle (P) \geq \beta\alpha$.  Since $\mathbb{C}$ is agnostic learnable by $\mathbb{H}$, there exists $h\in \mathbb{H}$ such that 
 
-$$ Pr[h=c] \geq 1- \epsilon$$ and such a $h$ is obtained in $poly(1/\epsilon, 1/\delta).$ Moreover, 
+$$ Pr[h=u_{a}] \geq Pr[c=u_{a}]- \epsilon$$ and such a $h$ is obtained in $poly(1/\epsilon, 1/\delta).$ Moreover, 
 
 \begin{equation}
 \begin{split}
-    1 &\geq Pr[h=c] + Pr[c=u_{\pi}] - Pr[(h=c) \; \& \; (c=u_{\pi})] \geq 1-\epsilon + \frac{\langle c, u_{\pi}\rangle + 1}{2} \\
-    & \geq 1-\epsilon + \frac{2\beta -\alpha + 1}{2}- Pr[(h=c) \; \& \; (c=u_{\pi})] .
+     \langle h, u_{a} \rangle = 2Pr[h=u_{a}] -1 \geq &2 Pr[c=u_{a}] - 1 - 2\epsilon \\
+     & = 2\frac{\langle c, u_{a}\rangle + 1}{2} -1 -2\epsilon \\
+     & \geq \alpha\beta - 2\epsilon
     \end{split}
 \end{equation}
-Therefore,
-
-$$  \frac{\langle h, u_{\pi}\rangle + 1}{2} =Pr[h=u_{\pi}] \geq Pr[(h=c) \; \& \; (c=u_{\pi})] \geq \frac{2\beta -\alpha + 1}{2} - \epsilon,$$
-which implies 
-
-$$\langle h, u_{\pi}\rangle  \geq 2\beta -\alpha -2 \epsilon.$$
-
-Moreover $Pr[h=1]\geq Pr[c=1]-\epsilon\geq \alpha -\epsilon$. Therefore, with probability $1-\delta$, if $f$ is $(\alpha, \beta)$ unfair, the algorithm $\mathfrak{M}(\delta, \epsilon)$ outputs a $(\alpha-\epsilon, \beta-\epsilon)$ unfairness certificate. 
+Therefore, with probability $1-\delta$, if $f$ is $\alpha\beta$ unfair, the algorithm $\mathfrak{M}(\delta, \epsilon)$ outputs a $(\alpha\beta-2\epsilon)$ unfairness certificate. 
 
 \bigskip
-Suppose now that $f$ is $(\mathbb{C}_{\alpha}, \beta)$ metric free individually fair. Then for all $c\in \mathbb{C}$ with $Pr[c=1]\geq 1$, $\langle c, u_{\pi}\rangle \leq 2\beta -\alpha,$ where is $u_{\pi}$ is defined as above. Consider $c$ in  $c\in \mathbb{C}$. By PAC learning, algorithm $\mathfrak{M}(\epsilon, \delta)$ delivers with probability $1-\delta$ a $h\in \mathbb{H}$ such that $Pr[h=c]\geq 1-\epsilon.$ Therefore, $Pr[h=1] \geq \alpha -\epsilon$ and 
+Suppose now that $f$ is $(\mathbb{C}, \beta\alpha)$ metric free individually fair. Then for all $a$ and all $c\in \mathbb{C}$ with $\langle c, u_{a}\rangle \leq \beta\alpha,$ where is $u_{a}$ is defined as above. Consider $c$ in  $c\in \mathbb{C}$. By agnostic efficient learning, algorithm $\mathfrak{M}(\epsilon, \delta)$ delivers with probability $1-\delta$ a $h\in \mathbb{H}$ such that $ Pr[h=u_{a}]\geq Pr[c=u_{a}]-\epsilon.$ Therefore,  
 
-$$\langle h, u_{\pi}\rangle =  2 Pr[h=u_{\pi}] -1 \leq 2Pr[c=u_{\pi}] - 1 + 2\epsilon  = \langle c, u_{\pi} \rangle + 2\epsilon \leq 2\beta -\alpha + 2\epsilon.$$
+$$\langle h, u_{a}\rangle =  2 Pr[h=u_{a}] -1 \leq 2Pr[c=u_{\pi}] - 1 + 2\epsilon  = \langle c, u_{\pi} \rangle + 2\epsilon \leq 2\beta -\alpha + 2\epsilon.$$
 Therefore, algorithm $\mathfrak{M}(\epsilon, \delta)$ will guarantee with probability $1-\delta$ that $f$ is $(\alpha-\epsilon, \beta + \epsilon)$ metric-free individually fair. 
 
 
