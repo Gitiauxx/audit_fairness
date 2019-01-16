@@ -60,7 +60,7 @@ def test_experiment(n, n_test, nu_max, auditor, sigma_noise=0.2, unbalance=0, nb
     results = pd.DataFrame()
     results.index.name = 'gamma'
 
-    for gamma in np.arange(5, nu_max):
+    for gamma in np.arange(1, nu_max):
         gamma = gamma / 10 
       
         # copy test to avoid changes to be compounded
@@ -93,7 +93,7 @@ def test_experiment(n, n_test, nu_max, auditor, sigma_noise=0.2, unbalance=0, nb
         audit.get_y('predict', 'attr', 1)
 
         feature_auditing = ['x1', 'x2']
-        g, g_std = audit.audit_iter(features, 'predict', nboot=nboot)
+        g, g_std = audit.audit_iter(features, 'predict', 'attr', nboot=nboot)
         
         results.loc[gamma, 'delta'] = l  / (l + l2 * (1-gamma))
         results.loc[gamma, 'delta'] = np.log(results.loc[gamma, 'delta'] / (1 - results.loc[gamma, 'delta']))
@@ -131,7 +131,7 @@ def test_unbalance(n, n_test, nu_max, auditor, sigma_noise=0.2, unbalance=0, nbo
     data = pd.DataFrame(index=np.arange(n))
     data['attr'] = np.random.choice([-1, 1], n)
     data['x1'] = np.random.normal(size=n)  + unbalance * data['attr']
-    data['x2'] = np.random.normal(size=n) 
+    data['x2'] = np.random.normal(size=n) - unbalance * data['attr']
     data['noise'] = np.random.normal(scale=sigma_noise, size=n)
     data['y'] =  data['x2'] + data['x1'] + data['noise']  
     data['outcome'] = - 1 + 2 * (data.y >= 0).astype('int32')
@@ -157,7 +157,7 @@ def test_unbalance(n, n_test, nu_max, auditor, sigma_noise=0.2, unbalance=0, nbo
     results = pd.DataFrame()
     results.index.name = 'gamma'
 
-    for gamma in np.arange(5, nu_max):
+    for gamma in np.arange(0, nu_max):
         gamma = gamma / 10 
       
         # copy test to avoid changes to be compounded
@@ -166,7 +166,7 @@ def test_unbalance(n, n_test, nu_max, auditor, sigma_noise=0.2, unbalance=0, nbo
         
         # define violation shape
         mask = test_sim.x1**2 + test_sim.x2**2 <= 1
-        #mask = (test_sim.x1 <= -1) & (test_sim.x2 <= -1)
+        #mask = (test_sim.x1 <= -0) & (test_sim.x2 <= -0)
         mask1 = ((test_sim.attr == 1)  & (mask))
         mask2 = ((test_sim.attr == -1) & (mask))
         
@@ -187,11 +187,15 @@ def test_unbalance(n, n_test, nu_max, auditor, sigma_noise=0.2, unbalance=0, nbo
         test_sim.loc[ind, 'predict'] = (-1) * test_sim.loc[ind, 'predict']
 
         # auditing using a decision tree with x1 and x2
-        audit = ad.detector_data(auditor, test_sim, stepsize=0.01, niter=500)
+        audit = ad.detector_data(auditor, test_sim, stepsize=0.025, niter=500)
         audit.get_y('predict', 'attr', 1)
 
         feature_auditing = ['x1', 'x2']
-        delta, alpha, test_start = audit.audit_weight(features, 'predict', 'attr', 1, nu= 10, seed=3, max_iter=10)
+        #delta, _, test_start = audit.audit_weight2(features, 'predict', 'attr', 1, nu= 10)
+        #delta, _ = audit.audit_iter_weight(features, 'predict', 'attr', 1, nu= 10, nboot=nboot)
+        #delta2, _ = audit.audit_iter_weight(features, 'predict', 'attr', 1, nu= 30, nboot=nboot)
+        delta, alpha = audit.cross_validation(features, 'predict', 'attr', 1)
+        delta2, _, _ = audit.audit_weight2(features, 'predict', 'attr', 1, nu= 10)
     
         l1 = len(test_sim[(mask1) & (test_sim.x1 <= 0) & (test_sim.x2 <= 0)])
         l2 = len(test_sim[(mask2) & (test_sim.x1 <= 0) & (test_sim.x2 <= 0)])
@@ -201,13 +205,16 @@ def test_unbalance(n, n_test, nu_max, auditor, sigma_noise=0.2, unbalance=0, nbo
 
         ll2 = l1 / l2
         results.loc[gamma, 'delta'] = np.log(ll / ll2)
-        results.loc[gamma,  'estimated_delta'] = delta
-       
+        results.loc[gamma,  'estimated_delta_10'] = delta
+        results.loc[gamma,  'estimated_delta_30'] = delta2
+        """
         test_end = test_start[(test_start.predicted == 1)]
         plt.plot(test_sim.x1, test_sim.x2, 'r*')
         plt.plot(test_end[test_end.attr == 1].x1, test_end[test_end.attr == 1].x2, 'b*')
         plt.plot(test_end[test_end.attr == -1].x1, test_end[test_end.attr == -1].x2, 'g*')
         plt.show()
+        """
+        
     
     
     return results
@@ -218,11 +225,11 @@ if __name__ == "__main__":
     n_test = 10000
     nu_max = 10
     auditor = SVC()
-    auditor = DecisionTreeClassifier(max_depth= 3, min_samples_leaf=0.02)
-    #auditor = RandomForestClassifier(n_estimators=40, max_depth=2)
+    #auditor = DecisionTreeClassifier(max_depth=3, min_samples_leaf=0.02)
+    #auditor = RandomForestClassifier(n_estimators=20, max_depth=2)
     #auditor = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 2), random_state=1)
-    #results = test_unbalance(n, n_test, nu_max, auditor, nboot=1, unbalance=0.2)
-    results = test_experiment(n, n_test, nu_max, auditor, nboot=1, unbalance=0.0)
+    results = test_unbalance(n, n_test, nu_max, auditor, nboot=10, unbalance=0.2)
+    #results = test_experiment(n, n_test, nu_max, auditor, nboot=1, unbalance=0.0)
     print(results)
     #results.to_csv("../../results/synth_oracle_exp1.csv")
 
