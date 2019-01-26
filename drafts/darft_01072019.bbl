@@ -1,0 +1,47 @@
+\begin{thebibliography}{1}
+
+\bibitem{dwork2012fairness}
+Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel.
+\newblock Fairness through awareness.
+\newblock In {\em Proceedings of the 3rd innovations in theoretical computer
+  science conference}, pages 214--226. ACM, 2012.
+
+\bibitem{dwork2014algorithmic}
+Cynthia Dwork, Aaron Roth, et~al.
+\newblock The algorithmic foundations of differential privacy.
+\newblock {\em Foundations and Trends{\textregistered} in Theoretical Computer
+  Science}, 9(3--4):211--407, 2014.
+
+\bibitem{feldman2012agnostic}
+Vitaly Feldman, Venkatesan Guruswami, Prasad Raghavendra, and Yi~Wu.
+\newblock Agnostic learning of monomials by halfspaces is hard.
+\newblock {\em SIAM Journal on Computing}, 41(6):1558--1590, 2012.
+
+\bibitem{gretton2009covariate}
+Arthur Gretton, Alexander~J Smola, Jiayuan Huang, Marcel Schmittfull, Karsten~M
+  Borgwardt, and Bernhard Sch{\"o}lkopf.
+\newblock Covariate shift by kernel mean matching.
+\newblock 2009.
+
+\bibitem{hebert2017calibration}
+Ursula H{\'e}bert-Johnson, Michael~P Kim, Omer Reingold, and Guy~N Rothblum.
+\newblock Calibration for the (computationally-identifiable) masses.
+\newblock {\em arXiv preprint arXiv:1711.08513}, 2017.
+
+\bibitem{kearns2017preventing}
+Michael Kearns, Seth Neel, Aaron Roth, and Zhiwei~Steven Wu.
+\newblock Preventing fairness gerrymandering: Auditing and learning for
+  subgroup fairness.
+\newblock {\em arXiv preprint arXiv:1711.05144}, 2017.
+
+\bibitem{kearns1994toward}
+Michael~J Kearns, Robert~E Schapire, and Linda~M Sellie.
+\newblock Toward efficient agnostic learning.
+\newblock {\em Machine Learning}, 17(2-3):115--141, 1994.
+
+\bibitem{kim2018fairness}
+Michael~P Kim, Omer Reingold, and Guy~N Rothblum.
+\newblock Fairness through computationally-bounded awareness.
+\newblock {\em arXiv preprint arXiv:1803.03239}, 2018.
+
+\end{thebibliography}

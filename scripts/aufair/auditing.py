@@ -1,4 +1,7 @@
 import numpy as np
+import pandas as pd
+from sklearn.model_selection import RandomizedSearchCV
+from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
 
 class detector(object):
 
@@ -92,6 +95,38 @@ class detector(object):
         alpha = predicted[predicted == 1].shape[0] / predicted.shape[0]
 
         return gamma, alpha
+
+    def certify(self, X, y, weights, parameter_grid=None):
+
+        if parameter_grid is None:
+            self.auditor.fit(X, y, sample_weight=weights)
+        else:
+
+            # hyperparameter tuning using a k-fold validation technique and random grid search
+            k = parameter_grid['cv']
+            grid_searched = parameter_grid['parameter']
+            niter = parameter_grid['niter']
+
+            auditor_random = RandomizedSearchCV(estimator = self.auditor, 
+                                param_distributions = grid_searched, 
+                                n_iter = niter, 
+                                cv = k,
+                                scoring='accuracy')
+            auditor_random.fit(X, y, sample_weight=weights)
+            self.auditor = auditor_random.best_estimator_
+            self.auditor.fit(X, y, sample_weight=weights)
+
+    def certificate(self, X, y, pred, A, weights):
+        predicted = self.auditor.predict(X)
+        print(predicted.mean())
+        accuracy = weights[predicted == y].sum() / weights.sum()
+    
+        attr = weights[A == pred].sum() / weights.sum()
+
+        return (accuracy - 1 + attr) / 4, accuracy
+
+    
+
 
 
 

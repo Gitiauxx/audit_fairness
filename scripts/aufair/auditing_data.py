@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from aufair import auditing as ad
+from aufair import mmd
 import time
 
 from sklearn.linear_model import LogisticRegression
@@ -11,28 +12,219 @@ pd.options.mode.chained_assignment = None
 
 class detector_data(object):
 
-    def __init__(self, auditor, data, stepsize=0.01, niter=100, min_size=0.01):
+    def __init__(self, auditor, data, protected, yname, n, lw=0.001, stepsize=None, niter=100, min_size=0.01):
         self.data = data
         self.auditor = auditor
         self.stepsize = stepsize
         self.niter = niter
         self.min_size = min_size
+        self.protected_attribute = protected[0]
+        self.protected_group = protected[1]
+        self.yname = yname
+        self.lw = lw
+        self.n = n
 
-    def get_y(self, yname, protected_attribute, protected_group):
+    def get_y(self):
+        
         data = self.data
         data['weight'] = 1
-        data['label'] = data[protected_attribute] 
+        data['label'] = data[self.protected_attribute] * data[self.yname]
         self.data = data
   
     def split_train_test(self, features, seed=None):
         if seed is not None:
             np.random.seed(seed=seed)
         
-        data = self.data
+        data = self.data.loc[np.random.choice(self.data.index, self.n, replace=False), :]
         train = data.loc[np.random.choice(data.index, int(len(data)* 0.7), replace=True), :]
         test = data.drop(train.index)
-
         return train, test
+
+    def certify(self, features, yname, seed=None, parameter_grid=None):
+        train, test = self.split_train_test(features, seed=seed)
+        pa = self.protected_attribute
+        pg = self.protected_group
+
+        test_x =  np.array(test[features])
+        test_y = np.array(test['label']).ravel()
+        test_weights = np.array(test.weight).ravel()
+
+        # search for unfairness ceritficate
+        detect = ad.detector(self.auditor, niter=self.niter, stepsize=self.stepsize)
+        train_x = np.array(train[features])
+        train_y = np.array(train['label']).ravel()
+        train_weights = np.array(train.weight).ravel()
+        
+
+        # compute unfairness level
+        detect.certify(train_x, train_y, train_weights)
+        test_a = np.array(test[pa]).ravel()
+        pred =  np.array(test[yname]).ravel()
+        detect.certify(train_x, train_y, train_weights,
+                        parameter_grid=parameter_grid)
+        gamma, _ = detect.certificate(test_x, test_y, pred, test_a, test_weights)
+
+        return gamma
+
+    def certify_ipw(self, features, yname, seed=None, model=None):
+
+        train, test = self.split_train_test(features, seed=seed)
+        train.set_index(np.arange(len(train)), inplace=True)
+        test.set_index(np.arange(len(test)), inplace=True)
+
+        pa = self.protected_attribute
+        pg = self.protected_group
+
+        # estimate importance sampling weights
+        if model is None:
+            mod = LogisticRegression()
+        
+        X = np.array(train[features])
+        y = np.array(train[pa])
+        mod.fit(X, y)
+        train['score'] = mod.predict_proba(X)[:, 1]
+        train.loc[train[pa] == pg, 'weight'] = (train['w']) / (1-train['w'])
+        
+        # search for unfairness ceritficate
+        detect = ad.detector(self.auditor, niter=self.niter, stepsize=self.stepsize)
+        train_x = np.array(train[features])
+        train_y = np.array(train['label']).ravel()
+        train_weights = np.array(train.weight).ravel()
+        detect.certify(train_x, train_y, train_weights)
+
+        # compute unfairness level
+        test_x =  np.array(test[features])
+        test['score'] = mod.predict_proba(test_x)[:, 1]
+        test.loc[test[pa] == pg, 'weight'] = (test['w']) / (1-test['w'])
+        
+        test_x =  np.array(test[features])
+        test_y = np.array(test['label']).ravel()
+        test_weights = np.array(test.weight).ravel()
+        test_a = np.array(test[pa]).ravel()
+        pred =  np.array(test[yname]).ravel()
+        gamma = detect.certificate(test_x, test_y, pred, test_a, test_weights)
+
+        return gamma
+
+    def certify_mmd(self, features, yname, seed=None):
+
+        train, test = self.split_train_test(features, seed=seed)
+        train.set_index(np.arange(len(train)), inplace=True)
+        test.set_index(np.arange(len(test)), inplace=True)
+
+        pa = self.protected_attribute
+        pg = self.protected_group
+
+        # mmd method to estimate weights
+        X = np.array(train[features])
+        A = np.array(train[pa])
+        mod = mmd.mmd(lw=self.lw, tol=0.01, learning_rate=0.01)
+        mod.fit(X, A)
+        train['weight'] = mod.predict(X, A)
+        
+        test_x = np.array(test[features])
+        test_a = np.array(test.attr).ravel()
+        test['weight'] = mod.predict(test_x, test_a)
+
+        # search for unfairness ceritficate
+        detect = ad.detector(self.auditor, niter=self.niter, stepsize=self.stepsize)
+        train_x = np.array(train[features])
+        train_y = np.array(train['label']).ravel()
+        train_weights = np.array(train.weight).ravel()
+        detect.certify(train_x, train_y, train_weights)
+
+        test_x =  np.array(test[features])
+        test_y = np.array(test['label']).ravel()
+        test_weights = np.array(test.weight).ravel()
+        test_a = np.array(test[pa]).ravel()
+        pred =  np.array(test[yname]).ravel()
+        gamma = detect.certificate(test_x, test_y, pred, test_a, test_weights)
+
+        return gamma
+        
+    def certify_quant(self, features, yname, seed=None, model=None, nu=5):
+
+        train, test = self.split_train_test(features, seed=seed)
+        train.set_index(np.arange(len(train)), inplace=True)
+        test.set_index(np.arange(len(test)), inplace=True)
+
+        pa = self.protected_attribute
+        pg = self.protected_group
+
+        # estimate importance sampling weights
+        if model is None:
+            mod = LogisticRegression()
+        
+        X = np.array(train[features])
+        y = np.array(train[pa])
+        mod.fit(X, y)
+        train['score'] = mod.predict_proba(X)[:, 1]
+
+        # create quantile estimate of weights
+        score_quantile = train.score.quantile([i / nu for i in np.arange(nu)])
+        train['bins'] = 0
+
+        b = 0
+        for q in score_quantile:
+            train.loc[train.score >= q, 'bins'] = b
+            b += 1
+
+        weight_updated = train[train[pa] != pg].groupby('bins')['bins'].size().to_frame('w1')
+        weight_updated['w2'] = train[train[pa] == pg].groupby('bins')['bins'].size()
+        train = pd.merge(train, weight_updated, left_on='bins', right_index=True, how='left')
+            
+        train.loc[train[pa] == pg, 'weight'] = train.loc[train[pa] == pg, 'w1'] / train.loc[train[pa] == pg, 'w2']
+        train.drop(['w1', 'w2'], axis=1, inplace=True)
+
+        # search for unfairness ceritficate
+        detect = ad.detector(self.auditor, niter=self.niter, stepsize=self.stepsize)
+        train_x = np.array(train[features])
+        train_y = np.array(train['label']).ravel()
+        train_weights = np.array(train.weight).ravel()
+        detect.certify(train_x, train_y, train_weights)
+
+        # compute unfairness level
+        test_x =  np.array(test[features])
+        test['score'] = mod.predict_proba(test_x)[:, 1]
+        test['bins'] = 0
+
+        b = 0
+        for q in score_quantile:
+            test.loc[test.score >= q, 'bins'] = b
+            b += 1
+
+        weight_updated = test[test[pa] != pg].groupby('bins')['bins'].size().to_frame('w1')
+        weight_updated['w2'] = test[test[pa] == pg].groupby('bins')['bins'].size()
+        test = pd.merge(test, weight_updated, left_on='bins', right_index=True, how='left')
+
+        test.loc[test[pa] == pg, 'weight'] = test.loc[test[pa] == pg, 'w1'] / test.loc[test[pa] == pg, 'w2']
+        test.drop(['w1', 'w2'], axis=1, inplace=True)
+       
+        test_x =  np.array(test[features])
+        test_y = np.array(test['label']).ravel()
+        test_weights = np.array(test.weight).ravel()
+        test_a = np.array(test[pa]).ravel()
+        pred =  np.array(test[yname]).ravel()
+        gamma, acc, attr = detect.certificate(test_x, test_y, pred, test_a, test_weights)
+
+        return gamma
+
+    def certify_iter(self, features, yname, nboot=10, balancing=None, parameter_grid=None):
+
+        results = np.zeros(nboot)
+        for iter in np.arange(nboot):
+            if balancing is None:
+                gamma = self.certify(features, yname, parameter_grid=parameter_grid)
+            elif balancing is "IPW":
+                gamma = self.certify_ipw(features, yname)
+            elif balancing is "IPW_Q":
+                gamma = self.certify_quant(features, yname)
+            elif balancing is 'MMD':
+                gamma = self.certify_mmd(features, yname)
+            
+            results[iter] = gamma
+            
+        return results.mean(axis=0), np.sqrt(results.var())
 
     def audit(self, features, yname, protected_attribute, seed=None):
         train, test = self.split_train_test(features, seed=seed)

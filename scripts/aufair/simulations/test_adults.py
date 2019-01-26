@@ -45,8 +45,8 @@ outcome = 'income'
 protected = {'sex': [' Male', ' Female'], 'race':[' Black', ' White']}
 
 # classifier -- aggregate
-train['attr'] =  train['gender']
-test['attr'] = test['gender']
+train['attr'] =  1 -2* train['gender']
+test['attr'] = 1 -2* test['gender']
 
 # logistic regression
 logreg = LogisticRegression()
@@ -54,24 +54,24 @@ dct = DecisionTreeClassifier(max_depth=10)
 rf = RandomForestClassifier(n_estimators=100)
 logreg.fit(np.array(train[feature_list]), np.array(train[outcome].ravel()))
 
-protected = {'attr': 0}
+protected = ('attr', 1)
+yname = 'predict'
 test_x = np.array(test[feature_list])
 test['predict'] = logreg.predict(test_x)
 
 # auditing the classifier
 auditor = DecisionTreeClassifier(max_depth=20, min_samples_leaf=0.01)
-audit = ad.detector_data(auditor, test, stepsize=0.05, min_size=0.2)
 
-feature_list = ['age', 'workclass', 'education',  'occupation', 
-		'hours-per-week', 'capital-gain', 'education-num', 'srace']
-balancer = LogisticRegression(C=0.01)
-audit.get_weights(balancer, feature_list, 'attr', 0)
+feature_auditing = [ 'occupation', 
+		'hours-per-week' ]
 
+audit = ad.detector_data(auditor, test, protected, yname, lw=0.01, niter=0)
+audit.get_y()
 
-audit.get_y('predict', 'attr', 0)
+g, g_std = audit.certify_iter(feature_auditing, 'predict',  nboot=10, balancing='MMD')
+print(g)
 
-feature_auditing = ['age', 'workclass', 'education',  'occupation', 
-		'hours-per-week', 'income' ]
+"""
 g, alpha, test_start = audit.audit_weight(feature_auditing, 'attr', 0, seed=3, conv=40)
 #g, alpha, test_start = audit.audit(feature_auditing, seed=3)
 test_end = test_start[(test_start.predicted == 1) & (test_start.weight > 0)]
@@ -83,4 +83,5 @@ print(alpha)
 print(test_end[test_end.attr == 0].describe())
 print(test_end[test_end.attr != 0].describe())
 print((test_end.label * test_end.weight / test_end.weight.sum()).sum())
+"""
         
