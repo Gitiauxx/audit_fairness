@@ -322,17 +322,18 @@ def figure3a():
     noise = 0.2
     n = 500000  
     ntest = 5000
-    nboot = 1
+    nboot = 10
 
     auditor = DecisionTreeClassifier(max_depth= 5)
     balancing_methods = { 'Uniform': None, 'IS': 'IS', 'MMD': 'MMD', 'MMD_NET': 'MMD_NET'}
-    balancing_methods = { 'MMD': 'MMD', 'Uniform': None}
+    balancing_methods = { 'MMD_NET': 'MMD_NET', 'KNN': 'KNN', 'Uniform': None}
 
 
     results_list = []
     for key in balancing_methods.keys():
         mod = balancing_methods[key]
         for unbalance in [-0.3, -0.2, -0.1, 0, 0.1, 0.2, 0.3]:
+            print(unbalance)
             results = t1.test_certifying(n, ntest, nu_min, nu_max, auditor, 
                                     nboot=nboot, sigma_noise=noise, 
                                     balancing=mod, unbalance=unbalance,

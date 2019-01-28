@@ -5,6 +5,8 @@ from aufair import mmd
 from aufair.mmd_net import MMD
 import time
 
+from keras import backend as K
+
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 
@@ -148,13 +150,17 @@ class detector_data(object):
         X = np.array(train[features])
         A = np.array(train[pa])
         A = (A + 1) / 2
-        mod = MMD(len(features), lw=self.lw).model
-        mod.fit(X, A, epochs=100, batch_size=128, verbose=0)
-        train['weight'] = mod.predict(X)
+        mmd = MMD(len(features), target=A, weight=np.array(train.weight).ravel(), lw=self.lw)
+        mod = mmd.model
+        mod.fit(X, A, epochs=5, batch_size=8, verbose=2)
+        train['wt'] = mod.predict(X)
+        train.loc[train.attr == 1, 'weight'] = (1 - train['wt']) /  train['wt']
         
         test_x = np.array(test[features])
         test_a = np.array(test.attr).ravel()
-        test['weight'] = mod.predict(test_x)
+        test['wt'] = mod.predict(test_x)
+        test.loc[test.attr == 1, 'weight'] = (1 - test['wt']) /  test['wt']
+        print(K.eval(mmd.kera_cost(test_x)((test_a + 1)/ 2, np.array(test.weight))))
     
         # search for unfairness ceritficate
         detect = ad.detector(self.auditor, niter=self.niter, stepsize=self.stepsize)
@@ -170,6 +176,53 @@ class detector_data(object):
         pred =  np.array(test[yname]).ravel()
         gamma, _ = detect.certificate(test_x, test_y, pred, test_a, test_weights)
 
+        return gamma
+
+    def certify_knn(self, features, yname, seed=None):
+        train, test = self.split_train_test(features, seed=seed)
+        train.set_index(np.arange(len(train)), inplace=True)
+        test.set_index(np.arange(len(test)), inplace=True)
+        
+        pa = self.protected_attribute
+        pg = self.protected_group
+
+        # mmd method to estimate weights
+        X = np.array(train[features])
+        y = np.array(train.label).ravel()
+        y = (y + 1)/ 2        
+        A = np.array(train[pa])
+        A = (A + 1) / 2
+        
+
+        t = 0
+        while t < 5:
+            W = np.array(train.weight).ravel()
+            mmd = MMD(len(features), target=A, weight=W, lw=self.lw)
+            mod = mmd.model_complete
+            mod.fit(X, {'weight': A, 'fairness': y}, epochs=1, batch_size=8, verbose=2)
+            train['wt'] = mod.predict(X)[0].ravel()
+            train.loc[train.attr == 1, 'weight'] = train['wt']
+
+            t += 1
+        
+        
+        test_x = np.array(test[features])
+        test_a = np.array(test.attr).ravel()
+        test_y = np.array(test.label).ravel()
+        predicted = mod.predict(test_x)
+        test['wt'] = predicted[0]
+        test.loc[test.attr == 1, 'weight'] = (1 - test['wt']) /  test['wt']
+
+        print(K.eval(mmd.kera_cost(test_x)((test_a + 1) / 2, np.array(test.weight))))
+
+        # compute unfairness
+        weights = np.array(test.weight).ravel()
+        pred =  np.array(test[yname]).ravel()
+        score = 2 * (predicted[1].ravel() >= 0.5).astype('int32') - 1
+        accuracy = weights[score == test_y].sum() / weights.sum()
+        attr = weights[test_a == pred].sum() / weights.sum()
+        gamma = (accuracy - 1 + attr) / 4
+    
         return gamma
         
     def certify_quant(self, features, yname, seed=None, model=None, nu=5):
@@ -251,7 +304,8 @@ class detector_data(object):
                 gamma = self.certify_mmd(features, yname)
             elif balancing is 'MMD_NET':
                 gamma = self.certify_mmd_net(features, yname)
-            
+            elif balancing is 'KNN':
+                gamma = self.certify_knn(features, yname)
             results[iter] = gamma
             
         return results.mean(axis=0), np.sqrt(results.var())
