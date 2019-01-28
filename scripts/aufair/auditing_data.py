@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from aufair import auditing as ad
 from aufair import mmd
+from aufair.mmd_net import MMD
 import time
 
 from sklearn.linear_model import LogisticRegression
@@ -12,7 +13,7 @@ pd.options.mode.chained_assignment = None
 
 class detector_data(object):
 
-    def __init__(self, auditor, data, protected, yname, n, lw=0.001, stepsize=None, niter=100, min_size=0.01):
+    def __init__(self, auditor, data, protected, yname, n=None, lw=0.001, stepsize=None, niter=100, min_size=0.01):
         self.data = data
         self.auditor = auditor
         self.stepsize = stepsize
@@ -26,7 +27,7 @@ class detector_data(object):
 
     def get_y(self):
         
-        data = self.data
+        data = self.data.set_index(np.arange(len(self.data)))
         data['weight'] = 1
         data['label'] = data[self.protected_attribute] * data[self.yname]
         self.data = data
@@ -35,7 +36,10 @@ class detector_data(object):
         if seed is not None:
             np.random.seed(seed=seed)
         
-        data = self.data.loc[np.random.choice(self.data.index, self.n, replace=False), :]
+        if self.n is not None:
+            data = self.data.loc[np.random.choice(self.data.index, self.n, replace=False), :]
+        else:
+            data = self.data
         train = data.loc[np.random.choice(data.index, int(len(data)* 0.7), replace=True), :]
         test = data.drop(train.index)
         return train, test
@@ -66,23 +70,14 @@ class detector_data(object):
 
         return gamma
 
-    def certify_ipw(self, features, yname, seed=None, model=None):
-
+    def certify_is(self, features, yname, seed=None):
         train, test = self.split_train_test(features, seed=seed)
         train.set_index(np.arange(len(train)), inplace=True)
         test.set_index(np.arange(len(test)), inplace=True)
-
+        
         pa = self.protected_attribute
         pg = self.protected_group
 
-        # estimate importance sampling weights
-        if model is None:
-            mod = LogisticRegression()
-        
-        X = np.array(train[features])
-        y = np.array(train[pa])
-        mod.fit(X, y)
-        train['score'] = mod.predict_proba(X)[:, 1]
         train.loc[train[pa] == pg, 'weight'] = (train['w']) / (1-train['w'])
         
         # search for unfairness ceritficate
@@ -94,7 +89,6 @@ class detector_data(object):
 
         # compute unfairness level
         test_x =  np.array(test[features])
-        test['score'] = mod.predict_proba(test_x)[:, 1]
         test.loc[test[pa] == pg, 'weight'] = (test['w']) / (1-test['w'])
         
         test_x =  np.array(test[features])
@@ -102,16 +96,15 @@ class detector_data(object):
         test_weights = np.array(test.weight).ravel()
         test_a = np.array(test[pa]).ravel()
         pred =  np.array(test[yname]).ravel()
-        gamma = detect.certificate(test_x, test_y, pred, test_a, test_weights)
+        gamma, _ = detect.certificate(test_x, test_y, pred, test_a, test_weights)
 
         return gamma
 
     def certify_mmd(self, features, yname, seed=None):
-
         train, test = self.split_train_test(features, seed=seed)
         train.set_index(np.arange(len(train)), inplace=True)
         test.set_index(np.arange(len(test)), inplace=True)
-
+        
         pa = self.protected_attribute
         pg = self.protected_group
 
@@ -121,6 +114,7 @@ class detector_data(object):
         mod = mmd.mmd(lw=self.lw, tol=0.01, learning_rate=0.01)
         mod.fit(X, A)
         train['weight'] = mod.predict(X, A)
+        print(mod.loss)
         
         test_x = np.array(test[features])
         test_a = np.array(test.attr).ravel()
@@ -138,7 +132,43 @@ class detector_data(object):
         test_weights = np.array(test.weight).ravel()
         test_a = np.array(test[pa]).ravel()
         pred =  np.array(test[yname]).ravel()
-        gamma = detect.certificate(test_x, test_y, pred, test_a, test_weights)
+        gamma, _ = detect.certificate(test_x, test_y, pred, test_a, test_weights)
+
+        return gamma
+
+    def certify_mmd_net(self, features, yname, seed=None):
+        train, test = self.split_train_test(features, seed=seed)
+        train.set_index(np.arange(len(train)), inplace=True)
+        test.set_index(np.arange(len(test)), inplace=True)
+        
+        pa = self.protected_attribute
+        pg = self.protected_group
+
+        # mmd method to estimate weights
+        X = np.array(train[features])
+        A = np.array(train[pa])
+        A = (A + 1) / 2
+        mod = MMD(len(features), lw=self.lw).model
+        mod.fit(X, A, epochs=100, batch_size=128, verbose=0)
+        train['weight'] = mod.predict(X)
+        
+        test_x = np.array(test[features])
+        test_a = np.array(test.attr).ravel()
+        test['weight'] = mod.predict(test_x)
+    
+        # search for unfairness ceritficate
+        detect = ad.detector(self.auditor, niter=self.niter, stepsize=self.stepsize)
+        train_x = np.array(train[features])
+        train_y = np.array(train['label']).ravel()
+        train_weights = np.array(train.weight).ravel()
+        detect.certify(train_x, train_y, train_weights)
+
+        test_x =  np.array(test[features])
+        test_y = np.array(test['label']).ravel()
+        test_weights = np.array(test.weight).ravel()
+        test_a = np.array(test[pa]).ravel()
+        pred =  np.array(test[yname]).ravel()
+        gamma, _ = detect.certificate(test_x, test_y, pred, test_a, test_weights)
 
         return gamma
         
@@ -215,12 +245,12 @@ class detector_data(object):
         for iter in np.arange(nboot):
             if balancing is None:
                 gamma = self.certify(features, yname, parameter_grid=parameter_grid)
-            elif balancing is "IPW":
-                gamma = self.certify_ipw(features, yname)
-            elif balancing is "IPW_Q":
-                gamma = self.certify_quant(features, yname)
-            elif balancing is 'MMD':
+            elif balancing is "IS":
+                gamma = self.certify_is(features, yname)
+            elif balancing is "MMD":
                 gamma = self.certify_mmd(features, yname)
+            elif balancing is 'MMD_NET':
+                gamma = self.certify_mmd_net(features, yname)
             
             results[iter] = gamma
             

@@ -1,93 +1,92 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.8)  26 JAN 2019 12:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.1.26)  27 JAN 2019 14:07
 entering extended mode
 **./darft_01072019.tex
 (darft_01072019.tex
-LaTeX2e <2017-04-15>
-Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+LaTeX2e <2018-12-01>
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\size10.clo"
+File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
-\c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\mathtools\mathtools.sty"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/mathtools\mathtool
+s.sty
 Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+ ("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
-Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count87
-\calc@Bcount=\count88
+("C:\Program Files\MiKTeX 2.9\tex/latex/tools\calc.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count88
+\calc@Bcount=\count89
 \calc@Adimen=\dimen103
 \calc@Bdimen=\dimen104
 \calc@Askip=\skip43
 \calc@Bskip=\skip44
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count89
+\calc@Ccount=\count90
 \calc@Cskip=\skip45
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\mathtools\mhsetup.sty"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/mathtools\mhsetup.
+sty
 Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
-Package: amsmath 2016/11/05 v2.16a AMS math features
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
+Package: amsmath 2018/12/01 v2.17b AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
 \ex@=\dimen105
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen106
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count90
-LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count91
-\leftroot@=\count92
-LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count93
-\DOTSCASE@=\count94
-LaTeX Info: Redefining \ldots on input line 472.
-LaTeX Info: Redefining \dots on input line 475.
-LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box26
-\strutbox@=\box27
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
 \big@size=\dimen107
-LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count95
-\c@MaxMatrixCols=\count96
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
 \dotsspace@=\muskip10
-\c@parentequation=\count97
-\dspbrk@lvl=\count98
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
 \tag@help=\toks16
-\row@=\count99
-\column@=\count100
-\maxfields@=\count101
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
 \andhelp@=\toks17
 \eqnshift@=\dimen108
 \alignsep@=\dimen109
@@ -99,14 +98,14 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \multlinegap=\skip47
 \multlinetaggap=\skip48
 \mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2817.
-LaTeX Info: Redefining \] on input line 2818.
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
 )
 LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count102
+\g_MT_multlinerow_int=\count103
 \l_MT_multwidth_dim=\dimen114
 \origjot=\skip49
 \l_MT_shortvdotswithinadjustabove_dim=\dimen115
@@ -116,386 +115,80 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen119
 \l_MT_below_shortintertext_sep=\dimen120
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
-Package: inputenc 2015/03/17 v1.2c Input encoding file
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\inputenc.sty"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks20
 \inpenc@posthook=\toks21
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
-File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-Now handling font encoding OML ...
-... no UTF-8 mapping file for font encoding OML
-Now handling font encoding T1 ...
-... processing UTF-8 mapping file for font encoding T1
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
-File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A0 (decimal 160)
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AB (decimal 171)
-   defining Unicode char U+00AD (decimal 173)
-   defining Unicode char U+00BB (decimal 187)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C0 (decimal 192)
-   defining Unicode char U+00C1 (decimal 193)
-   defining Unicode char U+00C2 (decimal 194)
-   defining Unicode char U+00C3 (decimal 195)
-   defining Unicode char U+00C4 (decimal 196)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00C7 (decimal 199)
-   defining Unicode char U+00C8 (decimal 200)
-   defining Unicode char U+00C9 (decimal 201)
-   defining Unicode char U+00CA (decimal 202)
-   defining Unicode char U+00CB (decimal 203)
-   defining Unicode char U+00CC (decimal 204)
-   defining Unicode char U+00CD (decimal 205)
-   defining Unicode char U+00CE (decimal 206)
-   defining Unicode char U+00CF (decimal 207)
-   defining Unicode char U+00D0 (decimal 208)
-   defining Unicode char U+00D1 (decimal 209)
-   defining Unicode char U+00D2 (decimal 210)
-   defining Unicode char U+00D3 (decimal 211)
-   defining Unicode char U+00D4 (decimal 212)
-   defining Unicode char U+00D5 (decimal 213)
-   defining Unicode char U+00D6 (decimal 214)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00D9 (decimal 217)
-   defining Unicode char U+00DA (decimal 218)
-   defining Unicode char U+00DB (decimal 219)
-   defining Unicode char U+00DC (decimal 220)
-   defining Unicode char U+00DD (decimal 221)
-   defining Unicode char U+00DE (decimal 222)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E0 (decimal 224)
-   defining Unicode char U+00E1 (decimal 225)
-   defining Unicode char U+00E2 (decimal 226)
-   defining Unicode char U+00E3 (decimal 227)
-   defining Unicode char U+00E4 (decimal 228)
-   defining Unicode char U+00E5 (decimal 229)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00E7 (decimal 231)
-   defining Unicode char U+00E8 (decimal 232)
-   defining Unicode char U+00E9 (decimal 233)
-   defining Unicode char U+00EA (decimal 234)
-   defining Unicode char U+00EB (decimal 235)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F0 (decimal 240)
-   defining Unicode char U+00F1 (decimal 241)
-   defining Unicode char U+00F2 (decimal 242)
-   defining Unicode char U+00F3 (decimal 243)
-   defining Unicode char U+00F4 (decimal 244)
-   defining Unicode char U+00F5 (decimal 245)
-   defining Unicode char U+00F6 (decimal 246)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+00F9 (decimal 249)
-   defining Unicode char U+00FA (decimal 250)
-   defining Unicode char U+00FB (decimal 251)
-   defining Unicode char U+00FC (decimal 252)
-   defining Unicode char U+00FD (decimal 253)
-   defining Unicode char U+00FE (decimal 254)
-   defining Unicode char U+00FF (decimal 255)
-   defining Unicode char U+0100 (decimal 256)
-   defining Unicode char U+0101 (decimal 257)
-   defining Unicode char U+0102 (decimal 258)
-   defining Unicode char U+0103 (decimal 259)
-   defining Unicode char U+0104 (decimal 260)
-   defining Unicode char U+0105 (decimal 261)
-   defining Unicode char U+0106 (decimal 262)
-   defining Unicode char U+0107 (decimal 263)
-   defining Unicode char U+0108 (decimal 264)
-   defining Unicode char U+0109 (decimal 265)
-   defining Unicode char U+010A (decimal 266)
-   defining Unicode char U+010B (decimal 267)
-   defining Unicode char U+010C (decimal 268)
-   defining Unicode char U+010D (decimal 269)
-   defining Unicode char U+010E (decimal 270)
-   defining Unicode char U+010F (decimal 271)
-   defining Unicode char U+0110 (decimal 272)
-   defining Unicode char U+0111 (decimal 273)
-   defining Unicode char U+0112 (decimal 274)
-   defining Unicode char U+0113 (decimal 275)
-   defining Unicode char U+0114 (decimal 276)
-   defining Unicode char U+0115 (decimal 277)
-   defining Unicode char U+0116 (decimal 278)
-   defining Unicode char U+0117 (decimal 279)
-   defining Unicode char U+0118 (decimal 280)
-   defining Unicode char U+0119 (decimal 281)
-   defining Unicode char U+011A (decimal 282)
-   defining Unicode char U+011B (decimal 283)
-   defining Unicode char U+011C (decimal 284)
-   defining Unicode char U+011D (decimal 285)
-   defining Unicode char U+011E (decimal 286)
-   defining Unicode char U+011F (decimal 287)
-   defining Unicode char U+0120 (decimal 288)
-   defining Unicode char U+0121 (decimal 289)
-   defining Unicode char U+0122 (decimal 290)
-   defining Unicode char U+0123 (decimal 291)
-   defining Unicode char U+0124 (decimal 292)
-   defining Unicode char U+0125 (decimal 293)
-   defining Unicode char U+0128 (decimal 296)
-   defining Unicode char U+0129 (decimal 297)
-   defining Unicode char U+012A (decimal 298)
-   defining Unicode char U+012B (decimal 299)
-   defining Unicode char U+012C (decimal 300)
-   defining Unicode char U+012D (decimal 301)
-   defining Unicode char U+012E (decimal 302)
-   defining Unicode char U+012F (decimal 303)
-   defining Unicode char U+0130 (decimal 304)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0132 (decimal 306)
-   defining Unicode char U+0133 (decimal 307)
-   defining Unicode char U+0134 (decimal 308)
-   defining Unicode char U+0135 (decimal 309)
-   defining Unicode char U+0136 (decimal 310)
-   defining Unicode char U+0137 (decimal 311)
-   defining Unicode char U+0139 (decimal 313)
-   defining Unicode char U+013A (decimal 314)
-   defining Unicode char U+013B (decimal 315)
-   defining Unicode char U+013C (decimal 316)
-   defining Unicode char U+013D (decimal 317)
-   defining Unicode char U+013E (decimal 318)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0143 (decimal 323)
-   defining Unicode char U+0144 (decimal 324)
-   defining Unicode char U+0145 (decimal 325)
-   defining Unicode char U+0146 (decimal 326)
-   defining Unicode char U+0147 (decimal 327)
-   defining Unicode char U+0148 (decimal 328)
-   defining Unicode char U+014A (decimal 330)
-   defining Unicode char U+014B (decimal 331)
-   defining Unicode char U+014C (decimal 332)
-   defining Unicode char U+014D (decimal 333)
-   defining Unicode char U+014E (decimal 334)
-   defining Unicode char U+014F (decimal 335)
-   defining Unicode char U+0150 (decimal 336)
-   defining Unicode char U+0151 (decimal 337)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0154 (decimal 340)
-   defining Unicode char U+0155 (decimal 341)
-   defining Unicode char U+0156 (decimal 342)
-   defining Unicode char U+0157 (decimal 343)
-   defining Unicode char U+0158 (decimal 344)
-   defining Unicode char U+0159 (decimal 345)
-   defining Unicode char U+015A (decimal 346)
-   defining Unicode char U+015B (decimal 347)
-   defining Unicode char U+015C (decimal 348)
-   defining Unicode char U+015D (decimal 349)
-   defining Unicode char U+015E (decimal 350)
-   defining Unicode char U+015F (decimal 351)
-   defining Unicode char U+0160 (decimal 352)
-   defining Unicode char U+0161 (decimal 353)
-   defining Unicode char U+0162 (decimal 354)
-   defining Unicode char U+0163 (decimal 355)
-   defining Unicode char U+0164 (decimal 356)
-   defining Unicode char U+0165 (decimal 357)
-   defining Unicode char U+0168 (decimal 360)
-   defining Unicode char U+0169 (decimal 361)
-   defining Unicode char U+016A (decimal 362)
-   defining Unicode char U+016B (decimal 363)
-   defining Unicode char U+016C (decimal 364)
-   defining Unicode char U+016D (decimal 365)
-   defining Unicode char U+016E (decimal 366)
-   defining Unicode char U+016F (decimal 367)
-   defining Unicode char U+0170 (decimal 368)
-   defining Unicode char U+0171 (decimal 369)
-   defining Unicode char U+0172 (decimal 370)
-   defining Unicode char U+0173 (decimal 371)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
-   defining Unicode char U+0178 (decimal 376)
-   defining Unicode char U+0179 (decimal 377)
-   defining Unicode char U+017A (decimal 378)
-   defining Unicode char U+017B (decimal 379)
-   defining Unicode char U+017C (decimal 380)
-   defining Unicode char U+017D (decimal 381)
-   defining Unicode char U+017E (decimal 382)
-   defining Unicode char U+01CD (decimal 461)
-   defining Unicode char U+01CE (decimal 462)
-   defining Unicode char U+01CF (decimal 463)
-   defining Unicode char U+01D0 (decimal 464)
-   defining Unicode char U+01D1 (decimal 465)
-   defining Unicode char U+01D2 (decimal 466)
-   defining Unicode char U+01D3 (decimal 467)
-   defining Unicode char U+01D4 (decimal 468)
-   defining Unicode char U+01E2 (decimal 482)
-   defining Unicode char U+01E3 (decimal 483)
-   defining Unicode char U+01E6 (decimal 486)
-   defining Unicode char U+01E7 (decimal 487)
-   defining Unicode char U+01E8 (decimal 488)
-   defining Unicode char U+01E9 (decimal 489)
-   defining Unicode char U+01EA (decimal 490)
-   defining Unicode char U+01EB (decimal 491)
-   defining Unicode char U+01F0 (decimal 496)
-   defining Unicode char U+01F4 (decimal 500)
-   defining Unicode char U+01F5 (decimal 501)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+0232 (decimal 562)
-   defining Unicode char U+0233 (decimal 563)
-   defining Unicode char U+1E02 (decimal 7682)
-   defining Unicode char U+1E03 (decimal 7683)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2010 (decimal 8208)
-   defining Unicode char U+2011 (decimal 8209)
-   defining Unicode char U+2012 (decimal 8210)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2015 (decimal 8213)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201A (decimal 8218)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-   defining Unicode char U+201E (decimal 8222)
-   defining Unicode char U+2030 (decimal 8240)
-   defining Unicode char U+2031 (decimal 8241)
-   defining Unicode char U+2039 (decimal 8249)
-   defining Unicode char U+203A (decimal 8250)
-   defining Unicode char U+2423 (decimal 9251)
-   defining Unicode char U+1E20 (decimal 7712)
-   defining Unicode char U+1E21 (decimal 7713)
 )
-Now handling font encoding OT1 ...
-... processing UTF-8 mapping file for font encoding OT1
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
-File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A0 (decimal 160)
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AD (decimal 173)
-   defining Unicode char U+00B8 (decimal 184)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-)
-Now handling font encoding OMS ...
-... processing UTF-8 mapping file for font encoding OMS
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
-File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A7 (decimal 167)
-   defining Unicode char U+00B6 (decimal 182)
-   defining Unicode char U+00B7 (decimal 183)
-   defining Unicode char U+2020 (decimal 8224)
-   defining Unicode char U+2021 (decimal 8225)
-   defining Unicode char U+2022 (decimal 8226)
-)
-Now handling font encoding OMX ...
-... no UTF-8 mapping file for font encoding OMX
-Now handling font encoding U ...
-... no UTF-8 mapping file for font encoding U
-   defining Unicode char U+00A9 (decimal 169)
-   defining Unicode char U+00AA (decimal 170)
-   defining Unicode char U+00AE (decimal 174)
-   defining Unicode char U+00BA (decimal 186)
-   defining Unicode char U+02C6 (decimal 710)
-   defining Unicode char U+02DC (decimal 732)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2026 (decimal 8230)
-   defining Unicode char U+2122 (decimal 8482)
-   defining Unicode char U+2423 (decimal 9251)
-))
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgfplots\pgfplots.sty"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.revision.tex")
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/pgfplots\pgfplots.
+sty
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots\pgfplot
+s.revision.tex)
 Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
+ ("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
-File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count103
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen121
 \Gin@req@width=\dimen122
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\frontendlayer\tikz.sty"
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf.sty"
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfrcs.sty"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common.tex"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/pgf/frontendlayer\
+tikz.sty
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/pgf/basiclayer\pgf
+.sty
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/pgf/utilities\pgfr
+cs.sty
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/utilities\pg
+futil-common.tex
 \pgfutil@everybye=\toks22
 \pgfutil@tempdima=\dimen123
 \pgfutil@tempdimb=\dimen124
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common-lists.te
-x")) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-latex.def"
-\pgfutil@abb=\box28
-("C:\Program Files\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/utilities\pg
+futil-common-lists.tex))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/utilities\pg
+futil-latex.def
+\pgfutil@abb=\box29
+
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/ms\everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfrcs.code.tex"
-Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/utilities\pg
+frcs.code.tex
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf\pgf.revision
+.tex)
+Package: pgfrcs 2019/01/05 v3.1 (3.1)
 ))
-Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+Package: pgf 2019/01/05 v3.1 (3.1)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgfcore.sty"
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\systemlayer\pgfsys.sty"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys.code.tex"
-Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/pgf/basiclayer\pgf
+core.sty
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/pgf/systemlayer\pg
+fsys.sty
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/systemlayer\
+pgfsys.code.tex
+Package: pgfsys 2019/01/05 v3.1 (3.1)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/utilities\pg
+fkeys.code.tex
 \pgfkeys@pathtoks=\toks23
 \pgfkeys@temptoks=\toks24
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeysfiltered.code.te
-x"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/utilities\pg
+fkeysfiltered.code.tex
 \pgfkeys@tmptoks=\toks25
 ))
 \pgf@x=\dimen125
@@ -515,31 +208,36 @@ x"
 \t@pgf@toka=\toks26
 \t@pgf@tokb=\toks27
 \t@pgf@tokc=\toks28
- ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgf.cfg"
-File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+\pgf@sys@id@count=\count108
+
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/systemlayer\
+pgf.cfg
+File: pgf.cfg 2019/01/05 v3.1 (3.1)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-pdftex.def"
-File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/systemlayer\
+pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2019/01/05 v3.1 (3.1)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
-"
-File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/systemlayer\
+pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2019/01/05 v3.1 (3.1)
 )))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.t
-ex"
-File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count108
-\pgfsyssoftpath@bigbuffer@items=\count109
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/systemlayer\
+pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2019/01/05 v3.1 (3.1)
+\pgfsyssoftpath@smallbuffer@items=\count109
+\pgfsyssoftpath@bigbuffer@items=\count110
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsysprotocol.code.t
-ex"
-File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
-)) ("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/systemlayer\
+pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2019/01/05 v3.1 (3.1)
+))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -553,43 +251,50 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcore.code.tex"
-Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcore.code.tex
+Package: pgfcore 2019/01/05 v3.1 (3.1)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathcalc.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathutil.code.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathparser.code.tex"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+.code.tex
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+calc.code.tex
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+util.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+parser.code.tex
 \pgfmath@dimen=\dimen133
-\pgfmath@count=\count110
-\pgfmath@box=\box29
+\pgfmath@count=\count111
+\pgfmath@box=\box30
 \pgfmath@toks=\toks29
 \pgfmath@stack@operand=\toks30
 \pgfmath@stack@operation=\toks31
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.basic.code.
-tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.trigonometr
-ic.code.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.random.code
-.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.comparison.
-code.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.base.code.t
-ex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.round.code.
-tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.misc.code.t
-ex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.integerarit
-hmetics.code.tex")))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count111
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+functions.code.tex
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+functions.basic.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+functions.trigonometric.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+functions.random.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+functions.comparison.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+functions.base.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+functions.round.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+functions.misc.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+functions.integerarithmetics.code.tex)))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+float.code.tex
+\c@pgfmathroundto@lastzeros=\count112
 ))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
-"
-File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2019/01/05 v3.1 (3.1)
 \pgf@picminx=\dimen134
 \pgf@picmaxx=\dimen135
 \pgf@picminy=\dimen136
@@ -605,115 +310,134 @@ File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
 \pgf@zx=\dimen146
 \pgf@zy=\dimen147
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathconstruct.c
-ode.tex"
-File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2019/01/05 v3.1 (3.1)
 \pgf@path@lastx=\dimen148
 \pgf@path@lasty=\dimen149
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathusage.code.
-tex"
-File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2019/01/05 v3.1 (3.1)
 \pgf@shorten@end@additional=\dimen150
 \pgf@shorten@start@additional=\dimen151
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
-"
-File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
-\pgfpic=\box30
-\pgf@hbox=\box31
-\pgf@layerbox@main=\box32
-\pgf@picture@serial@count=\count112
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2019/01/05 v3.1 (3.1)
+\pgfpic=\box31
+\pgf@hbox=\box32
+\pgf@layerbox@main=\box33
+\pgf@picture@serial@count=\count113
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoregraphicstate.co
-de.tex"
-File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2019/01/05 v3.1 (3.1)
 \pgflinewidth=\dimen152
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransformations
-.code.tex"
-File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2019/01/05 v3.1 (3.1)
 \pgf@pt@x=\dimen153
 \pgf@pt@y=\dimen154
 \pgf@pt@temp=\dimen155
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorequick.code.tex"
-File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcorequick.code.tex
+File: pgfcorequick.code.tex 2019/01/05 v3.1 (3.1)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreobjects.code.te
-x"
-File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2019/01/05 v3.1 (3.1)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathprocessing.
-code.tex"
-File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2019/01/05 v3.1 (3.1)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
-"
-File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2019/01/05 v3.1 (3.1)
 \pgfarrowsep=\dimen156
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex"
-File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2019/01/05 v3.1 (3.1)
 \pgf@max=\dimen157
-\pgf@sys@shading@range@num=\count113
-) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreimage.code.te
-x"
-File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+\pgf@sys@shading@range@num=\count114
+)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2019/01/05 v3.1 (3.1)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreexternal.code.t
-ex"
-File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
-\pgfexternal@startupbox=\box33
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2019/01/05 v3.1 (3.1)
+\pgfexternal@startupbox=\box34
 ))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
-"
-File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2019/01/05 v3.1 (3.1)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransparency.co
-de.tex"
-File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2019/01/05 v3.1 (3.1)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepatterns.code.t
-ex"
-File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2019/01/05 v3.1 (3.1)
+)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/basiclayer\p
+gfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2019/01/05 v3.1 (3.1)
 )))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleshapes.code.tex"
-File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
-\pgfnodeparttextbox=\box34
-) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleplot.code.tex"
-File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/modules\pgfm
+oduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2019/01/05 v3.1 (3.1)
+\pgfnodeparttextbox=\box35
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-0-65.
-sty"
-Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/modules\pgfm
+oduleplot.code.tex
+File: pgfmoduleplot.code.tex 2019/01/05 v3.1 (3.1)
+)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/pgf/compatibility\
+pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2019/01/05 v3.1 (3.1)
 \pgf@nodesepstart=\dimen158
 \pgf@nodesepend=\dimen159
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-1-18.
-sty"
-Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
-)) ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgffor.sty"
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfkeys.sty"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"))
-("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\math\pgfmath.sty"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgffor.code.tex"
-Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/pgf/compatibility\
+pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2019/01/05 v3.1 (3.1)
+))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/pgf/utilities\pgff
+or.sty
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/pgf/utilities\pgfk
+eys.sty
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/utilities\pg
+fkeys.code.tex))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/pgf/math\pgfmath.s
+ty
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+.code.tex))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/utilities\pg
+ffor.code.tex
+Package: pgffor 2019/01/05 v3.1 (3.1)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex")
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/math\pgfmath
+.code.tex)
 \pgffor@iter=\dimen160
 \pgffor@skip=\dimen161
 \pgffor@stack=\toks32
 \pgffor@toks=\toks33
 ))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex"
-Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/frontendlaye
+r/tikz\tikz.code.tex
+Package: tikz 2019/01/05 v3.1 (3.1)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryplothandlers.
-code.tex"
-File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count114
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/libraries\pg
+flibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2019/01/05 v3.1 (3.1)
+\pgf@plot@mark@count=\count115
 \pgfplotmarksize=\dimen162
 )
 \tikz@lastx=\dimen163
@@ -722,127 +446,134 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@lastysaved=\dimen166
 \tikzleveldistance=\dimen167
 \tikzsiblingdistance=\dimen168
-\tikz@figbox=\box35
-\tikz@figbox@bg=\box36
-\tikz@tempbox=\box37
-\tikz@tempbox@bg=\box38
-\tikztreelevel=\count115
-\tikznumberofchildren=\count116
-\tikznumberofcurrentchild=\count117
-\tikz@fig@count=\count118
+\tikz@figbox=\box36
+\tikz@figbox@bg=\box37
+\tikz@tempbox=\box38
+\tikz@tempbox@bg=\box39
+\tikztreelevel=\count116
+\tikznumberofchildren=\count117
+\tikznumberofcurrentchild=\count118
+\tikz@fig@count=\count119
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmodulematrix.code.tex"
-File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count119
-\pgfmatrixcurrentcolumn=\count120
-\pgf@matrix@numberofcolumns=\count121
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/modules\pgfm
+odulematrix.code.tex
+File: pgfmodulematrix.code.tex 2019/01/05 v3.1 (3.1)
+\pgfmatrixcurrentrow=\count120
+\pgfmatrixcurrentcolumn=\count121
+\pgf@matrix@numberofcolumns=\count122
 )
-\tikz@expandcount=\count122
+\tikz@expandcount=\count123
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-librarytopaths.code.tex"
-File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2019/01/05 v3.1 (3.1)
 )))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotscore.code.tex"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots\pgfplot
+s.code.tex
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots\pgfplot
+score.code.tex
 \t@pgfplots@toka=\toks34
 \t@pgfplots@tokb=\toks35
 \t@pgfplots@tokc=\toks36
 \pgfplots@tmpa=\dimen169
-\c@pgfplots@coordindex=\count123
-\c@pgfplots@scanlineindex=\count124
+\c@pgfplots@coordindex=\count124
+\c@pgfplots@scanlineindex=\count125
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\sys\pgfplotssysgeneric.code.
-tex"))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\libs\pgfplotslibrary.code.te
-x")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpg
-fsupp_loader.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryfpu.code.tex"
-)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/sys\pgf
+plotssysgeneric.code.tex))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/libs\pg
+fplotslibrary.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/oldpgfc
+ompatib\pgfplotsoldpgfsupp_loader.code.tex
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/libraries\pg
+flibraryfpu.code.tex)
 Package pgfplots: loading complementary arithmetics for your pgf version...
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpg
-fsupp_pgflibraryfpu.code.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpg
-fsupp_pgfmathfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count125
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/oldpgfc
+ompatib\pgfplotsoldpgfsupp_pgflibraryfpu.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/oldpgfc
+ompatib\pgfplotsoldpgfsupp_pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count126
+))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/util\pg
+fplotsutil.code.tex
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/liststr
+ucture\pgfplotsliststructure.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/liststr
+ucture\pgfplotsliststructureext.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/liststr
+ucture\pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count127
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpg
-fsupp_leq.code.tex"))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotsutil.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotslistst
-ructure.code.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotslistst
-ructureext.code.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotsarray.
-code.tex"
-\c@pgfplotsarray@tmp=\count126
-)
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotsmatrix
-.code.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\numtable\pgfplotstableshared
-.code.tex"
-\c@pgfplotstable@counta=\count127
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/liststr
+ucture\pgfplotsmatrix.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/numtabl
+e\pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count128
 \t@pgfplotstable@a=\toks37
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\liststructure\pgfplotsdeque.
-code.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotsbinary.code.tex
-"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotsbinary.data.cod
-e.tex"))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotsutil.verb.code.
-tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\libs\pgflibrarypgfplots.surf
-shading.code.tex"
-\c@pgfplotslibrarysurf@no=\count128
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/liststr
+ucture\pgfplotsdeque.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/util\pg
+fplotsbinary.code.tex
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/util\pg
+fplotsbinary.data.code.tex))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/util\pg
+fplotsutil.verb.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/libs\pg
+flibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count129
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\sys\pgflibrarypgfplots.surfs
-hading.pgfsys-pdftex.def")))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotscolormap.code.t
-ex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\util\pgfplotscolor.code.tex"
-))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotsstackedplots.code.te
-x")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotsplothandlers.code.te
-x"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotsmeshplothandler.code
-.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotsmeshplotimage.code.t
-ex")))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.scaling.code.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotscoordprocessing.code
-.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.errorbars.code.tex"
-) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.markers.code.tex"
-) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplotsticks.code.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgfplots\pgfplots.paths.code.tex")
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-librarydecorations.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduledecorations.code
-.tex"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/sys\pgf
+librarypgfplots.surfshading.pgfsys-pdftex.def)))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/util\pg
+fplotscolormap.code.tex
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots/util\pg
+fplotscolor.code.tex))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots\pgfplot
+sstackedplots.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots\pgfplot
+splothandlers.code.tex
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots\pgfplot
+smeshplothandler.code.tex
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots\pgfplot
+smeshplotimage.code.tex)))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots\pgfplot
+s.scaling.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots\pgfplot
+scoordprocessing.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots\pgfplot
+s.errorbars.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots\pgfplot
+s.markers.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots\pgfplot
+sticks.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgfplots\pgfplot
+s.paths.code.tex)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarydecorations.code.tex
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/modules\pgfm
+oduledecorations.code.tex
 \pgfdecoratedcompleteddistance=\dimen170
 \pgfdecoratedremainingdistance=\dimen171
 \pgfdecoratedinputsegmentcompleteddistance=\dimen172
 \pgfdecoratedinputsegmentremainingdistance=\dimen173
 \pgf@decorate@distancetomove=\dimen174
-\pgf@decorate@repeatstate=\count129
+\pgf@decorate@repeatstate=\count130
 \pgfdecorationsegmentamplitude=\dimen175
 \pgfdecorationsegmentlength=\dimen176
 )
-\tikz@lib@dec@box=\box39
+\tikz@lib@dec@box=\box40
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-librarydecorations.pathmorphing.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgflibraryd
-ecorations.pathmorphing.code.tex"))
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-librarydecorations.pathreplacing.code.tex"
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\decorations\pgflibraryd
-ecorations.pathreplacing.code.tex"))
-\pgfplots@numplots=\count130
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/libraries/de
+corations\pgflibrarydecorations.pathmorphing.code.tex))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/libraries/de
+corations\pgflibrarydecorations.pathreplacing.code.tex))
+\pgfplots@numplots=\count131
 \pgfplots@xmin@reg=\dimen177
 \pgfplots@xmax@reg=\dimen178
 \pgfplots@ymin@reg=\dimen179
@@ -850,22 +581,26 @@ ecorations.pathreplacing.code.tex"))
 \pgfplots@zmin@reg=\dimen181
 \pgfplots@zmax@reg=\dimen182
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-libraryplotmarks.code.tex"
-File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/frontendlaye
+r/tikz/libraries\tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2019/01/05 v3.1 (3.1)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryplotmarks.cod
-e.tex"
-File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
-))) ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
-Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/generic/pgf/libraries\pg
+flibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2019/01/05 v3.1 (3.1)
+)))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\subcaption
+.sty
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
-Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\caption.st
+y
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
-Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 67.
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\caption3.s
+ty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
 \captionmargin=\dimen183
 \captionmargin@=\dimen184
 \captionwidth=\dimen185
@@ -874,26 +609,27 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \caption@parindent=\dimen188
 \caption@hangindent=\dimen189
 )
-\c@ContinuedFloat=\count131
+\c@caption@flags=\count132
+\c@ContinuedFloat=\count133
 )
-\c@subfigure=\count132
-\c@subtable=\count133
+\c@subfigure=\count134
+\c@subtable=\count135
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\was\gensymb.sty"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/was\gensymb.sty
 Package: gensymb 2003/07/02 v1.0 (WaS)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
-Package: amsthm 2015/03/04 v2.20.2
+("C:\Program Files\MiKTeX 2.9\tex/latex/amscls\amsthm.sty"
+Package: amsthm 2017/10/31 v2.20.4
 \thm@style=\toks38
 \thm@bodyfont=\toks39
 \thm@headfont=\toks40
@@ -904,47 +640,48 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@headsep=\skip52
 \dth@everypar=\toks43
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
-Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\epsfig.sty"
+Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
 \epsfxsize=\dimen190
 \epsfysize=\dimen191
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\epstopdf.sty"
 Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\grfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\kvdefinekeys.sty"
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-))
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\kvoptions.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\kvsetkeys.sty"
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\etexcmds.sty"
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifluatex.sty"
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+))))
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifpdf.sty"
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -954,45 +691,47 @@ Package pdftexcmds Info: \pdfdraftmode found.
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\titling\titling.sty"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/titling\titling.st
+y
 Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip53
 \thanksmargin=\skip54
 \droptitle=\skip55
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+) (C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/url\url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
-Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+("C:\Program Files\MiKTeX 2.9\tex/latex/tools\array.sty"
+Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
 \col@sep=\dimen192
+\ar@mcellbox=\box41
 \extrarowheight=\dimen193
 \NC@list=\toks44
 \extratabsurround=\skip56
 \backup@length=\skip57
+\ar@cellbox=\box42
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\enumerate.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/tools\enumerate.sty"
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks45
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
-Package: geometry 2010/09/12 v5.6 Page Geometry
+("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.sty"
+Package: geometry 2018/04/16 v5.8 Page Geometry
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifvtex.sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+("C:\Program Files\MiKTeX 2.9\tex/generic/ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count134
-\Gm@cntv=\count135
-\c@Gm@tempcnt=\count136
+\Gm@cnth=\count136
+\Gm@cntv=\count137
+\c@Gm@tempcnt=\count138
 \Gm@bindingoffset=\dimen194
 \Gm@wd@mp=\dimen195
 \Gm@odd@mp=\dimen196
@@ -1003,49 +742,55 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen257
 \Gm@dimlist=\toks46
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.cfg"))
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/algorithms\algorit
+hm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+ ("C:\Program Files\MiKTeX 2.9\tex/latex/float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count137
+\c@float@type=\count139
 \float@exts=\toks47
-\float@box=\box40
+\float@box=\box43
 \@float@everytoks=\toks48
-\@floatcapt=\box41
+\@floatcapt=\box44
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks49
-\c@algorithm=\count138
+\c@algorithm=\count140
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\algorithmicx\algpseudocode.sty"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/algorithmicx\algps
+eudocode.sty
 Package: algpseudocode 
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\algorithmicx\algorithmicx.sty"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/algorithmicx\algor
+ithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count139
-\c@ALG@rem=\count140
-\c@ALG@nested=\count141
+\c@ALG@line=\count141
+\c@ALG@rem=\count142
+\c@ALG@nested=\count143
 \ALG@tlm=\skip58
 \ALG@thistlm=\skip59
-\c@ALG@Lnr=\count142
-\c@ALG@blocknr=\count143
-\c@ALG@storecount=\count144
-\c@ALG@tmpcounter=\count145
+\c@ALG@Lnr=\count144
+\c@ALG@blocknr=\count145
+\c@ALG@storecount=\count146
+\c@ALG@tmpcounter=\count147
 \ALG@tmplength=\skip60
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
-\c@thm=\count146
-\c@assumption=\count147
-\c@defn=\count148
- (darft_01072019.aux)
+\c@thm=\count148
+\c@assumption=\count149
+\c@defn=\count150
+ (darft_01072019.aux
+
+LaTeX Warning: Label `fig: 2a' multiply defined.
+
+)
 \openout1 = `darft_01072019.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -1061,18 +806,19 @@ LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
 
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/context/base\supp-pdf.mk
+ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count149
+\scratchcounter=\count151
 \scratchdimen=\dimen258
-\scratchbox=\box42
-\nofMPsegments=\count150
-\nofMParguments=\count151
+\scratchbox=\box45
+\nofMPsegments=\count152
+\nofMParguments=\count153
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count152
+\MPscratchCnt=\count154
 \MPscratchDim=\dimen259
-\MPnumerator=\count153
-\makeMPintoPDFobject=\count154
+\MPnumerator=\count155
+\makeMPintoPDFobject=\count156
 \everyMPtoPDFconversion=\toks51
 ) ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might b
@@ -1127,394 +873,319 @@ Package gensymb Warning: Not defining \micro.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Try loading font information for U+msa on input line 54.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 54.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for U+euf on input line 61.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\ueuf.fd"
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4]
+{C:/Users/Administrator/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+ [3] [4]
 LaTeX Font Info:    Try loading font information for U+bbm on input line 191.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\bbm\ubbm.fd"
+(C:\Users\Administrator\AppData\Roaming\MiKTeX\2.9\tex/latex/bbm\ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [5] [6] [7]
-
-LaTeX Warning: Reference `fig: 1a' on page 8 undefined on input line 356.
-
-[8]
-
-LaTeX Warning: Reference `fig: 1b' on page 9 undefined on input line 359.
-
+)
+[5] [6] [7] [8]
 PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
-NOTE: coordinate (0.0,-0.000147576751750593) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0075,0.00783222552991417) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.015,0.016732075321145075) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0225,0.02163871737951903) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03,0.03705976080103742) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0375,0.039985482452322696) has been dropped because it is u
-nbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.045,0.04934892548763161) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0525,0.05701888282593186) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.06,0.06318168515212522) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0675,0.06891913527032154) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.075,0.07901356893086989) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
 PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
-NOTE: coordinate (0.0,0.003972356278148443) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0075,0.0021252483003510194) has been dropped because it is 
-unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.015,0.018104783424518045) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0225,0.018476201781003072) has been dropped because it is u
-nbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03,0.02633188938306181) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0375,0.04442029940978822) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.045,0.05094968000089297) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0525,0.05463872014117899) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.06,0.06334081707779378) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0675,0.06788561979066152) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.075,0.08167849231325708) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
 
-Overfull \hbox (8.13911pt too wide) in paragraph at lines 388--389
- [][] 
- []
-
+NOTE: coordinate (0.0,-0.0011742405027683576) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.005000000000000001,0.0017875803452764582) has been dropped 
+because it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.00825711530198691) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.013112107287601617) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.01741532739948094) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.024214124300722385) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.028681483775164454) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.034999999999999996,0.03403245467280528) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.040048363841741805) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.045000000000000005,0.045811335543936266) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.05128026653640771) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
 PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
-NOTE: coordinate (0.0,-0.000147576751750593) has been dropped because it is unb
+NOTE: coordinate (0.0,0.0002891662007534164) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0075,0.00783222552991417) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.015,0.016732075321145075) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0225,0.02163871737951903) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03,0.03705976080103742) has been dropped because it is unbo
+NOTE: coordinate (0.005000000000000001,0.003772748552338808) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.009585581734400085) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.01132634061042239) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.01675729632711896) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.02103857570648003) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.02598937212541301) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0375,0.039985482452322696) has been dropped because it is u
-nbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.045,0.04934892548763161) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0525,0.05701888282593186) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.06,0.06318168515212522) has been dropped because it is unbo
+NOTE: coordinate (0.034999999999999996,0.031951191650474185) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.0382815965126826) has been dropped beca
+use it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.045000000000000005,0.04327814457266407) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.04747927762341583) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0675,0.06891913527032154) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.075,0.07901356893086989) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
 PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
-NOTE: coordinate (0.0,0.003972356278148443) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0075,0.0021252483003510194) has been dropped because it is 
-unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.015,0.018104783424518045) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0225,0.018476201781003072) has been dropped because it is u
+PGFPlots: reading {../results/synth_exp_sample_size_alpha.csv}
+NOTE: coordinate (0.0025,0.001840318677834757) has been dropped because it is u
 nbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03,0.02633188938306181) has been dropped because it is unbo
+NOTE: coordinate (0.005,0.0036387176953587364) has been dropped because it is u
+nbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0075,0.006440444250699103) has been dropped because it is u
+nbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.01,0.00891348869793079) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0375,0.04442029940978822) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.045,0.05094968000089297) has been dropped because it is unb
+NOTE: coordinate (0.0125,0.011091213619328976) has been dropped because it is u
+nbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.01260009278373104) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0525,0.05463872014117899) has been dropped because it is un
+NOTE: coordinate (0.0175,0.01606590329940577) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.06,0.06334081707779378) has been dropped because it is unbo
+NOTE: coordinate (0.02,0.018087283264718108) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0225,0.021301476921289805) has been dropped because it is u
+nbounded (in x). (see also unbounded coords=jump). 
+PGFPlots: reading {../results/synth_exp_sample_size_alpha.csv}
+NOTE: coordinate (0.0025,0.002040086082317842) has been dropped because it is u
+nbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.005,0.004071878963481065) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0075,0.005344901403962316) has been dropped because it is u
+nbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.01,0.007916840895554705) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0125,0.010616061444910577) has been dropped because it is u
+nbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.012640125521294081) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0175,0.014356679544722311) has been dropped because it is u
+nbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.02,0.015978153761546165) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0225,0.018819304939584423) has been dropped because it is u
+nbounded (in x). (see also unbounded coords=jump). 
+PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
+PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
+NOTE: coordinate (0.0,-0.0011742405027683576) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.005000000000000001,0.0017875803452764582) has been dropped 
+because it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.00825711530198691) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.013112107287601617) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.01741532739948094) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.024214124300722385) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.028681483775164454) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.034999999999999996,0.03403245467280528) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.040048363841741805) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.045000000000000005,0.045811335543936266) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.05128026653640771) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0675,0.06788561979066152) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.075,0.08167849231325708) has been dropped because it is unb
+PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
+NOTE: coordinate (0.0,0.0002891662007534164) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
-
-Overfull \hbox (8.13911pt too wide) in paragraph at lines 417--418
- [][] 
- []
-
-
-LaTeX Warning: Reference `fig: 1a' on page 9 undefined on input line 421.
-
-
-LaTeX Warning: Reference `fig: 1b' on page 9 undefined on input line 421.
-
-
-LaTeX Warning: Reference `fig: 1a' on page 9 undefined on input line 421.
-
-
-LaTeX Warning: Reference `fig: 1b' on page 9 undefined on input line 421.
-
-
-LaTeX Warning: Reference `fig: 2a' on page 9 undefined on input line 425.
-
-PGFPlots: reading {../results/synth_exp_unbalance_2a.csv}
-NOTE: coordinate (0.004888684210526299,1.4244192120216017) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.00978555555555554,1.1895337287404513) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01469205882352942,1.1121291449638777) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019610000000000013,1.0537011693705172) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024541666666666666,1.0414105146704755) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02949,1.0330722298604722) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03445884615384614,1.018893457084275) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03945333333333334,1.0079695438159435) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04448045454545454,1.004192307504387) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04955,0.9964759966855695) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0050042105263158,0.3394568210013161) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.009995555555555546,0.6819079051301263) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01497176470588235,0.8041375651594028) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019929999999999996,0.857668809284167) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024866666666666665,0.8884766958935956) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.029777142857142867,0.9163421183561038) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.034655384615384616,0.9361265040200999) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.039493333333333346,0.9559727589968118) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04427999999999999,0.9719538007740375) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.049,0.9822632539812876) has been dropped because it is unbo
+NOTE: coordinate (0.005000000000000001,0.003772748552338808) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.009585581734400085) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.01132634061042239) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.01675729632711896) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.02103857570648003) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.02598937212541301) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.005128157894736835,0.6864227909795739) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.010263333333333333,0.8200922826556127) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.015406764705882349,0.8839189137144364) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.020559999999999995,0.907610343604547) has been dropped beca
+NOTE: coordinate (0.034999999999999996,0.031951191650474185) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.0382815965126826) has been dropped beca
 use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.025724999999999994,0.9204644814593655) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.030904285714285714,0.9295594393527542) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03610115384615383,0.940817571380076) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.041320000000000016,0.9488096278788638) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04656681818181818,0.952106366621908) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.05185,0.9509051740548208) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-PGFPlots: reading {../results/synth_exp_unbalance_2a.csv}
-NOTE: coordinate (0.004960789473684203,3.0445293121038333) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.009934444444444435,1.9909075710347057) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.014923235294117662,1.6426570717166882) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019929999999999996,1.4756164527091995) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02495833333333333,1.3742483123544302) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03001285714285715,1.3063222463442639) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03509961538461538,1.2576575343630338) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04022666666666667,1.2184471293801924) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04540499999999999,1.1877397220763102) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.05065,1.161374762896855) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0050042105263158,0.3394568210013161) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.009995555555555546,0.6819079051301263) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01497176470588235,0.8041375651594028) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019929999999999996,0.857668809284167) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024866666666666665,0.8884766958935956) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.029777142857142867,0.9163421183561038) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.034655384615384616,0.9361265040200999) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.039493333333333346,0.9559727589968118) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04427999999999999,0.9719538007740375) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.049,0.9822632539812876) has been dropped because it is unbo
+NOTE: coordinate (0.045000000000000005,0.04327814457266407) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.04747927762341583) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.005128157894736835,0.6864227909795739) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.010263333333333333,0.8200922826556127) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.015406764705882349,0.8839189137144364) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.020559999999999995,0.907610343604547) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.025724999999999994,0.9204644814593655) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.030904285714285714,0.9295594393527542) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03610115384615383,0.940817571380076) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.041320000000000016,0.9488096278788638) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04656681818181818,0.952106366621908) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.05185,0.9509051740548208) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-PGFPlots: reading {../results/synth_exp_unbalance_2a.csv}
-NOTE: coordinate (0.004960789473684203,3.0445293121038333) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.009934444444444435,1.9909075710347057) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.014923235294117662,1.6426570717166882) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019929999999999996,1.4756164527091995) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02495833333333333,1.3742483123544302) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03001285714285715,1.3063222463442639) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03509961538461538,1.2576575343630338) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04022666666666667,1.2184471293801924) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04540499999999999,1.1877397220763102) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.05065,1.161374762896855) has been dropped because it is unb
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+PGFPlots: reading {../results/synth_exp_unbalance_3a.csv}
+NOTE: coordinate (-0.3,0.019486141832549812) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.004888684210526299,1.4244192120216017) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.00978555555555554,1.1895337287404513) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01469205882352942,1.1121291449638777) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019610000000000013,1.0537011693705172) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024541666666666666,1.0414105146704755) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02949,1.0330722298604722) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03445884615384614,1.018893457084275) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03945333333333334,1.0079695438159435) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04448045454545454,1.004192307504387) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04955,0.9964759966855695) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.005128157894736835,0.6864227909795739) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.010263333333333333,0.8200922826556127) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.015406764705882349,0.8839189137144364) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.020559999999999995,0.907610343604547) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.025724999999999994,0.9204644814593655) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.030904285714285714,0.9295594393527542) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03610115384615383,0.940817571380076) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.041320000000000016,0.9488096278788638) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04656681818181818,0.952106366621908) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.05185,0.9509051740548208) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-PGFPlots: reading {../results/synth_exp_unbalance_2a.csv}
-NOTE: coordinate (0.004960789473684203,3.0445293121038333) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.009934444444444435,1.9909075710347057) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.014923235294117662,1.6426570717166882) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019929999999999996,1.4756164527091995) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02495833333333333,1.3742483123544302) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03001285714285715,1.3063222463442639) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03509961538461538,1.2576575343630338) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04022666666666667,1.2184471293801924) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04540499999999999,1.1877397220763102) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.05065,1.161374762896855) has been dropped because it is unb
+NOTE: coordinate (-0.2,0.017111097977372473) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.004888684210526299,1.4244192120216017) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.00978555555555554,1.1895337287404513) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01469205882352942,1.1121291449638777) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019610000000000013,1.0537011693705172) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024541666666666666,1.0414105146704755) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02949,1.0330722298604722) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03445884615384614,1.018893457084275) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03945333333333334,1.0079695438159435) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04448045454545454,1.004192307504387) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04955,0.9964759966855695) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0050042105263158,0.3394568210013161) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.009995555555555546,0.6819079051301263) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01497176470588235,0.8041375651594028) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019929999999999996,0.857668809284167) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024866666666666665,0.8884766958935956) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.029777142857142867,0.9163421183561038) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.034655384615384616,0.9361265040200999) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.039493333333333346,0.9559727589968118) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04427999999999999,0.9719538007740375) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.049,0.9822632539812876) has been dropped because it is unbo
+NOTE: coordinate (-0.1,0.012515812610880993) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0,0.005569065210910627) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.1,0.007520602486796639) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.2,0.01777760649987794) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.3,0.025266684638381186) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.3,) has been dropped because it is unbounded (in x). (see 
+also unbounded coords=jump). 
+NOTE: coordinate (-0.2,) has been dropped because it is unbounded (in x). (see 
+also unbounded coords=jump). 
+NOTE: coordinate (-0.1,) has been dropped because it is unbounded (in x). (see 
+also unbounded coords=jump). 
+NOTE: coordinate (0.0,) has been dropped because it is unbounded (in x). (see a
+lso unbounded coords=jump). 
+NOTE: coordinate (0.1,) has been dropped because it is unbounded (in x). (see a
+lso unbounded coords=jump). 
+NOTE: coordinate (0.2,) has been dropped because it is unbounded (in x). (see a
+lso unbounded coords=jump). 
+NOTE: coordinate (0.3,) has been dropped because it is unbounded (in x). (see a
+lso unbounded coords=jump). 
+PGFPlots: reading {../results/synth_exp_unbalance_3a.csv}
+NOTE: coordinate (-0.3,0.032877813504823154) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.2,0.02782530839633903) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.1,0.018833131801692875) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0,-0.0012626262626262777) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.1,0.005125353821269711) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.2,0.017249300838993224) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.3,0.021527777777777778) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.3,) has been dropped because it is unbounded (in x). (see 
+also unbounded coords=jump). 
+NOTE: coordinate (-0.2,) has been dropped because it is unbounded (in x). (see 
+also unbounded coords=jump). 
+NOTE: coordinate (-0.1,) has been dropped because it is unbounded (in x). (see 
+also unbounded coords=jump). 
+NOTE: coordinate (0.0,) has been dropped because it is unbounded (in x). (see a
+lso unbounded coords=jump). 
+NOTE: coordinate (0.1,) has been dropped because it is unbounded (in x). (see a
+lso unbounded coords=jump). 
+NOTE: coordinate (0.2,) has been dropped because it is unbounded (in x). (see a
+lso unbounded coords=jump). 
+NOTE: coordinate (0.3,) has been dropped because it is unbounded (in x). (see a
+lso unbounded coords=jump). 
+PGFPlots: reading {../results/synth_exp_unbalance_3a.csv}
+NOTE: coordinate (-0.3,0.032877813504823154) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.2,0.02782530839633903) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.1,0.018833131801692875) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0,-0.0012626262626262777) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.1,0.005125353821269711) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.2,0.017249300838993224) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.3,0.021527777777777778) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.3,0.019486141832549812) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.2,0.017111097977372473) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.1,0.012515812610880993) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0,0.005569065210910627) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.1,0.007520602486796639) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.2,0.01777760649987794) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.3,0.025266684638381186) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.3,) has been dropped because it is unbounded (in x). (see 
+also unbounded coords=jump). 
+NOTE: coordinate (-0.2,) has been dropped because it is unbounded (in x). (see 
+also unbounded coords=jump). 
+NOTE: coordinate (-0.1,) has been dropped because it is unbounded (in x). (see 
+also unbounded coords=jump). 
+NOTE: coordinate (0.0,) has been dropped because it is unbounded (in x). (see a
+lso unbounded coords=jump). 
+NOTE: coordinate (0.1,) has been dropped because it is unbounded (in x). (see a
+lso unbounded coords=jump). 
+NOTE: coordinate (0.2,) has been dropped because it is unbounded (in x). (see a
+lso unbounded coords=jump). 
+NOTE: coordinate (0.3,) has been dropped because it is unbounded (in x). (see a
+lso unbounded coords=jump). 
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 480.
+
+ [warning /pgfplots/warning/plot without coordinates]
+PGFPlots: reading {../results/synth_exp_unbalance_3a.csv}
+NOTE: coordinate (-0.3,0.032877813504823154) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.2,0.02782530839633903) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.1,0.018833131801692875) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0,-0.0012626262626262777) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.1,0.005125353821269711) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.2,0.017249300838993224) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.3,0.021527777777777778) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.3,0.019486141832549812) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.2,0.017111097977372473) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.1,0.012515812610880993) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0,0.005569065210910627) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.1,0.007520602486796639) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.2,0.01777760649987794) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.3,0.025266684638381186) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (-0.3,) has been dropped because of a coordinate filter. (see 
+also unbounded coords=jump). 
+NOTE: coordinate (-0.2,) has been dropped because of a coordinate filter. (see 
+also unbounded coords=jump). 
+NOTE: coordinate (-0.1,) has been dropped because of a coordinate filter. (see 
+also unbounded coords=jump). 
+NOTE: coordinate (0.0,) has been dropped because of a coordinate filter. (see a
+lso unbounded coords=jump). 
+NOTE: coordinate (0.1,) has been dropped because of a coordinate filter. (see a
+lso unbounded coords=jump). 
+NOTE: coordinate (0.2,) has been dropped because of a coordinate filter. (see a
+lso unbounded coords=jump). 
+NOTE: coordinate (0.3,) has been dropped because of a coordinate filter. (see a
+lso unbounded coords=jump). 
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 480.
+
+ [warning /pgfplots/warning/plot without coordinates]
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {../results/synth_exp_unbalance_2b.csv}
 NOTE: coordinate (-0.3,0.6431497961242199) has been dropped because it is unbou
@@ -1690,21 +1361,9 @@ NOTE: coordinate (0.3,1.2749090596782673) has been dropped because it is unboun
 ded (in x). (see also unbounded coords=jump). 
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (1.22746pt too wide) in paragraph at lines 475--476
+Overfull \hbox (1.22746pt too wide) in paragraph at lines 509--510
  [][] 
  []
-
-
-LaTeX Warning: Reference `fig: 1a' on page 9 undefined on input line 479.
-
-
-LaTeX Warning: Reference `fig: 1b' on page 9 undefined on input line 479.
-
-
-LaTeX Warning: Reference `fig: 1a' on page 9 undefined on input line 479.
-
-
-LaTeX Warning: Reference `fig: 1b' on page 9 undefined on input line 479.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1958,80 +1617,58 @@ Missing character: There is no ; in font nullfont!
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [9]
-Overfull \vbox (16.28421pt too high) has occurred while \output is active []
+Overfull \vbox (25.82663pt too high) has occurred while \output is active []
 
 
-[10]
-
-LaTeX Warning: Reference `eq: opt1' on page 11 undefined on input line 551.
-
-
-LaTeX Warning: Reference `eq: opt1' on page 11 undefined on input line 556.
-
-
-LaTeX Warning: Reference `eq: opt1' on page 11 undefined on input line 561.
-
-[11]
-
-LaTeX Warning: Reference `thm1' on page 12 undefined on input line 573.
-
-
-LaTeX Warning: Reference `eq: opt1' on page 12 undefined on input line 584.
-
-
-LaTeX Warning: Reference `eq: opt1' on page 12 undefined on input line 588.
-
-(darft_01072019.bbl
+[10] [11] [12] (darft_01072019.bbl
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 12.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
-)
-[12] (darft_01072019.aux)
+) [13]
+(darft_01072019.aux)
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 26144 strings out of 493323
- 643830 string characters out of 3139075
- 911172 words of memory out of 3000000
- 29186 multiletter control sequences out of 15000+200000
+ 26105 strings out of 492946
+ 653119 string characters out of 3135503
+ 883293 words of memory out of 3000000
+ 29511 multiletter control sequences out of 15000+200000
  14969 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,23n,119p,1439b,2705s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\MX\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\bbm\dpi600\bbm1
-0.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm7.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on darft_01072019.pdf (12 pages, 325211 bytes).
+ 69i,23n,119p,1439b,2486s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Administrator\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/public/bbm/
+dpi600\bbm10.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
+x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm7.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on darft_01072019.pdf (13 pages, 325397 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
+ 146 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,7 +2,7 @@ import numpy as np
 
 class mmd(object):
 
-    def __init__(self, lw=0.1, learning_rate=0.001, tol=0.001, conv=10**(-8)):
+    def __init__(self, lw=0.1, learning_rate=0.5, tol=0.001, conv=10**(-7)):
 
         self.lw = lw
         self.learning_rate =learning_rate
@@ -27,9 +27,9 @@ class mmd(object):
        
         XA = X[A == 1] 
         XW = np.multiply(XA, W[A == 1][:, np.newaxis])
-        DW = np.dot(XA.transpose(), XW)
+        DW = np.dot(XA.transpose(), XW) / XA.shape[0]
         DW = np.dot(DW, F)
-        DW = DW / XA.shape[0]
+       
         
         return 2 * DW
 
@@ -39,13 +39,12 @@ class mmd(object):
         FF = self.norm_discrepancy(F)
 
         XA = X[A == 1] 
-        Z = np.multiply(W, 1 - W)
+        Z = np.multiply(W, 1 - W / 10)
         XW = np.multiply(XA, Z[A == 1][:, np.newaxis])
         DW = np.dot(XA.transpose(), XW)
         DW = np.dot(DW, F)
         DW = DW / XA.shape[0]
-        DW = DW / FF
-        
+      
         return  DW
 
     def fit(self, X, A):
@@ -55,18 +54,19 @@ class mmd(object):
         self.W = np.ones(X.shape[0])
         t = 0
         
-        while (loss > self.tol) & (np.abs(loss - loss0) > self.conv) & (t < 200):
+        while (loss > self.tol) & (np.abs(loss - loss0) > self.conv) :
 
             self.W[A == 1] = np.exp(np.multiply(X[A == 1], self.beta).sum(axis=1))
-            
-            #self.W[A == 1] = self.W[A == 1] / (1 + 1/2 * self.W[A == 1])
+            self.W[A == 1] = self.W[A == 1] / (1 + 1/10 * self.W[A == 1])
+
             self.beta = self.beta - \
-                        (self.learning_rate * self.gradient(X, A, self.W, self.beta) + self.lw * self.beta)
+                        (self.learning_rate * self.gradient_sigmoid(X, A, self.W, self.beta) + self.lw * self.beta)
             
             loss0 = loss
             loss = self.discrepancy(X, A, self.W)
             loss = np.linalg.norm(loss)
             self.loss = loss
+            
             t += 1
             
     def predict(self, X, A):
@@ -85,25 +85,30 @@ if __name__ == "__main__":
     data['x1'] = np.random.normal(size=n) 
     data['x2'] = np.random.normal(size=n) 
     data['noise'] = np.random.normal(scale=0.2, size=n)
-    data['y'] =  np.exp(0.5 * data['x2'] - 0.5 * data['x1'] + data['noise'] )
+    data['y'] =  np.exp( (data.x1 -data.x2)**3 + data['noise'] )
+    #np.exp(0.5 * data['x2'] - 0.5 * data['x1'] + data['noise'] )
     data['y'] = data['y'] / (1 + data['y'])
     data['u'] = np.random.uniform(0, 1, size=len(data))
-    data.loc[data.u < data.y, 'attr'] = -1
-    data.loc[data.u >= data.y, 'attr'] = 1
+    data.loc[data.u > data.y, 'attr'] = -1
+    data.loc[data.u < data.y, 'attr'] = 1
 
     # split train and test
     train = data.loc[np.random.choice(data.index, int(len(data)* 0.7), replace=True), :]
     test = data.drop(train.index)
 
 
-    mmd_estimator = mmd(lw=0.15, tol=0.1, learning_rate=0.005)
+    mmd_estimator = mmd(lw=0.01, tol=0.01, learning_rate=0.1)
     X = np.array(train[['x1', 'x2']])
     A = np.array(train.attr).ravel()
     mmd_estimator.fit(X, A)
+    print(mmd_estimator.beta)
+    print(mmd_estimator.loss)
 
     test_x = np.array(test[['x1', 'x2']])
     test_a = np.array(test.attr).ravel()
     test['weight'] = mmd_estimator.predict(test_x, test_a)
+    test['w'] = (1 - test['y']) / test['y']
+    print(test[test.attr == 1][['weight', 'w']])
 
     mask = (test.x1**2 + test.x2**2 <= 1)
     test = test[mask]

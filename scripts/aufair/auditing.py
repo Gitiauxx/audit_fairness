@@ -118,7 +118,6 @@ class detector(object):
 
     def certificate(self, X, y, pred, A, weights):
         predicted = self.auditor.predict(X)
-        print(predicted.mean())
         accuracy = weights[predicted == y].sum() / weights.sum()
     
         attr = weights[A == pred].sum() / weights.sum()

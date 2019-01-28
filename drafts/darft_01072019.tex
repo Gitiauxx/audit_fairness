@@ -353,12 +353,7 @@ A synthetic data is constructed by drawing independently two features $X_{1}$ an
 
 \bigskip
 \paragraph{Sample Complexity}
-First, the auditing algorithm $AMDF$ is trained using a short decision tree (with a maximm depth of 5) and a balanced data ($\mu=0$). Given our setting, for any value of $\nu$ we can compute the actual level of differential unfairness $\gamma_{o}$ and compare it to the value  $\gamma_{a}$ estimated by the auditing algorithm $AMDF$.  Figure \ref{fig: 1a} plots the average ratio $\gamma_{a}/\gamma_{o}$ after $100$ simulations for value of $\nu$ varying from $0$ to $1$. The experiment is conducted with data set of size $n\in \{5000, 10000, 20000, 30000\}$. As the classifier's unfairness increases, the auditor bias decreases since the ratio $\gamma_{a}/\gamma_{o}$  converges to one. This result is consistent with the correctness of algorithm \ref{algo: 1} proved in theorem \ref{thm: corr1}. As the sample size increases, the bias at low level of unfairness is reduced.
-
-\paragraph{Concept Class Complexity}
-Figure \ref{fig: 1b} runs a similar experiment with decision trees of depth varying from $5$ to $40$. At small level of unfairness, a less complex concept class $\mathbb{C}$ generates less bias in the estimate of $\gamma$. A shorter decision tree out-performs significantly deeper structures. This result, in line with the sample complexity presented in theorem \ref{thm: corr1} justifies the concept of multi fairness: in order to be statistically meaningful, the granularity of the sub-populations for which multi differential fairness is audited for is bounded by the complexity of $\mathbbm{C}$. 
-
-
+First, the auditing algorithm $AMDF$ is trained using a decision tree and a balanced data ($\mu=0$). Given our setting, for any value of $\nu$ we can compute the actual level of differential unfairness $\gamma_{o}$ and compare it to the value  $\gamma_{a}$ estimated by the auditing algorithm $AMDF$.  Figure \ref{fig: 1a} plots $\gamma_{a}$ against $\gamma_{o}$ after $100$ simulations for value of $\beta$ varying from $0$ to $0.5$ and fixed sub-population size $\alpha=0.1$. The experiment is conducted with data set of size $n\in \{1000, 5000\}$. The estimated unfairness level $\gamma_{a}$ is unbiased since the plots nearly align with $45\degree$ line. Figure \ref{fig: 1b} shows that this result is robust to changing the size $\alpha$ of the sub-population for which there is a fairness violation. Our auditing strategy is able to correctly measure unfairness even when it is limited to a group representing $1\%$ of the overall population. 
 
 \begin{figure}[h!]
 \begin{subfigure} {.475\linewidth}
@@ -367,8 +362,8 @@ Figure \ref{fig: 1b} runs a similar experiment with decision trees of depth vary
 \begin{axis}[
     xlabel={$\gamma_{o}$},
     ylabel={$\gamma_{a}$},
-    xmin=0, xmax=0.1,
-    ymin=0, ymax=0.1,
+    xmin=0, xmax=0.06,
+    ymin=0, ymax=0.06,
     xtick={0, 0.02, 0.04, 0.06, 0.08},
     ytick={0, 0.02, 0.04, 0.06, 0.08},
     legend pos=south east,
@@ -376,18 +371,19 @@ Figure \ref{fig: 1b} runs a similar experiment with decision trees of depth vary
     grid style=dashed,
     width=\linewidth
 ]
+\addplot[mark=none] table [x=gamma, y=gamma, col sep=comma]
+     {../results/synth_exp_sample_size_var.csv};
  \foreach\g in{1000, 5000}{
-                \addplot
-                plot [error bars/.cd, y dir = both, y explicit]
-                 table [discard if not={size}{\g}, x=gamma, y=estimated_gamma, y error= gamma_deviation , col sep=comma]
+                \addplot  
+                 table [discard if not={size}{\g}, x=gamma, y=estimated_gamma , col sep=comma]
      {../results/synth_exp_sample_size_var.csv};
             }
-            \legend{$n=1K$, $n=5K$}
+            \legend{$45\degree$ line, $n=1K$, $n=5K$}
 
 \end{axis}
 \end{tikzpicture}
-\caption{Effect of unfairness intensity on auditor's performance.}
-\label{fig: 1b}
+\caption{Effect of unfairness intensity $\beta$ on auditor's performance.}
+\label{fig: 1a}
 \end{subfigure}
  \hfill%
 \begin{subfigure} {.475\linewidth}
@@ -396,8 +392,44 @@ Figure \ref{fig: 1b} runs a similar experiment with decision trees of depth vary
 \begin{axis}[
     xlabel={$\gamma_{o}$},
     ylabel={$\gamma_{a}$},
-    xmin=0, xmax=0.1,
-    ymin=0, ymax=0.1,
+    xmin=0, xmax=0.04,
+    ymin=0, ymax=0.04,
+    xtick={0, 0.02, 0.04},
+    ytick={0, 0.02, 0.04},
+    legend pos=south east,
+    ymajorgrids=true,
+    grid style=dashed,
+    width=\linewidth
+]
+\addplot[mark=none] table [x=gamma, y=gamma, col sep=comma]
+     {../results/synth_exp_sample_size_var.csv};
+ \foreach\g in{1000, 5000}{
+                \addplot  
+                 table [discard if not={size}{\g}, x=gamma, y=estimated_gamma , col sep=comma]
+     {../results/synth_exp_sample_size_alpha.csv};
+            }
+            \legend{$45\degree$ line, $n=1K$, $n=5K$}
+
+\end{axis}
+\end{tikzpicture}
+\caption{Effect of sub-population size ($\alpha$) on auditor's performance.}
+\label{fig: 1b}
+\end{subfigure}
+\caption{Certifying $\gamma$- multi differential unfairness. The auditor is a decision tree whose depth is tuned using a $5$-fold cross validation; the unbalance parameter $\mu$ is set to $0$.  The plots show the average of $100$ experiments. Auditor's bias when estimating $\gamma_{a}$ is measured by deviations from the $45\degree$ line. Figure \ref{fig: 1a}: the size $\alpha$ of sub-population with a fairness violation is set to $0.1$; and, the intensity $\beta$ of the fairness violation varies from $0$ to $0.5$. Figure \ref{fig: 1b}: the size $\alpha$ of sub-population with a fairness violation varies from $0.01$ to $0.1$; and, the intensity $\beta$ of the fairness violation is set to $0.25$. } 
+\end{figure}
+
+\paragraph{Concept Class}
+Figure \ref{fig: 2a} runs a similar experiment but varies with decision trees of depth varying from $5$ to $40$. At small level of unfairness, a less complex concept class $\mathbb{C}$ generates less bias in the estimate of $\gamma$. A shorter decision tree out-performs significantly deeper structures. This result, in line with the sample complexity presented in theorem \ref{thm: corr1} justifies the concept of multi fairness: in order to be statistically meaningful, the granularity of the sub-populations for which multi differential fairness is audited for is bounded by the complexity of $\mathbbm{C}$. 
+
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$\gamma_{o}$},
+    ylabel={$\gamma_{a}$},
+    xmin=0, xmax=0.06,
+    ymin=0, ymax=0.06,
     xtick={0, 0.02, 0.04, 0.06, 0.08},
     ytick={0, 0.02, 0.04, 0.06, 0.08},
     legend pos=south east,
@@ -405,21 +437,22 @@ Figure \ref{fig: 1b} runs a similar experiment with decision trees of depth vary
     grid style=dashed,
     width=\linewidth
 ]
+\addplot[mark=none] table [x=gamma, y=gamma, col sep=comma]
+     {../results/synth_exp_sample_size_var.csv};
  \foreach\g in{1000, 5000}{
-                \addplot
-                plot [error bars/.cd, y dir = both, y explicit]
-                 table [discard if not={size}{\g}, x=gamma, y=estimated_gamma, y error= gamma_deviation , col sep=comma]
+                \addplot  
+                 table [discard if not={size}{\g}, x=gamma, y=estimated_gamma , col sep=comma]
      {../results/synth_exp_sample_size_var.csv};
             }
-            \legend{$n=1K$, $n=5K$}
+            \legend{$45\degree$ line, $n=1K$, $n=5K$}
 
 \end{axis}
 \end{tikzpicture}
-\caption{Effect of sub-population size $\alpha$ on auditor's performance.}
-\label{fig: 1b}
-\end{subfigure}
-\caption{Certifying $\gamma$- multi differential unfairness. Figure \ref{fig: 1a}: the auditor is a decision tree with depth $5$; sample size varies is $10K$ and the unbalance parameter, $\mu$ is set to $0.25$; Figure \ref{fig: 1b}: the auditor is a decision tree with depth varying from $5$ to $40$; sample size is $10K$. The auditor's bias is measured by the ratio $\gamma_{a}/\gamma_{o}$: a ratio of $1$ means that the auditor measures an unbiased level of unfairness.} 
+\caption{Effect of unfairness intensity $\beta$ on auditor's performance.}
+\label{fig: 2a}
+\caption{Certifying $\gamma$- multi differential unfairness. The auditor is a decision tree whose depth is tuned using a $5$-fold cross validation; the unbalance parameter $\mu$ is set to $0$.  The plots show the average of $100$ experiments. Auditor's bias when estimating $\gamma_{a}$ is measured by deviations from the $45\degree$ line. Figure \ref{fig: 1a}: the size $\alpha$ of sub-population with a fairness violation is set to $0.1$; and, the intensity $\beta$ of the fairness violation varies from $0$ to $0.5$. Figure \ref{fig: 1b}: the size $\alpha$ of sub-population with a fairness violation varies from $0.01$ to $0.1$; and, the intensity $\beta$ of the fairness violation is set to $0.25$. } 
 \end{figure}
+
 
 \paragraph{Unbalanced Data}
 To test the performance of our certifying algorithm on unbalanced data, we repeat the previous experiment with $\mu=0.25$. We compare the performance of four reweighting approaches: uniform weight ($UW$); estimated importance sampling weights ($IPW$); quantile weights ($QW$) with $10$ bins. Figure \ref{fig: 2a} shows that using absent of a reweighting scheme ($UW$) the certifying algorithm fails to estimate correctly the classifier's unfairness: for low level of unfairness ($\gamma_{o} < 2. 10^{-2}$), the bias in $\gamma_{a}$ is over $100\%$. 
@@ -431,20 +464,21 @@ To test the performance of our certifying algorithm on unbalanced data, we repea
 \begin{tikzpicture}
 \begin{axis}[
     xlabel={$\gamma_{o}$},
-    ylabel={$\gamma_{a}/\gamma_{o}$},
-    xmin=0, xmax=0.05,
-    ymin=0, ymax=1.6,
-    xtick={0, 0.01, 0.02, 0.03, 0.04, 0.05},
-    ytick={0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6},
+    ylabel={$\gamma_{a}$},
+    xmin=0, xmax=0.06,
+    ymin=0, ymax=0.06,
+    xtick={0, 0.02, 0.04, 0.06, 0.08},
+    ytick={0, 0.02, 0.04, 0.06, 0.08},
     legend pos=south east,
     ymajorgrids=true,
     grid style=dashed,
     width=\linewidth
 ]
- \foreach\g in{Uniform, IPW, IPW_Q, MMD}{
-                \addplot table [discard if not={balancing}{\g}, x=gamma, y=bias, col sep=comma] {../results/synth_exp_unbalance_2a.csv};
+
+ \foreach\g in{Uniform, IS, MMD, MMD_NET}{
+                \addplot table [discard if not={balancing}{\g}, x=unbalance, y=bias, col sep=comma] {../results/synth_exp_unbalance_3a.csv};
             }
-            \legend{$Uniform$,$IS$, $IS_Q$, $MMD$};
+            \legend{$Uniform$,$IS$, $MMD$, $MMD_NET$};
 \end{axis}
 \end{tikzpicture}
 \caption{Varying classifier's unfairness $\gamma_{o}$.}

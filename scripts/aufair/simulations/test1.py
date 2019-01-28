@@ -10,7 +10,7 @@ from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
 import matplotlib.pyplot as plt
 
-def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0.2, unbalance=0, nboot=10, parameter_grid=None):
+def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0.2, unbalance=0, nboot=10, parameter_grid=None, balancing=None, lw=10**(-4)):
     """
     Simulate a bivariate linear classification predicted by 
     a logistic regression. Noise is added using a gaussian process
@@ -32,9 +32,18 @@ def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0
 
     # simulate a synthethic data
     data = pd.DataFrame(index=np.arange(n))
-    data['attr'] = np.random.choice([-1, 1], n)
-    data['x1'] = np.random.normal(size=n)  - unbalance *data['attr']
+    data['x1'] = np.random.normal(size=n) 
     data['x2'] = np.random.normal(size=n) 
+    data['noise'] = np.random.normal(scale=sigma_noise, size=n)
+    
+    # create weights
+    data['w'] =  np.exp(unbalance * (data['x2'] - data['x1']) ** 2 + data['noise'] )
+    data['w'] = data['w'] / (1 + data['w'])
+    data['u'] = np.random.uniform(0, 1, size=len(data))
+    data.loc[data.u < data.w, 'attr'] = 1
+    data.loc[data.u >= data.w, 'attr'] = -1
+
+    # outcome
     data['noise'] = np.random.normal(scale=sigma_noise, size=n)
     data['y'] =  data['x2'] + data['x1'] + data['noise']  
     data['outcome'] = - 1 + 2 * (data.y >= 0).astype('int32')
@@ -49,7 +58,7 @@ def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0
     features = ['x1', 'x2']
     train_x = np.array(train[features])
     train_y = np.array(train['outcome'].ravel())
-    audited = LogisticRegression()
+    audited = LogisticRegression(solver='lbfgs')
     audited.fit(train_x, train_y)
 
     # test data is used to audit for fairness
@@ -93,7 +102,6 @@ def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0
         test_sim.loc[ind, 'predict'] = (-1) * test_sim.loc[ind, 'predict']
 
         # construct data
-        
         N = (1 - alpha1) / alpha1 * len(test_sim.loc[mask])
         test1 = test_sim.loc[mask, :]
         test_sim = test_sim.drop(test1.index)
@@ -104,11 +112,11 @@ def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0
         # auditing using a decision tree with x1 and x2
         protected = ('attr', 1)
         yname = 'predict'
-        audit = ad.detector_data(auditor, test_sim, protected, yname, n_test, stepsize=0.01, niter=0)
+        audit = ad.detector_data(auditor, test_sim, protected, yname, n=n_test, lw=lw, niter=0)
         audit.get_y()
 
         feature_auditing = ['x1', 'x2']
-        g, g_std = audit.certify_iter(features, 'predict',  nboot=nboot, parameter_grid=parameter_grid)
+        g, g_std = audit.certify_iter(features, 'predict',  nboot=nboot, parameter_grid=parameter_grid, balancing=balancing)
     
         results.loc[gamma, 'gamma'] =  alpha * nu
         results.loc[gamma,  'estimated_gamma'] = g
