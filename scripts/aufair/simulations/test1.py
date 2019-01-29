@@ -37,7 +37,7 @@ def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0
     data['noise'] = np.random.normal(scale=sigma_noise, size=n)
     
     # create weights
-    data['w'] =  np.exp(unbalance * (data['x2'] + data['x1']) ** 3 + data['noise'] )
+    data['w'] = np.exp(unbalance * (data['x2'] + data['x1']) ** 3 + data['noise'] )
     data['w'] = data['w'] / (1 + data['w'])
     data['u'] = np.random.uniform(0, 1, size=len(data))
     data.loc[data.u < data.w, 'attr'] = 1
@@ -45,7 +45,7 @@ def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0
 
     # outcome
     data['noise'] = np.random.normal(scale=sigma_noise, size=n)
-    data['y'] =  data['x2'] + data['x1']  + data['noise']  
+    data['y'] = data['x2'] + data['x1'] + data['noise']
     data['outcome'] = - 1 + 2 * (data.y >= 0).astype('int32')
 
     # split the data into train versus test set using a 0.7/0.3 ratio

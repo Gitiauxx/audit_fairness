@@ -1,0 +1,30 @@
+\begin{thebibliography}{1}
+
+\bibitem{calsamiglia2009decentralizing}
+Caterina Calsamiglia.
+\newblock Decentralizing equality of opportunity.
+\newblock {\em International Economic Review}, 50(1):273--290, 2009.
+
+\bibitem{dwork2012fairness}
+Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel.
+\newblock Fairness through awareness.
+\newblock In {\em Proceedings of the 3rd innovations in theoretical computer
+  science conference}, pages 214--226. ACM, 2012.
+
+\bibitem{Foulds2018}
+James Foulds and Shimei Pan.
+\newblock An intersectional definition of fairness.
+\newblock 07 2018.
+
+\bibitem{hardt2016equality}
+Moritz Hardt, Eric Price, Nati Srebro, et~al.
+\newblock Equality of opportunity in supervised learning.
+\newblock In {\em Advances in neural information processing systems}, pages
+  3315--3323, 2016.
+
+\bibitem{kim2018fairness}
+Michael~P Kim, Omer Reingold, and Guy~N Rothblum.
+\newblock Fairness through computationally-bounded awareness.
+\newblock {\em arXiv preprint arXiv:1803.03239}, 2018.
+
+\end{thebibliography}

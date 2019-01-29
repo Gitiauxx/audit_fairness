@@ -1,4 +1,9 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{calsamiglia2009decentralizing}
+Caterina Calsamiglia.
+\newblock Decentralizing equality of opportunity.
+\newblock {\em International Economic Review}, 50(1):273--290, 2009.
 
 \bibitem{dwork2012fairness}
 Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel.
@@ -43,5 +48,10 @@ Michael~J Kearns, Robert~E Schapire, and Linda~M Sellie.
 Michael~P Kim, Omer Reingold, and Guy~N Rothblum.
 \newblock Fairness through computationally-bounded awareness.
 \newblock {\em arXiv preprint arXiv:1803.03239}, 2018.
+
+\bibitem{kleinberg2016inherent}
+Jon Kleinberg, Sendhil Mullainathan, and Manish Raghavan.
+\newblock Inherent trade-offs in the fair determination of risk scores.
+\newblock {\em arXiv preprint arXiv:1609.05807}, 2016.
 
 \end{thebibliography}

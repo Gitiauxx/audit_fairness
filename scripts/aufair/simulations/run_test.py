@@ -343,7 +343,7 @@ def figure3a():
             results_list.append(results)
     
     report = pd.concat(results_list, axis=0)
-    report.to_csv('../../../results/synth_exp_unbalance_3a.csv')
+    report.to_csv('../../../results/synth_exp_unbalance_3a_tests.csv')
 
 def figure3b():
     nu_max = 11

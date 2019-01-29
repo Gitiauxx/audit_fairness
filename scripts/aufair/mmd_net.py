@@ -3,7 +3,6 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout, Input, Activation
 from keras.models import Model
 from keras import backend as K
-from keras_layer_normalization import LayerNormalization
 from keras.utils.generic_utils import get_custom_objects
 from keras.regularizers import L1L2
 from keras.optimizers import SGD
