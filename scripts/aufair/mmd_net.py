@@ -6,13 +6,14 @@ from keras import backend as K
 from keras.utils.generic_utils import get_custom_objects
 from keras.regularizers import L1L2
 from keras.optimizers import SGD
+from keras_layer_normalization import LayerNormalization
 
 import numpy as np
 import tensorflow as tf
 
 class MMD(object):
 
-    def __init__(self, n_features, target=None, weight=None, lw=0.1, tol=0.001, conv=10**(-8)):
+    def __init__(self, n_features, target=None, weight=None, lw=0.01, tol=0.001, conv=10**(-8)):
 
         self.lw = lw
         self.conv = conv
@@ -21,7 +22,7 @@ class MMD(object):
         self.target = tf.convert_to_tensor(target, dtype=tf.float32)
         self.weight = tf.convert_to_tensor(weight, dtype=tf.float32)
         self.model = self.create_model()
-        self.model_complete = self.create_complete_model()
+        #self.model_complete = self.create_complete_model()
         
         
 
@@ -35,33 +36,36 @@ class MMD(object):
 
     def kera_cost(self, phi):
 
-
+        
         def k_cost(y_true, y_pred):
-            n1 = K.sum(y_true, axis=0)
-            n2 = K.sum(1 - y_true, axis=0)
 
-            #calculate the 3 MMD terms
-            source = y_true * y_pred 
+            n1 = K.sum(y_true)
+            n2 = K.sum(1 - y_true)
+            
+            #calculate MMD terms
+            source = y_true * y_pred
             source = phi * source[:, tf.newaxis]
-            target = (1 - y_true) 
+            target = 1 - y_true
             target = phi * target[:, tf.newaxis]
-            discrepancy = 1 / n1 * K.sum(source, axis=0) - 1/ n2 * K.sum(target, axis=0)
+            discrepancy = 1 / n1 * K.sum(source, axis=0) - 1 / n2 * K.sum(target, axis=0)
             
             #calculate the bias MMD estimater (cannot be less than 0)
-            mmd_distance = K.sum(discrepancy * discrepancy) 
-            return mmd_distance
+            mmd_distance = K.sum(discrepancy * discrepancy)
+            return K.sqrt(mmd_distance)
         
         return k_cost
 
-    def ent_cost(self, a, w):
+    def ent_cost(self, source, target):
+
+        k_cost = self.kera_cost(source, target)
 
         def e_cost(y_true, y_pred):
-            return -K.sum((1 - a) * (y_true * K.log(y_pred) + (1 - y_true)  * K.log(1 - y_pred))+ \
-                    a  * (y_true * K.log(y_pred) + (1 - y_true)  * K.log(1 - y_pred)))
+            return  -K.mean((y_true * K.log(y_pred) + (1 - y_true) * K.log(1 - y_pred))) + \
+                    k_cost(y_true, y_pred)
         return e_cost
 
     def custom_activation(self, x):
-        return K.exp(x) / (1 + K.exp(x))
+        return K.exp(x) / (1 + K.exp(x) / 10)
 
     def get_layer_gradient(self, model, inputs, outputs, layer=-1):
         grads = model.optimizer.get_gradients(model.total_loss, model.layers[layer].output)
@@ -78,16 +82,16 @@ class MMD(object):
         inputs = Input(shape=(self.n_features, ), name='input')
         
         # 4 layers fully connected network
-        layer1 = Dense(8, activation='elu')(inputs)
-        layer2 = Dense(8, activation='elu')(layer1)
-        layer3 = Dense(8, activation='elu')(layer2)
-        layer4 = Dense(8, activation='elu')(layer3)
+        layer1 = Dense(8, activation='relu')(inputs)
+        layer2 = Dense(8, activation='relu')(layer1)
+        layer3 = Dense(8, activation='relu')(layer2)
+        layer4 = Dense(8, activation='relu')(layer3)
         
-        weight_out = Dense(1, activation='sigmoid', name='weight', use_bias=False,
-                        kernel_regularizer=L1L2(l1=0.0, l2=0.001))
-        outputs = weight_out(layer4)
+        representation = Dense(4, activation='relu', name='representation',
+                        kernel_regularizer=L1L2(l1=0.0, l2=self.lw))(layer4)
+        outputs = Dense(1, activation=self.custom_activation, name='weight')(representation)
         model = Model(inputs, outputs) 
-        model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+        model.compile(loss=self.kera_cost(outputs), optimizer='adam')
 
         return model    
 
@@ -99,26 +103,30 @@ class MMD(object):
         layer1 = Dense(8, activation='elu')(inputs)
         layer2 = Dense(8, activation='elu')(layer1)
         layer3 = Dense(8, activation='elu')(layer2)
-        layer4 = Dense(8, activation='elu')(layer3)
-        
-        # weight layer 
-        wlayer1 = Dense(8, activation='elu')(layer4)
-        weight_out = Dense(1, activation='sigmoid', name='weight', 
-                        kernel_regularizer=L1L2(l1=0.0, l2=0.001))(wlayer1)
+        source = Dense(8, activation='elu', name='source',
+                    kernel_regularizer=L1L2(l1=0.0, l2=0.001))(layer3)
 
+        inputs2 = Input(shape=(self.n_features,), name='input2')
+        
+        # 4 layers fully connected representation-layer
+        layer12 = Dense(8, activation='elu')(inputs2)
+        layer22 = Dense(8, activation='elu')(layer12)
+        layer32 = Dense(8, activation='elu')(layer22)
+        target = Dense(8, activation='elu', name='target',
+                    kernel_regularizer=L1L2(l1=0.0, l2=0.001))(layer32)
+        
         # fairness
-        flayer1 = Dense(8, activation='elu')(layer4)
+        flayer1 = Dense(8, activation='elu')(source)
         fairness_out = Dense(1, activation='sigmoid', name='fairness', 
                 kernel_regularizer=L1L2(l1=0.0, l2=0.001))(flayer1)
 
         # complete architecture
-        model = Model(inputs=inputs, outputs=[weight_out, fairness_out]) 
+        model = Model(inputs=[inputs, inputs2], outputs=[fairness_out]) 
 
         # register model
-        model.compile(loss={'fairness': self.ent_cost(self.target, self.weight), 
-                            'weight': 'binary_crossentropy'}, 
+        model.compile(loss={'fairness': self.ent_cost(source, target)}, 
                             optimizer='adam',
-                            metrics={'fairness': 'accuracy', 'weight': 'accuracy'})
+                            metrics={'fairness': 'accuracy'})
 
         return model
 

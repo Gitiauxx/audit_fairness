@@ -37,7 +37,7 @@ test['srace'] =  test['race'].astype('category').cat.codes
 test['income'] = -2 * test.income + 1
 
 feature_list = ['age', 'workclass', 'education',  'occupation', 
-		'hours-per-week', 'capital-gain', 'education-num', 'srace']
+		'hours-per-week', 'capital-gain', 'education-num', 'srace', 'gender', 'marital-status']
 outcome = 'income'
 protected = {'sex': [' Male', ' Female'], 'race':[' Black', ' White']}
 
@@ -60,14 +60,14 @@ test['predict'] = logreg.predict(test_x)
 auditor = DecisionTreeClassifier(max_depth=20, min_samples_leaf=0.01)
 
 feature_auditing = [ 'age', 'workclass', 'education',  'occupation', 
-		'hours-per-week', 'capital-gain', 'education-num', 'srace']
+		'hours-per-week', 'capital-gain', 'education-num', 'marital-status', 'gender']
 for f in feature_auditing:
 	test[f] = (test[f] - test[f].mean())/ np.sqrt(test[f].var())
 
 audit = ad.detector_data(auditor, test, protected, yname, lw=0.005, niter=0)
 audit.get_y()
 
-g, g_std = audit.certify_iter(feature_auditing, 'predict',  nboot=1, balancing='MMD')
+g, g_std = audit.certify_iter(feature_auditing, 'predict',  nboot=1, balancing='MMD_NET')
 print(g)
 
 """

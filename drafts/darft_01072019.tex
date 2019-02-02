@@ -52,15 +52,40 @@
 
 \begin{document}
 \maketitle
-
 \section{Introduction}
 Machine learning algorithms are used to make support decisions that have adverse consequences on an individual's life: for example, classifiers have used to support the judicial when deciding whether a criminal offender is likely to recommit a crime; or lender to determine the default risk of a potential borrower. At issue is whether classifiers are fair in the sense of \cite{calsamiglia2009decentralizing} , that is whether classifiers' outcomes are independent of \textit{exogenous irrelevant characteristics} (\cite{calsamiglia2009decentralizing}) or protected attributes, including race and gender. Abundant examples of classifiers' discrimination can be found in ... 
+
+\bigskip
+The question is how much additional harm does a black box classifier whose design, data and validation procedures are unknown. If the models have been tinkered with to obtain specific results or maliciously or inadvertently. Notion of constability (Hirsch 2017) and ability to reason about the classifier's outcomes. Different impact versus different treatment? In Ricci vs Stefano, the Suppreme upheld the results of the tests. Are we looking at different treatment instead of different impacts?
+
+Disparate impacts paper: they estimate whether we can predict protected attributes using data $D$. We argue for a disparate treatment measure that compare the additional disparate impacts caused by the classifier's outcome. 
+
+\bigskip
+Ricci and Destefano: " liable for disparate impact discrimination only if the exams at issue were not job related and consistent with business necessity, ...." can we link this to choosing relevant auditing features, that are related/consistent with the task at play.
+
+Higher priority of disparate treatment: "the City can avoid disparate-impact liability based on
+the strong basis in evidence that, had it not certified the results, it
+would have been subject to disparate-treatment liability"
+
+
 
 \bigskip
 However, despite a growing literature on classifier's fairness, there are at least two limitations to a systematic approach in defining what classifier means [frame this in terms of bounds: a computation bound and a data/social bound]. First, classifiers are trained and/or audited using samples from distribution that are not independent across external characteristics like race or gender. In fact, we show in this paper that for every classifier with non-trivial accuracy, there exists an imbalanced distribution for which the classifier's outcome will depend on protected attributes for some individuals (see also \cite{kleinberg2016inherent}).This forms the first bound to classifier's fairness, a social bound. Secondly, aggregate notion of fairness that guarantees some definition of fairness to hold on average is not sufficient, since it can hide significant unfairness at the individual level. But only sub-populations that can be efficiently computed can be audited for classifier's fairness. This forms a so-called computational bound to fairness.
 
 \bigskip
 This paper introduces a notion of individual differential fairness that makes explicit the information-theory bound. Individual differential fairness is a guarantee that a classifier's outcomes are nearly mean-independent of protected attributes conditional on an individual's features. Borrowing from the differential privacy literature, this definition can be interpreted as a privacy guarantee: a classifier's outcome will leak negligible information about the distribution of protected attributes among individuals sharing the same non-protected features. 
+
+
+Notes: race as a social/legal construct... even with identical feature, two individuals identified in different races will have a different experiment. Directly deal with the social embeddedness of race. Power to communities to understand what the algorithm does. Issues with counterfactual: what is the counterfactual? Yourself with white parents? richer parents.....? It stipulates the source of unfairness but it does not help ... Can AI account for social embeddedness?
+
+Fairness: impartial and just treatment without discrimination or favoritism. Bias and fairness is not interchangeable. But bias is a feature of statistical models; fairness is a feature of human value judgments. Better question: when is fairness instead of what is fairness? 
+
+Look into influence functions and Mitigating unwanted biases with adversarial learning
+
+Challenges to formal philosophical models: high unfairness on a small population versus spread of little of unfairness?
+
+Practical applications......... and due diligence
+
 
 \section{Multi-Differential Fairness}
 
@@ -96,18 +121,34 @@ For $\delta \in [0, 1)$, a classifier $f$ is $\ \delta-$ differential fair if fo
 
 The parameter $\delta$ controls the amount of information leaked by $f$ on the distribution of protected attributes of an individual with auditing feature $x$: larger value of $\delta$ implies larger leakage. For example, for a classifier that does not satisfy the fairness condition \ref{def: idf} for some $\delta=\ln(2)$, there exist individuals $x$ that are twice as likely to be classified $y=1$ if $A=1$ than if $A=-1$. In that example, the classifer's outcome $y$ leaks information related to $A$ that were not leaked by $x$ alone.   
 
-\paragraph{Classifier's versus data's bias}
-The advantage of individual differential fairness is to distinguish the unfairness caused by $f$  from the one embedded already in the data. To illustrate this point, note that the fairness condition in \ref{def: idf} is equivalent to:
+\paragraph{Disparate Treatment versus Disparate Impact}
+The advantage of individual differential fairness is to distinguish the unfairness caused by $f$  from the one already embedded in the data. To illustrate this point, note that the fairness condition in \ref{def: idf} is equivalent to:
 \begin{equation}
     \frac{Pr[A=a|x, y]}{Pr[A=a^{'}|x, y]} \leq e^{\delta}\frac{Pr[A=a|x]}{Pr[A=a^{'}|x]}.
 \end{equation}
-Auditing features might strongly correlate with protected attributes (e.g. zipcodes densely populated by a minority) because the data reflects social, cultural and historical biases. Individual differential fairness imposes a restriction on the classifier $f$ to not exacerbate those biases.  
+The right hand side ratio characterizes the information leaks by feature $x$ on protected attributes. For example, a ratio larger than one indicates that an individual with feature $x$ is more likely to be of protected attribute $A=a$: zipcodes of neighborhoods densely populated with a minority.  The issue is whether the classifier exacerbates the leakage. Auditing features might strongly correlate with protected attributes (e.g. zipcodes densely populated by a minority) because the data reflects social, cultural and historical biases. Individual differential fairness imposes a restriction on the classifier $f$ to not exacerbate those biases. 
+
+\bigskip
+One issue is whether the classifier can undo some of the leakages occurring via the features $x$.  The answer is no, unless the data is balanced, i.e $Pr[A=a|x] = Pr[A\neq a]| x]$. 
+
+\begin{thm}
+Let $x\in \mathfrak{X}$ such that $Pr[A=a|x] /Pr[A\neq a] > 1 + \mu$ with $\mu \geq 0$. Then,
+
+\begin{equation}
+ \frac{Pr[A=a|x, y]}{Pr[A=a^{'}|x, y]} < 1 + \mu \iff \frac{Pr[Y=y|x, A\neq a]}{Pr[Y=y|x, A=a]} > 1
+ \end{equation}
+\end{thm}
+
+[placeholder: how this result relates to \cite{kleinberg2016inherent}] The result has negative consequences for fairness in classification. If feature $x$ leaks information related to the protected attribute $A$, then the classifier's outcomes cannot be $0$-individual differential fair if the classifier reduces the leakage occurring through $x$. 
 
 \paragraph{Relation with differential privacy}
-There is an analogy between individual differential fairness for classifiers and differential privacy for database queries. Differential privacy as in  \cite{dwork2014algorithmic} guarantees that outcomes from a query are not distinguishable identical when computed on two adjacent databases that differs only by one record. The fairness condition \eqref{eq: idf} implies that outcomes from a classifier are not distinguishable for individuals that differ only by their protected attributes. [placeholder: why does it matter? Possibly, (i) merges the field of fairness with privacy, a field where computer science is "more comfortable" with; (ii) ] 
+There is an analogy between individual differential fairness for classifiers and differential privacy for database queries. Differential privacy as in  \cite{dwork2014algorithmic} guarantees that outcomes from a query are not distinguishable identical when computed on two adjacent databases that differs only by one record. The fairness condition \eqref{eq: idf} implies that outcomes from a classifier are not distinguishable for individuals that differ only by their protected attributes. [placeholder: why does it matter? Possibly, (i) merges the field of fairness with privacy, a field where computer science is "more comfortable" with; (ii). Why is there no balance issue in differential privacy? ] 
 
 \paragraph{Individual Fairness}
 The definition \ref{def: idf} is an individual level definition of fairness. Compared to the notion of individual fairness in \cite{dwork2012fairness}, individual differential fairness does not require to explicit a similarity metric. This is important because defining a similarity metric has been the main limitation of applying the concept of individual fairness.
+
+\paragraph{Other notion of fairness}
+need to look at disparate impact (an aggregate version of \ref{def: idf}. 
 
 \subsection{Multi-differential fairness}
 Although useful, the notion of individual differential fairness suffers from one limitation: it cannot be computationally efficiently audited for. Looking for violations of individual differential fairness will require searching over a set of $2^{|\mathfrak{X}|}$ individuals. Moreover, if $\mathfrak{X}$ is rich enough empirically, a sample from a distribution over $\mathfrak{X} \times \mathfrak{A}\times \{-1, 1\}$ has a negligible probability to have two individuals with the same auditing feature $x$ and different protected attributes $a$. 

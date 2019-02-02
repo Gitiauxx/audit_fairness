@@ -10,7 +10,7 @@ from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
 import matplotlib.pyplot as plt
 
-def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0.2, unbalance=0, nboot=10, parameter_grid=None, balancing=None, lw=10**(-4)):
+def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0.0, unbalance=0, nboot=10, parameter_grid=None, balancing=None, lw=10**(-4)):
     """
     Simulate a bivariate linear classification predicted by 
     a logistic regression. Noise is added using a gaussian process
@@ -34,18 +34,22 @@ def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0
     data = pd.DataFrame(index=np.arange(n))
     data['x1'] = np.random.normal(size=n) 
     data['x2'] = np.random.normal(size=n) 
+    data['x3'] = np.random.normal(size=n) 
+    data['x4'] = np.random.normal(size=n) 
     data['noise'] = np.random.normal(scale=sigma_noise, size=n)
     
     # create weights
-    data['w'] = np.exp(unbalance * (data['x2'] + data['x1']) ** 3 + data['noise'] )
+    data['w'] = np.exp(unbalance * (data['x2'] + data['x1']) ** 2 )
     data['w'] = data['w'] / (1 + data['w'])
+   
     data['u'] = np.random.uniform(0, 1, size=len(data))
     data.loc[data.u < data.w, 'attr'] = 1
     data.loc[data.u >= data.w, 'attr'] = -1
 
     # outcome
     data['noise'] = np.random.normal(scale=sigma_noise, size=n)
-    data['y'] = data['x2'] + data['x1'] + data['noise']
+    data['y'] = (data['x2'] + data['x1'] + data['noise']) ** 3
+    #data['x2'] + data['x1'] + data['noise']
     data['outcome'] = - 1 + 2 * (data.y >= 0).astype('int32')
 
     # split the data into train versus test set using a 0.7/0.3 ratio
@@ -55,7 +59,7 @@ def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0
     test = data
 
     # train data is used to fit the audited learner
-    features = ['x1', 'x2']
+    features = ['x1', 'x2', 'x3', 'x4']
     train_x = np.array(train[features])
     train_y = np.array(train['outcome'].ravel())
     audited = LogisticRegression(solver='lbfgs')

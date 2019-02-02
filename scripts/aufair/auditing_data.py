@@ -15,7 +15,7 @@ pd.options.mode.chained_assignment = None
 
 class detector_data(object):
 
-    def __init__(self, auditor, data, protected, yname, n=None, lw=0.001, stepsize=None, niter=100, min_size=0.01):
+    def __init__(self, auditor, data, protected, yname, n=None, lw=0.01, stepsize=None, niter=100, min_size=0.01):
         self.data = data
         self.auditor = auditor
         self.stepsize = stepsize
@@ -33,6 +33,11 @@ class detector_data(object):
         data['weight'] = 1
         data['label'] = data[self.protected_attribute] * data[self.yname]
         self.data = data
+
+    def get_representation(self, model):
+        get_representaiton_layer_output = K.function([model.get_layer('input').input],
+                                  [model.get_layer('representation').output])
+        self.representation = get_representaiton_layer_output
   
     def split_train_test(self, features, seed=None):
         if seed is not None:
@@ -116,7 +121,6 @@ class detector_data(object):
         mod = mmd.mmd(lw=self.lw, tol=0.01, learning_rate=0.01)
         mod.fit(X, A)
         train['weight'] = mod.predict(X, A)
-        print(mod.loss)
         
         test_x = np.array(test[features])
         test_a = np.array(test.attr).ravel()
@@ -152,29 +156,29 @@ class detector_data(object):
         A = (A + 1) / 2
         mmd = MMD(len(features), target=A, weight=np.array(train.weight).ravel(), lw=self.lw)
         mod = mmd.model
-        mod.fit(X, A, epochs=5, batch_size=8, verbose=2)
+        mod.fit(X, A, epochs=6, batch_size=512, verbose=2)
         train['wt'] = mod.predict(X)
-        train.loc[train.attr == 1, 'weight'] = (1 - train['wt']) /  train['wt']
+        train.loc[train.attr == 1, 'weight'] = train['wt']
+        self.get_representation(mod)
         
-        test_x = np.array(test[features])
+        rep_x = self.representation([np.array(test[features]), 1])[0]
         test_a = np.array(test.attr).ravel()
+        test_x =  np.array(test[features])
         test['wt'] = mod.predict(test_x)
-        test.loc[test.attr == 1, 'weight'] = (1 - test['wt']) /  test['wt']
-        print(K.eval(mmd.kera_cost(test_x)((test_a + 1)/ 2, np.array(test.weight))))
-    
+        test.loc[test.attr == 1, 'weight'] = test['wt']
+      
         # search for unfairness ceritficate
         detect = ad.detector(self.auditor, niter=self.niter, stepsize=self.stepsize)
-        train_x = np.array(train[features])
+        train_x = self.representation([np.array(train[features]), 1])[0]
         train_y = np.array(train['label']).ravel()
         train_weights = np.array(train.weight).ravel()
         detect.certify(train_x, train_y, train_weights)
 
-        test_x =  np.array(test[features])
+        test_x =  self.representation([np.array(test[features]), 1])[0]
         test_y = np.array(test['label']).ravel()
         test_weights = np.array(test.weight).ravel()
-        test_a = np.array(test[pa]).ravel()
         pred =  np.array(test[yname]).ravel()
-        gamma, _ = detect.certificate(test_x, test_y, pred, test_a, test_weights)
+        gamma, acc = detect.certificate(test_x, test_y, pred, test_a, test_weights)
 
         return gamma
 
@@ -188,40 +192,49 @@ class detector_data(object):
 
         # mmd method to estimate weights
         X = np.array(train[features])
-        y = np.array(train.label).ravel()
+        y = np.array(train[yname]).ravel()
         y = (y + 1)/ 2        
         A = np.array(train[pa])
         A = (A + 1) / 2
         
 
         t = 0
-        while t < 5:
+        while t < 1:
             W = np.array(train.weight).ravel()
             mmd = MMD(len(features), target=A, weight=W, lw=self.lw)
             mod = mmd.model_complete
-            mod.fit(X, {'weight': A, 'fairness': y}, epochs=1, batch_size=8, verbose=2)
-            train['wt'] = mod.predict(X)[0].ravel()
-            train.loc[train.attr == 1, 'weight'] = train['wt']
-
+            mod.fit({'input': X[A==1][:5000, :], 'input2': X[A == 0][:5000, :]}, {'fairness': y[A== 1][:5000]}, 
+                    epochs=10, batch_size=32, verbose=2)
+            self.get_representation(mod)
+            rep_x = self.representation([X[A==1][:5000, :], 1])[0]
+            rep_x1 = self.representation([X[A==-1][:5000, :], 1])[0]
+            print(K.eval(mmd.kera_cost(rep_x, rep_x1)(A, W)))
+            #train['wt'] = mod.predict(X)[0].ravel()
+            #train.loc[train.attr == 1, 'weight'] = (1 - train['wt']) /  train['wt']
             t += 1
         
         
         test_x = np.array(test[features])
         test_a = np.array(test.attr).ravel()
-        test_y = np.array(test.label).ravel()
-        predicted = mod.predict(test_x)
-        test['wt'] = predicted[0]
-        test.loc[test.attr == 1, 'weight'] = (1 - test['wt']) /  test['wt']
+        test_y = np.array(test[yname]).ravel()
+        
+        predicted = mod.predict({'input': test_x[test_a == 1][:1500, :], 'input2': test_x[test_a == -1][:1500, :]})
+        #test['wt'] = predicted[0]
+        #test.loc[test.attr == 1, 'weight'] = (1 - test['wt']) /  test['wt']
 
-        print(K.eval(mmd.kera_cost(test_x)((test_a + 1) / 2, np.array(test.weight))))
+        #self.get_representation(mod)
+        #rep_x = self.representation([test_x, 1])[0]
+        #print(K.eval(mmd.kera_cost(rep_x)((test_a + 1) / 2, np.array(test.weight))))
 
         # compute unfairness
         weights = np.array(test.weight).ravel()
         pred =  np.array(test[yname]).ravel()
-        score = 2 * (predicted[1].ravel() >= 0.5).astype('int32') - 1
+        score = 2 * (predicted.ravel() >= 0.5).astype('int32') - 1
+        print(score)
+        print(score[score == test_y[test_a == 1][:1500]].shape[0] / score.shape[0])
         accuracy = weights[score == test_y].sum() / weights.sum()
         attr = weights[test_a == pred].sum() / weights.sum()
-        gamma = (accuracy - 1 + attr) / 4
+        gamma = (2 * accuracy - 1 ) / 4
     
         return gamma
         
