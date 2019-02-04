@@ -53,7 +53,23 @@
 \begin{document}
 \maketitle
 \section{Introduction}
-Machine learning algorithms are used to make support decisions that have adverse consequences on an individual's life: for example, classifiers have used to support the judicial when deciding whether a criminal offender is likely to recommit a crime; or lender to determine the default risk of a potential borrower. At issue is whether classifiers are fair in the sense of \cite{calsamiglia2009decentralizing} , that is whether classifiers' outcomes are independent of \textit{exogenous irrelevant characteristics} (\cite{calsamiglia2009decentralizing}) or protected attributes, including race and gender. Abundant examples of classifiers' discrimination can be found in ... 
+Machine learning algorithms are more and more used to make support decisions that have adverse consequences on an individual's life: for example, classifiers have supported the judicial system to decide whether a criminal offender is likely to recommit a crime; or lender to determine the default risk of a potential borrower. At issue is whether classifiers are fair in the sense of \cite{calsamiglia2009decentralizing} , that is whether classifiers' outcomes are independent of \textit{exogenous irrelevant characteristics} (\cite{calsamiglia2009decentralizing}) or protected attributes, including race and gender. Abundant examples of classifiers' discrimination can be found in many applications (see \cite{NY2017}, \cite{atlantic2016}, \cite{ProPublica2016}). A ProPublica story (\cite{ProPublica2016}) reported that a machine learning based risk assessment tool, COMPASS, assigns higher risk to Afro-American defendants than they actually have; and lower risk to Caucasian defendants.
+
+\bigskip
+Contestability is challenging for potential victims of machine learning discrimination because (i) many of assessment tools are proprietary and are not necessarily required to be transparent about their functioning; and, (ii) there is, at least in the United States, a paper trail of legal cases that have put the burden on the plaintiff to demonstrate disparate treatment, that is to establish that characteristics irrelevant to the task affect the algorithm's outcomes (e.g. see \textit{Ricci et al. vs DeStefano et al.}\cite{Ricci}, \textit{Loomis vs. the State of Wisconsin} \cite{Loomis}). In  \textit{Loomis vs. the State of Wisconsin} (\cite{Loomis}) , the Wisconsin Supreme Court rules in favor of the use of COMPASS in recidivism risk assessment because, other among things, the plaintiff " the defendant failed to meet his burden of showing that the sentencing court actually relied on gender as a factor in sentencing". 
+	
+\bigskip
+ This paper defines a framework -- differential fairness -- and provides a tool for individuals to contest the outcomes of black boxes classifiers whose design, inputs and validation procedures are unknown. Differential fairness is a guarantee that a classifier's outcome are nearly independent of protected attributes conditional on features relevant to the decision making process. For example, 
+ 
+ 
+  
+ 
+ 
+ \bigskip
+ In this paper, we offer  and an auditing tool --[I need a name] -- that rigorously estimates with some statistical confidence whether a classifier's outcome would differ if the individual had different protected attributes. Differential fairness is a guarantee that a classifier's outcome is indistinguishable whether 
+ 
+ 
+ would have been different Algorithms-based assessment tools has been widely used because they were thought to be less discriminatory than even the most well meaning human being.  
 
 \bigskip
 The question is how much additional harm does a black box classifier whose design, data and validation procedures are unknown. If the models have been tinkered with to obtain specific results or maliciously or inadvertently. Notion of constability (Hirsch 2017) and ability to reason about the classifier's outcomes. Different impact versus different treatment? In Ricci vs Stefano, the Suppreme upheld the results of the tests. Are we looking at different treatment instead of different impacts?
@@ -87,7 +103,7 @@ Challenges to formal philosophical models: high unfairness on a small population
 Practical applications......... and due diligence
 
 
-\section{Multi-Differential Fairness}
+\section{Individual and Multi-Differential Fairness}
 
 \subsection{Preliminary}
 
@@ -108,47 +124,41 @@ Assumption \ref{ass: 1} guarantees that the distribution of auditing features co
 
 \subsection{Individual Differential Fairness}
 \paragraph{Individual Differential Fairness} 
-We define differential fairness as the guarantee that a classifier leaks with negligible probability the protected attribute of an individual.
+We define differential fairness as the guarantee that conditional on features relevant to the tasks, a classifier's outcome is nearly independent of protected attributes: 
 
 \begin{defn}(Individual Differential Fairness)
 \label{def: idf}
-For $\delta \in [0, 1)$, a classifier $f$ is $\ \delta-$ differential fair if for all $x\in\mathfrak{X}$ and all $a\neq a^{'}\in \mathfrak{A}$
+For $\delta \in [0, 1)$, a classifier $f$ is $\ \delta-$ differential fair if for all $x\in\mathfrak{X}$ and all $a\in \mathfrak{A}$ and for all $y\in\{-1, 1\}$
 \begin{equation}
 \label{eq: idf}
-    Pr[Y|a, x] \leq e^{\delta}Pr[Y|a^{'}, x]
+   e^{-\delta} \leq \frac{Pr[Y=y|A =a, x]}{Pr[Y=y|A\neq a, x]} \leq e^{\delta}
 \end{equation}
 \end{defn}
 
-The parameter $\delta$ controls the amount of information leaked by $f$ on the distribution of protected attributes of an individual with auditing feature $x$: larger value of $\delta$ implies larger leakage. For example, for a classifier that does not satisfy the fairness condition \ref{def: idf} for some $\delta=\ln(2)$, there exist individuals $x$ that are twice as likely to be classified $y=1$ if $A=1$ than if $A=-1$. In that example, the classifer's outcome $y$ leaks information related to $A$ that were not leaked by $x$ alone.   
+The parameter $\delta$ controls how much the distribution of the classifier's outcome $Y$ depends on protected attributes $A$ conditional on auditing features $x$: larger value of $\delta$ implies larger leakage. For example, for a classifier that does not satisfy the fairness condition \ref{def: idf} with $\delta=\ln(2)$, there exist individuals $x$ that are twice as likely to be classified $y=1$ if $A=1$ than if $A=-1$. 
 
-\paragraph{Disparate Treatment versus Disparate Impact}
-The advantage of individual differential fairness is to distinguish the unfairness caused by $f$  from the one already embedded in the data. To illustrate this point, note that the fairness condition in \ref{def: idf} is equivalent to:
+\paragraph{Differential Fairness and Distance of Distributions}
+Since the space of auditing features $\mathfrak{X}$ does not necessarily correspond to the one used to trained the classifier $f$, for any $x\in \mathfrak{X}$, the auditor access samples drawn from two distributions $Y|A=a, x$ and $Y|a\neq a, x$. Individual fairness constraints these two distributions too be nearly identical when distribution similarity is defined by max-divergence. Formally, the max divergence of two distributions $P$ and $Q$ is defined as 
+
 \begin{equation}
-    \frac{Pr[A=a|x, y]}{Pr[A=a^{'}|x, y]} \leq e^{\delta}\frac{Pr[A=a|x]}{Pr[A=a^{'}|x]}.
+D_{\infty}(P||Q) = \max_{y\in Y}\ln\left(\frac{Pr[P=y]}{Pr[Q=y]}\right)
 \end{equation}
-The right hand side ratio characterizes the information leaks by feature $x$ on protected attributes. For example, a ratio larger than one indicates that an individual with feature $x$ is more likely to be of protected attribute $A=a$: zipcodes of neighborhoods densely populated with a minority.  The issue is whether the classifier exacerbates the leakage. Auditing features might strongly correlate with protected attributes (e.g. zipcodes densely populated by a minority) because the data reflects social, cultural and historical biases. Individual differential fairness imposes a restriction on the classifier $f$ to not exacerbate those biases. 
-
-\bigskip
-One issue is whether the classifier can undo some of the leakages occurring via the features $x$.  The answer is no, unless the data is balanced, i.e $Pr[A=a|x] = Pr[A\neq a]| x]$. 
-
-\begin{thm}
-Let $x\in \mathfrak{X}$ such that $Pr[A=a|x] /Pr[A\neq a] > 1 + \mu$ with $\mu \geq 0$. Then,
-
+The fairness condition in \ref{def: idf} can be equivalently rewritten in terms of max divergence as:
 \begin{equation}
- \frac{Pr[A=a|x, y]}{Pr[A=a^{'}|x, y]} < 1 + \mu \iff \frac{Pr[Y=y|x, A\neq a]}{Pr[Y=y|x, A=a]} > 1
- \end{equation}
-\end{thm}
+\label{eq: maxdiv_idf}
+D_{\infty}((A|x, Y)||(A| x)) \leq \delta
+\end{equation}
+If a classifier is $\delta$-individual fair, the posterior and prior distribution of protected attribute conditional on auditing features is bounded by $\delta$. 
 
-[placeholder: how this result relates to \cite{kleinberg2016inherent}] The result has negative consequences for fairness in classification. If feature $x$ leaks information related to the protected attribute $A$, then the classifier's outcomes cannot be $0$-individual differential fair if the classifier reduces the leakage occurring through $x$. 
+\paragraph{Relation with Differential Privacy}
+There is an analogy between individual differential fairness for classifiers and differential privacy for database queries. Differential privacy as in  \cite{dwork2014algorithmic} guarantees that outcomes from a query are not distinguishable when computed on two adjacent databases that differs only by one record. The fairness condition \eqref{eq: idf} implies that outcomes from a classifier are not distinguishable for individuals that differ only by their protected attributes. The max-divergence equivalence in \ref{eq: maxdiv_idf} shows that differential fairness bounds the information leakage caused by $Y$ conditional on what is already leaked by the auditing features $x$ [placeholder: why does the analogy matter? Possibly, (i) merges the field of fairness with privacy, a field where computer science is "more comfortable" with; (ii). Why is there no balance issue in differential privacy? ] 
 
-\paragraph{Relation with differential privacy}
-There is an analogy between individual differential fairness for classifiers and differential privacy for database queries. Differential privacy as in  \cite{dwork2014algorithmic} guarantees that outcomes from a query are not distinguishable identical when computed on two adjacent databases that differs only by one record. The fairness condition \eqref{eq: idf} implies that outcomes from a classifier are not distinguishable for individuals that differ only by their protected attributes. [placeholder: why does it matter? Possibly, (i) merges the field of fairness with privacy, a field where computer science is "more comfortable" with; (ii). Why is there no balance issue in differential privacy? ] 
 
 \paragraph{Individual Fairness}
-The definition \ref{def: idf} is an individual level definition of fairness. Compared to the notion of individual fairness in \cite{dwork2012fairness}, individual differential fairness does not require to explicit a similarity metric. This is important because defining a similarity metric has been the main limitation of applying the concept of individual fairness.
+The definition \ref{def: idf} is an individual level definition of fairness, since it conditions the information leakage on auditing features $x$. Compared to the notion of individual fairness in \cite{dwork2012fairness}, individual differential fairness does not require to explicit a similarity metric. This is important because defining a similarity metric has been the main limitation of applying the concept of individual fairness. The similarity of treatment in differential fairness is defined in a statistical sense as the max-divergence distance between the distributions $Y|(x, A=a)$ and $Y|(x, A\neq a)$. Differential fairness interprets disparate treatment of a classifier $f$ on an individual with auditing features $x$ as a non-negligible distance between $Y|(x, A=a)$ and $Y|(x, A\neq a)$. 
 
-\paragraph{Other notion of fairness}
-need to look at disparate impact (an aggregate version of \ref{def: idf}. 
+\paragraph{Intention in Disparate Treatment}
+Differential fairness is a useful definition of fairness in machine learning because it provides a test to whether the protected attribute $A$ affects in a causal sense the classifier's outcome. This is important because, at least in the United States, there are legal precedents (see \cite{Ricci}, \cite{Loomis}, Title VII) that require a plaintiff to demonstrate the disparate treatment was intentional. Causality is defined here as the existence of path (either direct or indirect) between the protected attribute and the classifier's outcome that is not blocked by the auditing features $x$. Therefore, differential fairness sets a framework to establish causation of protected attributes on a classifier's outcome conditional on the auditing feature space. 
 
 \subsection{Multi-differential fairness}
 Although useful, the notion of individual differential fairness suffers from one limitation: it cannot be computationally efficiently audited for. Looking for violations of individual differential fairness will require searching over a set of $2^{|\mathfrak{X}|}$ individuals. Moreover, if $\mathfrak{X}$ is rich enough empirically, a sample from a distribution over $\mathfrak{X} \times \mathfrak{A}\times \{-1, 1\}$ has a negligible probability to have two individuals with the same auditing feature $x$ and different protected attributes $a$. 
@@ -167,15 +177,19 @@ Pr[Y=y|A=a, S] \leq e^{\delta} Pr[Y=y|A=a^{'}, S]
 
 Multi-differential fairness relaxes the notion of differential fairness by protecting sub-populations instead of individuals. Multi-differential fairness guarantees that the outcome of a classifier $f$ is nearly mean-independent of protected attributes within any sub-population $S\in \mathfrak{C}_{\alpha}$. The parameter $\delta$ controls for the amount of information related to protected attributes that the classifier leaks: smaller value of $\delta$ means smaller leakage. The fairness condition \ref{eq: mdf} applies only to subpopulations with $Pr[Y=y \;\&\; x\in S] \geq \alpha$ for $y\in\{-1, 1\}$. This is to avoid trivial cases where $\{x\in S \; \& \; Y=y\}$ is a singleton for some $y$, which would imply that $\delta=\infty$. 
 
+\paragraph{Disparate Treatment versus Disparate Impact}
+It is interesting to compare the definition of multi-differential fairness in \ref{def: mdf} with previous definitions of fairness that are based on information leaked by the data about the protected attributes.  First, if auditing features is empty, then multi-differential fairness devolves into a notion of disparate impact as in \cite{feldman2015certifying} or in \cite{chouldechova2017fair}. Disparate impact is then a particular case of multi-differential fairness where no disparate treatment  statement is made. On the other hand, if auditing features are all the features but protected attributes used to train $f$, multi-differential fairness is a framework to test whether there exists a sub-population for which there is a direct causal effect of protected attributes on the classifier's outcomes. 
+
 
 \paragraph{Collection of Indicators.}
 The collection of sub-population $\mathbb{C}$ can be equivalently thought as a family of indicators: for each $S\in \mathbb{C}$, there is an indicator $c_{S}: \mathfrak{X}\rightarrow \{-1, 1\}$ such that $c_{S}(x)=1$ if and only if $x\in S$. The relaxation of differential fairness to a collection of groups or sub-population is akin to \cite{kim2018fairness}, \cite{kearns2017preventing} or \cite{hebert2017calibration} where $\mathfrak{C}$ is the computational bound on the granularity of their definition of fairness. The richer $\mathbb{C}$, the stronger the fairness guarantee offers by definition \ref{def: mdf}. However, the complexity of $\mathbb{C}$ is limited by the fact that we identify a sub-population $S$ via random samples drawn from a distribution over $\mathfrak{X} \times \mathfrak{A}\times \{-1, 1\}$. The rest of this paper shows that auditing for multi-differential fairness in polynomial time requires to limit the complexity of $\mathbb{C}$. Potential candidates for $\mathbb{C}$ will be the family short-decision trees or the set of conjunctions of constant number of boolean features. Therefore, auditing for multi-differential fairness will not check whether the fairness condition \eqref{eq: mdf} holds for \textit{all} sub-populations of $\mathfrak{X}$, but only check  the fairness condition for all sub-populations that can be \textit{efficiently identifiable}. 
+
 
 \section{Auditing, Agnostic Learning and PAC learning}
 
 The definition of multi-differential fairness requires to verify that in no sub-population $S\in \mathbb{C}$ with $Pr[S]\geq \alpha$, the classifier leaks information about the distribution of protected attributes. If $\mathbb{C}$ is a rich and large class of subsets of the feature space $\mathfrak{X}$, an auditing algorithm linearly dependent on $|\mathbb{C}|$ can be prohibitively expensive. In this section we show that finding an auditing algorithm reduces to agnostic learning of the class of sub-populations $\mathbb{C}$. That is, there is no $\log(\mathbb{C})$ running time auditing algorithm unless $\mathbb{C}$ is efficiently agnostically learnable.  
 
-\subsection{Certifying Fairness and Agnostic Learning}
+\subsection{Certifying (the Lack) Fairness and Agnostic Learning}
 Auditing for multi-differential fairness consists firstly, in establishing there exists a fairness violation; secondly, in identifying a sub-population $S$ that violates the most the fairness condition in \ref{def: mdf}. 
 
 \paragraph{Multi Differential Fairness and Balanced Distribution}
@@ -187,7 +201,7 @@ Pr[Y|A=a, S] \leq e^{\delta} Pr[Y|A=a^{'}, S] \iff Pr_{u}[Y|A=a, S] \leq e^{\del
 the sub-script $u$ indicating that the probability are taken over the reweighted distribution. 
 
 \bigskip
-Suppose that for any $a \in \mathfrak{A}$, we have oracle access to the importance sampling weight $w_{a}(x)=\frac{1 - P[A=a|x]}{P[A=a|x]}$. For any distribution $D_{f}$ over $\mathfrak{X} \times \mathfrak{A}\times \{-1, 1\}$ denote $D_{f}^{w}$ with $Pr_{w}[A|x]= 1 - Pr_{w}[A|x]$ the corresponding balanced distribution. Note that once reweighted by $w_{a}$, for any sub-population $S\in \mathbb{C}$, auditing features does not reveal anything about the distribution of the protected attribute $A$: $Pr_{w}[A=a|X, S]=Pr_{w}[A\neq a|X, S]$. With a balanced distribution, the multi differential fairness condition can be rewritten as follows: for all protected attributes $a\in \mathfrak{A}$, $y\in \{-1,1\}$ and for all $S\in \mathbb{C}_{\alpha}$
+Suppose that for any $a \in \mathfrak{A}$, we have oracle access to the importance sampling weight $w_{a}(x)=\frac{1 - P[A=a|x]}{P[A=a|x]}$. For any distribution $D_{f}$ over $\mathfrak{X} \times \mathfrak{A}\times \{-1, 1\}$ denote $D_{f}^{w}$ the corresponding balanced distribution. Note that once reweighted by $w_{a}$, for any sub-population $S\in \mathbb{C}$, auditing features does not reveal anything about the distribution of the protected attribute $A$: $Pr_{w}[A=a|X, S]=Pr_{w}[A\neq a|X, S]$. With a balanced distribution, the multi differential fairness condition can be rewritten as follows: for all protected attributes $a\in \mathfrak{A}$, $y\in \{-1,1\}$ and for all $S\in \mathbb{C}_{\alpha}$
 
 \begin{equation}
     \label{eq: mdf_w}
@@ -213,17 +227,13 @@ Let $\gamma, \epsilon >0$, $\eta\in (0, 1)$ and $\mathbb{C}_{\alpha}$ be an $\al
 Moreover, $M(\epsilon, \delta)$ is an efficient certifying algorithm if it requires $poly(\log(|\mathfrak{C}_{\alpha}|, \log(1/\eta), 1/\epsilon))$ samples and runs in $poly(\log(|\mathfrak{C}_{\alpha}|, \log(1/\eta), 1/\epsilon))$. 
 \end{defn}
 
-Searching for $\gamma$-unfairness certificate can be formulated as a problem of detecting correlations. For $g, h:\mathfrak{X}\rightarrow \{-1, 1\}$,   let $\langle g, h\rangle_{D}\equiv E_{D}g(x)h(x)$ denote the average inner product between $g$ and $h$. Then, $S$ is a $\gamma$-unfair certificate of $f$ if and only if there exists $y\in \{-1, 1\}$ such that
-\begin{equation}
-    \left\langle \frac{1+c_{S}}{2}, \frac{a + 1}{2}\middle|Y=y\right\rangle_{D_{w}^{f}} -\frac{1}{2} \left\langle \frac{1+c_{S}}{2}, 1\middle |Y=y\right\rangle_{D_{w}^{f}} \geq \gamma,
-\end{equation}
-or equivalently, since $2Pr_{w}[a=c] - 1= \langle a, c_{S}\rangle_{D_{w}^{f}}$
+Searching for $\gamma$-unfairness certificate can be formulated as a problem of detecting correlations that can be written as:
 
 \begin{equation}
-Pr_{w}[A=c_{S}| Y=y] \geq 1 - \rho(y) + 2\gamma
+Pr_{w}[AY=c_{S}] \geq 1 - \rho(y) + 4\gamma
 \end{equation}
-with $\rho(y)=Pr_{w}[A=a|Y=y]$. Detecting multi-differential fairness violation can be phrased as a weak agnostic learning problem. A concept class $\mathbb{C}$ is agnostically efficiently learnable if and only if for all $\epsilon, \eta >0$, there exists an algorithm $\mathfrak{M}$ that given access to a distribution $\{x_{i}, o_{i}\}\sim D\times \{-1, 1\}$ outputs with probability $1-\eta$ in $poly(\log(|\mathfrak{C}, \log(\frac{1}{\delta}), \epsilon)$ outputs  a function $h\in \mathbb{C}$ such that
-$$ \langle g,h\rangle_{D} + \epsilon \geq max_{c\in \mathbb{C}}\langle g, c\rangle_{D}. $$
+with $\rho(y)=Pr_{w}[A=Y]$. Therefore, certifying the lack of multi-differential fairness can be phrased as a weak agnostic learning problem. A concept class $\mathbb{C}$ is agnostically efficiently learnable if and only if for all $\epsilon, \eta >0$, there exists an algorithm $\mathfrak{M}$ that given access to a distribution $\{x_{i}, o_{i}\}\sim D\times \{-1, 1\}$ outputs with probability $1-\eta$ in $poly(\log(|\mathfrak{C}, \log(\frac{1}{\eta}), \epsilon)$ outputs  a function $h\in \mathbb{C}$ such that
+$$ Pr_{D}[g=h]  + \epsilon \geq max_{c\in \mathbb{C}}Pr_{D}[g=c]. $$
 We show that if the collection of subpopulation $\mathbb{C}$ admits an efficient agnostic learner, we could use that learner to construct an algorithm certifying multi-differential fairness.
 
 \begin{thm}
@@ -287,30 +297,28 @@ At issue with unbalanced distribution is that the multi-differential fairness co
 Therefore, algorithm \ref{algo: 1}, when applied to unbalanced distribution, cannot distinguish the case of high value of $\delta$ from the case of low value $\delta$ but a high value of $w_{S}$. The latter situation is the result of unbalance in the data that could result from social, cultural or historical biases; the former is an issue with the classifier $f$ itself that needs to be audited for. 
 
 \bigskip
-One approach to obtain $w$ is to directly estimate the density $P[A=a|x]$. This idea of importance sampling is used in propensity-score matching methods (see) in the context of counterfactual analysis. However, exact or estimated importance sampling result in large variance in finite sample. In fact, estimating the distribution $P[A=a|x]$ to obtain the weight $w_{a}(x)$ may be an overkill. \cite{gretton2009covariate} shows that the weights can be obtained by minimizing the following maximum mean discrepancy problem
-
+One approach to obtain $w$ is to directly estimate the density $P[A=a|x]$. This idea of importance sampling is used in propensity-score matching methods (see) in the context of counterfactual analysis. However, exact or estimated importance sampling result in large variance in finite sample. In fact, estimating the distribution $P[A=a|x]$ to obtain the weight $w_{a}(x)$ may be an overkill. Instead, we observe that if $u$ is a weight function, 
+\begin{equation}
+Pr_{w}[AY = c] \leq Pr_{u}[AY = c] + MMD(uP_{a}, P_{\not a})
+\end{equation}
+with equality whenever $u=w_{a}$. $MMD$ is the maximum mean discrepancy between the distribution of features $P(x, A=a)$ weighted by $u$ and the distribution of $P(x, A\neq a)$:
 \begin{equation}
 \label{eq: mmd1}
-\left \Vert \frac{1}{n_{a}}\displaystyle\sum_{i, A=a}w_{a}(x)\phi(x) -\frac{1}{n_{a^{'}}}\displaystyle\sum_{i, A=a^{'}}\phi(x)\right \Vert^{2}
+MMD(uP_{a}, P_{\not a}) = 
+\left \Vert E\left[ \frac{1}{n_{a}}\displaystyle\sum_{i, A=a}u(x)\phi(x) -\frac{1}{n_{a^{'}}}\displaystyle\sum_{i, A=a^{'}}\phi(x)\right]\right \Vert^{2}
 \end{equation}
-where the discrepancy is measured over all function in the RKHS represented by the kernel $k(x,x^{'})=\langle \phi(x)| \phi(x^{'})\rangle$. Our approach $MMD$ takes $\phi(x)=x$ and obtains $w_{a}$ by solving 
-
-\begin{equation}
-\min_{w\in \mathbb{W}}\left \Vert \frac{1}{n_{a}}\displaystyle\sum_{i, A=a}w(x)x -\frac{1}{n_{a^{'}}}\displaystyle\sum_{i, A=a^{'}}x\right \Vert^{2} + Reg(w)
-\end{equation}
-where $\mathbb{W}$ is a concept class for the weight function and $Reg(w)$ is a regularization parameter for $w$. 
- 
+where $\phi:\mathfrak{X}\rightarrow \mathfrak{F}$ is a feature map into a feature space $\mathfrak{F}$ ( see \cite{gretton2009covariate}).  In other words, the maximum mean discrepancy between $u P(., A=a)$ and $P(., A\neq a)$ is measured over all function in the reproducing kernel Hilbert space represented by the kernel $k(x,x^{'})=\langle \phi(x)| \phi(x^{'})\rangle$. 
 
 \bigskip
- The last approach is to regularize further the maximum mean discrepancy method  by attempting to extract only the information predictive of the auditing algorithm outcomes $ay$. We jointly learn a representation $\phi$ of the feature space and a weight function $w(\phi)$ by minimizing the following loss:
- 
+Therefore to audit for multi-differential fairness, our approach consists into finding $c\in \mathbb{C}$, $\phi$ and $u$ that minimizes the empirical counterpart of the upper bound in \eqref{eq: mmd1}:
+
 \begin{equation}
 \begin{split}
-L(w, c, \phi) = &\frac{1}{n_{a}+n_{a^{'}}}\displaystyle\sum_{i}w_{i}\mathbbm{1}(c(\phi(x_{i}))\neq y^{*}_{i}) + Reg(c)  \\
-& + \left \Vert \frac{1}{n_{a}}\displaystyle\sum_{i, A=a}w(x)\phi(x) -\frac{1}{n_{a^{'}}}\displaystyle\sum_{i, A=a^{'}}\phi(x)\right \Vert^{2} + Reg(w)
+L(w, c, \phi) = &\frac{1}{N}\displaystyle\sum_{i}u_{i}\mathbbm{1}(c(\phi(x_{i}))\neq a_{i}y_{i}) + Reg(c)  \\
+& + \left \Vert \frac{1}{n_{a}}\displaystyle\sum_{i, A=a}u_{i}\phi(x_{i}) -\frac{1}{N -n_{a}}\displaystyle\sum_{i, A\neq a}\phi(x_{i})\right \Vert^{2} + Reg(u)
 \end{split}.
 \end{equation}
-In our implementation $DNN-MMD$, the common representation $\phi$ is learned via a neural network that is then shared with both tasks of minimizing the re-weighted auditing risk and the distributional shift between features distribution for the minority and majority group. 
+In our implementation $MMD_{NET}$, the feature representation $\phi$ is learned via a neural network that is then shared with both tasks of minimizing the re-weighted certifying risk and the distributional shift between $u P(., A=a)$ and $P(., A\neq a)$. 
 
 
 
@@ -399,11 +407,11 @@ Suppose $\nu > 0, \epsilon >0, \eta\in (0, 1)$ and $\mathbb{C}\subset 2^{\mathfr
 \section{Experiments}
 
 \subsection{Synthetic Data}
-A synthetic data is constructed by drawing independently two features $X_{1}$ and $X_{2}$ from two normal distribution $N(A\mu, 1)$, where  $\mathfrak{A}=\{-1, 1\}$ is the protected attribute and $\mu \geq 0$ is an unbalance factor. $\mu=0$ means that the data is perfectly balanced. As $\mu$ increases, the distriubtion $Pr(x|A=1)$ becomes more dense in the right uppermost quadrant than the distribution $Pr[x|A=-1]$. The data is labeled according to the sign of $X_{1} + X_{2} + e$, where is $e$ is a noise drawn from $N(0, 0.2)$. The audited classifier $f$ is a logistic regression classifier that is altered to generate instances of metric-free individual unfairness: with probability $1-\nu\in[0, 1)$, the sign of the outcomes from individuals with $A=-1$ is changed from $-1$ to $+1$ if $x^{2}_{1} + x^{2}_{2} \leq 1$ and $x_{1}+ x_{2} \leq 0$; fi $A=1$, all classifier's outcomes are set to $1$ if if $x^{2}_{1} + x^{2}_{2} \leq 1$ and $x_{1}+ x_{2} \leq 0$. For $\nu=0$, the audited classifier is metric-free individual fair; however, as $\nu$ increases, the half circle $\{(x_{1}, x_{2})|x^{2}_{1} + x^{2}_{2} \leq 1 \mbox{ and } \}$ there is a fraction $\nu$ of individuals with protected attribute equal to $1$ who are not treated similarly as individuals with protected value equal to $1$. 
+A synthetic data is constructed by drawing independently two features $X_{1}$ and $X_{2}$ from two normal distribution $N(0, 1)$. We consider a binary protected attribute  $\mathfrak{A}=\{-1, 1\}$ drawn from Bernouilli distribution with $A=1$ obtained with probability $w(x)=\frac{e^{\mu * (x_{1}- x_{2}))^{2}}}{1 + e^{\mu * (x_{1}+ x_{2}))^{2}}}$ and $A=-1$ with probability $1-w(x)$ for $x=(x_{1}, x_{2})$. $\mu$ is an unbalance factor. $\mu=0$ means that the data is perfectly balanced with $w(x)=\frac{1}{2}$. As $\mu$ increases, the distribution $Pr(x|A=1)$ becomes more dense in the for points away from the $45\degree$ diagonal in a $(x_{1}, x_{2})$ plane. The data is labeled according to the sign of $(X_{1} + X_{2} + e) ^{3}$, where is $e$ is a noise drawn from $N(0, 0.2)$. The audited classifier $f$ is a logistic regression classifier that is altered to generate instances of metric-free individual unfairness: with probability $1-\nu\in[0, 1)$, the sign of the classifier's outcomes $Y$ from individuals with $A=-1$ is changed from $-1$ to $+1$ if $x^{2}_{1} + x^{2}_{2} \leq 1$; if $A=1$, all classifier's outcomes are changed from $-1$ to $+1$ if $x^{2}_{1} + x^{2}_{2} \leq 1$ . For $\nu=0$, the audited classifier is differentially fair; however, as $\nu$ increases, the half circle $\{(x_{1}, x_{2})|x^{2}_{1} + x^{2}_{2} \leq 1 \mbox{ and } y=-1\}$ there is a fraction $\nu$ of individuals with protected attribute equal to $-1$ who are not treated similarly as individuals with protected value equal to $1$. 
 
 \bigskip
 \paragraph{Sample Complexity}
-First, the auditing algorithm $AMDF$ is trained using a decision tree and a balanced data ($\mu=0$). Given our setting, for any value of $\nu$ we can compute the actual level of differential unfairness $\gamma_{o}$ and compare it to the value  $\gamma_{a}$ estimated by the auditing algorithm $AMDF$.  Figure \ref{fig: 1a} plots $\gamma_{a}$ against $\gamma_{o}$ after $100$ simulations for value of $\beta$ varying from $0$ to $0.5$ and fixed sub-population size $\alpha=0.1$. The experiment is conducted with data set of size $n\in \{1000, 5000\}$. The estimated unfairness level $\gamma_{a}$ is unbiased since the plots nearly align with $45\degree$ line. Figure \ref{fig: 1b} shows that this result is robust to changing the size $\alpha$ of the sub-population for which there is a fairness violation. Our auditing strategy is able to correctly measure unfairness even when it is limited to a group representing $1\%$ of the overall population. 
+The auditing algorithm $MMD_{NET}$ is trained using a decision tree and a unbalanced data ($\mu=0.2$). Given our setting, for any value of $\nu$ we can compute the actual level of differential unfairness $\gamma_{o}$ and compare it to the value  $\gamma_{a}$ estimated by the auditing algorithm$MMD_{NET}$.  Figure \ref{fig: 1a} plots $\gamma_{a}$ against $\gamma_{o}$ after $100$ simulations for value of $\beta$ varying from $0$ to $0.5$ and fixed sub-population size $\alpha=0.1$. The experiment is conducted with data set of size $n\in \{1000, 5000\}$. The estimated unfairness level $\gamma_{a}$ is unbiased since the plots nearly align with $45\degree$ line. Larger sample ($5K$) have little effect on how bias the auditor $MMD_{NET}$ is, but reduces the variance of the estimated $\gamma_{a}$.  
 
 \begin{figure}[h!]
 \begin{subfigure} {.475\linewidth}
@@ -440,33 +448,34 @@ First, the auditing algorithm $AMDF$ is trained using a decision tree and a bala
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-    xlabel={$\gamma_{o}$},
-    ylabel={$\gamma_{a}$},
-    xmin=0, xmax=0.04,
-    ymin=0, ymax=0.04,
-    xtick={0, 0.02, 0.04},
-    ytick={0, 0.02, 0.04},
-    legend pos=south east,
+    xlabel={$\mu$},
+    ylabel={$\gamma_{a}-\gamma_{o}$},
+    xmin=-0.30, xmax=0.3,
+    ymin=-0.01, ymax=0.05,
+    xtick={-0.3, -0.2, -0.1, 0.0, 0.1, 0.2, 0.3},
+    ytick={-0.01, 0, 0.01, 0.02, 0.03, 0.04, 0.05},
+    legend pos=north west,
     ymajorgrids=true,
     grid style=dashed,
     width=\linewidth
 ]
-\addplot[mark=none] table [x=gamma, y=gamma, col sep=comma]
-     {../results/synth_exp_sample_size_var.csv};
- \foreach\g in{1000, 5000}{
+ \foreach\g in{Uniform, IS, MMD_NET}{
                 \addplot  
-                 table [discard if not={size}{\g}, x=gamma, y=estimated_gamma , col sep=comma]
-     {../results/synth_exp_sample_size_alpha.csv};
+                 table [discard if not={balancing}{\g}, x=unbalance, y=bias , col sep=comma]
+     {../results/synth_exp_unbalance_3a.csv};
             }
-            \legend{$45\degree$ line, $n=1K$, $n=5K$}
+            \legend{$UW$, $ISW$, $MMD_{NET}$}
 
 \end{axis}
 \end{tikzpicture}
-\caption{Effect of sub-population size ($\alpha$) on auditor's performance.}
+\caption{Effect of unbalanced data on auditor's performance.}
 \label{fig: 1b}
 \end{subfigure}
-\caption{Certifying $\gamma$- multi differential unfairness. The auditor is a decision tree whose depth is tuned using a $5$-fold cross validation; the unbalance parameter $\mu$ is set to $0$.  The plots show the average of $100$ experiments. Auditor's bias when estimating $\gamma_{a}$ is measured by deviations from the $45\degree$ line. Figure \ref{fig: 1a}: the size $\alpha$ of sub-population with a fairness violation is set to $0.1$; and, the intensity $\beta$ of the fairness violation varies from $0$ to $0.5$. Figure \ref{fig: 1b}: the size $\alpha$ of sub-population with a fairness violation varies from $0.01$ to $0.1$; and, the intensity $\beta$ of the fairness violation is set to $0.25$. } 
+\caption{Certifying $\gamma$- multi differential unfairness. The auditor is a decision tree whose depth is tuned using a $5$-fold cross validation.  The weights function $u$ is obtained using a neural network with four hidden layers with eight neurons each. The plots show the average of $100$ experiments. Figure \ref{fig: 1a} auditor's bias when estimating $\gamma_{a}$ is measured by deviations from the $45\degree$ line; the unbalance parameter $\mu$ is set to $0$; the size $\alpha$ of sub-population with a fairness violation is set to $0.1$; and, the intensity $\beta$ of the fairness violation varies from $0$ to $0.5$. Figure \ref{fig: 1b}: bias is measured as the difference $\gamma_{a}-\gamma_{o}$; the size $\alpha$ of sub-population with a fairness violation is set to $0.1$; the intensity $\beta$ of the fairness violation is set to $0.5$; the balancing parameter $\mu$ varies from $-0.3$ to $0.3$.  } 
 \end{figure}
+
+\paragraph{Unbalanced Data}
+To test the performance of our certifying algorithm on unbalanced data, we repeat the previous experiment with $\mu$ varying from $-0.3$ to $0.3$. We compare the performance of three reweighting approaches: uniform weight ($UW$); direct use of the importance sampling weights $w$ ($ISW$); . Figure \ref{fig: 1b} shows that absent of a reweighting scheme ($UW$) the certifying algorithm fails to estimate correctly the classifier's unfairness if $\mu \neq 0$. This is in line with the observation made in section 3 that the auditing algorithm needs to control for the information leaked by the auditing features $x$ when measuring the additional leakage from the classifier's outcome $y$. Our preferred method $MMD_{NET}$ performs well as there is little bias in the estimate $\gamma_{a}$ even at large value of the unbalancing factor $\nu$. Note using importance sampling weights directly does worse than a uniform sampling: this confirms previous observations in the literature that in finite sample, the variance of the importance sample weights can affect be detrimental to a re-balancing approach. 
 
 \paragraph{Concept Class}
 Figure \ref{fig: 2a} runs a similar experiment but varies with decision trees of depth varying from $5$ to $40$. At small level of unfairness, a less complex concept class $\mathbb{C}$ generates less bias in the estimate of $\gamma$. A shorter decision tree out-performs significantly deeper structures. This result, in line with the sample complexity presented in theorem \ref{thm: corr1} justifies the concept of multi fairness: in order to be statistically meaningful, the granularity of the sub-populations for which multi differential fairness is audited for is bounded by the complexity of $\mathbbm{C}$. 
@@ -504,8 +513,15 @@ Figure \ref{fig: 2a} runs a similar experiment but varies with decision trees of
 \end{figure}
 
 
-\paragraph{Unbalanced Data}
-To test the performance of our certifying algorithm on unbalanced data, we repeat the previous experiment with $\mu=0.25$. We compare the performance of four reweighting approaches: uniform weight ($UW$); estimated importance sampling weights ($IPW$); quantile weights ($QW$) with $10$ bins. Figure \ref{fig: 2a} shows that using absent of a reweighting scheme ($UW$) the certifying algorithm fails to estimate correctly the classifier's unfairness: for low level of unfairness ($\gamma_{o} < 2. 10^{-2}$), the bias in $\gamma_{a}$ is over $100\%$. 
+\subsection{Case Study: COMPAS}
+We chose to apply first our method to the COMPAS algorithm because it is a widely used to assess the likelihood of a defendant to become a recidivist. Records from Broward County, Florida are publicly available and expansive analysis of the COMPAS fairness have been already carried out. Our novelty is to apply our multi-differential fairness framework and explore whether there exists in those records group of individuals that could argue for a disparate treatment akin to an "intentional" discrimination. 
+
+\paragraph{Data Description}
+The data collected in Broward County from 2013 to 2015  contain $7K$ individuals with their criminal history, their age, race, gender, a risk score and a risk category assigned by COMPAS. We transform the risk category into a binary variable equal to $1$ for individuals assigned in the high risk category (risk score between $8$ and $10$).
+
+ 
+
+\
 
 
 \begin{figure}[h!]

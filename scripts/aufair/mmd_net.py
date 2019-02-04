@@ -6,7 +6,6 @@ from keras import backend as K
 from keras.utils.generic_utils import get_custom_objects
 from keras.regularizers import L1L2
 from keras.optimizers import SGD
-from keras_layer_normalization import LayerNormalization
 
 import numpy as np
 import tensorflow as tf

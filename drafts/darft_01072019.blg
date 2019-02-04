@@ -1,0 +1,28 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: darft_01072019.aux
+The style file: plain.bst
+Database file #1: references.bib
+Warning--string name "supreme" is undefined
+--line 33 of file references.bib
+I was expecting a `,' or a `}'---line 33 of file references.bib
+ :  journal=supreme 
+ :                  Court of the United States},
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 42 of file references.bib
+ : 
+ : @inproceedings{dwork2012fairness,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in NY2017
+Warning--to sort, need author or key in atlantic2016
+Warning--to sort, need author or key in ProPublica2016
+Warning--to sort, need author or key in Ricci
+Warning--to sort, need author or key in Loomis
+Warning--empty author in Ricci
+Warning--empty journal in Ricci
+Warning--empty year in Ricci
+Warning--empty author in atlantic2016
+Warning--empty author in ProPublica2016
+Warning--empty author in Loomis
+Warning--empty author in NY2017
+Warning--empty journal in gretton2009covariate
+(There were 2 error messages)

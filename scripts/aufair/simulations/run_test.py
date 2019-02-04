@@ -322,10 +322,10 @@ def figure3a():
     noise = 0.2
     n = 500000  
     ntest = 10000
-    nboot = 10
+    nboot = 1
 
     auditor = DecisionTreeClassifier(max_depth= 5)
-    balancing_methods = { 'Uniform': None, 'IS': 'IS', 'MMD_NET': 'MMD_NET'}
+    balancing_methods = {'Uniform': None, 'IS': 'IS', 'MMD_NET': 'MMD_NET'}
 
     results_list = []
     for key in balancing_methods.keys():
@@ -341,7 +341,7 @@ def figure3a():
             results_list.append(results)
     
     report = pd.concat(results_list, axis=0)
-    report.to_csv('../../../results/synth_exp_unbalance_3a.csv')
+    report.to_csv('../../../results/synth_exp_unbalance_3a_test.csv')
 
 def figure3b():
     nu_max = 11

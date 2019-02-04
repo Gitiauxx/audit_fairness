@@ -156,7 +156,7 @@ class detector_data(object):
         A = (A + 1) / 2
         mmd = MMD(len(features), target=A, weight=np.array(train.weight).ravel(), lw=self.lw)
         mod = mmd.model
-        mod.fit(X, A, epochs=6, batch_size=512, verbose=2)
+        mod.fit(X, A, epochs=6, batch_size=512, verbose=0)
         train['wt'] = mod.predict(X)
         train.loc[train.attr == 1, 'weight'] = train['wt']
         self.get_representation(mod)
