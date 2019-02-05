@@ -5,7 +5,7 @@ from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
 
 class detector(object):
 
-    def __init__(self, auditor, stepsize=0.01, niter=100, min_size=0.02):
+    def __init__(self, auditor, stepsize=0.01, niter=150, min_size=0.02):
         self.auditor = auditor
         self.stepsize = stepsize
         self.niter = niter
@@ -72,9 +72,6 @@ class detector(object):
         weights_adjusted  = weights.copy().astype(float)
         weights_adjusted[(train_y == -1) ] = 1.0 * weights_adjusted[train_y == -1] * (1.0 + eta)
 
-        #weights_adjusted[(pred == -1) & (attr == 1) ] = weights[(pred == -1) & (attr == 1) ] * (1 + eta)
-        #weights_adjusted[(pred == 1) & (attr == -1) ] = weights[(pred == 1) & (attr == -1) ] * (1 + eta)
-       
         # train auditor
         self.auditor.fit(train_x, train_y, 
                         sample_weight=weights_adjusted)
@@ -121,8 +118,106 @@ class detector(object):
         accuracy = weights[predicted == y].sum() / weights.sum()
     
         attr = weights[A == pred].sum() / weights.sum()
+        alpha = weights[predicted == y].sum() / weights.sum()
 
-        return (accuracy - 1 + attr) / 4, accuracy
+        return (accuracy - 1 + attr) / 4, alpha
+
+    def delta(self, X, y, pred, A, weights):
+
+        predicted = self.auditor.predict(X)
+        alpha = weights[predicted == y].sum() / weights.sum()
+        
+
+        d = predicted[(predicted == 1) & (pred == 1) & (A == 1)].shape[0]
+        if predicted[(predicted == 1)  & (A == 1)].shape[0] == 0:
+            return np.nan, np.nan
+        
+        d = d / predicted[(predicted == 1)  & (A == 1)].shape[0]
+        
+        d2 = predicted[(predicted == 1) & (pred == 1) & (A == 0)].shape[0]
+        if predicted[(predicted == 1)  & (A == 0)].shape[0] == 0:
+            return np.nan, np.nan
+        
+        d2 = d2 / predicted[(predicted == 1)  & (A == 0)].shape[0]
+       
+        if d2 > 0:
+            return np.log(d / d2), alpha
+        else:
+            return np.nan, np.nan
+
+
+    def violation(self, X, y, weights, pred, A):
+
+        iter = 0
+        self.eta = 0
+        eta = 0
+        gamma0 = -1
+        gamma = 0
+        w = weights.copy()
+        
+        while (iter < self.niter) & (gamma >= gamma0 - 0.1):
+            
+            # certificate
+            self.certify(X, y, w)
+            gamma, alpha = self.delta(X, y, pred, A, weights)
+
+            w[ y == -1] = weights[ y == -1] * (1 + eta)
+            if np.isnan(gamma) | np.isnan(alpha) | (alpha < self.min_size):
+                break
+            if gamma > gamma0:
+                self.eta = eta
+                gamma0 = gamma
+            
+            predicted = self.auditor.predict(X)
+
+            eta += self.stepsize
+            iter += 1
+
+        weights[y == - 1] = weights[y == -1] * (1 + self.eta) 
+
+        predicted = self.auditor.predict(X)
+    
+    def violation_individual(self, X, y, weights, pred, A, x):
+
+        iter = 0
+        self.eta = 0
+        eta = 0
+        gamma0 = -1
+        gamma = 0
+        w = weights.copy()
+        outcome = 1
+        
+        while (iter < self.niter) & (gamma >= gamma0 - 0.1) & (outcome == 1):
+            
+            # certificate
+            self.certify(X, y, w)
+            outcome = self.auditor.predict(x)
+            if outcome == -1:
+                break
+
+            gamma, alpha = self.delta(X, y, pred, A, weights)
+
+            w[ y == -1] = weights[ y == -1] * (1 + eta)
+            if np.isnan(gamma) | np.isnan(alpha) | (alpha < self.min_size):
+                break
+            if gamma > gamma0:
+                self.eta = eta
+                gamma0 = gamma
+            
+            
+
+            eta += self.stepsize
+            iter += 1
+
+        weights[y == - 1] = weights[y == -1] * (1 + self.eta) 
+
+        
+
+
+
+
+
+
 
     
 

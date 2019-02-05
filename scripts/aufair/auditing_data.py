@@ -182,6 +182,102 @@ class detector_data(object):
 
         return gamma
 
+    def get_violation(self, features, seed=None):
+
+        train, test = self.split_train_test(features, seed=seed)
+        train.set_index(np.arange(len(train)), inplace=True)
+        test.set_index(np.arange(len(test)), inplace=True)
+        
+        pa = self.protected_attribute
+        pg = self.protected_group
+        yname = self.yname
+
+        # mmd method to estimate weights
+        X = np.array(train[features])
+        A = np.array(train[pa])
+        A = (A + 1) / 2
+        mmd = MMD(len(features), target=A, weight=np.array(train.weight).ravel(), lw=self.lw)
+        mod = mmd.model
+        mod.fit(X, A, epochs=6, batch_size=512, verbose=0)
+        train['wt'] = mod.predict(X)
+        train.loc[train.attr == 1, 'weight'] = train['wt']
+        self.get_representation(mod)
+
+        # weights for test data
+        rep_x = self.representation([np.array(test[features]), 1])[0]
+        test_a = np.array(test.attr).ravel()
+        test_x =  np.array(test[features])
+        test['wt'] = mod.predict(test_x)
+        test.loc[test.attr == 1, 'weight'] = test['wt']
+
+        # get violations
+        detect = ad.detector(self.auditor, niter=self.niter, stepsize=self.stepsize)
+        train_x = self.representation([np.array(train[features]), 1])[0]
+        train_y = np.array(train['label']).ravel()
+        train_weights = np.array(train.weight).ravel()
+        pred = np.array( (train[yname] + 1) / 2).ravel()
+        detect.violation(train_x, train_y, train_weights, pred, A)
+
+        # look at test data
+        test_x =  self.representation([np.array(test[features]), 1])[0]
+        test_y = np.array(test['label']).ravel()
+        test_weights = np.array(test.weight).ravel()
+        pred =  np.array(test[yname]).ravel()
+        test_a = (test_a + 1) / 2
+        gamma, alpha = detect.delta(test_x, test_y, pred, test_a, test_weights)
+        test['predicted'] = self.auditor.predict(test_x)
+
+        return gamma, test
+
+    def get_violation_individual(self, features, individual, seed=None):
+
+        train, test = self.split_train_test(features, seed=seed)
+        train.set_index(np.arange(len(train)), inplace=True)
+        test.set_index(np.arange(len(test)), inplace=True)
+        
+        pa = self.protected_attribute
+        pg = self.protected_group
+        yname = self.yname
+
+        # mmd method to estimate weights
+        X = np.array(train[features])
+        A = np.array(train[pa])
+        A = (A + 1) / 2
+        mmd = MMD(len(features), target=A, weight=np.array(train.weight).ravel(), lw=self.lw)
+        mod = mmd.model
+        mod.fit(X, A, epochs=6, batch_size=512, verbose=0)
+        train['wt'] = mod.predict(X)
+        train.loc[train.attr == 1, 'weight'] = train['wt']
+        self.get_representation(mod)
+
+        # weights for test data
+        rep_x = self.representation([np.array(test[features]), 1])[0]
+        test_a = np.array(test.attr).ravel()
+        test_x =  np.array(test[features])
+        test['wt'] = mod.predict(test_x)
+        test.loc[test.attr == 1, 'weight'] = test['wt']
+
+        # get violations
+        detect = ad.detector(self.auditor, niter=self.niter, stepsize=self.stepsize)
+        train_x = self.representation([np.array(train[features]), 1])[0]
+        rep_individual = self.representation([individual[np.newaxis, :], 1])[0]
+        train_y = np.array(train['label']).ravel()
+        train_weights = np.array(train.weight).ravel()
+        pred = np.array( (train[yname] + 1) / 2).ravel()
+        detect.violation_individual(train_x, train_y, 
+                    train_weights, pred, A, rep_individual)
+
+        # look at test data
+        test_x =  self.representation([np.array(test[features]), 1])[0]
+        test_y = np.array(test['label']).ravel()
+        test_weights = np.array(test.weight).ravel()
+        pred =  np.array(test[yname]).ravel()
+        test_a = (test_a + 1) / 2
+        gamma, alpha = detect.delta(test_x, test_y, pred, test_a, test_weights)
+        
+
+        return gamma
+
     def certify_knn(self, features, yname, seed=None):
         train, test = self.split_train_test(features, seed=seed)
         train.set_index(np.arange(len(train)), inplace=True)
