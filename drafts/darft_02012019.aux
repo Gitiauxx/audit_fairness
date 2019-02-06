@@ -1,0 +1,127 @@
+\relax 
+\citation{calsamiglia2009decentralizing}
+\citation{calsamiglia2009decentralizing}
+\citation{NY2017}
+\citation{atlantic2016}
+\citation{ProPublica2016}
+\citation{ProPublica2016}
+\citation{Ricci}
+\citation{Loomis}
+\citation{Loomis}
+\citation{dwork2014algorithmic}
+\citation{feldman2015certifying}
+\citation{dwork2012fairness}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
+\citation{kim2018fairness}
+\citation{hebert2017calibration}
+\citation{kearns2017preventing}
+\citation{ustun2018actionable}
+\citation{russell2019efficient}
+\@writefile{toc}{\contentsline {paragraph}{Related Work}{2}}
+\@writefile{toc}{\contentsline {paragraph}{Contributions}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Individual and Multi-Differential Fairness}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Preliminary}{3}}
+\@writefile{toc}{\contentsline {paragraph}{Notations}{3}}
+\@writefile{toc}{\contentsline {paragraph}{Assumptions}{3}}
+\newlabel{ass: 1}{{1}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Individual Differential Fairness}{3}}
+\@writefile{toc}{\contentsline {paragraph}{Individual Differential Fairness}{3}}
+\newlabel{def: idf}{{2.1}{3}}
+\newlabel{eq: idf}{{1}{3}}
+\@writefile{toc}{\contentsline {paragraph}{Differential Fairness and Distance of Distributions}{3}}
+\citation{dwork2014algorithmic}
+\citation{dwork2012fairness}
+\citation{Ricci}
+\citation{Loomis}
+\newlabel{eq: maxdiv_idf}{{3}{4}}
+\@writefile{toc}{\contentsline {paragraph}{Relation with Differential Privacy}{4}}
+\@writefile{toc}{\contentsline {paragraph}{Individual Fairness}{4}}
+\@writefile{toc}{\contentsline {paragraph}{Intention in Disparate Treatment}{4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Multi-differential fairness}{4}}
+\citation{feldman2015certifying}
+\citation{chouldechova2017fair}
+\citation{kim2018fairness}
+\citation{kearns2017preventing}
+\citation{hebert2017calibration}
+\newlabel{def: mdf}{{2.2}{5}}
+\newlabel{eq: mdf}{{4}{5}}
+\@writefile{toc}{\contentsline {paragraph}{Disparate Treatment versus Disparate Impact}{5}}
+\@writefile{toc}{\contentsline {paragraph}{Collection of Indicators.}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Fairness Diagnostics}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Certifying (the Lack) Fairness and Agnostic Learning}{6}}
+\@writefile{toc}{\contentsline {paragraph}{Multi Differential Fairness and Balanced Distribution}{6}}
+\newlabel{eq: mdf_w}{{6}{6}}
+\newlabel{eq: mdf_viol1}{{7}{6}}
+\citation{feldman2012agnostic}
+\citation{kearns1994toward}
+\newlabel{thm: al}{{3.1}{7}}
+\newlabel{eq: risk1}{{10}{7}}
+\newlabel{eq: risk2}{{11}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Unbalanced Data}{7}}
+\@writefile{toc}{\contentsline {paragraph}{Importance Sampling and Reweighting}{7}}
+\newlabel{eq: mdf_nw}{{12}{7}}
+\citation{rosenbaum1983central}
+\citation{freedman2008weighting}
+\citation{cortes2010learning}
+\citation{gretton2009covariate}
+\citation{gretton2009covariate}
+\newlabel{eq: mmd1}{{14}{8}}
+\newlabel{thm: corr1}{{3.2}{8}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Certifying Algorithm \relax }}{9}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{algo: 1}{{1}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Unfairness Diagnostics: Worst Violation}{9}}
+\@writefile{toc}{\contentsline {paragraph}{Worst Violation Problem}{9}}
+\newlabel{eq: wvio}{{16}{9}}
+\@writefile{toc}{\contentsline {paragraph}{Worst Violation Algorithm}{9}}
+\newlabel{thm: algo3_ana}{{3.3}{10}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Worst Violation Algorithm\relax }}{10}}
+\newlabel{algo: 3}{{2}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Unfairness Diagnostic: Individual Recourse}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experiments}{10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Synthetic Data}{10}}
+\@writefile{toc}{\contentsline {paragraph}{Sample Complexity}{11}}
+\newlabel{fig: 1a}{{1a}{11}}
+\newlabel{sub@fig: 1a}{{a}{11}}
+\newlabel{fig: 1b}{{1b}{11}}
+\newlabel{sub@fig: 1b}{{b}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Certifying $\gamma $- multi differential unfairness. The auditor is a decision tree whose depth is tuned using a $5$-fold cross validation. The weights function $u$ is obtained using a neural network with four hidden layers with eight neurons each. The plots show the average of $100$ experiments. Figure 1a\hbox {} auditor's bias when estimating $\gamma _{a}$ is measured by deviations from the $45\ensuremath  {^\circ }$ line; the unbalance parameter $\mu $ is set to $0$; the size $\alpha $ of sub-population with a fairness violation is set to $0.1$; and, the intensity $\beta $ of the fairness violation varies from $0$ to $0.5$. Figure 1b\hbox {}: bias is measured as the difference $\gamma _{a}-\gamma _{o}$; the size $\alpha $ of sub-population with a fairness violation is set to $0.1$; the intensity $\beta $ of the fairness violation is set to $0.5$; the balancing parameter $\mu $ varies from $-0.3$ to $0.3$. \relax }}{11}}
+\@writefile{toc}{\contentsline {paragraph}{Unbalanced Data}{12}}
+\@writefile{toc}{\contentsline {paragraph}{Concept Class}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Effect of auditor's class on auditor's performance.\relax }}{12}}
+\newlabel{fig: 2a}{{2}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Certifying $\gamma $- multi differential unfairness. The auditor is a decision tree whose depth is tuned using a $5$-fold cross validation. The weights function $u$ is obtained using a neural network with four hidden layers with eight neurons each. The plots show the average of $100$ experiments. Figure 2\hbox {} auditor's bias when estimating $\gamma _{a}$ is measured by deviations from the $45\ensuremath  {^\circ }$ line; the unbalance parameter $\mu $ is set to $0.2$; the size $\alpha $ of sub-population with a fairness violation is set to $0.1$; and, the intensity $\beta $ of the fairness violation varies from $0$ to $0.5$. \relax }}{12}}
+\@writefile{toc}{\contentsline {paragraph}{Worst Violations}{12}}
+\newlabel{fig: 3a}{{\caption@xref {fig: 3a}{ on input line 513}}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Finding $\delta $ for the worst violation of multi-differential fairness. The auditor is a decision tree whose depth is tuned using a $5$-fold cross validation. The weights function $u$ is obtained using a neural network with four hidden layers with eight neurons each. The plots show the average of $100$ experiments. auditor's bias when estimating $\gamma _{a}$ is measured by deviations from the $45\ensuremath  {^\circ }$ line; the unbalance parameter $\mu $ is set to $0.2$; the size $\alpha $ of sub-population with a fairness violation is set to $0.1$; and, the intensity $\beta $ of the fairness violation is set to $0.5$. The bias in the estimated $\delta $ is measured as the difference $\delta _{a}-\delta _{o}$ \relax }}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Case Study: COMPAS}{13}}
+\@writefile{toc}{\contentsline {paragraph}{Data Description}{13}}
+\@writefile{toc}{\contentsline {paragraph}{Certifying the Lack of Differential Fairness}{13}}
+\bibstyle{plain}
+\bibdata{references}
+\bibcite{Ricci}{1}
+\bibcite{atlantic2016}{2}
+\bibcite{ProPublica2016}{3}
+\bibcite{Loomis}{4}
+\bibcite{NY2017}{5}
+\bibcite{calsamiglia2009decentralizing}{6}
+\bibcite{chouldechova2017fair}{7}
+\bibcite{cortes2010learning}{8}
+\bibcite{dwork2012fairness}{9}
+\newlabel{tab: 1}{{\caption@xref {tab: 1}{ on input line 537}}{14}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Certifying the lack of differential fairness in COMPAS risk classification. Features are as follows: I: count of prior felonies; II: degree of current charge (criminal vs non-criminal); III: age; IV: count of juvenile prior felonies; V: count of juvenile prior misdemeanors. Standard deviations are obtained by drawing $100$ train/test splits. In the first column, Race, the protected attribute is a binary variable indicating whether an individual is self-identified as Afro-American; in the second column, Gender, the protected attribute is a binary variable indicating whether an individual is self-identified as Male\relax }}{14}}
+\@writefile{toc}{\contentsline {paragraph}{Worst Violations}{14}}
+\@writefile{toc}{\contentsline {paragraph}{Disparate Treatment}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Other Datasets: Group Fairness vs. Multi-Differential Fairness}{14}}
+\bibcite{dwork2014algorithmic}{10}
+\bibcite{feldman2015certifying}{11}
+\bibcite{feldman2012agnostic}{12}
+\bibcite{freedman2008weighting}{13}
+\bibcite{gretton2009covariate}{14}
+\bibcite{hebert2017calibration}{15}
+\bibcite{kearns2017preventing}{16}
+\bibcite{kearns1994toward}{17}
+\bibcite{kim2018fairness}{18}
+\bibcite{rosenbaum1983central}{19}
+\bibcite{russell2019efficient}{20}
+\bibcite{ustun2018actionable}{21}

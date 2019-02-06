@@ -1,11 +1,11 @@
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import RandomizedSearchCV
-from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
+from copy import deepcopy
 
 class detector(object):
 
-    def __init__(self, auditor, stepsize=0.01, niter=150, min_size=0.02):
+    def __init__(self, auditor, stepsize=0.01, niter=150, min_size=0.1):
         self.auditor = auditor
         self.stepsize = stepsize
         self.niter = niter
@@ -26,17 +26,12 @@ class detector(object):
         gamma0 = -1
         gamma = 0
         
-        while (iter < self.niter) & (gamma >= gamma0 - 0.1):
+        while (iter < self.niter):
             
             self.fit_iter(train_x, train_y, train_weights, eta)
             gamma, alpha = self.compute_unfairness(train_x, train_y, train_attr, train_pred)
-           
-            predicted = self.auditor.predict(train_x)
-            if predicted[(predicted == -1 ) & (train_attr == -1)].shape[0]:
-                a = predicted[(predicted == 1 ) & (train_attr == -1)].shape[0] / predicted[(predicted == -1 ) & (train_attr == -1)].shape[0]
-            else:
-                a = 10000
-            #gamma = np.log( gamma / (1 - gamma) * a)
+            print(gamma)
+
             if gamma < 0:
                 gamma = 0
            
@@ -124,26 +119,29 @@ class detector(object):
 
     def delta(self, X, y, pred, A, weights):
 
+
         predicted = self.auditor.predict(X)
-        alpha = weights[predicted == y].sum() / weights.sum()
+        alpha = predicted[(predicted == 1) & (y == 1)].shape[0] / predicted.shape[0]
         
 
         d = predicted[(predicted == 1) & (pred == 1) & (A == 1)].shape[0]
-        if predicted[(predicted == 1)  & (A == 1)].shape[0] == 0:
-            return np.nan, np.nan
+        print(d)
+        if predicted[(predicted == 1) & (pred == 1)].shape[0] == 0:
+            return 0, 0
         
-        d = d / predicted[(predicted == 1)  & (A == 1)].shape[0]
+        d = d / predicted[(predicted == 1) & (pred == 1)].shape[0]
         
         d2 = predicted[(predicted == 1) & (pred == 1) & (A == 0)].shape[0]
-        if predicted[(predicted == 1)  & (A == 0)].shape[0] == 0:
-            return np.nan, np.nan
+        print(d2)
+        if predicted[(predicted == 1) & (A == 0)].shape[0] == 0:
+            return 0, 0
         
-        d2 = d2 / predicted[(predicted == 1)  & (A == 0)].shape[0]
+        d2 = d2 / predicted[(predicted == 1) & (pred == 1)].shape[0]
        
         if d2 > 0:
             return np.log(d / d2), alpha
         else:
-            return np.nan, np.nan
+            return 0, 0
 
 
     def violation(self, X, y, weights, pred, A):
@@ -153,30 +151,31 @@ class detector(object):
         eta = 0
         gamma0 = -1
         gamma = 0
-        w = weights.copy()
+        w = deepcopy(weights)
         
-        while (iter < self.niter) & (gamma >= gamma0 - 0.1):
+        while (iter < self.niter) & (gamma > gamma0 - 0.1) :
             
             # certificate
             self.certify(X, y, w)
             gamma, alpha = self.delta(X, y, pred, A, weights)
+            print(gamma)
+            print(alpha)
 
-            w[ y == -1] = weights[ y == -1] * (1 + eta)
+            w[ y == -1] = weights[y == -1] * (1 + eta)
             if np.isnan(gamma) | np.isnan(alpha) | (alpha < self.min_size):
                 break
             if gamma > gamma0:
                 self.eta = eta
                 gamma0 = gamma
-            
-            predicted = self.auditor.predict(X)
 
             eta += self.stepsize
             iter += 1
 
-        weights[y == - 1] = weights[y == -1] * (1 + self.eta) 
+        weights[y == - 1] = weights[y == -1] * (1 + self.eta)
+        self.certify(X, y, weights)
+        gamma, alpha = self.delta(X, y, pred, A, weights)
 
-        predicted = self.auditor.predict(X)
-    
+
     def violation_individual(self, X, y, weights, pred, A, x):
 
         iter = 0
@@ -197,19 +196,19 @@ class detector(object):
 
             gamma, alpha = self.delta(X, y, pred, A, weights)
 
-            w[ y == -1] = weights[ y == -1] * (1 + eta)
+            w[y == -1] = weights[y == -1] * (1 + eta)
             if np.isnan(gamma) | np.isnan(alpha) | (alpha < self.min_size):
                 break
             if gamma > gamma0:
                 self.eta = eta
                 gamma0 = gamma
-            
-            
 
             eta += self.stepsize
             iter += 1
 
-        weights[y == - 1] = weights[y == -1] * (1 + self.eta) 
+        self.eta0 = self.eta - self.stepsize
+
+
 
         
 
