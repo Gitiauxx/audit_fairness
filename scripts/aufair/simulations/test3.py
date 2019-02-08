@@ -124,7 +124,8 @@ def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0
         audit.get_y()
 
         feature_auditing = ['x1', 'x2']
-        delta, g_std = audit.audit_iter(features, yname, 'attr', nboot=nboot)
+        delta, g_std = audit.certify_violation_iter(features, nboot=nboot)
+            #audit.audit_iter(features, yname, 'attr', nboot=nboot)
     
         results.loc[gamma, 'delta'] = np.log(l / ((1 - gamma) * l2))
         results.loc[gamma,  'estimated_delta'] = delta

@@ -216,16 +216,18 @@ class detector_data(object):
         train_y = np.array(train['label']).ravel()
         train_weights = np.array(train.weight).ravel()
         pred = np.array((train[yname] + 1) / 2).ravel()
-        detect.violation(X, train_y, train_weights, pred, A)
+        detect.violation_threshold(train_x, train_y, train_weights, pred, A)
 
         # look at test data
-        #test_x = self.representation([np.array(test[features]), 1])[0]
+        test_x = self.representation([np.array(test[features]), 1])[0]
         test_y = np.array(test['label']).ravel()
         test_weights = np.array(test.weight).ravel()
         pred = np.array(test[yname]).ravel()
         pred = (pred + 1) / 2
         test_a = (test_a + 1) / 2
-        gamma, alpha = detect.delta(test_x, test_y, pred, test_a, test_weights)
+        gamma, alpha = detect.delta(test_x, test_y, pred, test_a, test_weights, threshold=detect.threshold)
+        print(gamma)
+        print(alpha)
         test['predicted'] = self.auditor.predict(test_x)
 
         return gamma, test

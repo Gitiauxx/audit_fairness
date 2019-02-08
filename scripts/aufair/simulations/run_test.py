@@ -49,7 +49,7 @@ def figure1b():
     noise = 0.2
     n = 500000
     ntest = 5000
-    nboot = 5
+    nboot = 20
     alpha = 0.1
     unbalance = 0.25
 
@@ -386,18 +386,18 @@ def figure3b():
 
 
 def figure4():
-    nu_max = 10
-    nu_min = 0
-    noise = 0.2
+    nu_max = 6
+    nu_min = 3
+    noise = 0.0
     n = 500000
-    ntest = 10000
-    nboot = 10
-    alpha = 0.15
+    ntest = 15000
+    nboot = 1
+    alpha = 0.1
     unbalance = 0.0
 
     # auditor
-    rf = RandomForestClassifier(n_estimators=50)
-    dt = DecisionTreeClassifier(max_depth=3)
+    rf = RandomForestClassifier(n_estimators=100, max_depth=2)
+    #dt = DecisionTreeClassifier(max_depth=5, min_samples_leaf=0.02)
 
     max_depth = [1, 2, 4, 6, 8]
     min_samples_leaf = [1, 2, 5, 10]
@@ -406,9 +406,9 @@ def figure4():
 
     # nboot runs for different sampe size
     results_list = []
-    for step in [0.015]:
+    for step in [0.001]:
         print(step)
-        results = t3.test_certifying(n, ntest, nu_min, nu_max, dt, nboot=nboot,
+        results = t3.test_certifying(n, ntest, nu_min, nu_max, rf, nboot=nboot,
                                      sigma_noise=noise,
                                     # parameter_grid=parameter_grid_tree,
                                      alpha=alpha,
@@ -419,8 +419,8 @@ def figure4():
         results_list.append(results)
 
     report = pd.concat(results_list, axis=0)
-    report.to_csv('../../../results/synth_exp_violation_delta.csv')
+    report.to_csv('../../../results/synth_exp_violation_delta_test.csv')
 
 if __name__ == "__main__":
-    figure1b()
+    figure4()
 

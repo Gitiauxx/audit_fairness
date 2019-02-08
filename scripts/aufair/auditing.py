@@ -5,7 +5,7 @@ from copy import deepcopy
 
 class detector(object):
 
-    def __init__(self, auditor, stepsize=0.01, niter=150, min_size=0.1):
+    def __init__(self, auditor, stepsize=0.01, niter=150, min_size=0.05):
         self.auditor = auditor
         self.stepsize = stepsize
         self.niter = niter
@@ -117,29 +117,32 @@ class detector(object):
 
         return (accuracy - 1 + attr) / 4, alpha
 
-    def delta(self, X, y, pred, A, weights):
+    def delta(self, X, y, pred, A, weights, threshold=None):
 
 
-        predicted = self.auditor.predict(X)
+        if threshold is None:
+            predicted = self.auditor.predict(X)
+        else:
+            predict_proba = self.auditor.predict_proba(X)[:, 1]
+            predicted = (predict_proba > threshold).astype('int32')
+
         alpha = predicted[(predicted == 1) & (y == 1)].shape[0] / predicted.shape[0]
-        
 
         d = predicted[(predicted == 1) & (pred == 1) & (A == 1)].shape[0]
-        print(d)
         if predicted[(predicted == 1) & (pred == 1)].shape[0] == 0:
-            return 0, 0
+            return 0, alpha
         
         d = d / predicted[(predicted == 1) & (pred == 1)].shape[0]
         
-        d2 = predicted[(predicted == 1) & (pred == 1) & (A == 0)].shape[0]
-        print(d2)
-        if predicted[(predicted == 1) & (A == 0)].shape[0] == 0:
-            return 0, 0
+        #d2 = predicted[(predicted == 1) & (pred == 1) & (A == 0)].shape[0]
+        #print(d2)
+        #if predicted[(predicted == 1) & (A == 0)].shape[0] == 0:
+            #return 0, 0
         
-        d2 = d2 / predicted[(predicted == 1) & (pred == 1)].shape[0]
+        #d2 = d2 / predicted[(predicted == 1) & (pred == 1)].shape[0]
        
-        if d2 > 0:
-            return np.log(d / d2), alpha
+        if d < 1:
+            return np.log(d / (1 - d)), alpha
         else:
             return 0, 0
 
@@ -158,8 +161,6 @@ class detector(object):
             # certificate
             self.certify(X, y, w)
             gamma, alpha = self.delta(X, y, pred, A, weights)
-            print(gamma)
-            print(alpha)
 
             w[ y == -1] = weights[y == -1] * (1 + eta)
             if np.isnan(gamma) | np.isnan(alpha) | (alpha < self.min_size):
@@ -174,6 +175,23 @@ class detector(object):
         weights[y == - 1] = weights[y == -1] * (1 + self.eta)
         self.certify(X, y, weights)
         gamma, alpha = self.delta(X, y, pred, A, weights)
+
+    def violation_threshold(self, X, y, weights, pred, A):
+
+        # certificate
+        self.certify(X, y, weights)
+
+        # find threshold with optimal recall
+        alpha = 0
+        threshold = 0.62
+        while alpha < self.min_size:
+            gamma, alpha = self.delta(X, y, pred, A, weights, threshold=threshold)
+            print(alpha)
+            threshold -= self.stepsize
+
+        threshold += 2 * self.stepsize
+        self.threshold = threshold
+
 
 
     def violation_individual(self, X, y, weights, pred, A, x):
