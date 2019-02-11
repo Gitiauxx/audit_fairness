@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.7)  5 FEB 2019 21:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.7)  10 FEB 2019 10:14
 entering extended mode
 **./darft_01072019.tex
 (darft_01072019.tex
@@ -1466,14 +1466,14 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [12] [13]
 
-Package caption Warning: \label without proper reference on input line 524.
+Package caption Warning: \label without proper reference on input line 534.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `tab: 1' on page 14 undefined on input line 523.
 
 
-Package caption Warning: \label without proper reference on input line 524.
+Package caption Warning: \label without proper reference on input line 534.
 See the caption package documentation for explanation.
 
 
@@ -2058,7 +2058,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  26165 strings out of 493303
  653751 string characters out of 3128480
- 846238 words of memory out of 3000000
+ 846239 words of memory out of 3000000
  29221 multiletter control sequences out of 15000+200000
  14969 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191

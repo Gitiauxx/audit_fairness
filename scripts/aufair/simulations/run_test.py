@@ -7,6 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 from aufair.simulations import test1 as t1
 from aufair.simulations import test2 as t2
 from aufair.simulations import test3 as t3
+from aufair.simulations import test4 as t4
 from aufair.simulations.create_data import dataset
 from aufair import auditing as ad
 #from aufair.simulations import test_net as tn
@@ -386,18 +387,19 @@ def figure3b():
 
 
 def figure4():
-    nu_max = 6
-    nu_min = 3
-    noise = 0.0
+    nu_max = 10
+    nu_min = 1
+    noise = 0.2
     n = 500000
-    ntest = 15000
-    nboot = 1
+    ntest = 10000
+    nboot = 20
     alpha = 0.1
-    unbalance = 0.0
+    unbalance = 0.2
 
     # auditor
     rf = RandomForestClassifier(n_estimators=100, max_depth=2)
-    #dt = DecisionTreeClassifier(max_depth=5, min_samples_leaf=0.02)
+    dt = DecisionTreeClassifier(max_depth=2, min_samples_leaf=0.02)
+    svm = SVC()
 
     max_depth = [1, 2, 4, 6, 8]
     min_samples_leaf = [1, 2, 5, 10]
@@ -406,9 +408,9 @@ def figure4():
 
     # nboot runs for different sampe size
     results_list = []
-    for step in [0.001]:
+    for step in [0.1]:
         print(step)
-        results = t3.test_certifying(n, ntest, nu_min, nu_max, rf, nboot=nboot,
+        results = t3.test_certifying(n, ntest, nu_min, nu_max, svm, nboot=nboot,
                                      sigma_noise=noise,
                                     # parameter_grid=parameter_grid_tree,
                                      alpha=alpha,
@@ -419,8 +421,45 @@ def figure4():
         results_list.append(results)
 
     report = pd.concat(results_list, axis=0)
-    report.to_csv('../../../results/synth_exp_violation_delta_test.csv')
+    report.to_csv('../../../results/synth_exp_violation_delta_test2.csv')
+
+def figure5():
+    nu_max = 10
+    nu_min = 1
+    noise = 0.2
+    n = 500000
+    ntest = 5000
+    nboot = 1
+    alpha = 0.1
+    unbalance = 0.2
+
+    # auditor
+    rf = RandomForestClassifier(n_estimators=100, max_depth=2)
+    dt = DecisionTreeClassifier(max_depth=2, min_samples_leaf=0.02)
+    svm = SVC()
+
+    max_depth = [1, 2, 4, 6, 8]
+    min_samples_leaf = [1, 2, 5, 10]
+    p_grid = {'max_depth': max_depth, 'min_samples_leaf': min_samples_leaf}
+    parameter_grid_tree = {'cv': 5, 'parameter': p_grid, 'niter': 20}
+
+    # nboot runs for different sampe size
+    results_list = []
+    for step in [0.05]:
+        print(step)
+        results = t4.test_certifying(n, ntest, nu_min, nu_max, svm, nboot=nboot,
+                                     sigma_noise=noise,
+                                    # parameter_grid=parameter_grid_tree,
+                                     alpha=alpha,
+                                     unbalance=unbalance,
+                                     balancing='MMD_NET',
+                                     stepsize=step)
+        results['step'] = step
+        results_list.append(results)
+
+    report = pd.concat(results_list, axis=0)
+    report.to_csv('../../../results/synth_exp_violation_delta_individual.csv')
 
 if __name__ == "__main__":
-    figure4()
+    figure5()
 

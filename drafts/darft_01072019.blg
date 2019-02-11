@@ -12,6 +12,10 @@ I was expecting a `,' or a `}'---line 42 of file references.bib
  : @inproceedings{dwork2012fairness,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Repeated entry---line 279 of file references.bib
+ : @article{gretton2009covariate
+ :                              ,
+I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in NY2017
 Warning--to sort, need author or key in atlantic2016
 Warning--to sort, need author or key in ProPublica2016
@@ -25,4 +29,4 @@ Warning--empty author in ProPublica2016
 Warning--empty author in Loomis
 Warning--empty author in NY2017
 Warning--empty journal in gretton2009covariate
-(There were 2 error messages)
+(There were 3 error messages)

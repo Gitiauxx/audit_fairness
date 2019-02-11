@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage{mathtools}
+\usepackage{booktabs}
 
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}%
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}%
@@ -489,29 +490,30 @@ on a small sub-population (small $\alpha$) from a less intense violation (small 
 		\begin{axis}[
 		xlabel={$\delta_{o}$},
 		ylabel={$\delta_{a}$},
-		xmin=0, xmax=3,
-		ymin=0, ymax=3,
-		xtick={0, 0.5, 1, 1.5, 2.0, 2.5, 3.0},
-		ytick={0, 0.5, 1, 1.5, 2.0, 2.5, 3.0},
+		xmin=0, xmax=3.5,
+		ymin=0, ymax=3.5,
+		xtick={0, 0.5, 1, 1.5, 2.0, 2.5, 3.0, 3.5},
+		ytick={0, 0.5, 1, 1.5, 2.0, 2.5, 3.0, 3.5},
 		legend pos=north west,
 		ymajorgrids=true,
 		grid style=dashed,
 		width=\linewidth
 		]
 		\addplot[mark=none] table [x=delta, y=delta, col sep=comma]
-		{../results/synth_exp_violation_delta.csv};
-		\foreach\g in{0.015}{
-			\addplot  
-			table [discard if not={step}{\g}, x=delta, y=estimated_delta , col sep=comma]
-			{../results/synth_exp_violation_delta.csv};
+		{../results/synth_exp_violation_delta_test.csv};
+		\foreach\g in{0.1}{
+			\addplot 
+			plot [error bars/.cd, y dir = both, y explicit] 
+			table [discard if not={step}{\g}, x=delta, y=estimated_delta , y error=delta_deviation, col sep=comma]
+			{../results/synth_exp_violation_delta_test2.csv};
 		}
-		\legend{$45\degree$ line, $\xi=0.01$}
+		\legend{$45\degree$ line, $\xi=0.1$}
 		
 		\end{axis}
 		\end{tikzpicture}
 	\end{subfigure}
 	\label{fig: 3a}
-	\caption{Finding $\delta$ for the worst violation of multi-differential fairness. The auditor is a decision tree whose depth is tuned using a $5$-fold cross validation.  The weights function $u$ is obtained using a neural network with four hidden layers with eight neurons each. The plots show the average of $100$ experiments. auditor's bias when estimating $\gamma_{a}$ is measured by deviations from the $45\degree$ line; the unbalance parameter $\mu$ is set to $0.2$; the size $\alpha$ of sub-population with a fairness violation is set to $0.1$; and, the intensity $\beta$ of the fairness violation is set to $0.5$.  The bias in the estimated $\delta$ is measured as the difference $\delta_{a}-\delta_{o}$  }  
+	\caption{Finding $\delta$ for the worst violation of multi-differential fairness. The auditor is a RBF support vector machine whose regularization is tuned using a $5$-fold cross validation.  The weights function $u$ is obtained using a neural network with four hidden layers with eight neurons each. The plots show the average of $100$ experiments. auditor's bias when estimating $\gamma_{a}$ is measured by deviations from the $45\degree$ line; the unbalance parameter $\mu$ is set to $0.2$; the size $\alpha$ of sub-population with a fairness violation is set to $0.1$; and, the intensity $\beta$ of the fairness violation is set to $0.5$.  The bias in the estimated $\delta$ is measured as the difference $\delta_{a}-\delta_{o}$  }  
 \end{figure}
 
 
@@ -539,7 +541,25 @@ First, we assess whether the COMPAS risk classification is multi-differential fa
 \end{table}
 
 \paragraph{Worst Violations}
-The results in Table \ref{tab: 1} do not allow to distinguish the case of a small violation of differential fairness spread evenly across the whole feature distribution from the case of large violations concentrated on small sub-populations. 
+The results in Table \ref{tab: 1} do not allow to distinguish the case of a small violation of differential fairness spread evenly across the whole feature distribution from the case of large violations concentrated on small sub-populations. We run our worst-case violation algorithm on $100$ $0.7/0.3$ train/test split and average the characteristics of the sub-population over the $100$ experiments. Table \ref{tab: 2} shows that violation of differential fairness is more severely concentrated on African American individuals who have a small or non-existent criminal and misdemeanor history. In the sub-population with the worst-case violation, African American individuals have a similar criminal history as non-African American individuals, but are three times more likely to be classified as high risk. Note that although individuals self-identified as African American do not have the same criminal history than the rest of the population (see the two first columns of table \ref{tab: 2}), our worst-case violation algorithm is able to extract effectively a sub-population where African-American individuals are similar to the rest of the group, but are treated differently. Note also that an African American in the worst-case violation sub-population, albeit with no criminal history, is more likely to be classified as high risk than a non-African American, with an average more felonies and misdemeanors, in the overall population. 
+
+\begin{table} [h!]
+	\centering  
+	\begin{tabular}{c|cc||cc} 
+	Variable & \multicolumn{2}{c}{Population} & \multicolumn{2}{c}{Worst-case Violation} \\
+                 & African-American & Other & African-American& Other \\
+      \hline 
+       \hline 
+    Prior Felonies & 4.44 $\pm$ 5.58 & 2.46$\pm$ 3.76 & 0.79$\pm$ 0.24 & 0.67 $\pm$ 0.17 \\ 
+    Charge Degree & 0.31 $\pm$ 0.46 & 0.4 $\pm$ 0.49 & 0.74 $\pm$ 0.23 & 0.74 $\pm$ 0.2  \\ 
+    Juvenile Felonies & 0.1 $\pm$ 0.49 & 0.03$\pm$ 0.32 & 0.01$\pm$ 0.02 & 0.0 $\pm$ 0.02  \\
+   Juvenile Misdemeanor & 0.14 $\pm$ 0.61 & 0.04$\pm$ 0.3 & 0.01$\pm$ 0.02 & 0.01 $\pm$ 0.01 \\ 
+    \hline
+    High Risk & 0.14 $\pm$ 0.35 & 0.05$\pm$ 0.22 & 0.06$\pm$ 0.04 & 0.02 $\pm$0.01 \\  
+\end{tabular} 
+\caption{Identifying the worst-case violation of differential fairness in the COMPAS risk score. The protected attribute is whether the individual is self-identified as African American. The worst-case violation algorithm is run with a random forest of $100$ tree stumps of depth 2 and an incremental weight increase equal to $0.1$. The algorithm is run $100$ times, each time with a different $0.7/0.3$ train/test set split. Estimates in the tables are obtained from the test set.   }
+\label{tab: 2}
+\end{table}
 
 
 \paragraph{Disparate Treatment}
@@ -547,6 +567,117 @@ Pick up Alice, Bob, Carol and Dick who belongs to sub-population for which a dis
 
 
 \subsection{Other Datasets: Group Fairness vs. Multi-Differential Fairness}
+
+
+\section{Appendix}
+
+\subsection{Analysis of Algorithm 2}
+
+Let $a\in\mathfrak{A}$. Assume that the classifier $f$ is $\gamma$-unfair. Let $\delta_{m}$ denote the worst-case violation. Note that by definition of $\gamma$ and $\delta_{m}$:
+\begin{equation}
+\gamma = \alpha\left(\frac{e^{\delta_{m}}}{e^{\delta_{m}}+ 1}- \frac{1}{2}\right)
+\end{equation} At each iteration $t$, denote $c_{t}^{*}$ the solution of the following optimization problem 
+\begin{equation}
+\label{eq: opt1}
+max_{c\in \mathbb{C}} E_{D_{f}^{w}}\left[\displaystyle\sum_{i=1}^{m} w_{it}\mathbbm{1}_{a}\left(a_{i}y_{i}=c(x_{i})\right)\right],
+\end{equation}
+where $w_{it}$ are the weights at iteration $t$ and the expectation is taken over all the samples of size $m$ drawn from $D_{f}^{w}$.
+\begin{equation}
+w_{it} = \begin{cases}
+w_{i}(1 + \nu t) \mbox{ if } y_{i}\neq a_{i} \\
+w_{i} \mbox{ otherwise.}
+\end{cases}
+\end{equation}
+
+Note first that
+
+\begin{equation}
+\begin{split}
+E_{D_{f}^{w}}\left[\displaystyle\sum_{i=1}^{m} w_{it}a_{i}y_{i}c_{t}(x_{i})\right] &=  E_{D}\left[\displaystyle\sum_{i=1, a_{i}=y_{i} }^{m} w_{i}c_{t}(x_{i}) - \displaystyle\sum_{i=1, a_{i}\neq y_{i} }^{m} w_{i}c_{t}(x_{i}) -\xi t\displaystyle\sum_{i=1, a_{i}\neq y_{i} }^{m} w_{i}c_{t}(x_{i}) \right] \\
+& =2 * Pr_{w}[c_{t}(x_{i})= a_{i}y_{i})]- 1 - \xi t E_{D_{f}^{w}}\left[\displaystyle\sum_{i=1, a_{i}\neq y_{i} }^{m} w_{i}c_{t}(x_{i})\right] \\
+\end{split}
+\end{equation}
+On the other hand,if $c_{o}$ denotes the indicator such that $c_{o}(x)=-1$ for all $x\in \mathfrak{X}$, 
+\begin{equation}
+E_{D}\left[\displaystyle\sum_{i=1}^{m} w_{it}a_{i}y_{i}c_{0}(x_{i})\right] =2 *Pr_{w}[a_{i}\neq y_{i}] - 1 + \xi t E_{D_{f}^{w}}\left[\displaystyle\sum_{i=1, a_{i}\neq y_{i} }^{m} w_{i}\right] 
+.
+\end{equation}
+Therefore, either $c_{t}=c_{o}$ or  
+\begin{equation}
+Pr_{w}[c_{t}(x_{i})= a_{i}y_{i})] \geq Pr_{w}[a_{i}\neq y_{i}] + \frac{1}{2}\xi t  E_{D_{f}^{w}}\left[\displaystyle\sum_{i=1, a_{i}\neq y_{i}, c_{t}(x_{i})=1) }^{m} w_{i}c_{t}(x_{i})\right].
+\end{equation}
+Note that 
+
+\begin{equation}
+E_{D_{f}^{w}}\left[\displaystyle\sum_{i=1, a_{i}\neq y_{i}, c_{t}(x_{i})=1) }^{m} w_{i}c_{t}(x_{i})\right] = Pr_{w}[a_{i}y_{i}\neq c_{t}(x_{i})| c_{t}(x_{i})=1].
+\end{equation}
+It follows that if $c_{t}\neq c_{o}$, 
+\begin{equation}
+Pr_{w}[AY=c_{t}|c_{t}=1] \geq 1 - \frac{2}{\xi t}\left(Pr_{w}[c_{t}=AY)] - \rho(y)\right),
+\end{equation}
+where $\rho(y) = Pr_{w}[A\neq Y]$. 
+Since the classifier $f$ is $\gamma$-unfair, we know that 
+\begin{equation}
+\max_{c\in\mathbb{C}}Pr_{w}[AY=c] = 4\gamma + 1 - \rho(y). 
+\end{equation} 
+Therefore, since $c_{t}\in \mathbb{C}$, at iteration $t$, either $c=c_{o}$ or
+\begin{equation}
+Pr_{w}[AY=c_{t}|c_{t}=1] \geq 1 - \frac{2(4\gamma + 1 - 2\rho(y))}{\xi t}= 1-h(\xi t),
+\end{equation}
+where $h(\xi t) = \frac{2(4\gamma + 1 - 2\rho(y))}{\xi t}$.
+Therefore $Pr_{w}[Y=1|c_{t}=1, A=1] \geq 1-h(\xi t)$ or $Pr_{w}[Y=-1|c_{t}=1, A=-1] \geq 1-h(\xi t)$. Without loss of generality, we can assume $Pr_{w}[Y=1|c_{t}=1, A=1] \geq 1-h(\xi t)$. Let $\delta(c_{t}) = \ln\left(\frac{Pr_{w}[Y=1|A=1, c=1])}{Pr_{w}[Y=1|A=-1, c=1]}\right)$. It follows that whenever $c_{t}\neq c_{o}$
+
+\begin{equation}
+\frac{e^{\delta(c_{t})}}{1 + e^{\delta(c_{t})}} \geq 1 -h(\xi t).
+\end{equation}
+
+Therefore,
+
+\begin{equation}
+\label{eq: proof_bound}
+\delta_{m}\geq\delta(c_{t})\geq \ln\left(\frac{1-h(\xi t)}{h(\xi t)}\right).
+\end{equation}
+What matters from \eqref{eq: proof_bound} is that since $h$ is a decreasing function of $t$, there exists $T$ such that $\delta(c_{T}) = \delta_{m}$. We are guaranteed that the algorithm will not stop later than $T$ since by definition of $\delta(c_{T})$ and $\gamma$:
+
+\begin{equation}
+\begin{split}
+Pr_{w}[Y=1,c_{T}=1]\left(\frac{e^{\delta(c_{T})}}{1 + e^{\delta(c_{T})}}-\frac{1}{2}\right)&=Pr_{w}[Y=1,c=1]\left(Pr_{w}[A=1| Y=1, c=1] - \frac{1}{2}\right)\\
+& \leq \gamma = \alpha\left(\frac{e^{\delta_{m}}}{e^{\delta_{m}}+ 1}- \frac{1}{2}\right),
+\end{split}
+\end{equation}
+which implies $Pr_{w}[Y=1,c_{T}=1]\leq \alpha$. Therefore the size of the sub-population identified with a fairness violation by $c_{T}$ will be at most $\alpha$ and the algorithm will stop at the latest $T$. To show that the algorithm does not stop too early, we need to bound above $Pr_{w}[c_{t}=1, Y=1]$ for any $t\leq T$. 
+ 
+
+\bigskip
+\textbf{Small samples properties}
+We can use a generic uniform convergence property: 
+
+\begin{thm}
+	\label{thm1}
+	Let$\mathfrak{H}$ be a family of function  mapping from $\mathfrak{X}$ to $\{-1, 1\}$ and let $S=\{x_{1}, ..., x_{m}\}$ be a sample where $x_{i}\sim D$ for some distribution $D$ over $\mathfrak{X}$. With probability $1-\delta$, for all $h\in \mathfrak{H}$
+	$$  \left|E_{S\sim D}[h]- \frac{1}{m}\displaystyle\sum_{i=1}^{m} h(x_{i})\right| \leq 2\mathfrak{R}_{m}(\mathfrak{H}) + \sqrt{\frac{2\ln(1/\delta)}{m}}.$$
+\end{thm}
+
+Applying the uniform convergence result from \ref{thm1} allows deriving property of algorithm 2. For any a sample $S$ and any $g\in \mathbb{C}$ with probability $1-\delta/2$, ,
+\begin{equation}
+\left|\frac{1}{m}\displaystyle\sum_{i=1, g(x_{i})=1}^{m} w_{it}f_{i}^{*}g(x_{i}) + \frac{1}{2}\epsilon t E_{D}[|B_{g}|] +
+\epsilon t  E_{D}[|B_{g}^{-}|] - \beta_{g}\right| \leq 2\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) + \sqrt{\frac{2\ln(2/\delta)}{m}},
+\end{equation}
+
+and 
+\begin{equation}
+\left|\frac{1}{m}\displaystyle\sum_{i=1, g(x_{i})=1}^{m} w_{it}f_{i}^{*}g_{0}(x_{i}) - \frac{1}{2}\epsilon t E_{D}[|B_{g}|] -
+\epsilon t  E_{D}[|B_{g}^{-}|] + \beta_{g}\right| \leq 2\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) + \sqrt{\frac{2\ln(2/\delta)}{m}}.
+\end{equation}
+Therefore, with probability $1-\delta$, $h$ cannot be solution of the empirical counterpart of \eqref{eq: opt1} if 
+\begin{equation}
+t > \frac{2\beta_{g}}{\epsilon(1-\beta_{g})} + \frac{4}{1-\beta_{g}}\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) + \frac{2}{1-\beta_{g}}\sqrt{\frac{2\ln(2/\delta)}{m}}.
+\end{equation}
+Therefore at iteration $t$, with probability $1-\delta$, a solution of \eqref{eq: opt1} for a sample $S$ is either $g(x)=-1$ for all $x\in S$ or 
+\begin{equation}
+\beta_{g} > \frac{\epsilon t}{2 + \epsilon t} - \frac{4}{2 + \epsilon t}\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) - \frac{2}{2 + \epsilon t}\sqrt{\frac{2\ln(2/\delta)}{m}}.
+\end{equation}
+
 
 \bibliographystyle{plain} % We choose the "plain" reference style
 \bibliography{references}

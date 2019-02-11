@@ -105,19 +105,48 @@ def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0
 
         test_sim.loc[ind, 'predict'] = (-1) * test_sim.loc[ind, 'predict']
 
+        # second violation
+        # define violation shape
+        lmask = (test_sim.x1 ** 2 + test_sim.x2 ** 2 > 1) & (test_sim.x1 ** 2 + test_sim.x2 ** 2 <= 2) & (test_sim.predict <= 0)
+        # mask = (test_sim.x1 <= -0) & (test_sim.x2 <= -0)
+        lmask1 = ((test_sim.attr == 1) & (lmask))
+        lmask2 = ((test_sim.attr == -1) & (lmask))
+
+        np.random.seed(seed=1)
+        ll = len(test_sim[lmask1])
+        ind = np.random.choice(test_sim[lmask1].index,
+                               int(ll),
+                               replace=False)
+
+        test_sim.loc[ind, 'predict'] = (-1) * test_sim.loc[ind, 'predict']
+
+        ll2 = len(test_sim[lmask2])
+        ind = np.random.choice(test_sim[lmask2].index,
+                               int((1 - gamma / 2) * ll2),
+                               replace=False)
+
+        test_sim.loc[ind, 'predict'] = (-1) * test_sim.loc[ind, 'predict']
+
         # construct data
-        N = (1 - alpha1) / alpha1 * len(test_sim.loc[mask])
+        N = (1 - alpha1) / alpha1 * len(test_sim.loc[(mask) | (lmask)])
         test1 = test_sim.loc[mask, :]
         test_sim = test_sim.drop(test1.index)
-        ind = np.random.choice(test_sim.index, int(N), replace=True)
+        ind = np.random.choice(test_sim.loc[lmask, :].index, len(test1), replace=True)
         test2 = test_sim.loc[ind, :]
-        test_sim = pd.concat([test1, test2])
+        d = len(test2[(test2.predict ==1) & (test2.attr == 1)])/ len(test2[(test2.predict ==1) & (test2.attr == -1)])
+        dd = len(test2[(test2.attr == 1)])/ len(test2[(test2.attr == -1)])
+        print(np.log(d / dd))
+        test_sim = test_sim.drop(test2.index)
+        ind = np.random.choice(test_sim.index, int(N), replace=True)
+        test3 = test_sim.loc[ind, :]
+        test_sim = pd.concat([test1, test2, test3])
 
         # auditing using a decision tree with x1 and x2
         protected = ('attr', 1)
         yname = 'predict'
         audit = ad.detector_data(auditor, test_sim, protected, yname, n=n_test, stepsize=stepsize, niter=300)
         audit.get_y()
+        individual = np.array([-0.95, -0.95])
 
         feature_auditing = ['x1', 'x2']
         """
@@ -129,14 +158,23 @@ def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0
         results.loc[gamma,  'gamma_deviation'] = g_std
         results.loc[gamma, 'bias'] = delta - results.loc[gamma, 'delta']
         """
-        delta, delta_std = audit.certify_violation_iter(features, nboot=nboot)
-        results.loc[gamma, 'delta'] = np.log(l / ((1 - gamma) * l2))
-        results.loc[gamma, 'estimated_delta'] = delta
-        results.loc[gamma, 'delta_deviation'] = delta_std
-        results.loc[gamma, 'bias'] = delta - results.loc[gamma, 'delta']
-       # plt.plot(test_final.x1, test_final.x2, 'b*')
-        #plt.plot(test_final[test_final.predicted == 1].x1, test_final[test_final.predicted == 1].x2, 'r*')
-        #plt.show()
+        delta, delta1 = audit.individual_violation_iter(features, individual, nboot=nboot)
+            #audit.get_violation_individual(features, individual, seed=1)
+
+
+        results.loc[gamma, 'delta'] = np.log(ll / ((1 - gamma / 2) * ll2))
+        results.loc[gamma, 'delta_wv'] = np.log(l / ((1 - gamma) * l2))
+        results.loc[gamma, 'upper_delta'] = delta
+        results.loc[gamma, 'lower_delta'] = delta1
+
+
+        """
+        plt.plot(test_final.x1, test_final.x2, 'b*')
+        plt.plot(test_final[test_final.predicted1 == 1].x1, test_final[test_final.predicted1 == 1].x2, 'g*')
+        plt.plot(test_final[test_final.predicted == 1].x1, test_final[test_final.predicted == 1].x2, 'r*')
+        plt.plot(individual[0], individual[1], "o")
+        plt.show()
+        """
 
     
     return results

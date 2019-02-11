@@ -211,24 +211,48 @@ class detector_data(object):
         test.loc[test[pa] == 1, 'weight'] = test['wt']
 
         # get violations
+        #train = train[train[yname] == 1]
+        #test = test[test[yname] == 1]
         detect = ad.detector(self.auditor, niter=self.niter, stepsize=self.stepsize)
-        train_x = self.representation([np.array(train[features]), 1])[0]
+        train_x = np.array(train[features])
         train_y = np.array(train['label']).ravel()
         train_weights = np.array(train.weight).ravel()
-        pred = np.array((train[yname] + 1) / 2).ravel()
-        detect.violation_threshold(train_x, train_y, train_weights, pred, A)
+        train_attr = np.array(train[pa]).ravel()
+        train_pred = np.array(train[yname]).ravel()
+        #detect.violation(train_x, train_y, train_weights, pred, A)
+        detect.fit(train_x, train_y, train_weights, train_pred, train_attr)
 
         # look at test data
-        test_x = self.representation([np.array(test[features]), 1])[0]
+        """"
+         test_x = self.representation([np.array(test[features]), 1])[0]
         test_y = np.array(test['label']).ravel()
         test_weights = np.array(test.weight).ravel()
         pred = np.array(test[yname]).ravel()
         pred = (pred + 1) / 2
         test_a = (test_a + 1) / 2
-        gamma, alpha = detect.delta(test_x, test_y, pred, test_a, test_weights, threshold=detect.threshold)
+        gamma, alpha = detect.delta(test_x, test_y, pred, test_a, test_weights)
         print(gamma)
         print(alpha)
         test['predicted'] = self.auditor.predict(test_x)
+       
+        """
+        test_x = np.array(test[features])
+        test_y = np.array(test['label']).ravel()
+        test_attr = np.array(test[pa]).ravel()
+        test_pred = np.array(test[yname]).ravel()
+        gamma, alpha = detect.compute_unfairness(test_x, test_y, test_attr, test_pred)
+     
+
+        # extract subgroup
+        test['predicted'] = self.auditor.predict(test_x)
+
+        # compute delta
+        if gamma > 0:
+            delta = np.log(gamma)
+        else:
+            delta = 0
+
+        return delta, test
 
         return gamma, test
 
@@ -263,7 +287,6 @@ class detector_data(object):
         self.get_representation(mod)
 
         # weights for test data
-        rep_x = self.representation([np.array(test[features]), 1])[0]
         test_a = np.array(test.attr).ravel()
         test_x =  np.array(test[features])
         test['wt'] = mod.predict(test_x)
@@ -271,40 +294,50 @@ class detector_data(object):
 
         # get violations
         detect = ad.detector(self.auditor, niter=self.niter, stepsize=self.stepsize)
-        train_x = self.representation([np.array(train[features]), 1])[0]
-        rep_individual = self.representation([individual[np.newaxis, :], 1])[0]
+        train_x = np.array(train[features])
         train_y = np.array(train['label']).ravel()
         train_weights = np.array(train.weight).ravel()
-        pred = np.array((train[yname] + 1) / 2).ravel()
-        detect.violation_individual(train_x, train_y, 
-                    train_weights, pred, A, rep_individual)
+        train_attr = np.array(train[pa]).ravel()
+        train_pred = np.array(train[yname]).ravel()
+        detect.violation_individual(train_x, train_y, train_weights, train_pred, train_attr, individual)
 
         # train 2 models
-        train_weights[train_y == - 1] = train_weights[train_y == -1] * (1 + detect.eta)
-        detect.certify(train_x, train_y, train_weights)
+        detect.fit_iter(train_x, train_y, train_weights, detect.eta)
 
-        test_x = self.representation([np.array(test[features]), 1])[0]
+        ## upper bound
+        test_x = np.array(test[features])
         test_y = np.array(test['label']).ravel()
-        test_weights = np.array(test.weight).ravel()
-        pred = np.array(test[yname]).ravel()
-        test_a = (test_a + 1) / 2
-        gamma1, alpha1 = detect.delta(test_x, test_y, pred, test_a, test_weights)
-        predicted = self.auditor.predict(test_x)
-        test_x = test_x[predicted == -1]
-        pred = pred[predicted == -1]
-        test_a = test_a[predicted == -1]
-        test_weights = test_weights[predicted == -1]
-        test_y = test_y[predicted == - 1]
+        test_attr = np.array(test[pa]).ravel()
+        test_pred = np.array(test[yname]).ravel()
+        gamma, alpha = detect.compute_unfairness(test_x, test_y, test_attr, test_pred)
+        test['predicted'] = self.auditor.predict(test_x)
 
-        train_weights[train_y == - 1] = train_weights[train_y == -1] * (1 + detect.eta0) / (1 + detect.eta)
-        detect.certify(train_x, train_y, train_weights)
-        if len(test_x) > 0:
-            gamma2, _ = detect.delta(test_x, test_y, pred, test_a, test_weights)
+        ## lower bound
+        detect.fit_iter(train_x, train_y, train_weights, detect.eta1)
+        gamma1, alpha = detect.compute_unfairness(test_x, test_y, test_attr, test_pred)
+        test['predicted1'] = self.auditor.predict(test_x)
+
+        # compute delta
+        if gamma > 0:
+            delta = np.log(gamma)
         else:
-            gamma2 = 0
+            delta = 0
 
+        if gamma1 > 0:
+            delta1 = np.log(gamma1)
+        else:
+            delta1 = 0
 
-        return gamma1, gamma2
+        return delta, delta1, test
+
+    def individual_violation_iter(self, feature, individual, nboot=None):
+        results = np.zeros((nboot, 2))
+        for iter in np.arange(nboot):
+            delta, delta1, _ = self.get_violation_individual(feature, individual)
+            results[iter, 0] = delta
+            results[iter, 1] = delta1
+
+        return results[:, 0].mean(axis=0), results[:, 1].mean(axis=0)
 
     def certify_knn(self, features, yname, seed=None):
         train, test = self.split_train_test(features, seed=seed)

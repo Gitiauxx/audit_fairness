@@ -92,11 +92,22 @@
 \newlabel{fig: 2a}{{2}{12}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Certifying $\gamma $- multi differential unfairness. The auditor is a decision tree whose depth is tuned using a $5$-fold cross validation. The weights function $u$ is obtained using a neural network with four hidden layers with eight neurons each. The plots show the average of $100$ experiments. Figure 2\hbox {} auditor's bias when estimating $\gamma _{a}$ is measured by deviations from the $45\ensuremath  {^\circ }$ line; the unbalance parameter $\mu $ is set to $0.2$; the size $\alpha $ of sub-population with a fairness violation is set to $0.1$; and, the intensity $\beta $ of the fairness violation varies from $0$ to $0.5$. \relax }}{12}}
 \@writefile{toc}{\contentsline {paragraph}{Worst Violations}{12}}
-\newlabel{fig: 3a}{{\caption@xref {fig: 3a}{ on input line 513}}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Finding $\delta $ for the worst violation of multi-differential fairness. The auditor is a decision tree whose depth is tuned using a $5$-fold cross validation. The weights function $u$ is obtained using a neural network with four hidden layers with eight neurons each. The plots show the average of $100$ experiments. auditor's bias when estimating $\gamma _{a}$ is measured by deviations from the $45\ensuremath  {^\circ }$ line; the unbalance parameter $\mu $ is set to $0.2$; the size $\alpha $ of sub-population with a fairness violation is set to $0.1$; and, the intensity $\beta $ of the fairness violation is set to $0.5$. The bias in the estimated $\delta $ is measured as the difference $\delta _{a}-\delta _{o}$ \relax }}{13}}
+\newlabel{fig: 3a}{{\caption@xref {fig: 3a}{ on input line 515}}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Finding $\delta $ for the worst violation of multi-differential fairness. The auditor is a RBF support vector machine whose regularization is tuned using a $5$-fold cross validation. The weights function $u$ is obtained using a neural network with four hidden layers with eight neurons each. The plots show the average of $100$ experiments. auditor's bias when estimating $\gamma _{a}$ is measured by deviations from the $45\ensuremath  {^\circ }$ line; the unbalance parameter $\mu $ is set to $0.2$; the size $\alpha $ of sub-population with a fairness violation is set to $0.1$; and, the intensity $\beta $ of the fairness violation is set to $0.5$. The bias in the estimated $\delta $ is measured as the difference $\delta _{a}-\delta _{o}$ \relax }}{13}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Case Study: COMPAS}{13}}
 \@writefile{toc}{\contentsline {paragraph}{Data Description}{13}}
 \@writefile{toc}{\contentsline {paragraph}{Certifying the Lack of Differential Fairness}{13}}
+\newlabel{tab: 1}{{\caption@xref {tab: 1}{ on input line 539}}{14}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Certifying the lack of differential fairness in COMPAS risk classification. Features are as follows: I: count of prior felonies; II: degree of current charge (criminal vs non-criminal); III: age; IV: count of juvenile prior felonies; V: count of juvenile prior misdemeanors. Standard deviations are obtained by drawing $100$ train/test splits. In the first column, Race, the protected attribute is a binary variable indicating whether an individual is self-identified as Afro-American; in the second column, Gender, the protected attribute is a binary variable indicating whether an individual is self-identified as Male\relax }}{14}}
+\@writefile{toc}{\contentsline {paragraph}{Worst Violations}{14}}
+\@writefile{toc}{\contentsline {paragraph}{Disparate Treatment}{14}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Identifying the worst-case violation of differential fairness in the COMPAS risk score. The protected attribute is whether the individual is self-identified as African American. The worst-case violation algorithm is run with a random forest of $100$ tree stumps of depth 2 and an incremental weight increase equal to $0.1$. The algorithm is run $100$ times, each time with a different $0.7/0.3$ train/test set split. Estimates in the tables are obtained from the test set. \relax }}{15}}
+\newlabel{tab: 2}{{2}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Other Datasets: Group Fairness vs. Multi-Differential Fairness}{15}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Appendix}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Analysis of Algorithm 2}{15}}
+\newlabel{eq: opt1}{{20}{15}}
+\newlabel{eq: proof_bound}{{30}{16}}
 \bibstyle{plain}
 \bibdata{references}
 \bibcite{Ricci}{1}
@@ -108,13 +119,9 @@
 \bibcite{chouldechova2017fair}{7}
 \bibcite{cortes2010learning}{8}
 \bibcite{dwork2012fairness}{9}
-\newlabel{tab: 1}{{\caption@xref {tab: 1}{ on input line 537}}{14}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Certifying the lack of differential fairness in COMPAS risk classification. Features are as follows: I: count of prior felonies; II: degree of current charge (criminal vs non-criminal); III: age; IV: count of juvenile prior felonies; V: count of juvenile prior misdemeanors. Standard deviations are obtained by drawing $100$ train/test splits. In the first column, Race, the protected attribute is a binary variable indicating whether an individual is self-identified as Afro-American; in the second column, Gender, the protected attribute is a binary variable indicating whether an individual is self-identified as Male\relax }}{14}}
-\@writefile{toc}{\contentsline {paragraph}{Worst Violations}{14}}
-\@writefile{toc}{\contentsline {paragraph}{Disparate Treatment}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Other Datasets: Group Fairness vs. Multi-Differential Fairness}{14}}
 \bibcite{dwork2014algorithmic}{10}
 \bibcite{feldman2015certifying}{11}
+\newlabel{thm1}{{5.1}{17}}
 \bibcite{feldman2012agnostic}{12}
 \bibcite{freedman2008weighting}{13}
 \bibcite{gretton2009covariate}{14}
