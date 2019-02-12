@@ -322,19 +322,19 @@ The objective is to identify for any $a\in \mathfrak{A}$ the sub-population $S$ 
 \end{equation}
 To illustrate the challenges of the worst-violation problem, consider the case of a binary protected attributes $A=\{-1, 1\}$ where there exist $S_{0}, S_{\delta}\in \mathbb{C}$  with no violation of multi differential fairness in sub-population $S_{0}$, but a $\delta-$ multi differential fairness violation in $S_{\delta}$ (e.g. $P[Y| A=1, S_{\delta}] < e^{\delta}P[Y| A=-1, S_{\delta}]$).  Consider $c, c^{'}\in \mathbb{C}$ such that $c(x)=1$ if and only if $x\in S_{\delta}$ and $c^{'}(x)=1$ if and only if $x\in S_{\delta}\cup S_{0}$. Both $c$ and $c^{'}$ have the same accuracy on $S_{\delta}\cup S_{0}$ once the distribution is rebalanced. Therefore, algorithm \ref{algo: 1} will pick indifferently $c$ or $c^{'}$ as unfairness certificate, although $c^{'}$ does not single out $S_{\delta}$ as a worst violation. 
 
-\paragraph{Worst Violation Algorithm}
+\paragraph{Worst Violation Algorithm (WVA)}
 At issue in the previous example is that for the sub-population $S_{0}$  with no violation of multi differential fairness, choosing $c=1$ or $c=-1$ will lead to same empirical risk used in our certifying procedure \ref{algo: 1}. Our worst violation algorithm \ref{algo: 3} puts a slightly larger weight on samples $((x_{i}, a_{i}), y_{i})$ whenever $a_{i}y_{i}\neq 1$ so that the empirical risk is now smaller if $c=-1$ and there is no violation of multi differential fairness.  More generally, our worst violation algorithm is an iterative procedure such that at each iteration $t$, the weight on samples $((x_{i}, a_{i}), y_{i})$ whenever $a_{i}y_{i}\neq 1$ is increased to $1 + \xi t$, with $\xi > 0$ and the solution $c_{t}^{*}$ of the empirical risk minimization \eqref{eq: risk1} or \eqref{eq: risk2} identifies a sub-population $S_{t}=\{x| c_{t}^{*}(x)=1\}$ for which $\delta \geq \log(1 + \xi t)$. The algorithm \ref{algo: 3} terminates whenever either $|S|\leq \alpha$ or $c^{*}_{t}(x)=-1$ for all $x$. At the last iteration before termination, theorem \ref{thm: algo3_ana} shows that algorithm \ref{algo: 3} will identify a sub-population with a $\delta$-multi differential fairness violation with $\delta$ asymptotically close to $\delta_{m}$. 
 
 
 \begin{thm}
 \label{thm: algo3_ana}
-Suppose $\nu > 0, \epsilon >0, \eta\in (0, 1)$ and $\mathbb{C}\subset 2^{\mathfrak{X}}$ is $\alpha-$strong. Denote $\delta_{m}$ the worst violation of multi differential fairness for $\mathbb{C}$ as defined in \eqref{eq: wvio}. With probability $1-\eta$, with $O\left(\right)$ samples and after $O\left(\right)$ iterations, algorithm \ref{algo: 3} learns $c\in \mathbb{C}$ such that 
+Suppose $\xi > 0, \epsilon >0, \eta\in (0, 1)$ and $\mathbb{C}\subset 2^{\mathfrak{X}}$ is $\alpha-$strong. Denote $\delta_{m}$ the worst-case violation of multi differential fairness for $\mathbb{C}$ as defined in \eqref{eq: wvio}. With probability $1-\eta$, with $O\left(\right)$ samples and after $O\left(\right)$ iterations, algorithm \ref{algo: 3} learns $c\in \mathbb{C}$ such that 
 \begin{equation}
     \log\left(\frac{Pr_{w}[A=a|y, c(x)=1]}{Pr_{w}[A\neq a|y, c(x)=1]} \right) \geq \delta_{m} - \epsilon.
 \end{equation}
 \end{thm}
 \begin{algorithm}
-\caption{Worst Violation Algorithm}
+\caption{Worst Violation Algorithm (WVA)}
 \label{algo: 3}
 \begin{algorithmic}[1]
 \State \textbf{Input:}  $\{((x_{i}, a_{i}), y_{i})\}_{i=1}^{m}$, $\mathbb{C}\subset 2^{|\mathfrak{X}|}$, $\xi$, $alpha$
@@ -622,6 +622,7 @@ Since the classifier $f$ is $\gamma$-unfair, we know that
 \end{equation} 
 Therefore, since $c_{t}\in \mathbb{C}$, at iteration $t$, either $c=c_{o}$ or
 \begin{equation}
+\label{eq: bound}
 Pr_{w}[AY=c_{t}|c_{t}=1] \geq 1 - \frac{2(4\gamma + 1 - 2\rho(y))}{\xi t}= 1-h(\xi t),
 \end{equation}
 where $h(\xi t) = \frac{2(4\gamma + 1 - 2\rho(y))}{\xi t}$.
@@ -637,7 +638,11 @@ Therefore,
 \label{eq: proof_bound}
 \delta_{m}\geq\delta(c_{t})\geq \ln\left(\frac{1-h(\xi t)}{h(\xi t)}\right).
 \end{equation}
-What matters from \eqref{eq: proof_bound} is that since $h$ is a decreasing function of $t$, there exists $T$ such that $\delta(c_{T}) = \delta_{m}$. We are guaranteed that the algorithm will not stop later than $T$ since by definition of $\delta(c_{T})$ and $\gamma$:
+What matters from \eqref{eq: proof_bound} is that since $h$ is a decreasing function of $t$, there exists $T$ such that $\delta(c_{T}) = \delta_{m}$:
+\begin{equation}
+T = \frac{2(4\gamma + 1-2\rho(y))}{\xi} \left(e^{\delta_{m}} + 1\right)
+\end{equation}
+We are guaranteed that the algorithm will not stop later than $T$ since by definition of $\delta(c_{T})$ and $\gamma$:
 
 \begin{equation}
 \begin{split}
@@ -646,6 +651,9 @@ Pr_{w}[Y=1,c_{T}=1]\left(\frac{e^{\delta(c_{T})}}{1 + e^{\delta(c_{T})}}-\frac{1
 \end{split}
 \end{equation}
 which implies $Pr_{w}[Y=1,c_{T}=1]\leq \alpha$. Therefore the size of the sub-population identified with a fairness violation by $c_{T}$ will be at most $\alpha$ and the algorithm will stop at the latest $T$. To show that the algorithm does not stop too early, we need to bound above $Pr_{w}[c_{t}=1, Y=1]$ for any $t\leq T$. 
+
+\bigskip
+To do so, note that because of \eqref{eq: bound}, we know that either $Pr[A=1|c_{t}=1, Y=1]Pr[Y=1, c_{t}]\geq \frac{1-h(\xi t)}{2}$ or $Pr[A=-1|c_{t}=1, Y=-1]Pr[Y=-1, c_{t}]\geq \frac{1-h(\xi t)}{2}$
  
 
 \bigskip
@@ -654,29 +662,28 @@ We can use a generic uniform convergence property:
 
 \begin{thm}
 	\label{thm1}
-	Let$\mathfrak{H}$ be a family of function  mapping from $\mathfrak{X}$ to $\{-1, 1\}$ and let $S=\{x_{1}, ..., x_{m}\}$ be a sample where $x_{i}\sim D$ for some distribution $D$ over $\mathfrak{X}$. With probability $1-\delta$, for all $h\in \mathfrak{H}$
-	$$  \left|E_{S\sim D}[h]- \frac{1}{m}\displaystyle\sum_{i=1}^{m} h(x_{i})\right| \leq 2\mathfrak{R}_{m}(\mathfrak{H}) + \sqrt{\frac{2\ln(1/\delta)}{m}}.$$
+	Let $\mathbb{H}$ be a family of function  mapping from $\mathfrak{X}$ to $\{-1, 1\}$ and let $S=\{x_{1}, ..., x_{m}\}$ be a sample where $x_{i}\sim D$ for some distribution $D$ over $\mathfrak{X}$. With probability $1-\delta$, for all $h\in \mathbb{H}$
+	$$  \left|E_{S\sim D}[h]- \frac{1}{m}\displaystyle\sum_{i=1}^{m} h(x_{i})\right| \leq 2\mathfrak{R}_{m}(\mathbb{H}) + \sqrt{\frac{2\ln(1/\eta)}{m}},$$
+	where $\mathfrak{R}_{m}(\mathbb{H})$ is the Rachemacher complexity of $\mathbb{H}$.
 \end{thm}
 
-Applying the uniform convergence result from \ref{thm1} allows deriving property of algorithm 2. For any a sample $S$ and any $g\in \mathbb{C}$ with probability $1-\delta/2$, ,
+Applying the uniform convergence result from \ref{thm1} allows deriving small sample properties of algorithm 2. For any a sample $\{(x_{i}, a_{i}), y_{i}\}_{i=1}^{m}$ and any $c\in \mathbb{C}$ with probability $1-\eta/2$, ,
 \begin{equation}
-\left|\frac{1}{m}\displaystyle\sum_{i=1, g(x_{i})=1}^{m} w_{it}f_{i}^{*}g(x_{i}) + \frac{1}{2}\epsilon t E_{D}[|B_{g}|] +
-\epsilon t  E_{D}[|B_{g}^{-}|] - \beta_{g}\right| \leq 2\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) + \sqrt{\frac{2\ln(2/\delta)}{m}},
+\left|\displaystyle\sum_{i=1}^{m} w_{it}a_{i}y_{i}c_{t}(x_{i}) - E_{D_{f}^{w}}\left[\displaystyle\sum_{i=1}^{m} w_{it}a_{i}y_{i}c_{t}(x_{i})\right]\right| \leq 2\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) + \sqrt{\frac{2\ln(2/\eta)}{m}}.
 \end{equation}
 
-and 
+Therefore, at iteration $t$, with training sample $\{(x_{i}, a_{i}), y_{i}\}_{i=1}^{m}$,  whenever $c_{t}$ is chosen over $c_{o}$, we have with probability $1-\eta/2$
 \begin{equation}
-\left|\frac{1}{m}\displaystyle\sum_{i=1, g(x_{i})=1}^{m} w_{it}f_{i}^{*}g_{0}(x_{i}) - \frac{1}{2}\epsilon t E_{D}[|B_{g}|] -
-\epsilon t  E_{D}[|B_{g}^{-}|] + \beta_{g}\right| \leq 2\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) + \sqrt{\frac{2\ln(2/\delta)}{m}}.
+Pr_{w}[AY=c_{t}|c_{t}] \geq 1 - \frac{2(4\gamma + 1-2\rho(y))}{\xi t} - 4\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) - \sqrt{\frac{2\ln(2/\eta)}{m}}
 \end{equation}
-Therefore, with probability $1-\delta$, $h$ cannot be solution of the empirical counterpart of \eqref{eq: opt1} if 
+
+Therefore, with probability $1-\eta$, the algorithm will stop with at most $T_{m}$ iterations where
 \begin{equation}
-t > \frac{2\beta_{g}}{\epsilon(1-\beta_{g})} + \frac{4}{1-\beta_{g}}\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) + \frac{2}{1-\beta_{g}}\sqrt{\frac{2\ln(2/\delta)}{m}}.
+T_{m}= \frac{2(4\gamma + 1-2\rho(y)}{\xi\left(\frac{1}{1 + e^{\delta_{m}}} - 4\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) - \sqrt{\frac{2\ln(2/\eta)}{m}}\right)}
 \end{equation}
-Therefore at iteration $t$, with probability $1-\delta$, a solution of \eqref{eq: opt1} for a sample $S$ is either $g(x)=-1$ for all $x\in S$ or 
-\begin{equation}
-\beta_{g} > \frac{\epsilon t}{2 + \epsilon t} - \frac{4}{2 + \epsilon t}\mathfrak{R}_{m}(\mathfrak{\mathbb{C}}) - \frac{2}{2 + \epsilon t}\sqrt{\frac{2\ln(2/\delta)}{m}}.
-\end{equation}
+
+
+
 
 
 \bibliographystyle{plain} % We choose the "plain" reference style
