@@ -163,7 +163,7 @@ class detector_data(object):
         
         rep_x = self.representation([np.array(test[features]), 1])[0]
         test_a = np.array(test.attr).ravel()
-        test_x =  np.array(test[features])
+        test_x = np.array(test[features])
         test['wt'] = mod.predict(test_x)
         test.loc[test.attr == 1, 'weight'] = test['wt']
       

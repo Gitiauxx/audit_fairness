@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.7)  12 FEB 2019 11:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.7)  13 FEB 2019 05:06
 entering extended mode
-**./darft_01072019.tex
-(darft_01072019.tex
+**./darft_02122019.tex
+(darft_02122019.tex
 LaTeX2e <2017-04-15>
 Babel <3.17> and hyphenation patterns for 75 language(s) loaded.
 
@@ -127,6 +127,27 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_intertext_sep=\dimen118
 \l_MT_above_shortintertext_sep=\dimen119
 \l_MT_below_shortintertext_sep=\dimen120
+)
+("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\booktabs\bookta
+bs.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen121
+\lightrulewidth=\dimen122
+\cmidrulewidth=\dimen123
+\belowrulesep=\dimen124
+\belowbottomsep=\dimen125
+\aboverulesep=\dimen126
+\abovetopsep=\dimen127
+\cmidrulesep=\dimen128
+\cmidrulekern=\dimen129
+\defaultaddspace=\dimen130
+\@cmidla=\count103
+\@cmidlb=\count104
+\@aboverulesep=\dimen131
+\@belowrulesep=\dimen132
+\@thisruleclass=\count105
+\@lastruleclass=\count106
+\@thisrulewidth=\dimen133
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.s
 ty"
@@ -477,8 +498,8 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 ftex.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen121
-\Gin@req@width=\dimen122
+\Gin@req@height=\dimen134
+\Gin@req@width=\dimen135
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\frontendlay
 er\tikz.sty"
@@ -489,8 +510,8 @@ gfrcs.sty"
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities
 \pgfutil-common.tex"
 \pgfutil@everybye=\toks22
-\pgfutil@tempdima=\dimen123
-\pgfutil@tempdimb=\dimen124
+\pgfutil@tempdima=\dimen136
+\pgfutil@tempdimb=\dimen137
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\utilities
 \pgfutil-common-lists.tex"))
@@ -525,20 +546,20 @@ Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 \pgfkeysfiltered.code.tex"
 \pgfkeys@tmptoks=\toks25
 ))
-\pgf@x=\dimen125
-\pgf@y=\dimen126
-\pgf@xa=\dimen127
-\pgf@ya=\dimen128
-\pgf@xb=\dimen129
-\pgf@yb=\dimen130
-\pgf@xc=\dimen131
-\pgf@yc=\dimen132
+\pgf@x=\dimen138
+\pgf@y=\dimen139
+\pgf@xa=\dimen140
+\pgf@ya=\dimen141
+\pgf@xb=\dimen142
+\pgf@yb=\dimen143
+\pgf@xc=\dimen144
+\pgf@yc=\dimen145
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count103
-\c@pgf@countb=\count104
-\c@pgf@countc=\count105
-\c@pgf@countd=\count106
+\c@pgf@counta=\count107
+\c@pgf@countb=\count108
+\c@pgf@countc=\count109
+\c@pgf@countd=\count110
 \t@pgf@toka=\toks26
 \t@pgf@tokb=\toks27
 \t@pgf@tokc=\toks28
@@ -560,8 +581,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlay
 er\pgfsyssoftpath.code.tex"
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count107
-\pgfsyssoftpath@bigbuffer@items=\count108
+\pgfsyssoftpath@smallbuffer@items=\count111
+\pgfsyssoftpath@bigbuffer@items=\count112
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\systemlay
 er\pgfsysprotocol.code.tex"
@@ -598,8 +619,8 @@ athcalc.code.tex"
 athutil.code.tex")
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfm
 athparser.code.tex"
-\pgfmath@dimen=\dimen133
-\pgfmath@count=\count109
+\pgfmath@dimen=\dimen146
+\pgfmath@count=\count113
 \pgfmath@box=\box29
 \pgfmath@toks=\toks29
 \pgfmath@stack@operand=\toks30
@@ -625,37 +646,37 @@ athfunctions.misc.code.tex")
 athfunctions.integerarithmetics.code.tex")))
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfm
 athfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count110
+\c@pgfmathroundto@lastzeros=\count114
 ))
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclaye
 r\pgfcorepoints.code.tex"
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen134
-\pgf@picmaxx=\dimen135
-\pgf@picminy=\dimen136
-\pgf@picmaxy=\dimen137
-\pgf@pathminx=\dimen138
-\pgf@pathmaxx=\dimen139
-\pgf@pathminy=\dimen140
-\pgf@pathmaxy=\dimen141
-\pgf@xx=\dimen142
-\pgf@xy=\dimen143
-\pgf@yx=\dimen144
-\pgf@yy=\dimen145
-\pgf@zx=\dimen146
-\pgf@zy=\dimen147
+\pgf@picminx=\dimen147
+\pgf@picmaxx=\dimen148
+\pgf@picminy=\dimen149
+\pgf@picmaxy=\dimen150
+\pgf@pathminx=\dimen151
+\pgf@pathmaxx=\dimen152
+\pgf@pathminy=\dimen153
+\pgf@pathmaxy=\dimen154
+\pgf@xx=\dimen155
+\pgf@xy=\dimen156
+\pgf@yx=\dimen157
+\pgf@yy=\dimen158
+\pgf@zx=\dimen159
+\pgf@zy=\dimen160
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclaye
 r\pgfcorepathconstruct.code.tex"
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen148
-\pgf@path@lasty=\dimen149
+\pgf@path@lastx=\dimen161
+\pgf@path@lasty=\dimen162
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclaye
 r\pgfcorepathusage.code.tex"
 File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
-\pgf@shorten@end@additional=\dimen150
-\pgf@shorten@start@additional=\dimen151
+\pgf@shorten@end@additional=\dimen163
+\pgf@shorten@start@additional=\dimen164
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclaye
 r\pgfcorescopes.code.tex"
@@ -663,19 +684,19 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box30
 \pgf@hbox=\box31
 \pgf@layerbox@main=\box32
-\pgf@picture@serial@count=\count111
+\pgf@picture@serial@count=\count115
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclaye
 r\pgfcoregraphicstate.code.tex"
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
-\pgflinewidth=\dimen152
+\pgflinewidth=\dimen165
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclaye
 r\pgfcoretransformations.code.tex"
 File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
-\pgf@pt@x=\dimen153
-\pgf@pt@y=\dimen154
-\pgf@pt@temp=\dimen155
+\pgf@pt@x=\dimen166
+\pgf@pt@y=\dimen167
+\pgf@pt@temp=\dimen168
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclaye
 r\pgfcorequick.code.tex"
@@ -692,13 +713,13 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclaye
 r\pgfcorearrows.code.tex"
 File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
-\pgfarrowsep=\dimen156
+\pgfarrowsep=\dimen169
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclaye
 r\pgfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen157
-\pgf@sys@shading@range@num=\count112
+\pgf@max=\dimen170
+\pgf@sys@shading@range@num=\count116
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\basiclaye
 r\pgfcoreimage.code.tex"
@@ -733,8 +754,8 @@ File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibili
 ty\pgfcomp-version-0-65.sty"
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen158
-\pgf@nodesepend=\dimen159
+\pgf@nodesepstart=\dimen171
+\pgf@nodesepend=\dimen172
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pgf\compatibili
 ty\pgfcomp-version-1-18.sty"
@@ -756,8 +777,8 @@ Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\math\pgfm
 ath.code.tex")
-\pgffor@iter=\dimen160
-\pgffor@skip=\dimen161
+\pgffor@iter=\dimen173
+\pgffor@skip=\dimen174
 \pgffor@stack=\toks32
 \pgffor@toks=\toks33
 ))
@@ -768,32 +789,32 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries
 \pgflibraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count113
-\pgfplotmarksize=\dimen162
+\pgf@plot@mark@count=\count117
+\pgfplotmarksize=\dimen175
 )
-\tikz@lastx=\dimen163
-\tikz@lasty=\dimen164
-\tikz@lastxsaved=\dimen165
-\tikz@lastysaved=\dimen166
-\tikzleveldistance=\dimen167
-\tikzsiblingdistance=\dimen168
+\tikz@lastx=\dimen176
+\tikz@lasty=\dimen177
+\tikz@lastxsaved=\dimen178
+\tikz@lastysaved=\dimen179
+\tikzleveldistance=\dimen180
+\tikzsiblingdistance=\dimen181
 \tikz@figbox=\box35
 \tikz@figbox@bg=\box36
 \tikz@tempbox=\box37
 \tikz@tempbox@bg=\box38
-\tikztreelevel=\count114
-\tikznumberofchildren=\count115
-\tikznumberofcurrentchild=\count116
-\tikz@fig@count=\count117
+\tikztreelevel=\count118
+\tikznumberofchildren=\count119
+\tikznumberofcurrentchild=\count120
+\tikz@fig@count=\count121
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\p
 gfmodulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count118
-\pgfmatrixcurrentcolumn=\count119
-\pgf@matrix@numberofcolumns=\count120
+\pgfmatrixcurrentrow=\count122
+\pgfmatrixcurrentcolumn=\count123
+\pgf@matrix@numberofcolumns=\count124
 )
-\tikz@expandcount=\count121
+\tikz@expandcount=\count125
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendl
 ayer\tikz\libraries\tikzlibrarytopaths.code.tex"
@@ -806,9 +827,9 @@ lotscore.code.tex"
 \t@pgfplots@toka=\toks34
 \t@pgfplots@tokb=\toks35
 \t@pgfplots@tokc=\toks36
-\pgfplots@tmpa=\dimen169
-\c@pgfplots@coordindex=\count122
-\c@pgfplots@scanlineindex=\count123
+\pgfplots@tmpa=\dimen182
+\c@pgfplots@coordindex=\count126
+\c@pgfplots@scanlineindex=\count127
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\sys\
 pgfplotssysgeneric.code.tex"))
@@ -824,7 +845,7 @@ Package pgfplots: loading complementary arithmetics for your pgf version...
 gfcompatib\pgfplotsoldpgfsupp_pgflibraryfpu.code.tex")
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldp
 gfcompatib\pgfplotsoldpgfsupp_pgfmathfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count124
+\c@pgfmathroundto@lastzeros=\count128
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\oldp
 gfcompatib\pgfplotsoldpgfsupp_leq.code.tex"))
@@ -836,13 +857,13 @@ structure\pgfplotsliststructure.code.tex")
 structure\pgfplotsliststructureext.code.tex")
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\list
 structure\pgfplotsarray.code.tex"
-\c@pgfplotsarray@tmp=\count125
+\c@pgfplotsarray@tmp=\count129
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\list
 structure\pgfplotsmatrix.code.tex")
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\numt
 able\pgfplotstableshared.code.tex"
-\c@pgfplotstable@counta=\count126
+\c@pgfplotstable@counta=\count130
 \t@pgfplotstable@a=\toks37
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\list
@@ -855,7 +876,7 @@ structure\pgfplotsdeque.code.tex")
 \pgfplotsutil.verb.code.tex")
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\libs
 \pgflibrarypgfplots.surfshading.code.tex"
-\c@pgfplotslibrarysurf@no=\count127
+\c@pgfplotslibrarysurf@no=\count131
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgfplots\sys\
 pgflibrarypgfplots.surfshading.pgfsys-pdftex.def")))
@@ -887,14 +908,14 @@ lots.paths.code.tex")
 ayer\tikz\libraries\tikzlibrarydecorations.code.tex"
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\modules\p
 gfmoduledecorations.code.tex"
-\pgfdecoratedcompleteddistance=\dimen170
-\pgfdecoratedremainingdistance=\dimen171
-\pgfdecoratedinputsegmentcompleteddistance=\dimen172
-\pgfdecoratedinputsegmentremainingdistance=\dimen173
-\pgf@decorate@distancetomove=\dimen174
-\pgf@decorate@repeatstate=\count128
-\pgfdecorationsegmentamplitude=\dimen175
-\pgfdecorationsegmentlength=\dimen176
+\pgfdecoratedcompleteddistance=\dimen183
+\pgfdecoratedremainingdistance=\dimen184
+\pgfdecoratedinputsegmentcompleteddistance=\dimen185
+\pgfdecoratedinputsegmentremainingdistance=\dimen186
+\pgf@decorate@distancetomove=\dimen187
+\pgf@decorate@repeatstate=\count132
+\pgfdecorationsegmentamplitude=\dimen188
+\pgfdecorationsegmentlength=\dimen189
 )
 \tikz@lib@dec@box=\box39
 )
@@ -906,13 +927,13 @@ ayer\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex"
 ayer\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex"
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\libraries
 \decorations\pgflibrarydecorations.pathreplacing.code.tex"))
-\pgfplots@numplots=\count129
-\pgfplots@xmin@reg=\dimen177
-\pgfplots@xmax@reg=\dimen178
-\pgfplots@ymin@reg=\dimen179
-\pgfplots@ymax@reg=\dimen180
-\pgfplots@zmin@reg=\dimen181
-\pgfplots@zmax@reg=\dimen182
+\pgfplots@numplots=\count133
+\pgfplots@xmin@reg=\dimen190
+\pgfplots@xmax@reg=\dimen191
+\pgfplots@ymin@reg=\dimen192
+\pgfplots@ymax@reg=\dimen193
+\pgfplots@zmin@reg=\dimen194
+\pgfplots@zmax@reg=\dimen195
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\generic\pgf\frontendl
 ayer\tikz\libraries\tikzlibraryplotmarks.code.tex"
@@ -934,19 +955,19 @@ Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
 3.sty"
 Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen183
-\captionmargin@=\dimen184
-\captionwidth=\dimen185
-\caption@tempdima=\dimen186
-\caption@indent=\dimen187
-\caption@parindent=\dimen188
-\caption@hangindent=\dimen189
+\captionmargin=\dimen196
+\captionmargin@=\dimen197
+\captionwidth=\dimen198
+\caption@tempdima=\dimen199
+\caption@indent=\dimen256
+\caption@parindent=\dimen257
+\caption@hangindent=\dimen258
 )
-\c@caption@flags=\count130
-\c@ContinuedFloat=\count131
+\c@caption@flags=\count134
+\c@ContinuedFloat=\count135
 )
-\c@subfigure=\count132
-\c@subtable=\count133
+\c@subfigure=\count136
+\c@subtable=\count137
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\was\gensymb.sty
 "
@@ -980,8 +1001,8 @@ Package: amsthm 2017/10/31 v2.20.4
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\epsfig
 .sty"
 Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
-\epsfxsize=\dimen190
-\epsfysize=\dimen191
+\epsfxsize=\dimen259
+\epsfysize=\dimen260
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstop
 df.sty"
@@ -1064,8 +1085,8 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty
 "
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
-\col@sep=\dimen192
-\extrarowheight=\dimen193
+\col@sep=\dimen261
+\extrarowheight=\dimen262
 \NC@list=\toks44
 \extratabsurround=\skip56
 \backup@length=\skip57
@@ -1088,17 +1109,17 @@ Package ifvtex Info: VTeX not detected.
 ex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count134
-\Gm@cntv=\count135
-\c@Gm@tempcnt=\count136
-\Gm@bindingoffset=\dimen194
-\Gm@wd@mp=\dimen195
-\Gm@odd@mp=\dimen196
-\Gm@even@mp=\dimen197
-\Gm@layoutwidth=\dimen198
-\Gm@layoutheight=\dimen199
-\Gm@layouthoffset=\dimen256
-\Gm@layoutvoffset=\dimen257
+\Gm@cnth=\count138
+\Gm@cntv=\count139
+\c@Gm@tempcnt=\count140
+\Gm@bindingoffset=\dimen263
+\Gm@wd@mp=\dimen264
+\Gm@odd@mp=\dimen265
+\Gm@even@mp=\dimen266
+\Gm@layoutwidth=\dimen267
+\Gm@layoutheight=\dimen268
+\Gm@layouthoffset=\dimen269
+\Gm@layoutvoffset=\dimen270
 \Gm@dimlist=\toks46
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geomet
@@ -1111,7 +1132,7 @@ nment
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty
 "
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count137
+\c@float@type=\count141
 \float@exts=\toks47
 \float@box=\box40
 \@float@everytoks=\toks48
@@ -1122,7 +1143,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks49
-\c@algorithm=\count138
+\c@algorithm=\count142
 )
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\algorithmicx\al
 gpseudocode.sty"
@@ -1133,55 +1154,51 @@ gorithmicx.sty"
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count139
-\c@ALG@rem=\count140
-\c@ALG@nested=\count141
+\c@ALG@line=\count143
+\c@ALG@rem=\count144
+\c@ALG@nested=\count145
 \ALG@tlm=\skip58
 \ALG@thistlm=\skip59
-\c@ALG@Lnr=\count142
-\c@ALG@blocknr=\count143
-\c@ALG@storecount=\count144
-\c@ALG@tmpcounter=\count145
+\c@ALG@Lnr=\count146
+\c@ALG@blocknr=\count147
+\c@ALG@storecount=\count148
+\c@ALG@tmpcounter=\count149
 \ALG@tmplength=\skip60
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 )
-\c@thm=\count146
-\c@assumption=\count147
-\c@defn=\count148
- (darft_01072019.aux
+\c@thm=\count150
+\c@assumption=\count151
+\c@defn=\count152
+ (darft_02122019.aux)
+\openout1 = `darft_02122019.aux'.
 
-LaTeX Warning: Label `fig: 2a' multiply defined.
-
-)
-\openout1 = `darft_01072019.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf
 .mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count149
-\scratchdimen=\dimen258
+\scratchcounter=\count153
+\scratchdimen=\dimen271
 \scratchbox=\box42
-\nofMPsegments=\count150
-\nofMParguments=\count151
+\nofMPsegments=\count154
+\nofMParguments=\count155
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count152
-\MPscratchDim=\dimen259
-\MPnumerator=\count153
-\makeMPintoPDFobject=\count154
+\MPscratchCnt=\count156
+\MPscratchDim=\dimen272
+\MPnumerator=\count157
+\makeMPintoPDFobject=\count158
 \everyMPtoPDFconversion=\toks51
 ) ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might b
@@ -1190,14 +1207,14 @@ enefit from \pgfplotsset{compat=1.16} (current compat level: 1.15).
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \celsius on input line 53.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 53.
+LaTeX Info: Redefining \celsius on input line 54.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 54.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 53.
-Package gensymb Info: Using \Omega for \ohm on input line 53.
+LaTeX Info: Redefining \ohm on input line 54.
+Package gensymb Info: Using \Omega for \ohm on input line 54.
 
 Package gensymb Warning: Not defining \micro.
 
@@ -1235,13 +1252,13 @@ Package gensymb Warning: Not defining \micro.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 54.
+LaTeX Font Info:    Try loading font information for U+msa on input line 55.
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.f
 d"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 54.
+LaTeX Font Info:    Try loading font information for U+msb on input line 55.
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.f
 d"
@@ -1249,31 +1266,34 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/xgitiaux/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 74.
+
+LaTeX Warning: Citation `Loubes2018' on page 2 undefined on input line 75.
+
+[2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
- [2]
-Overfull \hbox (8.4642pt too wide) in paragraph at lines 108--109
-[]\OT1/cmr/m/n/10 This pa-per in-tro-duces a no-tion of in-di-vid-ual dif-fer-e
-n-tial fair-ness that makes ex-plicit the information-
- []
-
-LaTeX Font Info:    Try loading font information for U+euf on input line 127.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
+LaTeX Font Info:    Try loading font information for U+euf on input line 103.
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\ueuf.f
 d"
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [3] [4] [5] [6] [7]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 267.
+) [3]
+
+LaTeX Warning: Citation `foulds2018intersectional' on page 4 undefined on input
+ line 146.
+
+[4] [5] [6] [7]
+LaTeX Font Info:    Try loading font information for U+bbm on input line 248.
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\bbm\ubbm.fd"
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
-[8] [9] [10]
+[8] [9] [10] [11]
 PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
 PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
 
@@ -1409,660 +1429,327 @@ NOTE: coordinate (0.2,0.06071444874135915) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
 NOTE: coordinate (0.3,0.0863061024114749) has been dropped because it is unboun
 ded (in x). (see also unbounded coords=jump). 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[11]
+[12]
 PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
-PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
+PGFPlots: reading {../results/synth_exp_auditor_2a.csv}
 
-NOTE: coordinate (0.0,-0.0011742405027683576) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.005000000000000001,0.0017875803452764582) has been dropped 
-because it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.010000000000000002,0.00825711530198691) has been dropped be
-cause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.015,0.013112107287601617) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.020000000000000004,0.01741532739948094) has been dropped be
-cause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.025,0.024214124300722385) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03,0.028681483775164454) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.034999999999999996,0.03403245467280528) has been dropped be
-cause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04000000000000001,0.040048363841741805) has been dropped be
-cause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.045000000000000005,0.045811335543936266) has been dropped b
-ecause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.05,0.05128026653640771) has been dropped because it is unbo
+NOTE: coordinate (0.0,0.012136347390081858) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
-PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
-NOTE: coordinate (0.0,0.0002891662007534164) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.005000000000000001,0.003772748552338808) has been dropped b
+NOTE: coordinate (0.005000000000000001,0.019825773564549037) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.010000000000000002,0.009585581734400085) has been dropped b
+NOTE: coordinate (0.010000000000000002,0.022494811311695572) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.015,0.01132634061042239) has been dropped because it is unb
+NOTE: coordinate (0.015,0.02189956252768389) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.020000000000000004,0.01675729632711896) has been dropped be
-cause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.025,0.02103857570648003) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03,0.02598937212541301) has been dropped because it is unbo
+NOTE: coordinate (0.020000000000000004,0.028181910622220696) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.031211933125899833) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.03719178994330717) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.034999999999999996,0.031951191650474185) has been dropped b
+NOTE: coordinate (0.034999999999999996,0.042775472715370404) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04000000000000001,0.0382815965126826) has been dropped beca
+NOTE: coordinate (0.04000000000000001,0.044883661780637726) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.045000000000000005,0.05008093544336443) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.05297513643201326) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0,0.010500684949512338) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.005000000000000001,0.011037113878757056) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.014173796180670365) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.01986828421213549) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.02632263174003463) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.028475880242358947) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.033827640279459746) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.034999999999999996,0.040857613664610916) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.043952689016358445) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.045000000000000005,0.04776508983405324) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.049852734129992846) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0,0.01034707818866017) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.005000000000000001,0.01589640146578361) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.017026649131316473) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.02274058541692362) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.026721850674043323) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.030475763638086295) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.03454813003441962) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.034999999999999996,0.0384446820670616) has been dropped bec
+ause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.04352223428852444) has been dropped bec
+ause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.045000000000000005,0.050094362120784754) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.0548728783253717) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+PGFPlots: reading {../results/synth_exp_auditor_2a.csv}
+NOTE: coordinate (0.0,0.014163850820092323) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.005000000000000001,0.01434837490185556) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.02193010661778369) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.022518162169165877) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.0272737106908436) has been dropped bec
+ause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.033334660888297264) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.0365174982555788) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.034999999999999996,0.04191126510874456) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.0438872943819152) has been dropped beca
 use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.045000000000000005,0.04327814457266407) has been dropped be
-cause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.05,0.04747927762341583) has been dropped because it is unbo
+NOTE: coordinate (0.045000000000000005,0.050859654095889884) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.0547718526209192) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0,0.010500684949512338) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.005000000000000001,0.011037113878757056) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.014173796180670365) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.01986828421213549) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.02632263174003463) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.028475880242358947) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.033827640279459746) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.034999999999999996,0.040857613664610916) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.043952689016358445) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.045000000000000005,0.04776508983405324) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.049852734129992846) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0,0.01034707818866017) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.005000000000000001,0.01589640146578361) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.017026649131316473) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.02274058541692362) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.026721850674043323) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.030475763638086295) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.03454813003441962) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.034999999999999996,0.0384446820670616) has been dropped bec
+ause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.04352223428852444) has been dropped bec
+ause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.045000000000000005,0.050094362120784754) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.0548728783253717) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+PGFPlots: reading {../results/synth_exp_auditor_2a.csv}
+NOTE: coordinate (0.0,0.014163850820092323) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.005000000000000001,0.01434837490185556) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.02193010661778369) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.022518162169165877) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.0272737106908436) has been dropped bec
+ause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.033334660888297264) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.0365174982555788) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.034999999999999996,0.04191126510874456) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.0438872943819152) has been dropped beca
+use it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.045000000000000005,0.050859654095889884) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.0547718526209192) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0,0.012136347390081858) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.005000000000000001,0.019825773564549037) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.022494811311695572) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.02189956252768389) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.028181910622220696) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.031211933125899833) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.03719178994330717) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.034999999999999996,0.042775472715370404) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.044883661780637726) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.045000000000000005,0.05008093544336443) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.05297513643201326) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0,0.010500684949512338) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.005000000000000001,0.011037113878757056) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.014173796180670365) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.01986828421213549) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.02632263174003463) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.028475880242358947) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.033827640279459746) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.034999999999999996,0.040857613664610916) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.043952689016358445) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.045000000000000005,0.04776508983405324) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.049852734129992846) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+PGFPlots: reading {../results/synth_exp_auditor_2a.csv}
+NOTE: coordinate (0.0,0.014163850820092323) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.005000000000000001,0.01434837490185556) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.02193010661778369) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.022518162169165877) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.0272737106908436) has been dropped bec
+ause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.033334660888297264) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.0365174982555788) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.034999999999999996,0.04191126510874456) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.0438872943819152) has been dropped beca
+use it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.045000000000000005,0.050859654095889884) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.0547718526209192) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0,0.012136347390081858) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.005000000000000001,0.019825773564549037) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.022494811311695572) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.02189956252768389) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.028181910622220696) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.031211933125899833) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.03719178994330717) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.034999999999999996,0.042775472715370404) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.044883661780637726) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.045000000000000005,0.05008093544336443) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.05297513643201326) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.0,0.01034707818866017) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.005000000000000001,0.01589640146578361) has been dropped be
+cause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.010000000000000002,0.017026649131316473) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.015,0.02274058541692362) has been dropped because it is unb
+ounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.020000000000000004,0.026721850674043323) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.025,0.030475763638086295) has been dropped because it is un
+bounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.03,0.03454813003441962) has been dropped because it is unbo
+unded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.034999999999999996,0.0384446820670616) has been dropped bec
+ause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.04000000000000001,0.04352223428852444) has been dropped bec
+ause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.045000000000000005,0.050094362120784754) has been dropped b
+ecause it is unbounded (in x). (see also unbounded coords=jump). 
+NOTE: coordinate (0.05,0.0548728783253717) has been dropped because it is unbou
+nded (in x). (see also unbounded coords=jump). 
+
+Package caption Warning: \label without proper reference on input line 537.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig: 3a' on page 13 undefined on input line 507.
+
+PGFPlots: reading {../results/synth_exp_violation_delta_test.csv}
+PGFPlots: reading {../results/synth_exp_violation_delta_test2.csv}
+[13]
+
+Package caption Warning: \label without proper reference on input line 561.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab: 1' on page 14 undefined on input line 550.
+
+[14]
+
+Package caption Warning: \label without proper reference on input line 561.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tab: 1' on page 15 undefined on input line 566.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[12] [13]
-
-Package caption Warning: \label without proper reference on input line 534.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `tab: 1' on page 14 undefined on input line 523.
-
-
-Package caption Warning: \label without proper reference on input line 534.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `tab: 1' on page 14 undefined on input line 539.
-
-PGFPlots: reading {../results/synth_exp_unbalance_3a.csv}
-NOTE: coordinate (-0.3,0.036651275943809694) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.02853070592499394) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,0.01669835466658929) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,-0.0005896694005950616) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.024632290589832975) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.06071444874135915) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.0863061024114749) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.3,0.0050345793910892556) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.002026379913426111) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,-0.00029775634094997283) has been dropped because it is 
-unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,-0.002377424194841358) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.0028628907468464977) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.00505558309563096) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.007572792350202404) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-PGFPlots: reading {../results/synth_exp_unbalance_3a.csv}
-NOTE: coordinate (-0.3,0.02351318989933692) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.017215140331959283) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,0.008700910915453393) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,-0.00033170077937833345) has been dropped because it is u
-nbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.009088037510184083) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.020527787364991418) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.029280158815898592) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.3,0.0050345793910892556) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.002026379913426111) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,-0.00029775634094997283) has been dropped because it is 
-unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,-0.002377424194841358) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.0028628907468464977) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.00505558309563096) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.007572792350202404) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-PGFPlots: reading {../results/synth_exp_unbalance_3a.csv}
-NOTE: coordinate (-0.3,0.02351318989933692) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.017215140331959283) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,0.008700910915453393) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,-0.00033170077937833345) has been dropped because it is u
-nbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.009088037510184083) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.020527787364991418) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.029280158815898592) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.3,0.036651275943809694) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.02853070592499394) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,0.01669835466658929) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,-0.0005896694005950616) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.024632290589832975) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.06071444874135915) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.0863061024114749) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.3,0.0050345793910892556) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.002026379913426111) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,-0.00029775634094997283) has been dropped because it is 
-unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,-0.002377424194841358) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.0028628907468464977) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.00505558309563096) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.007572792350202404) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-
-Package pgfplots Warning: the current plot has no coordinates (or all have been
- filtered away) on input line 564.
-
- [warning /pgfplots/warning/plot without coordinates]
-PGFPlots: reading {../results/synth_exp_unbalance_3a.csv}
-NOTE: coordinate (-0.3,0.02351318989933692) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.017215140331959283) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,0.008700910915453393) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,-0.00033170077937833345) has been dropped because it is u
-nbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.009088037510184083) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.020527787364991418) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.029280158815898592) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.3,0.036651275943809694) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.02853070592499394) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,0.01669835466658929) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,-0.0005896694005950616) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.024632290589832975) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.06071444874135915) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.0863061024114749) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-Missing character: There is no ; in font nullfont!
-PGFPlots: reading {../results/synth_exp_unbalance_2b.csv}
-NOTE: coordinate (-0.3,0.6431497961242199) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.819985889541504) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,0.7852455524261782) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,1.2371482305078283) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.8066297104597291) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,1.2440180214699403) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.743596338538896) has been dropped because it is unbound
-ed (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.3,1.2054431886977037) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.9169037177943625) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,1.1770909600309747) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,0.8635075574727559) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,1.1936449416349448) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.9187733481707554) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,1.2749090596782673) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.3,0.8374726434952212) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,1.1029042986223578) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,1.0242137049490743) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,0.9891807324884369) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.9643640462533535) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.959077866522088) has been dropped because it is unbound
-ed (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.9563733380148205) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-PGFPlots: reading {../results/synth_exp_unbalance_2b.csv}
-NOTE: coordinate (-0.3,1.9426577910257197) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,1.3075508997564744) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,0.9483838164450688) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,0.675898275992387) has been dropped because it is unbound
-ed (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.9206079780279607) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,1.2957153189305586) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,1.6863081648327225) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.3,1.2054431886977037) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.9169037177943625) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,1.1770909600309747) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,0.8635075574727559) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,1.1936449416349448) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.9187733481707554) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,1.2749090596782673) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.3,0.8374726434952212) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,1.1029042986223578) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,1.0242137049490743) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,0.9891807324884369) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.9643640462533535) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.959077866522088) has been dropped because it is unbound
-ed (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.9563733380148205) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-PGFPlots: reading {../results/synth_exp_unbalance_2b.csv}
-NOTE: coordinate (-0.3,1.9426577910257197) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,1.3075508997564744) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,0.9483838164450688) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,0.675898275992387) has been dropped because it is unbound
-ed (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.9206079780279607) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,1.2957153189305586) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,1.6863081648327225) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.3,0.6431497961242199) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.819985889541504) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,0.7852455524261782) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,1.2371482305078283) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.8066297104597291) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,1.2440180214699403) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.743596338538896) has been dropped because it is unbound
-ed (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.3,0.8374726434952212) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,1.1029042986223578) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,1.0242137049490743) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,0.9891807324884369) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.9643640462533535) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.959077866522088) has been dropped because it is unbound
-ed (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.9563733380148205) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-PGFPlots: reading {../results/synth_exp_unbalance_2b.csv}
-NOTE: coordinate (-0.3,1.9426577910257197) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,1.3075508997564744) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,0.9483838164450688) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,0.675898275992387) has been dropped because it is unbound
-ed (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.9206079780279607) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,1.2957153189305586) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,1.6863081648327225) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.3,0.6431497961242199) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.819985889541504) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,0.7852455524261782) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,1.2371482305078283) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,0.8066297104597291) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,1.2440180214699403) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,0.743596338538896) has been dropped because it is unbound
-ed (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.3,1.2054431886977037) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.2,0.9169037177943625) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (-0.1,1.1770909600309747) has been dropped because it is unbou
-nded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0,0.8635075574727559) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.1,1.1936449416349448) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.2,0.9187733481707554) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.3,1.2749090596782673) has been dropped because it is unboun
-ded (in x). (see also unbounded coords=jump). 
-Missing character: There is no ; in font nullfont!
-
-Overfull \hbox (1.22746pt too wide) in paragraph at lines 593--594
- [][] 
+[15] [16] [17] [18] (darft_02122019.bbl
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
+ [19]
+Underfull \hbox (badness 2753) in paragraph at lines 113--116
+[]\OT1/cmr/m/n/10 Chris Rus-sell.  Ef-fi-cient search for di-verse co-her-ent e
+x-pla-na-tions.  \OT1/cmr/m/it/10 arXiv preprint
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-PGFPlots: reading {../results/synth_exp_unbalance_3.csv}
-NOTE: coordinate (0.004823421052631573,1.1521792686010426) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.00966,0.9499007946029304) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01451205882352941,0.9976158557976208) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019382500000000014,0.9916267174677121) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024274999999999994,1.0147109674744323) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02919428571428571,1.0109199227024592) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03414653846153844,0.9919092996580499) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03914,0.9782077609330538) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0441859090909091,0.9717854881191762) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0493,0.9793666190927286) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.004823421052631573,1.8102872172061848) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.00966,1.3721931541115233) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01451205882352941,1.1283226568217373) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019382500000000014,1.0934987014164885) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024274999999999994,1.1207957477911727) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02919428571428571,1.0645830382691497) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03414653846153844,1.0609829892529459) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03914,1.0445172255679733) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0441859090909091,1.0183604968102848) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0493,1.007115477661604) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.004823421052631573,3.0864007238281674) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.00966,2.0595143158904214) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01451205882352941,1.6414384114145335) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019382500000000014,1.4981643143476027) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024274999999999994,1.3990548426085434) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02919428571428571,1.333131912354772) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03414653846153844,1.2808778845325004) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03914,1.2294162238228639) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0441859090909091,1.201950316562401) has been dropped becaus
-e it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0493,1.1601312195552882) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-PGFPlots: reading {../results/synth_exp_unbalance_3.csv}
-NOTE: coordinate (0.004862368421052642,1.1568612295057668) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.009729999999999999,1.1286105293125117) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.014603823529411761,0.9966071870157398) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019485000000000013,0.9911618850261064) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024375,1.01523855856718) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.029275714285714287,0.9898815431049234) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03418961538461539,0.9972494037150006) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03912,0.9952130691776863) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.044071363636363645,0.9892013637731677) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04905,0.9816485219910598) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.004823421052631573,1.8102872172061848) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.00966,1.3721931541115233) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01451205882352941,1.1283226568217373) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019382500000000014,1.0934987014164885) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024274999999999994,1.1207957477911727) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02919428571428571,1.0645830382691497) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03414653846153844,1.0609829892529459) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03914,1.0445172255679733) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0441859090909091,1.0183604968102848) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0493,1.007115477661604) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.004823421052631573,3.0864007238281674) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.00966,2.0595143158904214) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01451205882352941,1.6414384114145335) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019382500000000014,1.4981643143476027) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024274999999999994,1.3990548426085434) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02919428571428571,1.333131912354772) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03414653846153844,1.2808778845325004) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03914,1.2294162238228639) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0441859090909091,1.201950316562401) has been dropped becaus
-e it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0493,1.1601312195552882) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-PGFPlots: reading {../results/synth_exp_unbalance_3.csv}
-NOTE: coordinate (0.004862368421052642,1.1568612295057668) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.009729999999999999,1.1286105293125117) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.014603823529411761,0.9966071870157398) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019485000000000013,0.9911618850261064) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024375,1.01523855856718) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.029275714285714287,0.9898815431049234) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03418961538461539,0.9972494037150006) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03912,0.9952130691776863) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.044071363636363645,0.9892013637731677) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04905,0.9816485219910598) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.004823421052631573,1.1521792686010426) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.00966,0.9499007946029304) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01451205882352941,0.9976158557976208) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019382500000000014,0.9916267174677121) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024274999999999994,1.0147109674744323) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02919428571428571,1.0109199227024592) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03414653846153844,0.9919092996580499) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03914,0.9782077609330538) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0441859090909091,0.9717854881191762) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0493,0.9793666190927286) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.004823421052631573,3.0864007238281674) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.00966,2.0595143158904214) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01451205882352941,1.6414384114145335) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019382500000000014,1.4981643143476027) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024274999999999994,1.3990548426085434) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02919428571428571,1.333131912354772) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03414653846153844,1.2808778845325004) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03914,1.2294162238228639) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0441859090909091,1.201950316562401) has been dropped becaus
-e it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0493,1.1601312195552882) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-PGFPlots: reading {../results/synth_exp_unbalance_3.csv}
-NOTE: coordinate (0.004862368421052642,1.1568612295057668) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.009729999999999999,1.1286105293125117) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.014603823529411761,0.9966071870157398) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019485000000000013,0.9911618850261064) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024375,1.01523855856718) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.029275714285714287,0.9898815431049234) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03418961538461539,0.9972494037150006) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03912,0.9952130691776863) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.044071363636363645,0.9892013637731677) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.04905,0.9816485219910598) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.004823421052631573,1.1521792686010426) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.00966,0.9499007946029304) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01451205882352941,0.9976158557976208) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019382500000000014,0.9916267174677121) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024274999999999994,1.0147109674744323) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02919428571428571,1.0109199227024592) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03414653846153844,0.9919092996580499) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03914,0.9782077609330538) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0441859090909091,0.9717854881191762) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0493,0.9793666190927286) has been dropped because it is unb
-ounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.004823421052631573,1.8102872172061848) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.00966,1.3721931541115233) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.01451205882352941,1.1283226568217373) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.019382500000000014,1.0934987014164885) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.024274999999999994,1.1207957477911727) has been dropped bec
-ause it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.02919428571428571,1.0645830382691497) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03414653846153844,1.0609829892529459) has been dropped beca
-use it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.03914,1.0445172255679733) has been dropped because it is un
-bounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0441859090909091,1.0183604968102848) has been dropped becau
-se it is unbounded (in x). (see also unbounded coords=jump). 
-NOTE: coordinate (0.0493,1.007115477661604) has been dropped because it is unbo
-unded (in x). (see also unbounded coords=jump). 
-Missing character: There is no ; in font nullfont!
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[14] [15] [16] (darft_01072019.bbl
-LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
- [17]) [18] (darft_01072019.aux)
+) [20] (darft_02122019.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 26165 strings out of 493303
- 653751 string characters out of 3128480
- 846239 words of memory out of 3000000
- 29221 multiletter control sequences out of 15000+200000
+ 26222 strings out of 493303
+ 654860 string characters out of 3128480
+ 830224 words of memory out of 3000000
+ 29272 multiletter control sequences out of 15000+200000
  14969 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,23n,119p,1547b,2717s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 69i,22n,119p,1563b,2717s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\xgitiaux\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\bbm\dpi60
 0\bbm10.pk><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmbx10.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9
@@ -2071,30 +1758,29 @@ grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/xgitiaux/A
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
 Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
 /cmmi5.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmmi6.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/xgitiaux/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/xgitiaux/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/User
+lic/amsfonts/cm/cmmi7.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/xgitiaux/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/xgitiaux/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/User
 s/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-12.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr17.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/xgitiaux/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/xgitiaux/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/xgiti
-aux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><
-C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmsy5.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/xgitiaux/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/xgitiaux
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb
-><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/euler/eufm7.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/symbols/msbm10.pfb><C:/Users/xgitiaux/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on darft_01072019.pdf (18 pages, 352097 bytes).
+17.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmr5.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/xgitiaux/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/xgitiaux/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/xgitia
+ux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+<C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmsy5.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy7.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/xgitiaux/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/xgit
+iaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm7.
+pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/symbols/msbm10.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on darft_02122019.pdf (20 pages, 356660 bytes).
 PDF statistics:
- 161 PDF objects out of 1000 (max. 8388607)
+ 164 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
