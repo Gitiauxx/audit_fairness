@@ -145,7 +145,10 @@ class detector(object):
             gamma = np.nan
        
         # compute size of violation
-        alpha = predicted[predicted == 1].shape[0] / predicted.shape[0]
+        alpha = predicted[(predicted == 1) & (attr == 1)].shape[0] / predicted.shape[0]
+        alpha2 = predicted[(predicted == 1) & (attr == -1)].shape[0] / predicted.shape[0]
+        if alpha2 < alpha:
+            alpha2 = alpha
 
         return gamma, alpha
 

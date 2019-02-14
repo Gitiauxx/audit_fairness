@@ -44,17 +44,18 @@ outcome = 'income'
 protected = {'sex': [' Male', ' Female'], 'race': [' Black', ' White']}
 
 # features
-train['income'] = 2 * train['income'] - 1
+train['income'] = -2 * train['income'] + 1
 test['income'] = 2 * test['income'] - 1
 train['attr'] = 2 * (train.sex == ' Female').astype('int32') - 1
 test['attr'] = 2 * (test.sex == ' Female').astype('int32') - 1
-train = train[['attr', 'income', 'age', 'workclass', 'education',  'occupation',
+train = train[['attr', 'income', 'age', 'workclass', 'education',  'occupation', 'gender',
 		'hours-per-week', 'capital-gain', 'education-num', 'srace', 'marital-status']]
-test = test[['attr', 'income', 'age', 'workclass', 'education',  'occupation',
+test = test[['attr', 'income', 'age', 'workclass', 'education',  'occupation', 'gender',
 		'hours-per-week', 'capital-gain', 'education-num', 'srace', 'marital-status']]
 
 # define data to measure differential unfairness
-features_auditing = ['age', 'workclass', 'education',  'occupation', 'hours-per-week', 'capital-gain', 'education-num']
+features_auditing = ['age', 'workclass', 'education',  'occupation', 
+                    'hours-per-week', 'education-num']
 test_df = test.copy()
 for var in features_auditing:
     test_df = test_df[~np.isnan(test_df[var])]
@@ -70,6 +71,7 @@ certification.index.name = 'Experiment'
 # experiment 1: baseline
 logreg = LR()
 pred, _ = logreg.run(train, test, 'income', 1, ['attr', 'srace'], 'attr', 1, {'lambda': 1.0})
+logreg = LogisticRegression()
 test_df['outcome'] = pred
 
 auditor = RandomForestClassifier(n_estimators=100, max_depth=2)
@@ -79,8 +81,10 @@ audit.get_y()
 g, g_std = audit.certify_iter(features_auditing, yname,  nboot=10, balancing='MMD_NET')
 certification.loc["Baseline_LogReg", "gamma"] = g
 certification.loc["Baseline_LogReg", "gamma_deviation"] = g_std
-certification.loc["Baseline_LogReg", "tpp"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == 1) & (test_df.income == 1)]) / \
-                                              len(test_df[(test_df.attr == -1) & (test_df.outcome == 1) & (test.income == 1)])
+certification.loc["Baseline_LogReg", "tpp - female"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == 1) & (test_df.income == 1)]) / \
+                                              len(test_df[(test_df.attr == 1) & (test_df.income == 1)])
+certification.loc["Baseline_LogReg", "tpp -male"] = len(test_df[(test_df.attr == -1) & (test_df.outcome == 1) & (test.income == 1)]) /\
+                                              len(test_df[(test_df.attr == -1) & (test_df.income == 1)])
 certification.loc["Baseline_LogReg", "tnp"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == -1) & (test.income == -1)]) / \
                                               len(test_df[(test_df.attr == -1) & (test_df.outcome == -1) & (test_df.income == -1)])
 
@@ -89,8 +93,10 @@ nboot = 10
 resu = np.zeros(nboot)
 for iter in range(nboot):
     delta, test_audited = audit.get_violation(features_auditing)
-    resu[iter] = delta
+    resu[iter] = len(test_audited[(test_audited.predicted == 1) & (test_audited.attr == 1) & (test_audited.outcome == 1)]) / \
+    len(test_audited[(test_audited.predicted == 1) & (test_audited.attr == -1) &  (test_audited.outcome == 1)])
 certification.loc["Baseline_LogReg", "delta"] = resu.mean()
+print(certification)
 
 # experiment 2: baseline - SVM
 svm = SVM()
