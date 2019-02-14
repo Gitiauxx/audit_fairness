@@ -43,7 +43,7 @@ feature_list = ['age', 'workclass', 'education', 'occupation',
 outcome = 'income'
 protected = {'sex': [' Male', ' Female'], 'race': [' Black', ' White']}
 
-# classifier -- aggregate
+# features
 train['income'] = 2 * train['income'] - 1
 test['income'] = 2 * test['income'] - 1
 train['attr'] = 2 * (train.sex == ' Female').astype('int32') - 1
@@ -79,6 +79,18 @@ audit.get_y()
 g, g_std = audit.certify_iter(features_auditing, yname,  nboot=10, balancing='MMD_NET')
 certification.loc["Baseline_LogReg", "gamma"] = g
 certification.loc["Baseline_LogReg", "gamma_deviation"] = g_std
+certification.loc["Baseline_LogReg", "tpp"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == 1) & (test_df.income == 1)]) / \
+                                              len(test_df[(test_df.attr == -1) & (test_df.outcome == 1) & (test.income == 1)])
+certification.loc["Baseline_LogReg", "tnp"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == -1) & (test.income == -1)]) / \
+                                              len(test_df[(test_df.attr == -1) & (test_df.outcome == -1) & (test_df.income == -1)])
+
+# worst case violation
+nboot = 10
+resu = np.zeros(nboot)
+for iter in range(nboot):
+    delta, test_audited = audit.get_violation(features_auditing)
+    resu[iter] = delta
+certification.loc["Baseline_LogReg", "delta"] = resu.mean()
 
 # experiment 2: baseline - SVM
 svm = SVM()
@@ -92,6 +104,16 @@ audit.get_y()
 g, g_std = audit.certify_iter(features_auditing, yname,  nboot=10, balancing='MMD_NET')
 certification.loc["Baseline_SVM", "gamma"] = g
 certification.loc["Baseline_SVM", "gamma_deviation"] = g_std
+certification.loc["Baseline_SVM", "tpp"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == 1) & (test_df.income == 1)]) / \
+                                              len(test_df[(test_df.attr == -1) & (test_df.outcome == 1) & (test.income == 1)])
+certification.loc["Baseline_SVM", "tnp"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == -1) & (test.income == -1)]) / \
+                                              len(test_df[(test_df.attr == -1) & (test_df.outcome == -1) & (test_df.income == -1)])
+
+print(certification)
+for iter in range(nboot):
+    delta, test_audited = audit.get_violation(features_auditing)
+    resu[iter] = delta
+certification.loc["Baseline_SVM", "delta"] = resu.mean()
 
 # experiment 3: Feldman-Logreg
 feldman = fa.FeldmanAlgorithm(LR())
@@ -104,6 +126,15 @@ audit.get_y()
 g, g_std = audit.certify_iter(features_auditing, yname,  nboot=10, balancing='MMD_NET')
 certification.loc["Feldman_LogReg", "gamma"] = g
 certification.loc["Feldman_LogReg", "gamma_deviation"] = g_std
+certification.loc["Feldman_LogReg", "tpp"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == 1) & (test_df.income == 1)]) / \
+                                              len(test_df[(test_df.attr == -1) & (test_df.outcome == 1) & (test.income == 1)])
+certification.loc["Feldman_LogReg", "tnp"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == -1) & (test.income == -1)]) / \
+                                              len(test_df[(test_df.attr == -1) & (test_df.outcome == -1) & (test_df.income == -1)])
+
+for iter in range(nboot):
+    delta, test_audited = audit.get_violation(features_auditing)
+    resu[iter] = delta
+certification.loc["Feldman_LogReg", "delta"] = resu.mean()
 
 # experiment 4: Feldman-SVM
 feldman_svm = fa.FeldmanAlgorithm(SVM())
@@ -116,6 +147,15 @@ audit.get_y()
 g, g_std = audit.certify_iter(features_auditing, yname,  nboot=10, balancing='MMD_NET')
 certification.loc["Feldman_SVM", "gamma"] = g
 certification.loc["Feldman_SVM", "gamma_deviation"] = g_std
+certification.loc["Feldman_SVM", "tpp"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == 1) & (test_df.income == 1)]) / \
+                                              len(test_df[(test_df.attr == -1) & (test_df.outcome == 1) & (test.income == 1)])
+certification.loc["Feldman_SVM", "tnp"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == -1) & (test.income == -1)]) / \
+                                              len(test_df[(test_df.attr == -1) & (test_df.outcome == -1) & (test_df.income == -1)])
+
+for iter in range(nboot):
+    delta, test_audited = audit.get_violation(features_auditing)
+    resu[iter] = delta
+certification.loc["Feldman_SVM", "delta"] = resu.mean()
 
 # experiment 5 - fairlearn - LogReg
 logreg = LogisticRegression()
@@ -143,10 +183,19 @@ audit.get_y()
 g, g_std = audit.certify_iter(features_auditing, yname,  nboot=10, balancing='MMD_NET')
 certification.loc["Fairlearn_LR_05", "gamma"] = g
 certification.loc["Fairlearn_LR_05", "gamma_deviation"] = g_std
+certification.loc["Fairlearn_LR_05", "tpp"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == 1) & (test_df.income == 1)]) / \
+                                              len(test_df[(test_df.attr == -1) & (test_df.outcome == 1) & (test.income == 1)])
+certification.loc["Fairlearn_LR_05", "tnp"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == -1) & (test.income == -1)]) / \
+                                              len(test_df[(test_df.attr == -1) & (test_df.outcome == -1) & (test_df.income == -1)])
+
+for iter in range(nboot):
+    delta, test_audited = audit.get_violation(features_auditing)
+    resu[iter] = delta
+certification.loc["Fairlearn_LR_05", "delta"] = resu.mean()
 
 # experiment 6: fairlearn more restrictive ).01
 cons = moments.EO()
-res_tuple = red.expgrad(trainX, trainA, trainY, logreg, cons=cons, eps=0.05)
+res_tuple = red.expgrad(trainX, trainA, trainY, logreg, cons=cons, eps=0.1)
 res = res_tuple._asdict()
 best_classifier = res["best_classifier"]
 logreg.fit(trainX, trainY.ravel())
@@ -165,11 +214,21 @@ audit = ad.detector_data(auditor, test_df, protected, yname, lw=0.005, niter=200
 audit.get_y()
 
 g, g_std = audit.certify_iter(features_auditing, yname,  nboot=10, balancing='MMD_NET')
-certification.loc["Fairlearn_LR_01", "gamma"] = g
-certification.loc["Fairlearn_LR_01", "gamma_deviation"] = g_std
+certification.loc["Fairlearn_LR_1", "gamma"] = g
+certification.loc["Fairlearn_LR_1", "gamma_deviation"] = g_std
+certification.loc["Fairlearn_LR_1", "tpp"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == 1) & (test_df.income == 1)]) / \
+                                              len(test_df[(test_df.attr == -1) & (test_df.outcome == 1) & (test.income == 1)])
+certification.loc["Fairlearn_LR_1", "tnp"] = len(test_df[(test_df.attr == 1) & (test_df.outcome == -1) & (test.income == -1)]) / \
+                                              len(test_df[(test_df.attr == -1) & (test_df.outcome == -1) & (test_df.income == -1)])
+
+for iter in range(nboot):
+    delta, test_audited = audit.get_violation(features_auditing)
+    resu[iter] = delta
+certification.loc["Fairlearn_LR_1", "delta"] = resu.mean()
 
 certification.to_csv('../../../results/certification_methods_adults.csv')
 
+""""
 # experiment 5: zafar algorithm
 zafar = za.ZafarAlgorithmFairness()
 pred, _ = zafar.run(train, test, 'income', 1, ['attr', 'srace'], 'attr', 1, {'c': 0.001})
@@ -182,7 +241,7 @@ g, g_std = audit.certify_iter(features_auditing, yname,  nboot=10, balancing='MM
 certification.loc["ZafarFairness", "gamma"] = g
 certification.loc["ZafarFairness", "gamma_deviation"] = g_std
 
-
+"""
 print(certification)
 
 
