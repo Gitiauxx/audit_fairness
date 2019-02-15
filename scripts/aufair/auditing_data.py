@@ -146,11 +146,12 @@ class detector_data(object):
         train, test = self.split_train_test(features, seed=seed)
         train.set_index(np.arange(len(train)), inplace=True)
         test.set_index(np.arange(len(test)), inplace=True)
-        
+
         pa = self.protected_attribute
         pg = self.protected_group
 
         # mmd method to estimate weights
+        train['cons'] = 1
         X = np.array(train[features])
         A = np.array(train[pa])
         A = (A + 1) / 2
@@ -158,14 +159,14 @@ class detector_data(object):
         mod = mmd.model
         mod.fit(X, A, epochs=6, batch_size=512, verbose=0)
         train['wt'] = mod.predict(X)
-        train.loc[train.attr == 1, 'weight'] = train['wt']
+        train.loc[train[pa] == 1, 'weight'] = train['wt']
         self.get_representation(mod)
-        
-        rep_x = self.representation([np.array(test[features]), 1])[0]
+
+
         test_a = np.array(test.attr).ravel()
         test_x = np.array(test[features])
         test['wt'] = mod.predict(test_x)
-        test.loc[test.attr == 1, 'weight'] = test['wt']
+        test.loc[test[pa] == 1, 'weight'] = test['wt']
       
         # search for unfairness ceritficate
         detect = ad.detector(self.auditor, niter=self.niter, stepsize=self.stepsize)
@@ -173,8 +174,11 @@ class detector_data(object):
         train_y = np.array(train['label']).ravel()
         train_weights = np.array(train.weight).ravel()
         detect.certify(train_x, train_y, train_weights)
+        train_pred = np.array(train[yname]).ravel()
+        train_attr = np.array(train[pa]).ravel()
+        gamma, acc = detect.certificate(train_x, train_y, train_pred, train_attr, train_weights)
 
-        test_x =  self.representation([np.array(test[features]), 1])[0]
+        test_x = self.representation([np.array(test[features]), 1])[0]
         test_y = np.array(test['label']).ravel()
         test_weights = np.array(test.weight).ravel()
         pred =  np.array(test[yname]).ravel()
@@ -189,7 +193,6 @@ class detector_data(object):
         test.set_index(np.arange(len(test)), inplace=True)
         
         pa = self.protected_attribute
-        pg = self.protected_group
         yname = self.yname
 
         # mmd method to estimate weights
@@ -211,10 +214,9 @@ class detector_data(object):
         test.loc[test[pa] == 1, 'weight'] = test['wt']
 
         # get violations
-        #train = train[train[yname] == 1]
-        #test = test[test[yname] == 1]
         detect = ad.detector(self.auditor, niter=self.niter, stepsize=self.stepsize)
         train_x = np.array(train[features])
+        train_x = self.representation([np.array(train[features]), 1])[0]
         train_y = np.array(train['label']).ravel()
         train_weights = np.array(train.weight).ravel()
         train_attr = np.array(train[pa]).ravel()
@@ -237,6 +239,7 @@ class detector_data(object):
        
         """
         test_x = np.array(test[features])
+        test_x = self.representation([np.array(test[features]), 1])[0]
         test_y = np.array(test['label']).ravel()
         test_attr = np.array(test[pa]).ravel()
         test_pred = np.array(test[yname]).ravel()

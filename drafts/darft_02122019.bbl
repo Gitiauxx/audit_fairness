@@ -41,6 +41,11 @@ Corinna Cortes, Yishay Mansour, and Mehryar Mohri.
 \newblock In {\em Advances in neural information processing systems}, pages
   442--450, 2010.
 
+\bibitem{Loubes2018}
+Eustasio del Barrio, Fabrice Gamboa, Paula Gordaliza, and Jean-Michel Loubes.
+\newblock Obtaining fairness using optimal transport theory.
+\newblock {\em arXiv preprint arXiv:1806.03195}, 2018.
+
 \bibitem{dwork2012fairness}
 Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel.
 \newblock Fairness through awareness.

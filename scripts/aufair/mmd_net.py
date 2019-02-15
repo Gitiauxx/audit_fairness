@@ -81,16 +81,16 @@ class MMD(object):
         inputs = Input(shape=(self.n_features, ), name='input')
         
         # 4 layers fully connected network
-        layer1 = Dense(8, activation='relu')(inputs)
-        layer2 = Dense(8, activation='relu')(layer1)
-        layer3 = Dense(8, activation='relu')(layer2)
-        layer4 = Dense(8, activation='relu')(layer3)
+        layer1 = Dense(16, activation='relu')(inputs)
+        layer2 = Dense(16, activation='relu')(layer1)
+        layer3 = Dense(32, activation='relu')(layer2)
+        layer4 = Dense(32, activation='relu')(layer3)
         
         representation = Dense(4, activation='relu', name='representation',
-                        kernel_regularizer=L1L2(l1=0.0, l2=self.lw))(layer4)
+                        kernel_regularizer=L1L2(l1=0.0, l2=self.lw))(layer2)
         outputs = Dense(1, activation=self.custom_activation, name='weight')(representation)
         model = Model(inputs, outputs) 
-        model.compile(loss=self.kera_cost(outputs), optimizer='adam')
+        model.compile(loss=self.kera_cost(inputs), optimizer='adam')
 
         return model    
 

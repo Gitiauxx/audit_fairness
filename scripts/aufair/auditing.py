@@ -62,6 +62,7 @@ class detector(object):
             self.fit_iter(train_x, train_y, train_weights, eta)
             gamma, alpha = self.compute_unfairness(train_x, train_y, train_attr, train_pred)
 
+
             if gamma < 0:
                 gamma = 0
 
@@ -148,7 +149,9 @@ class detector(object):
         alpha = predicted[(predicted == 1) & (attr == 1)].shape[0] / predicted.shape[0]
         alpha2 = predicted[(predicted == 1) & (attr == -1)].shape[0] / predicted.shape[0]
         if alpha2 < alpha:
-            alpha2 = alpha
+            alpha = alpha2
+        if np.isnan(alpha2):
+            alpha = alpha2
 
         return gamma, alpha
 
@@ -175,11 +178,15 @@ class detector(object):
     def certificate(self, X, y, pred, A, weights):
         predicted = self.auditor.predict(X)
         accuracy = weights[predicted == y].sum() / weights.sum()
-    
-        attr = weights[A == pred].sum() / weights.sum()
-        alpha = weights[predicted == y].sum() / weights.sum()
 
-        return (accuracy - 1 + attr) / 4, alpha
+        attr = weights[A == pred].sum() / weights.sum()
+
+        alpha = weights[predicted == y].shape[0]/ weights.shape[0]
+        gamma, _ = self.compute_unfairness(X, y, A, pred)
+        gamma = gamma /(gamma + 1) - 1/2
+
+        return gamma * alpha, alpha
+            #(accuracy - 1 + attr) / 4, alpha
 
     def delta(self, X, y, pred, A, weights, threshold=None):
 

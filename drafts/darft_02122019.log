@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.7)  13 FEB 2019 05:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.5.7)  15 FEB 2019 14:29
 entering extended mode
 **./darft_02122019.tex
 (darft_02122019.tex
@@ -1266,18 +1266,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/xgitiaux/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-
-LaTeX Warning: Citation `Loubes2018' on page 2 undefined on input line 75.
-
 [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 88.
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
-LaTeX Font Info:    Try loading font information for U+euf on input line 103.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 88.
+LaTeX Font Info:    Try loading font information for U+euf on input line 105.
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\ueuf.f
 d"
@@ -1285,454 +1282,1042 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [3]
 
 LaTeX Warning: Citation `foulds2018intersectional' on page 4 undefined on input
- line 146.
+ line 148.
 
 [4] [5] [6] [7]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 248.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 250.
 
 ("C:\Users\xgitiaux\AppData\Local\Programs\MiKTeX 2.9\tex\latex\bbm\ubbm.fd"
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
+
+LaTeX Warning: Citation `cortes2008sample' on page 8 undefined on input line 27
+5.
+
 [8] [9] [10] [11]
 PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
 PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 
 NOTE: coordinate (0.0,-0.0011742405027683576) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.005000000000000001,0.0017875803452764582) has been dropped 
 because it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.010000000000000002,0.00825711530198691) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.015,0.013112107287601617) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.020000000000000004,0.01741532739948094) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.025,0.024214124300722385) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.03,0.028681483775164454) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.034999999999999996,0.03403245467280528) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.04000000000000001,0.040048363841741805) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.045000000000000005,0.045811335543936266) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.05,0.05128026653640771) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
 PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,0.0002891662007534164) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.005000000000000001,0.003772748552338808) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.010000000000000002,0.009585581734400085) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.015,0.01132634061042239) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.020000000000000004,0.01675729632711896) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.025,0.02103857570648003) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.03,0.02598937212541301) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.034999999999999996,0.031951191650474185) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.04000000000000001,0.0382815965126826) has been dropped beca
 use it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.045000000000000005,0.04327814457266407) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.05,0.04747927762341583) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 PGFPlots: reading {../results/synth_exp_unbalance_3a.csv}
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.3,0.036651275943809694) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.2,0.02853070592499394) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.1,0.01669835466658929) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,-0.0005896694005950616) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.1,0.024632290589832975) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.2,0.06071444874135915) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.3,0.0863061024114749) has been dropped because it is unboun
 ded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.3,0.0050345793910892556) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.2,0.002026379913426111) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.1,-0.00029775634094997283) has been dropped because it is 
 unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,-0.002377424194841358) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.1,0.0028628907468464977) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.2,0.00505558309563096) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.3,0.007572792350202404) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
 PGFPlots: reading {../results/synth_exp_unbalance_3a.csv}
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.3,0.02351318989933692) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.2,0.017215140331959283) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.1,0.008700910915453393) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,-0.00033170077937833345) has been dropped because it is u
 nbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.1,0.009088037510184083) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.2,0.020527787364991418) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.3,0.029280158815898592) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.3,0.0050345793910892556) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.2,0.002026379913426111) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.1,-0.00029775634094997283) has been dropped because it is 
 unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,-0.002377424194841358) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.1,0.0028628907468464977) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.2,0.00505558309563096) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.3,0.007572792350202404) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
 PGFPlots: reading {../results/synth_exp_unbalance_3a.csv}
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.3,0.02351318989933692) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.2,0.017215140331959283) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.1,0.008700910915453393) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,-0.00033170077937833345) has been dropped because it is u
 nbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.1,0.009088037510184083) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.2,0.020527787364991418) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.3,0.029280158815898592) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.3,0.036651275943809694) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.2,0.02853070592499394) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (-0.1,0.01669835466658929) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,-0.0005896694005950616) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.1,0.024632290589832975) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.2,0.06071444874135915) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.3,0.0863061024114749) has been dropped because it is unboun
 ded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 [12]
 PGFPlots: reading {../results/synth_exp_sample_size_var.csv}
 PGFPlots: reading {../results/synth_exp_auditor_2a.csv}
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 
 NOTE: coordinate (0.0,0.012136347390081858) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.005000000000000001,0.019825773564549037) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.010000000000000002,0.022494811311695572) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.015,0.02189956252768389) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.020000000000000004,0.028181910622220696) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.025,0.031211933125899833) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.03,0.03719178994330717) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.034999999999999996,0.042775472715370404) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.04000000000000001,0.044883661780637726) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.045000000000000005,0.05008093544336443) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.05,0.05297513643201326) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,0.010500684949512338) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.005000000000000001,0.011037113878757056) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.010000000000000002,0.014173796180670365) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.015,0.01986828421213549) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.020000000000000004,0.02632263174003463) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.025,0.028475880242358947) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.03,0.033827640279459746) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.034999999999999996,0.040857613664610916) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.04000000000000001,0.043952689016358445) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.045000000000000005,0.04776508983405324) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.05,0.049852734129992846) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,0.01034707818866017) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.005000000000000001,0.01589640146578361) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.010000000000000002,0.017026649131316473) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.015,0.02274058541692362) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.020000000000000004,0.026721850674043323) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.025,0.030475763638086295) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.03,0.03454813003441962) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.034999999999999996,0.0384446820670616) has been dropped bec
 ause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.04000000000000001,0.04352223428852444) has been dropped bec
 ause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.045000000000000005,0.050094362120784754) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.05,0.0548728783253717) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
 PGFPlots: reading {../results/synth_exp_auditor_2a.csv}
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,0.014163850820092323) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.005000000000000001,0.01434837490185556) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.010000000000000002,0.02193010661778369) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.015,0.022518162169165877) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.020000000000000004,0.0272737106908436) has been dropped bec
 ause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.025,0.033334660888297264) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.03,0.0365174982555788) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.034999999999999996,0.04191126510874456) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.04000000000000001,0.0438872943819152) has been dropped beca
 use it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.045000000000000005,0.050859654095889884) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.05,0.0547718526209192) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,0.010500684949512338) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.005000000000000001,0.011037113878757056) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.010000000000000002,0.014173796180670365) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.015,0.01986828421213549) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.020000000000000004,0.02632263174003463) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.025,0.028475880242358947) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.03,0.033827640279459746) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.034999999999999996,0.040857613664610916) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.04000000000000001,0.043952689016358445) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.045000000000000005,0.04776508983405324) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.05,0.049852734129992846) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,0.01034707818866017) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.005000000000000001,0.01589640146578361) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.010000000000000002,0.017026649131316473) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.015,0.02274058541692362) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.020000000000000004,0.026721850674043323) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.025,0.030475763638086295) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.03,0.03454813003441962) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.034999999999999996,0.0384446820670616) has been dropped bec
 ause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.04000000000000001,0.04352223428852444) has been dropped bec
 ause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.045000000000000005,0.050094362120784754) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.05,0.0548728783253717) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
 PGFPlots: reading {../results/synth_exp_auditor_2a.csv}
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,0.014163850820092323) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.005000000000000001,0.01434837490185556) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.010000000000000002,0.02193010661778369) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.015,0.022518162169165877) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.020000000000000004,0.0272737106908436) has been dropped bec
 ause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.025,0.033334660888297264) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.03,0.0365174982555788) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.034999999999999996,0.04191126510874456) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.04000000000000001,0.0438872943819152) has been dropped beca
 use it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.045000000000000005,0.050859654095889884) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.05,0.0547718526209192) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,0.012136347390081858) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.005000000000000001,0.019825773564549037) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.010000000000000002,0.022494811311695572) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.015,0.02189956252768389) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.020000000000000004,0.028181910622220696) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.025,0.031211933125899833) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.03,0.03719178994330717) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.034999999999999996,0.042775472715370404) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.04000000000000001,0.044883661780637726) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.045000000000000005,0.05008093544336443) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.05,0.05297513643201326) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,0.010500684949512338) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.005000000000000001,0.011037113878757056) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.010000000000000002,0.014173796180670365) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.015,0.01986828421213549) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.020000000000000004,0.02632263174003463) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.025,0.028475880242358947) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.03,0.033827640279459746) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.034999999999999996,0.040857613664610916) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.04000000000000001,0.043952689016358445) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.045000000000000005,0.04776508983405324) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.05,0.049852734129992846) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 PGFPlots: reading {../results/synth_exp_auditor_2a.csv}
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,0.014163850820092323) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.005000000000000001,0.01434837490185556) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.010000000000000002,0.02193010661778369) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.015,0.022518162169165877) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.020000000000000004,0.0272737106908436) has been dropped bec
 ause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.025,0.033334660888297264) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.03,0.0365174982555788) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.034999999999999996,0.04191126510874456) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.04000000000000001,0.0438872943819152) has been dropped beca
 use it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.045000000000000005,0.050859654095889884) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.05,0.0547718526209192) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,0.012136347390081858) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.005000000000000001,0.019825773564549037) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.010000000000000002,0.022494811311695572) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.015,0.02189956252768389) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.020000000000000004,0.028181910622220696) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.025,0.031211933125899833) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.03,0.03719178994330717) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.034999999999999996,0.042775472715370404) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.04000000000000001,0.044883661780637726) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.045000000000000005,0.05008093544336443) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.05,0.05297513643201326) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.0,0.01034707818866017) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.005000000000000001,0.01589640146578361) has been dropped be
 cause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.010000000000000002,0.017026649131316473) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.015,0.02274058541692362) has been dropped because it is unb
 ounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.020000000000000004,0.026721850674043323) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.025,0.030475763638086295) has been dropped because it is un
 bounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.03,0.03454813003441962) has been dropped because it is unbo
 unded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.034999999999999996,0.0384446820670616) has been dropped bec
 ause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.04000000000000001,0.04352223428852444) has been dropped bec
 ause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.045000000000000005,0.050094362120784754) has been dropped b
 ecause it is unbounded (in x). (see also unbounded coords=jump). 
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 NOTE: coordinate (0.05,0.0548728783253717) has been dropped because it is unbou
 nded (in x). (see also unbounded coords=jump). 
 
-Package caption Warning: \label without proper reference on input line 537.
+Package caption Warning: \label without proper reference on input line 539.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig: 3a' on page 13 undefined on input line 507.
+LaTeX Warning: Reference `fig: 3a' on page 13 undefined on input line 509.
 
 PGFPlots: reading {../results/synth_exp_violation_delta_test.csv}
 PGFPlots: reading {../results/synth_exp_violation_delta_test2.csv}
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
+Missing character: There is no + in font nullfont!
 [13]
 
-Package caption Warning: \label without proper reference on input line 561.
+Package caption Warning: \label without proper reference on input line 563.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `tab: 1' on page 14 undefined on input line 550.
+LaTeX Warning: Reference `tab: 1' on page 14 undefined on input line 552.
 
 [14]
 
-Package caption Warning: \label without proper reference on input line 561.
+Package caption Warning: \label without proper reference on input line 563.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `tab: 1' on page 15 undefined on input line 566.
+LaTeX Warning: Reference `tab: 1' on page 15 undefined on input line 568.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [15] [16] [17] [18] (darft_02122019.bbl
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 58.
  [19]
-Underfull \hbox (badness 2753) in paragraph at lines 113--116
+Underfull \hbox (badness 2753) in paragraph at lines 118--121
 []\OT1/cmr/m/n/10 Chris Rus-sell.  Ef-fi-cient search for di-verse co-her-ent e
 x-pla-na-tions.  \OT1/cmr/m/it/10 arXiv preprint
  []
@@ -1743,10 +2328,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 26222 strings out of 493303
- 654860 string characters out of 3128480
- 830224 words of memory out of 3000000
- 29272 multiletter control sequences out of 15000+200000
+ 26223 strings out of 493303
+ 654878 string characters out of 3128480
+ 830235 words of memory out of 3000000
+ 29273 multiletter control sequences out of 15000+200000
  14969 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,22n,119p,1563b,2717s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1778,7 +2363,7 @@ iaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm7.
 pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
 fonts/symbols/msbm10.pfb><C:/Users/xgitiaux/AppData/Local/Programs/MiKTeX 2.9/f
 onts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on darft_02122019.pdf (20 pages, 356660 bytes).
+Output written on darft_02122019.pdf (20 pages, 357056 bytes).
 PDF statistics:
  164 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
