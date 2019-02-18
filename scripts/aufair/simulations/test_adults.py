@@ -166,6 +166,7 @@ for iter in range(nboot):
     resu[iter] = (test_audited[(test_audited.predicted == 1) & (test_audited.attr == 1)].outcome + 1).mean() / \
                  (test_audited[(test_audited.predicted == 1) & (test_audited.attr == -1)].outcome + 1).mean()
 certification.loc["Feldman_SVM", "delta"] = resu[~np.isnan(resu)].mean()
+print(certification)
 
 # experiment 5 - fairlearn - LogReg
 logreg = LogisticRegression()
@@ -239,7 +240,8 @@ for iter in range(nboot):
                  (test_audited[(test_audited.predicted == 1) & (test_audited.attr == -1)].outcome + 1).mean()
 certification.loc["Fairlearn_LR_1", "delta"] = resu[~np.isnan(resu)].mean()
 
-certification.to_csv('../../../results/certification_methods_adults.csv')
+
+certification.to_csv('../../../results/certification_methods_adults2.csv')
 
 print(certification)
 

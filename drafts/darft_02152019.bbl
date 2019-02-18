@@ -1,0 +1,123 @@
+\begin{thebibliography}{10}
+
+\bibitem{Ricci}
+Ricci et al. vs. destefano et al.
+
+\bibitem{atlantic2016}
+How algorithms can bring down minorities credit scores?
+\newblock {\em The Atlantic}, 2016.
+
+\bibitem{ProPublica2016}
+How we analyzed the compas recidivism algorithm.
+\newblock {\em ProPublica}, 2016.
+
+\bibitem{Loomis}
+Loomis vs. state of wisconsin.
+\newblock {\em Supreme Court of the State of Wisconsin}, 2016.
+
+\bibitem{NY2017}
+When an algorithm helps send you to prison.
+\newblock {\em New York Times}, 2017.
+
+\bibitem{calsamiglia2009decentralizing}
+Caterina Calsamiglia.
+\newblock Decentralizing equality of opportunity.
+\newblock {\em International Economic Review}, 50(1):273--290, 2009.
+
+\bibitem{chouldechova2017fair}
+Alexandra Chouldechova.
+\newblock Fair prediction with disparate impact: A study of bias in recidivism
+  prediction instruments.
+\newblock {\em Big data}, 5(2):153--163, 2017.
+
+\bibitem{chouldechova2018frontiers}
+Alexandra Chouldechova and Aaron Roth.
+\newblock The frontiers of fairness in machine learning.
+\newblock {\em arXiv preprint arXiv:1810.08810}, 2018.
+
+\bibitem{cortes2010learning}
+Corinna Cortes, Yishay Mansour, and Mehryar Mohri.
+\newblock Learning bounds for importance weighting.
+\newblock In {\em Advances in neural information processing systems}, pages
+  442--450, 2010.
+
+\bibitem{cortes2008sample}
+Corinna Cortes, Mehryar Mohri, Michael Riley, and Afshin Rostamizadeh.
+\newblock Sample selection bias correction theory.
+\newblock In {\em International Conference on Algorithmic Learning Theory},
+  pages 38--53. Springer, 2008.
+
+\bibitem{Loubes2018}
+Eustasio del Barrio, Fabrice Gamboa, Paula Gordaliza, and Jean-Michel Loubes.
+\newblock Obtaining fairness using optimal transport theory.
+\newblock {\em arXiv preprint arXiv:1806.03195}, 2018.
+
+\bibitem{dwork2012fairness}
+Cynthia Dwork, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Richard Zemel.
+\newblock Fairness through awareness.
+\newblock In {\em Proceedings of the 3rd innovations in theoretical computer
+  science conference}, pages 214--226. ACM, 2012.
+
+\bibitem{dwork2014algorithmic}
+Cynthia Dwork, Aaron Roth, et~al.
+\newblock The algorithmic foundations of differential privacy.
+\newblock {\em Foundations and Trends{\textregistered} in Theoretical Computer
+  Science}, 9(3--4):211--407, 2014.
+
+\bibitem{feldman2015certifying}
+Michael Feldman, Sorelle~A Friedler, John Moeller, Carlos Scheidegger, and
+  Suresh Venkatasubramanian.
+\newblock Certifying and removing disparate impact.
+\newblock In {\em Proceedings of the 21th ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, pages 259--268. ACM, 2015.
+
+\bibitem{feldman2012agnostic}
+Vitaly Feldman, Venkatesan Guruswami, Prasad Raghavendra, and Yi~Wu.
+\newblock Agnostic learning of monomials by halfspaces is hard.
+\newblock {\em SIAM Journal on Computing}, 41(6):1558--1590, 2012.
+
+\bibitem{freedman2008weighting}
+David~A Freedman and Richard~A Berk.
+\newblock Weighting regressions by propensity scores.
+\newblock {\em Evaluation Review}, 32(4):392--409, 2008.
+
+\bibitem{gretton2009covariate}
+Arthur Gretton, Alexander~J Smola, Jiayuan Huang, Marcel Schmittfull, Karsten~M
+  Borgwardt, and Bernhard Sch{\"o}lkopf.
+\newblock Covariate shift by kernel mean matching.
+\newblock 2009.
+
+\bibitem{hebert2017calibration}
+Ursula H{\'e}bert-Johnson, Michael~P Kim, Omer Reingold, and Guy~N Rothblum.
+\newblock Calibration for the (computationally-identifiable) masses.
+\newblock {\em arXiv preprint arXiv:1711.08513}, 2017.
+
+\bibitem{jagielski2018differentially}
+Matthew Jagielski, Michael Kearns, Jieming Mao, Alina Oprea, Aaron Roth, Saeed
+  Sharifi-Malvajerdi, and Jonathan Ullman.
+\newblock Differentially private fair learning.
+\newblock {\em arXiv preprint arXiv:1812.02696}, 2018.
+
+\bibitem{kearns2017preventing}
+Michael Kearns, Seth Neel, Aaron Roth, and Zhiwei~Steven Wu.
+\newblock Preventing fairness gerrymandering: Auditing and learning for
+  subgroup fairness.
+\newblock {\em arXiv preprint arXiv:1711.05144}, 2017.
+
+\bibitem{kearns1994toward}
+Michael~J Kearns, Robert~E Schapire, and Linda~M Sellie.
+\newblock Toward efficient agnostic learning.
+\newblock {\em Machine Learning}, 17(2-3):115--141, 1994.
+
+\bibitem{kim2018fairness}
+Michael~P Kim, Omer Reingold, and Guy~N Rothblum.
+\newblock Fairness through computationally-bounded awareness.
+\newblock {\em arXiv preprint arXiv:1803.03239}, 2018.
+
+\bibitem{rosenbaum1983central}
+Paul~R Rosenbaum and Donald~B Rubin.
+\newblock The central role of the propensity score in observational studies for
+  causal effects.
+\newblock {\em Biometrika}, 70(1):41--55, 1983.
+
+\end{thebibliography}

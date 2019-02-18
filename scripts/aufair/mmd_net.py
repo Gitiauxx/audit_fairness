@@ -1,11 +1,9 @@
-from keras import regularizers
-from keras.models import Sequential
 from keras.layers import Dense, Dropout, Input, Activation
 from keras.models import Model
 from keras import backend as K
 from keras.utils.generic_utils import get_custom_objects
 from keras.regularizers import L1L2
-from keras.optimizers import SGD
+from sklearn.model_selection import StratifiedKFold
 
 import numpy as np
 import tensorflow as tf
@@ -81,8 +79,8 @@ class MMD(object):
         inputs = Input(shape=(self.n_features, ), name='input')
         
         # 4 layers fully connected network
-        layer1 = Dense(16, activation='relu')(inputs)
-        layer2 = Dense(16, activation='relu')(layer1)
+        layer1 = Dense(32, activation='relu')(inputs)
+        layer2 = Dense(32, activation='relu')(layer1)
         layer3 = Dense(32, activation='relu')(layer2)
         layer4 = Dense(32, activation='relu')(layer3)
         
@@ -92,7 +90,41 @@ class MMD(object):
         model = Model(inputs, outputs) 
         model.compile(loss=self.kera_cost(inputs), optimizer='adam')
 
-        return model    
+        return model
+
+    def fit(self, X, y,epochs=6, batch_size=512):
+        model = self.model
+
+        # 5 fold splits
+        results = np.zeros(5)
+        skf = StratifiedKFold(n_splits=5, shuffle=True)
+        i = 0
+
+        for train, test in skf.split(X, y):
+            model.fit(X[train], y[train], verbose=0, epochs=epochs, batch_size=batch_size)
+            scores = model.evaluate(X[test], y[test], verbose=0)
+            results[i] = scores
+            i += 1
+
+        self.score = results.mean()
+
+
+    def cross_validate_fit(self, X, y, epoch=[4, 5, 6], lw=[0.001, 0.005]):
+
+        best_lw = 0
+        score = np.inf
+
+        for l in lw:
+            self.lw = l
+            self.model = self.create_model()
+            self.fit(X, y)
+            if self.score < score:
+                score = self.score
+                best_lw = l
+
+        self.lw = best_lw
+        self.model = self.create_model()
+        self.fit(X, y)
 
     def create_complete_model(self):
 

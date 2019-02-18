@@ -142,7 +142,7 @@ class detector_data(object):
 
         return gamma
 
-    def certify_mmd_net(self, features, yname, seed=None):
+    def certify_mmd_net(self, features, yname, seed=None, parameter_grid=None):
         train, test = self.split_train_test(features, seed=seed)
         train.set_index(np.arange(len(train)), inplace=True)
         test.set_index(np.arange(len(test)), inplace=True)
@@ -156,12 +156,13 @@ class detector_data(object):
         A = np.array(train[pa])
         A = (A + 1) / 2
         mmd = MMD(len(features), target=A, weight=np.array(train.weight).ravel(), lw=self.lw)
+        #mod = mmd.model
+        mmd.cross_validate_fit(X, A)
         mod = mmd.model
-        mod.fit(X, A, epochs=6, batch_size=512, verbose=0)
+        #mod.fit(X, A, epochs=6, batch_size=512, verbose=0)
         train['wt'] = mod.predict(X)
         train.loc[train[pa] == 1, 'weight'] = train['wt']
         self.get_representation(mod)
-
 
         test_a = np.array(test.attr).ravel()
         test_x = np.array(test[features])
@@ -173,7 +174,7 @@ class detector_data(object):
         train_x = self.representation([np.array(train[features]), 1])[0]
         train_y = np.array(train['label']).ravel()
         train_weights = np.array(train.weight).ravel()
-        detect.certify(train_x, train_y, train_weights)
+        detect.certify(train_x, train_y, train_weights, parameter_grid=parameter_grid)
         train_pred = np.array(train[yname]).ravel()
         train_attr = np.array(train[pa]).ravel()
         gamma, acc = detect.certificate(train_x, train_y, train_pred, train_attr, train_weights)

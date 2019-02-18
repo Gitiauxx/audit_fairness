@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: darft_02012019.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: darft_02152019.aux
 The style file: plain.bst
 Database file #1: references.bib
 Warning--string name "supreme" is undefined
@@ -16,6 +16,7 @@ Repeated entry---line 273 of file references.bib
  : @article{gretton2009covariate
  :                              ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "foulds2018intersectional"
 Warning--to sort, need author or key in NY2017
 Warning--to sort, need author or key in atlantic2016
 Warning--to sort, need author or key in ProPublica2016

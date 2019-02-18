@@ -20,6 +20,7 @@ def figure1a():
     noise = 0.2
     alpha = 0.1
     n = 500000
+    unbalance = 0.2
 
     # auditor
     dt = DecisionTreeClassifier()
@@ -32,16 +33,19 @@ def figure1a():
 
     # nboot runs for different sampe size
     results_list = []
-    for ntest in [1000, 5000]:
-        results = t1.test_certifying(n, ntest, nu_min, nu_max, dt, nboot=100, 
-                                    sigma_noise=noise, 
+    for ntest in [5000]:
+        print(ntest)
+        results = t1.test_certifying(n, ntest, nu_min, nu_max, dt, nboot=5,
+                                    sigma_noise=noise,
+                                    unbalance=unbalance,
+                                    balancing="MMD_NET",
                                     parameter_grid=parameter_grid,
                                     alpha=alpha)
         results['size'] = ntest
         results_list.append(results)
     
     report1 = pd.concat(results_list, axis=0)
-    report1.to_csv('../../../results/synth_exp_sample_size_var.csv')
+    report1.to_csv('../../../results/synth_exp_sample_size_var_crossval.csv')
 
 #  figure 1b: decison tree --varying data size and sub-population size
 def figure1b():
@@ -461,5 +465,5 @@ def figure5():
     report.to_csv('../../../results/synth_exp_violation_delta_individual.csv')
 
 if __name__ == "__main__":
-    figure5()
+    figure1a()
 

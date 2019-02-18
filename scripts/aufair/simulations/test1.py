@@ -76,6 +76,7 @@ def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0
     results.index.name = 'nu'
 
     for nu in np.arange(nu_min, nu_max):
+        print(nu)
         nu = nu / 20
         gamma = 4 * nu / (2 * nu + 1)
         alpha1 = 2 * alpha / (1 + 1 - gamma)
@@ -120,7 +121,8 @@ def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0
         audit.get_y()
 
         feature_auditing = ['x1', 'x2']
-        g, g_std = audit.certify_iter(features, 'predict',  nboot=nboot, parameter_grid=parameter_grid, balancing=balancing)
+        g, g_std = audit.certify_iter(features, 'predict',  nboot=nboot, parameter_grid=parameter_grid,
+                                      balancing=balancing)
     
         results.loc[gamma, 'gamma'] =  alpha * nu
         results.loc[gamma,  'estimated_gamma'] = g
