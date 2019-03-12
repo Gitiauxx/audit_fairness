@@ -8,6 +8,7 @@ from aufair.simulations import test1 as t1
 from aufair.simulations import test2 as t2
 from aufair.simulations import test3 as t3
 from aufair.simulations import test4 as t4
+from aufair.simulations import test5 as t5
 from aufair.simulations.create_data import dataset
 from aufair import auditing as ad
 #from aufair.simulations import test_net as tn
@@ -49,14 +50,15 @@ def figure1a():
 
 #  figure 1b: decison tree --varying data size and sub-population size
 def figure1b():
-    nu_max = 11
+    nu_max = 10
     nu_min = 0
     noise = 0.2
     n = 500000
     ntest = 5000
-    nboot = 20
+    nboot = 2
     alpha = 0.1
-    unbalance = 0.25
+    unbalance = 0.2
+    step = 0.05
 
     # auditor
     dt = DecisionTreeClassifier(max_depth=2)
@@ -84,17 +86,123 @@ def figure1b():
         auditor = auditor_dict[key][0]
         print(key)
         p_validation = auditor_dict[key][1]
-        results = t1.test_certifying(n, ntest, nu_min, nu_max, auditor, nboot=nboot,
+        results = t3.test_certifying(n, ntest, nu_min, nu_max, auditor, nboot=nboot,
                                     sigma_noise=noise, 
-                                    #parameter_grid=p_validation,
+                                    parameter_grid=p_validation,
                                     alpha=alpha,
                                     unbalance=unbalance,
-                                    balancing='MMD_NET')
+                                    balancing='MMD_NET',
+                                    stepsize=step)
         results['auditor'] = key
         results_list.append(results)
     
     report = pd.concat(results_list, axis=0)
-    report.to_csv('../../../results/synth_exp_auditor_2a.csv')
+    report.to_csv('../../../results/worst_violations_auditors.csv')
+
+
+#  figure 1b: decison tree --varying data size and sub-population size
+def figure1c():
+    nu_max = 6
+    nu_min = 5
+    noise = 0.2
+    n = 500000
+    ntest = 5000
+    nboot = 1
+    alpha = 0.1
+    unbalance = 0.2
+    step = 0.01
+
+    # auditor
+    dt = DecisionTreeClassifier(max_depth=2)
+    rf = RandomForestClassifier(n_estimators=50, max_depth=2)
+
+    max_depth = [1, 2, 4, 6, 8]
+    min_samples_leaf = [1, 2, 5, 10]
+    p_grid = {'max_depth': max_depth, 'min_samples_leaf': min_samples_leaf}
+    parameter_grid_tree = {'cv': 5, 'parameter': p_grid, 'niter': 20}
+
+    svm_rbf = SVC(kernel='rbf')
+    svm_lin = SVC(kernel='linear', C=0.5)
+
+    C = [0.1, 0.5, 1, 1.5]
+
+    p_grid = {'C': C}
+    parameter_grid_svm = {'cv': 5, 'parameter': p_grid, 'niter': 4}
+
+    auditor_dict = {'dt': (dt, parameter_grid_tree), 'rf': (rf, parameter_grid_tree),
+                    'svm_rbf': (svm_rbf, parameter_grid_svm), 'svm_linear': (svm_lin, parameter_grid_svm)}
+
+    balancing_methods = { 'MMD_NET': 'MMD_NET', 'Uniform': None, 'IS': 'IS'}
+
+    # nboot runs for different sampe size
+    results_list = []
+    for unbalance in [-0.2, -0.1,0, 0.1, 0.2]:
+        for bm in balancing_methods .keys():
+            balancing = balancing_methods[bm]
+            results = t3.test_certifying(n, ntest, nu_min, nu_max, svm_rbf, nboot=nboot,
+                                     sigma_noise=noise,
+                                     #parameter_grid=parameter_grid_tree,
+                                     alpha=alpha,
+                                     unbalance=unbalance,
+                                     balancing=balancing,
+                                     stepsize=step)
+            results['balancing'] = bm
+            results['unbablance'] = unbalance
+            results_list.append(results)
+
+    report = pd.concat(results_list, axis=0)
+    report.to_csv('../../../results/worst_violations_unbalance.csv')
+
+#  figure 1b: decison tree --varying data size and sub-population size
+def figure1d():
+    nu_max = 6
+    nu_min = 5
+    noise = 0.2
+    n = 500000
+    ntest = 5000
+    nboot = 1
+    alpha = 0.1
+    unbalance =- 0.2
+    step = 0.05
+
+    # auditor
+    dt = DecisionTreeClassifier(max_depth=2)
+    rf = RandomForestClassifier(n_estimators=50, max_depth=2)
+
+    max_depth = [1, 2, 4, 6, 8]
+    min_samples_leaf = [1, 2, 5, 10]
+    p_grid = {'max_depth': max_depth, 'min_samples_leaf': min_samples_leaf}
+    parameter_grid_tree = {'cv': 5, 'parameter': p_grid, 'niter': 20}
+
+    svm_rbf = SVC(kernel='rbf', C=0.5)
+    svm_lin = SVC(kernel='linear', C=0.5)
+
+    C = [0.1, 0.5, 1, 1.5]
+
+    p_grid = {'C': C}
+    parameter_grid_svm = {'cv': 5, 'parameter': p_grid, 'niter': 4}
+
+    auditor_dict = {'dt': (dt, parameter_grid_tree), 'rf': (rf, parameter_grid_tree),
+                    'svm_rbf': (svm_rbf, parameter_grid_svm), 'svm_linear': (svm_lin, parameter_grid_svm)}
+
+    balancing_methods = {'Uniform': None, 'IS': 'IS', 'MMD_NET': 'MMD_NET'}
+
+    # nboot runs for different sampe size
+    results_list = []
+    for step in [0.01, 0.005]:
+
+        results = t5.test_certifying(n, ntest, nu_min, nu_max, svm_rbf, nboot=nboot,
+                                     sigma_noise=noise,
+                                     parameter_grid=parameter_grid_tree,
+                                     alpha=alpha,
+                                     unbalance=unbalance,
+                                     balancing="MMD_NET",
+                                     stepsize=step)
+        results['step'] = step
+        results_list.append(results)
+
+    report = pd.concat(results_list, axis=0)
+    #report.to_csv('../../../results/worst_violations_iteration3.csv')
 
 # figure 2a: comparing different concept class
 def figure2a():  
@@ -103,7 +211,7 @@ def figure2a():
     noise = 0.2
     n = 500000  
     ntest = 5000
-    nboot = 10
+    nboot = 1
     alpha = 0.05
     unbalance = 0.25
 
@@ -215,7 +323,7 @@ def figure1e():
     nu_min = 1
     noise = 0.2
     n = 500000  
-    ntest = 2500
+    ntest = 5000
 
     C = [0.5, 1, 1.5, 2, 10] 
    
@@ -242,7 +350,7 @@ def figure1e():
     report2.to_csv('../../../results/synth_exp_auditor_svm.csv')
 
 # compare different tree
-def figure1d():  
+def figure1f():
     nu_max = 11
     nu_min = 1
     noise = 0.2
@@ -367,36 +475,53 @@ def figure3a():
     report.to_csv('../../../results/synth_exp_unbalance_3a_test.csv')
 
 def figure3b():
-    nu_max = 11
-    nu_min = 1
-    noise = 0.2
+    nu_max = 10
+    nu_min = 2
+    noise = 0.1
     n = 500000  
-    ntest = 10000
-    nboot = 10
-    unbalance = 0.25
+    ntest = 5000
+    nboot = 5
+    unbalance = -0.2
 
     auditor = DecisionTreeClassifier(max_depth= 5)
     
     results_list = []
-    for lw in [10**(-4), 10**(-3), 10**(-2), 10**(-1)]:
+    for lw in [10**(-4)]:
         print(lw)
-        results = t2.test_certifying(n, ntest, nu_min, nu_max, auditor, 
-                                    nboot=nboot, sigma_noise=noise, 
-                                    balancing='MMD', unbalance=unbalance, lw=lw)
-        results['lw'] = lw
+        results = t2.test_certifying(n, ntest, nu_min, nu_max, auditor,
+                                     nboot=nboot, sigma_noise=noise,
+                                     unbalance=unbalance)
+        results['meth'] = 'Uniform'
         results_list.append(results)
+        results = t2.test_certifying(n, ntest, nu_min, nu_max, auditor,
+                                     nboot=nboot, sigma_noise=noise,
+                                     unbalance=unbalance,
+                                     balancing='IS')
+        results['meth'] = 'IS'
+        results_list.append(results)
+        results = t2.test_certifying(n, ntest, nu_min, nu_max, auditor,
+                                    nboot=nboot, sigma_noise=noise, 
+                                    balancing='KNN', unbalance=unbalance)
+        results['meth'] = 'KNN'
+
+        results_list.append(results)
+
+        results = t2.test_certifying(n, ntest, nu_min, nu_max, auditor,
+                                     nboot=nboot, sigma_noise=noise,
+                                     balancing='MMD_NET', unbalance=unbalance)
+        results['meth'] = 'MMD'
     
     report = pd.concat(results_list, axis=0)
-    report.to_csv('../../../results/synth_exp_unbalance_3a.csv')
+    report.to_csv('../../../results/synth_exp_unbalance_3a_knn.csv')
 
 
 def figure4():
-    nu_max = 10
-    nu_min = 1
+    nu_max = 6
+    nu_min = 5
     noise = 0.2
     n = 500000
     ntest = 10000
-    nboot = 20
+    nboot = 10
     alpha = 0.1
     unbalance = 0.2
 
@@ -405,18 +530,18 @@ def figure4():
     dt = DecisionTreeClassifier(max_depth=2, min_samples_leaf=0.02)
     svm = SVC()
 
-    max_depth = [1, 2, 4, 6, 8]
-    min_samples_leaf = [1, 2, 5, 10]
-    p_grid = {'max_depth': max_depth, 'min_samples_leaf': min_samples_leaf}
-    parameter_grid_tree = {'cv': 5, 'parameter': p_grid, 'niter': 20}
+    C = [0.1, 0.5, 1, 1.5]
+
+    p_grid = {'C': C}
+    parameter_grid_svm = {'cv': 5, 'parameter': p_grid, 'niter': 4}
 
     # nboot runs for different sampe size
     results_list = []
-    for step in [0.1]:
+    for step in [0.05]:
         print(step)
         results = t3.test_certifying(n, ntest, nu_min, nu_max, svm, nboot=nboot,
                                      sigma_noise=noise,
-                                    # parameter_grid=parameter_grid_tree,
+                                     parameter_grid=parameter_grid_svm,
                                      alpha=alpha,
                                      unbalance=unbalance,
                                      balancing='MMD_NET',
@@ -425,15 +550,15 @@ def figure4():
         results_list.append(results)
 
     report = pd.concat(results_list, axis=0)
-    report.to_csv('../../../results/synth_exp_violation_delta_test2.csv')
+    report.to_csv('../../../results/synth_exp_violation_delta_10K.csv')
 
 def figure5():
-    nu_max = 10
-    nu_min = 1
+    nu_max = 1
+    nu_min = 0
     noise = 0.2
     n = 500000
     ntest = 5000
-    nboot = 1
+    nboot = 10
     alpha = 0.1
     unbalance = 0.2
 
@@ -450,7 +575,6 @@ def figure5():
     # nboot runs for different sampe size
     results_list = []
     for step in [0.05]:
-        print(step)
         results = t4.test_certifying(n, ntest, nu_min, nu_max, svm, nboot=nboot,
                                      sigma_noise=noise,
                                     # parameter_grid=parameter_grid_tree,
@@ -465,5 +589,5 @@ def figure5():
     report.to_csv('../../../results/synth_exp_violation_delta_individual.csv')
 
 if __name__ == "__main__":
-    figure1a()
+    figure3b()
 

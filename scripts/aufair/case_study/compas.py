@@ -78,7 +78,7 @@ for iter in range(nboot):
     results['attr_0'] = len(test[(test.predicted == 1) & (test.attr == -1)])
     results.loc[iter, 'delta'] = delta
 results.to_csv('../../../results/compas_most_harm.csv')
-"""
+
 
 # individual 
 bob = np.array([2.0, 1, 1, 0, 0]).ravel()
@@ -104,4 +104,5 @@ andy[4] = (andy[4] - data.juv_misd_count.mean()) / data.juv_misd_count.var() ** 
 
 gamma1 = audit.get_violation_individual(feature_list, andy)
 print(gamma1)
+"""
 

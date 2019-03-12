@@ -40,8 +40,11 @@ class audit(object):
 
         for iter in range(nboot):
             delta, test_audited = audit.get_violation(self.standardized_features)
-            resu[iter, 0] = (test_audited[(test_audited.predicted == 1) & (test_audited.attr == 1)].outcome + 1).mean() / \
+            try:
+                resu[iter, 0] = (test_audited[(test_audited.predicted == 1) & (test_audited.attr == 1)].outcome + 1).mean() / \
                          (test_audited[(test_audited.predicted == 1) & (test_audited.attr == -1)].outcome + 1).mean()
+            except:
+                resu[iter, 0] = np.nan
             resu[iter, 1] = self.tpp(test_audited)
 
             # collect worst-case violations
@@ -49,8 +52,8 @@ class audit(object):
                 violations.loc[iter, v + '_1'] = test_audited[(test_audited.predicted == 1) & (test_audited.attr == 1)][v].mean()
                 violations.loc[iter, v + '_0'] = test_audited[(test_audited.predicted == 1) & (test_audited.attr == -1)][v].mean()
 
-            violations['attr_1'] = len(test_audited[(test_audited.predicted == 1) & (test_audited.attr == 1)])
-            violations['attr_0'] = len(test_audited[(test_audited.predicted == 1) & (test_audited.attr == -1)])
+            violations.loc[iter, 'attr_1'] = len(test_audited[(test_audited.predicted == 1) & (test_audited.attr == 1)])
+            violations.loc[iter, 'attr_0'] = len(test_audited[(test_audited.predicted == 1) & (test_audited.attr == -1)])
             violations.loc[iter, 'delta'] = delta
 
         resu = resu[~np.isnan(resu[:, 0])]

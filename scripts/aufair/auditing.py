@@ -5,7 +5,7 @@ from copy import deepcopy
 
 class detector(object):
 
-    def __init__(self, auditor, stepsize=0.01, niter=150, min_size=0.05):
+    def __init__(self, auditor, stepsize=0.01, niter=150, min_size=0.025):
         self.auditor = auditor
         self.stepsize = stepsize
         self.niter = niter
@@ -18,10 +18,13 @@ class detector(object):
         self.eta = 0
         eta = 0
         gamma0 = -1
+        alpha = 1
+        self.gamma = np.zeros(2*self.niter)
+        self.alpha = np.zeros(2*self.niter)
 
-        while (iter < self.niter):
+        while (iter < self.niter) | (alpha > self.min_size ):
             
-            self.fit_iter(train_x, train_y, train_weights, eta)
+            self.fit_iter(train_x, train_y, train_pred, train_weights, eta)
             gamma, alpha = self.compute_unfairness(train_x, train_y, train_attr, train_pred)
 
             if gamma < 0:
@@ -41,11 +44,12 @@ class detector(object):
             if gamma > gamma0:
                 self.eta = eta
                 gamma0 = gamma
+            self.eta =  eta
 
             iter += 1
  
         # predict subgroup with maximum unfairness
-        self.fit_iter(train_x, train_y, train_weights, self.eta)
+        self.fit_iter(train_x, train_y, train_pred, train_weights, self.eta)
 
     def violation_individual(self, train_x, train_y, train_weights, train_pred, train_attr, x):
 
@@ -59,8 +63,9 @@ class detector(object):
 
         while (iter < self.niter) & (alpha_max - alpha < 0.025):
 
-            self.fit_iter(train_x, train_y, train_weights, eta)
+            self.fit_iter(train_x, train_y, train_pred, train_weights, eta)
             gamma, alpha = self.compute_unfairness(train_x, train_y, train_attr, train_pred)
+
 
 
             if gamma < 0:
@@ -115,11 +120,11 @@ class detector(object):
             iter += 1
     """
 
-    def fit_iter(self, train_x, train_y, weights, eta):
+    def fit_iter(self, train_x, train_y, pred, weights, eta):
         
         # change weight
         weights_adjusted = weights.copy().astype(float)
-        weights_adjusted[(train_y == -1)] = 1.0 * weights_adjusted[train_y == -1] * (1.0 + eta)
+        weights_adjusted[(train_y == -1)] = 1.0 * weights_adjusted[(train_y == -1)] * (1.0 + eta)
 
         # train auditor
         self.auditor.fit(train_x, train_y, 

@@ -34,5 +34,40 @@ test['attr'] = 2 * (test.sex == ' Female').astype('int32') - 1
 
 train.to_csv('..\\..\\..\\data\\adult_income_train_clean.csv')
 test.to_csv('..\\..\\..\\data\\adult_income_testclean.csv')
+print(len(test) + len(train))
 
 
+# community and crimes
+crime = pd.read_csv('https://raw.githubusercontent.com/sethneel/GerryFair/dev_branch/dataset/communities.csv')
+crime['Y'] = 2 * (crime.ViolentCrimesPerPop == 1).astype('int32') - 1
+crime['attr'] = 2 * (crime['racepctblack'] >= 0.2).astype('int32') - 1
+crime.to_csv('..\\..\\..\\data\\communities_crime_clean.csv')
+
+# law school
+data = pd.read_csv('..\\..\\..\\data\\admissions_bar.csv')
+data['lsat'] = data.lsat.apply(lambda x: x.replace(' ', ''))
+data['ugpa'] = data.ugpa.apply(lambda x: x.replace(' ', ''))
+data['race'] = data.race.apply(lambda x: x.replace(' ', ''))
+data['fam_inc'] = data.fam_inc.apply(lambda x: x.replace(' ', ''))
+data = data[data.lsat != '']
+data = data[data.ugpa != '']
+data = data[data.race != '']
+data = data[data.fam_inc != '']
+data.loc[data.pass_bar == ' ', 'pass_bar'] = '0'
+data = data[data.pass_bar.isin(['1', '0'])]
+data = data[data.gender.isin(['male', 'female'])]
+
+# create categorical data for age_cat, sex, race and charge degree
+data['lsat'] = data.lsat.astype(float)
+data['zfygpa'] = data.zfygpa.astype('category').cat.codes
+data['zgpa'] = data.zgpa.astype('category').cat.codes
+data['ugpa'] = data.ugpa.astype(float)
+data['fam_inc'] = data.fam_inc.astype(float)
+data['gender'] = data.sex.astype('category').cat.codes
+data['race'] = data.race.astype('category').cat.codes
+data['dropout'] = data.dropout.astype('category').cat.codes
+data['fulltime'] = data.fulltime.astype('category').cat.codes
+data['cluster'] = data.cluster.astype('category').cat.codes
+
+data['Y'] = 2 * (data.pass_bar == 1).astype('int32') - 1
+data['attr'] = 2 * (data.black == 1)

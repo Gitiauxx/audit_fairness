@@ -17,9 +17,9 @@ class MMD(object):
         self.tol = tol
         self.n_features = n_features
         self.target = tf.convert_to_tensor(target, dtype=tf.float32)
-        self.weight = tf.convert_to_tensor(weight, dtype=tf.float32)
+        self.w = tf.convert_to_tensor(weight, dtype=tf.float32)
         self.model = self.create_model()
-        #self.model_complete = self.create_complete_model()
+        self.model_complete = self.create_complete_model()
         
         
 
@@ -33,7 +33,6 @@ class MMD(object):
 
     def kera_cost(self, phi):
 
-        
         def k_cost(y_true, y_pred):
 
             n1 = K.sum(y_true)
@@ -52,13 +51,10 @@ class MMD(object):
         
         return k_cost
 
-    def ent_cost(self, source, target):
-
-        k_cost = self.kera_cost(source, target)
+    def ent_cost(self, w):
 
         def e_cost(y_true, y_pred):
-            return  -K.mean((y_true * K.log(y_pred) + (1 - y_true) * K.log(1 - y_pred))) + \
-                    k_cost(y_true, y_pred)
+            return  -K.mean((w * y_true * K.log(y_pred) + w * (1 - y_true) * K.log(1 - y_pred)))
         return e_cost
 
     def custom_activation(self, x):
@@ -79,20 +75,20 @@ class MMD(object):
         inputs = Input(shape=(self.n_features, ), name='input')
         
         # 4 layers fully connected network
-        layer1 = Dense(32, activation='relu')(inputs)
-        layer2 = Dense(32, activation='relu')(layer1)
-        layer3 = Dense(32, activation='relu')(layer2)
-        layer4 = Dense(32, activation='relu')(layer3)
+        layer1 = Dense(8, activation='relu')(inputs)
+        layer2 = Dense(8, activation='relu')(layer1)
+        layer3 = Dense(8, activation='relu')(layer2)
+        layer4 = Dense(8, activation='relu')(layer3)
         
-        representation = Dense(4, activation='relu', name='representation',
-                        kernel_regularizer=L1L2(l1=0.0, l2=self.lw))(layer2)
+        representation = Dense(8, activation='relu', name='representation',
+                        kernel_regularizer=L1L2(l1=0.0, l2=self.lw))(layer4)
         outputs = Dense(1, activation=self.custom_activation, name='weight')(representation)
         model = Model(inputs, outputs) 
         model.compile(loss=self.kera_cost(inputs), optimizer='adam')
 
         return model
 
-    def fit(self, X, y,epochs=6, batch_size=512):
+    def fit(self, X, y, epochs=5, batch_size=512):
         model = self.model
 
         # 5 fold splits
@@ -109,7 +105,7 @@ class MMD(object):
         self.score = results.mean()
 
 
-    def cross_validate_fit(self, X, y, epoch=[4, 5, 6], lw=[0.001, 0.005]):
+    def cross_validate_fit(self, X, y, epoch=[4, 5, 6], lw=[0.0001, 0.005]):
 
         best_lw = 0
         score = np.inf
@@ -131,31 +127,31 @@ class MMD(object):
         inputs = Input(shape=(self.n_features,), name='input')
         
         # 4 layers fully connected representation-layer
-        layer1 = Dense(8, activation='elu')(inputs)
-        layer2 = Dense(8, activation='elu')(layer1)
-        layer3 = Dense(8, activation='elu')(layer2)
-        source = Dense(8, activation='elu', name='source',
+        layer1 = Dense(8, activation='relu')(inputs)
+        layer2 = Dense(8, activation='relu')(layer1)
+        layer3 = Dense(8, activation='relu')(layer2)
+        representation = Dense(8, activation='relu', name='representation',
                     kernel_regularizer=L1L2(l1=0.0, l2=0.001))(layer3)
 
-        inputs2 = Input(shape=(self.n_features,), name='input2')
-        
-        # 4 layers fully connected representation-layer
-        layer12 = Dense(8, activation='elu')(inputs2)
-        layer22 = Dense(8, activation='elu')(layer12)
-        layer32 = Dense(8, activation='elu')(layer22)
-        target = Dense(8, activation='elu', name='target',
-                    kernel_regularizer=L1L2(l1=0.0, l2=0.001))(layer32)
-        
-        # fairness
-        flayer1 = Dense(8, activation='elu')(source)
+
+        # fairness auditing
+        flayer1 = Dense(8, activation='relu')(representation)
+        flayer2 = Dense(8, activation='relu')(flayer1)
         fairness_out = Dense(1, activation='sigmoid', name='fairness', 
-                kernel_regularizer=L1L2(l1=0.0, l2=0.001))(flayer1)
+                kernel_regularizer=L1L2(l1=0.0, l2=0.05 ))(flayer2)
+
+        # weight layersctivation=
+        wlayer1 = Dense(8, activation='relu')(representation)
+        wlayer2 = Dense(8, activation='relu')(wlayer1)
+        weight_out = Dense(1, activation=self.custom_activation, name='weight',
+                           kernel_regularizer=L1L2(l1=0.0, l2=0.01))(wlayer2)
 
         # complete architecture
-        model = Model(inputs=[inputs, inputs2], outputs=[fairness_out]) 
+        model = Model(inputs=inputs, outputs=[fairness_out, weight_out])
 
         # register model
-        model.compile(loss={'fairness': self.ent_cost(source, target)}, 
+        model.compile(loss={'fairness': self.ent_cost(self.w),
+                            'weight': self.kera_cost(representation)},
                             optimizer='adam',
                             metrics={'fairness': 'accuracy'})
 

@@ -39,7 +39,7 @@ def test_certifying(n, n_test, nu_min, nu_max, auditor, alpha=0.1, sigma_noise=0
     # create weights
     data['w'] = np.exp(unbalance * (data['x2'] + data['x1']) ** 2 )
     data['w'] = data['w'] / (1 + data['w'])
-    data['w'] = 0.5
+    #data['w'] = 0.5
    
     data['u'] = np.random.uniform(0, 1, size=len(data))
     data.loc[data.u < data.w, 'attr'] = 1
